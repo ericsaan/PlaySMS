@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 
+
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
 {
 
@@ -34,65 +35,153 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     @IBOutlet weak var lblAfternoon: UILabel!
     
     @IBOutlet weak var lblBigBorder: UILabel!
+       //let kid = UserDefaults.standard.value(forKey: "Kid") as? String ?? String()
+    
+    
+    var parentOne = ""
+    var parentTwo = ""
+    
+    @IBOutlet weak var lblParentOne: UILabel!
+    
+    @IBOutlet weak var lblParentTwo: UILabel!
+    
+    /*
+ 
+ 
+ 980
+     982
+     986
+     987
+     988
+     989
+     994
+     995
+     981
+     984
+ 
+ */
     
     
     
-    @IBAction func btn989Afternoon(_ sender: Any)
+    //******************************************
+    func MorningOrAfternoon() -> String
     {
-        statusMessageToSend = ""
-        statusMessageToSend = "(989) Afternoon - I'm on the Bus. "
-              sendSMStatusUpdate()
+        var timeOfDay = ""
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+      
+        if (hour < 12)
+        {
+            timeOfDay = "Morning"
+        }
+        else if (hour < 17)
+        {
+            timeOfDay = "Afternoon"
+        }
+        else
+        {
+            timeOfDay = "Evening Activity"
+        }
+        return (timeOfDay)
     }
     
-    @IBAction func btn986Afternoon(_ sender: Any)
+    //******************************************
+    
+    @IBAction func btn980(_ sender: UIButton)
     {
-        statusMessageToSend = ""
-        statusMessageToSend = "(982) Afternoon - I'm on the Bus. "
-              sendSMStatusUpdate()
-    }
-    
-    @IBAction func btn981ActivityBus(_ sender: Any)
-    {
-        statusMessageToSend = ""
-        statusMessageToSend = "(981) Evening - I'm on the Bus. "
-              sendSMStatusUpdate()
-    }
-    
-    
-    
-    @IBAction func btnTxtDaddy(_ sender: UIButton)  // note ths is the 986 Morning Button
         
-    {
-        statusMessageToSend = ""
-        statusMessageToSend = "(986) Morning - I'm on the Bus. "
-                   sendSMStatusUpdate()
-        
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
         
     }
     
+    @IBAction func btn982(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+    }
+    
+    @IBAction func btn986(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+
+    }
+    
+    
+       
+    @IBAction func btn987(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+    }
+    
+    
+    @IBAction func btn988(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+    }
+    
+   
+    @IBAction func btn989(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+    }
+    
+    
+    
+    @IBAction func btn994(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+    }
+    
+    @IBAction func btn995(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+    }
+    
+    @IBAction func btn981(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+    }
+    
+    @IBAction func btn984(_ sender: UIButton)
+    {
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+    }
     
     
     @IBAction func btnImhere(_ sender: UIButton)
     {
-        statusMessageToSend = ""
-        statusMessageToSend = "I'm Here! "
-        sendSMStatusUpdate()
-        
+        let statusMessageToSend = "I'm Here! "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
     }
     
     
     @IBAction func btnPickedUp(_ sender: UIButton)
     {
-        statusMessageToSend = ""
-        statusMessageToSend = "Picked Up! "
-        sendSMStatusUpdate()
-        
+        let statusMessageToSend = "Picked Up! "
+        sendSMStatusUpdate(messageToSend: statusMessageToSend)
     }
+        
+    
+      
     
     
     
     
-    func sendSMStatusUpdate ()
+    //****************************************************
+    //need to refactor to get better encapsulation...ees
+    //****************************************************
+    
+    func sendSMStatusUpdate (messageToSend : String)
     {
 
         //first let's get the list of recipients
@@ -100,19 +189,37 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         
         if (callMamaSwitch.isOn)
         {
-            recipientsList.append("4252411902")
+           // recipientsList.append("4252411902")
+            parentOne = UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String!
+            
+            if parentOne != ""
+            {
+                recipientsList.append(parentOne)
+                print (parentOne)
+            }
+            
+            
+            
         }
         
         if (callDaddySwitch.isOn)
         {
-            recipientsList.append("4252411879")
+            //recipientsList.append("4252411879")
+            parentTwo = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String!
+            
+            if parentTwo != ""
+            {
+                recipientsList.append(parentTwo)
+                print (parentTwo)
+            }
         }
     
         
         
         let messageVC = MFMessageComposeViewController()
         
-        messageVC.body =   statusMessageToSend
+        messageVC.body =   messageToSend
+        
 
         // MessageVC.recipients = ["4252411879"];
         messageVC.recipients = recipientsList;
@@ -138,27 +245,53 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //at first we are just checkign to making it work. next we will read in first
+        
+            /*
+        UserDefaults.standard.set(parentOne, forKey: "ParentOne")
+        UserDefaults.standard.set(parentTwo, forKey: "ParentTwo")
+        UserDefaults.standard.set(kid, forKey: "Kid")
+        */
+        
+        
+        let parentOne = UserDefaults.standard.value(forKey: "ParentOne") as? String ?? String()
+        let parentTwo = UserDefaults.standard.value(forKey: "ParentTwo") as? String ?? String()
+
+        print(parentOne)
+        print(parentTwo)
+        
+        
     }
 
     
     override func viewWillAppear(_ animated: Bool)
     {
-       //imageViewBorderActivityBus.layer.borderColor = UIColor.white.cgColor
-       //imageViewBorderActivityBus.layer.borderWidth = 2
-        lbl981Border.layer.borderWidth = 1
-        lbl981Border.layer.borderColor = UIColor.white.cgColor
+       
+        //first let's set the text values of the buttons
+        lblParentOne.text = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
+        lblParentTwo.text = UserDefaults.standard.value(forKey: "ContactTwoName") as! String!
         
+        if lblParentOne.text == nil
+        {
+            lblParentOne.text = "P/G One"
+        }
+        if lblParentTwo.text == nil
+        {
+            lblParentTwo.text = "P/G Two"
+        }
+        
+        
+        
+        //next we create the gold color and then apply it to the label borders
         let lakeSideGold = UIColor(displayP3Red: 1.0, green: 0.76078431, blue: 0.0, alpha: 1.0)
-        lbl981Border.layer.borderColor = lakeSideGold.cgColor
         
-        //lbl981Border.layer.borderColor = [UIColor colorWithRed:252.0/255.0 green:194.0/255.0 blue:0 alpha:1.0]
-
+       
         lbl986Border.layer.borderWidth = 1
-        //lbl986Border.layer.borderColor = UIColor.white.cgColor
         lbl986Border.layer.borderColor = lakeSideGold.cgColor
         
         lblAfternoon.layer.borderWidth = 1
-        //lblAfternoon.layer.borderColor = UIColor.white.cgColor
         lblAfternoon.layer.borderColor = lakeSideGold.cgColor
         
         lblBigBorder.layer.borderWidth = 2

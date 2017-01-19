@@ -18,7 +18,8 @@ class ViewController_Conversations: UIViewController, MFMessageComposeViewContro
     @IBOutlet weak var lblBigBorder: UILabel!
     
     var statusMessageToSend = ""
-
+    
+    var studentPhoneNumber  = ""
     
     //now all the button action methods
     
@@ -26,25 +27,31 @@ class ViewController_Conversations: UIViewController, MFMessageComposeViewContro
     
     @IBAction func btnTakeBusX(_ sender: UIButton)
     {
-       sendSMStatusUpdate(_recipient: "4257851934", _message: "Take Bus ")
-        
+        studentPhoneNumber = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String
+        sendSMStatusUpdate(_recipient: studentPhoneNumber, _message: "Take Bus ")
         
     }
    
     
     @IBAction func btnHowsTraffic(_ sender: UIButton)
     {
-        sendSMStatusUpdate(_recipient: "4257851934", _message: "How's Traffic? ")
+        studentPhoneNumber = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String!
+        sendSMStatusUpdate(_recipient: studentPhoneNumber, _message: "How's Traffic? ")
     }
     
     
+    //*****************************************************
+    //btn action to open onebusaway or waze
+    //*****************************************************
     
-    
-    @IBAction func btnWhereRU(_ sender: UIButton)
+    @IBAction func btnWhereIsBus(_ sender: UIButton)
     {
+        //let findMyFriendsHooks = "onebusaway.co://"
+        //let findMyFriendsHooks = "waze://?ll=47.6205,122.3493"
+        //let findMyFriendsHooks = "waze://?ll=37.44469,-122.15971&z=10"
         
-        //let instagramHooks = "instagram://user?username=your_username"
-        let findMyFriendsHooks = "findmyfriends://"
+        let findMyFriendsHooks = "onebusaway://"
+        
         let appUrl = URL(string: findMyFriendsHooks)
         if UIApplication.shared.canOpenURL(appUrl! as URL)
         {
@@ -53,29 +60,52 @@ class ViewController_Conversations: UIViewController, MFMessageComposeViewContro
         } else {
             //redirect to safari because the user doesn't have Instagram
             print("App not installed")
-            UIApplication.shared.open(URL(string: "https://itunes.apple.com/in/app/instagram/id389801252?m")!)
+            UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/onebusaway/id329380089?mt=8")!)
+        //UIApplication.shared.open(URL(string: "http://itunes.apple.com/us/app/id323229106")!)
+        }
+ 
+    }
+    
+    @IBAction func btnWhereRU(_ sender: UIButton)
+    {
+        
+        let findMyFriendsHooks = "findmyfriends://"
+        
+        let appUrl = URL(string: findMyFriendsHooks)
+        if UIApplication.shared.canOpenURL(appUrl! as URL)
+        {
+            UIApplication.shared.open(appUrl!)
+            
+        } else {
+            //redirect to safari because the user doesn't have Instagram
+            print("App not installed")
+            //UIApplication.shared.open(URL(string: "https://itunes.apple.com/in/app/instagram/id389801252?m")!)
         }
     }
     
     @IBAction func btnLittleLate(_ sender: UIButton)
     {
-        sendSMStatusUpdate(_recipient: "4257851934", _message: "I'll be a little late... ")
+        studentPhoneNumber = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String!
+        sendSMStatusUpdate(_recipient: studentPhoneNumber, _message: "I'll be a little late... ")
     }
     
     
     @IBAction func btn10MinutesAway(_ sender: UIButton)
     {
-        sendSMStatusUpdate(_recipient: "4257851934", _message: "10 Minutes Away... ")
+        studentPhoneNumber = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String!
+        sendSMStatusUpdate(_recipient: studentPhoneNumber, _message: "10 Minutes Away... ")
     }
     
     @IBAction func btn5MinutesAway(_ sender: UIButton)
     {
-        sendSMStatusUpdate(_recipient: "4257851934", _message: "5 Minutes Away ")
+        studentPhoneNumber = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String!
+        sendSMStatusUpdate(_recipient: studentPhoneNumber, _message: "5 Minutes Away ")
     }
     
     @IBAction func btnImHere(_ sender: UIButton)
     {
-        sendSMStatusUpdate(_recipient: "4257851934", _message: "I'm Here! ")
+        studentPhoneNumber = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String!
+        sendSMStatusUpdate(_recipient: studentPhoneNumber, _message: "I'm Here! ")
     }
     
     //method that sends the SMS message
@@ -111,7 +141,10 @@ class ViewController_Conversations: UIViewController, MFMessageComposeViewContro
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        
+        
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -136,3 +169,15 @@ class ViewController_Conversations: UIViewController, MFMessageComposeViewContro
     }
    
 }
+
+/*
+ //how to get the urlscheme of an ios app
+ Download the .ipa from iTunes using my computer
+ Copy the application to my desktop
+ Rename it to *.zip
+ Extract the *.zip
+ Open the 'Payload' folder
+ Right click on the application and select 'Show Package Contents'
+ I then double-click the 'Info.plist' file (which Xcode should then open)
+ Then check 'URL types' > 'Item 0' > 'URL Schemes'
+*/

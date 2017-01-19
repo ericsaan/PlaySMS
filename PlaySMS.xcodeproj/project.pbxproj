@@ -18,15 +18,11 @@
 		B8103E1C1E1888A500B2AD1B /* lakeside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8103E1B1E1888A500B2AD1B /* lakeside.jpg */; };
 		B84EA3541E19F44E00DDDAC5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B84EA3531E19F44E00DDDAC5 /* Default.png */; };
 		B84EA3561E19F61300DDDAC5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84EA3551E19F61300DDDAC5 /* Default@2x.png */; };
+		B85925D61E2A98B100AC6B4B /* Settings_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */; };
+		B85925D81E2AAD1D00AC6B4B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */; };
+		B85925DA1E2B5C0B00AC6B4B /* PDFPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */; };
 		B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B8718E2D1E19AA5800515C7E /* SilverButton.png */; };
-		B8DE9CA61E1B6A0900DAD0C3 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8DE9CA41E1B6A0900DAD0C3 /* Interface.storyboard */; };
-		B8DE9CA81E1B6A0900DAD0C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DE9CA71E1B6A0900DAD0C3 /* Assets.xcassets */; };
-		B8DE9CAF1E1B6A0900DAD0C3 /* Bus Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B8DE9CAE1E1B6A0900DAD0C3 /* Bus Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		B8DE9CB61E1B6A0900DAD0C3 /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE9CB51E1B6A0900DAD0C3 /* InterfaceController.swift */; };
-		B8DE9CB81E1B6A0900DAD0C3 /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE9CB71E1B6A0900DAD0C3 /* ExtensionDelegate.swift */; };
-		B8DE9CBA1E1B6A0900DAD0C3 /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8DE9CB91E1B6A0900DAD0C3 /* NotificationController.swift */; };
-		B8DE9CBC1E1B6A0900DAD0C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8DE9CBB1E1B6A0900DAD0C3 /* Assets.xcassets */; };
-		B8DE9CC01E1B6A0900DAD0C3 /* Bus Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = B8DE9CA21E1B6A0900DAD0C3 /* Bus Watch.app */; };
+		B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */; };
 		B8F2D5281E21EB8D00442E97 /* PDF 2_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */; };
 		B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5291E21EDC000442E97 /* Spy Male_950000_25.png */; };
 		B8F2D52C1E21EF4800442E97 /* Queen UK_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D52B1E21EF4800442E97 /* Queen UK_950000_25.png */; };
@@ -41,42 +37,13 @@
 		B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		B8DE9CB01E1B6A0900DAD0C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B8103DF71E18530300B2AD1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B8DE9CAD1E1B6A0900DAD0C3;
-			remoteInfo = "Bus Watch Extension";
-		};
-		B8DE9CBE1E1B6A0900DAD0C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = B8103DF71E18530300B2AD1B /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = B8DE9CA11E1B6A0900DAD0C3;
-			remoteInfo = "Bus Watch";
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXCopyFilesBuildPhase section */
-		B8DE9CC41E1B6A0900DAD0C3 /* Embed App Extensions */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 13;
-			files = (
-				B8DE9CAF1E1B6A0900DAD0C3 /* Bus Watch Extension.appex in Embed App Extensions */,
-			);
-			name = "Embed App Extensions";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		B8DE9CC81E1B6A0900DAD0C3 /* Embed Watch Content */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
 			dstSubfolderSpec = 16;
 			files = (
-				B8DE9CC01E1B6A0900DAD0C3 /* Bus Watch.app in Embed Watch Content */,
 			);
 			name = "Embed Watch Content";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -97,18 +64,11 @@
 		B8103E1B1E1888A500B2AD1B /* lakeside.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lakeside.jpg; sourceTree = "<group>"; };
 		B84EA3531E19F44E00DDDAC5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B84EA3551E19F61300DDDAC5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings_950000_25.png; sourceTree = "<group>"; };
+		B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFPageViewController.swift; sourceTree = "<group>"; };
 		B8718E2D1E19AA5800515C7E /* SilverButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverButton.png; sourceTree = "<group>"; };
-		B8DE9CA21E1B6A0900DAD0C3 /* Bus Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bus Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8DE9CA51E1B6A0900DAD0C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
-		B8DE9CA71E1B6A0900DAD0C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B8DE9CA91E1B6A0900DAD0C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B8DE9CAE1E1B6A0900DAD0C3 /* Bus Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Bus Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8DE9CB41E1B6A0900DAD0C3 /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
-		B8DE9CB51E1B6A0900DAD0C3 /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
-		B8DE9CB71E1B6A0900DAD0C3 /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
-		B8DE9CB91E1B6A0900DAD0C3 /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
-		B8DE9CBB1E1B6A0900DAD0C3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		B8DE9CBD1E1B6A0900DAD0C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WheresTheBusViewController.swift; sourceTree = "<group>"; };
 		B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PDF 2_950000_25.png"; sourceTree = "<group>"; };
 		B8F2D5291E21EDC000442E97 /* Spy Male_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spy Male_950000_25.png"; sourceTree = "<group>"; };
 		B8F2D52B1E21EF4800442E97 /* Queen UK_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Queen UK_950000_25.png"; sourceTree = "<group>"; };
@@ -131,13 +91,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B8DE9CAB1E1B6A0900DAD0C3 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -145,8 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				B8103E011E18530300B2AD1B /* PlaySMS */,
-				B8DE9CA31E1B6A0900DAD0C3 /* Bus Watch */,
-				B8DE9CB21E1B6A0900DAD0C3 /* Bus Watch Extension */,
 				B8103E001E18530300B2AD1B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -155,8 +106,6 @@
 			isa = PBXGroup;
 			children = (
 				B8103DFF1E18530300B2AD1B /* PlaySMS.app */,
-				B8DE9CA21E1B6A0900DAD0C3 /* Bus Watch.app */,
-				B8DE9CAE1E1B6A0900DAD0C3 /* Bus Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -167,6 +116,9 @@
 				B8103E021E18530300B2AD1B /* AppDelegate.swift */,
 				B8103E0B1E18530300B2AD1B /* LaunchScreen.storyboard */,
 				B8103E061E18530300B2AD1B /* Main.storyboard */,
+				B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */,
+				B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */,
+				B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */,
 				B8103E041E18530300B2AD1B /* ViewController.swift */,
 				B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */,
 				B8F2D5341E22033400442E97 /* ViewController_PDFViewController.swift */,
@@ -183,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */,
+				B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */,
 				B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */,
 				B84EA3531E19F44E00DDDAC5 /* Default.png */,
 				B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */,
@@ -198,37 +151,6 @@
 				B8103E141E1883F400B2AD1B /* 1483251869_button_play.png */,
 			);
 			name = PNGs;
-			sourceTree = "<group>";
-		};
-		B8DE9CA31E1B6A0900DAD0C3 /* Bus Watch */ = {
-			isa = PBXGroup;
-			children = (
-				B8DE9CA41E1B6A0900DAD0C3 /* Interface.storyboard */,
-				B8DE9CA71E1B6A0900DAD0C3 /* Assets.xcassets */,
-				B8DE9CA91E1B6A0900DAD0C3 /* Info.plist */,
-			);
-			path = "Bus Watch";
-			sourceTree = "<group>";
-		};
-		B8DE9CB21E1B6A0900DAD0C3 /* Bus Watch Extension */ = {
-			isa = PBXGroup;
-			children = (
-				B8DE9CB51E1B6A0900DAD0C3 /* InterfaceController.swift */,
-				B8DE9CB71E1B6A0900DAD0C3 /* ExtensionDelegate.swift */,
-				B8DE9CB91E1B6A0900DAD0C3 /* NotificationController.swift */,
-				B8DE9CBB1E1B6A0900DAD0C3 /* Assets.xcassets */,
-				B8DE9CBD1E1B6A0900DAD0C3 /* Info.plist */,
-				B8DE9CB31E1B6A0900DAD0C3 /* Supporting Files */,
-			);
-			path = "Bus Watch Extension";
-			sourceTree = "<group>";
-		};
-		B8DE9CB31E1B6A0900DAD0C3 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				B8DE9CB41E1B6A0900DAD0C3 /* PushNotificationPayload.apns */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		B8F2D52F1E21F15C00442E97 /* PDF */ = {
@@ -256,46 +178,11 @@
 			buildRules = (
 			);
 			dependencies = (
-				B8DE9CBF1E1B6A0900DAD0C3 /* PBXTargetDependency */,
 			);
 			name = PlaySMS;
 			productName = PlaySMS;
 			productReference = B8103DFF1E18530300B2AD1B /* PlaySMS.app */;
 			productType = "com.apple.product-type.application";
-		};
-		B8DE9CA11E1B6A0900DAD0C3 /* Bus Watch */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B8DE9CC51E1B6A0900DAD0C3 /* Build configuration list for PBXNativeTarget "Bus Watch" */;
-			buildPhases = (
-				B8DE9CA01E1B6A0900DAD0C3 /* Resources */,
-				B8DE9CC41E1B6A0900DAD0C3 /* Embed App Extensions */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				B8DE9CB11E1B6A0900DAD0C3 /* PBXTargetDependency */,
-			);
-			name = "Bus Watch";
-			productName = "Bus Watch";
-			productReference = B8DE9CA21E1B6A0900DAD0C3 /* Bus Watch.app */;
-			productType = "com.apple.product-type.application.watchapp2";
-		};
-		B8DE9CAD1E1B6A0900DAD0C3 /* Bus Watch Extension */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B8DE9CC11E1B6A0900DAD0C3 /* Build configuration list for PBXNativeTarget "Bus Watch Extension" */;
-			buildPhases = (
-				B8DE9CAA1E1B6A0900DAD0C3 /* Sources */,
-				B8DE9CAB1E1B6A0900DAD0C3 /* Frameworks */,
-				B8DE9CAC1E1B6A0900DAD0C3 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "Bus Watch Extension";
-			productName = "Bus Watch Extension";
-			productReference = B8DE9CAE1E1B6A0900DAD0C3 /* Bus Watch Extension.appex */;
-			productType = "com.apple.product-type.watchkit2-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -308,16 +195,6 @@
 				ORGANIZATIONNAME = Sully;
 				TargetAttributes = {
 					B8103DFE1E18530300B2AD1B = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 993GJ25QRB;
-						ProvisioningStyle = Automatic;
-					};
-					B8DE9CA11E1B6A0900DAD0C3 = {
-						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 993GJ25QRB;
-						ProvisioningStyle = Automatic;
-					};
-					B8DE9CAD1E1B6A0900DAD0C3 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = 993GJ25QRB;
 						ProvisioningStyle = Automatic;
@@ -338,8 +215,6 @@
 			projectRoot = "";
 			targets = (
 				B8103DFE1E18530300B2AD1B /* PlaySMS */,
-				B8DE9CA11E1B6A0900DAD0C3 /* Bus Watch */,
-				B8DE9CAD1E1B6A0900DAD0C3 /* Bus Watch Extension */,
 			);
 		};
 /* End PBXProject section */
@@ -366,25 +241,9 @@
 				B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */,
 				B8103E1A1E18877600B2AD1B /* LakesideLogo2.jpeg in Resources */,
 				B8103E0A1E18530300B2AD1B /* Assets.xcassets in Resources */,
+				B85925D61E2A98B100AC6B4B /* Settings_950000_25.png in Resources */,
 				B8103E081E18530300B2AD1B /* Main.storyboard in Resources */,
 				B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8DE9CA01E1B6A0900DAD0C3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B8DE9CA81E1B6A0900DAD0C3 /* Assets.xcassets in Resources */,
-				B8DE9CA61E1B6A0900DAD0C3 /* Interface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8DE9CAC1E1B6A0900DAD0C3 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B8DE9CBC1E1B6A0900DAD0C3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,38 +254,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */,
 				B8F2D5351E22033400442E97 /* ViewController_PDFViewController.swift in Sources */,
 				B8103E051E18530300B2AD1B /* ViewController.swift in Sources */,
 				B8103E031E18530300B2AD1B /* AppDelegate.swift in Sources */,
 				B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */,
 				B8F2D5371E222C7B00442E97 /* PDFAfternoon.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		B8DE9CAA1E1B6A0900DAD0C3 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B8DE9CBA1E1B6A0900DAD0C3 /* NotificationController.swift in Sources */,
-				B8DE9CB81E1B6A0900DAD0C3 /* ExtensionDelegate.swift in Sources */,
-				B8DE9CB61E1B6A0900DAD0C3 /* InterfaceController.swift in Sources */,
+				B85925D81E2AAD1D00AC6B4B /* SettingsViewController.swift in Sources */,
+				B85925DA1E2B5C0B00AC6B4B /* PDFPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		B8DE9CB11E1B6A0900DAD0C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B8DE9CAD1E1B6A0900DAD0C3 /* Bus Watch Extension */;
-			targetProxy = B8DE9CB01E1B6A0900DAD0C3 /* PBXContainerItemProxy */;
-		};
-		B8DE9CBF1E1B6A0900DAD0C3 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = B8DE9CA11E1B6A0900DAD0C3 /* Bus Watch */;
-			targetProxy = B8DE9CBE1E1B6A0900DAD0C3 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B8103E061E18530300B2AD1B /* Main.storyboard */ = {
@@ -443,14 +282,6 @@
 				B8103E0C1E18530300B2AD1B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		B8DE9CA41E1B6A0900DAD0C3 /* Interface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				B8DE9CA51E1B6A0900DAD0C3 /* Base */,
-			);
-			name = Interface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -577,76 +408,6 @@
 			};
 			name = Release;
 		};
-		B8DE9CC21E1B6A0900DAD0C3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 993GJ25QRB;
-				INFOPLIST_FILE = "Bus Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Debug;
-		};
-		B8DE9CC31E1B6A0900DAD0C3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
-				DEVELOPMENT_TEAM = 993GJ25QRB;
-				INFOPLIST_FILE = "Bus Watch Extension/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.watchkitapp.watchkitextension;
-				PRODUCT_NAME = "${TARGET_NAME}";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Release;
-		};
-		B8DE9CC61E1B6A0900DAD0C3 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 993GJ25QRB;
-				IBSC_MODULE = Bus_Watch_Extension;
-				INFOPLIST_FILE = "Bus Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Debug;
-		};
-		B8DE9CC71E1B6A0900DAD0C3 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 993GJ25QRB;
-				IBSC_MODULE = Bus_Watch_Extension;
-				INFOPLIST_FILE = "Bus Watch/Info.plist";
-				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.watchkitapp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = watchos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 3.0;
-				TARGETED_DEVICE_FAMILY = 4;
-				WATCHOS_DEPLOYMENT_TARGET = 3.1;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -664,24 +425,6 @@
 			buildConfigurations = (
 				B8103E121E18530300B2AD1B /* Debug */,
 				B8103E131E18530300B2AD1B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B8DE9CC11E1B6A0900DAD0C3 /* Build configuration list for PBXNativeTarget "Bus Watch Extension" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B8DE9CC21E1B6A0900DAD0C3 /* Debug */,
-				B8DE9CC31E1B6A0900DAD0C3 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B8DE9CC51E1B6A0900DAD0C3 /* Build configuration list for PBXNativeTarget "Bus Watch" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B8DE9CC61E1B6A0900DAD0C3 /* Debug */,
-				B8DE9CC71E1B6A0900DAD0C3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
