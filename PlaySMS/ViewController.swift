@@ -294,6 +294,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         lblAfternoon.layer.borderWidth = 1
         lblAfternoon.layer.borderColor = lakeSideGold.cgColor
         
+        
         lblBigBorder.layer.borderWidth = 2
         lblBigBorder.layer.borderColor = lakeSideGold.cgColor
         
