@@ -21,7 +21,8 @@ class ViewController_PDFViewController: UIViewController, MFMessageComposeViewCo
     {
         //load up the Afternoon PDF File
         
-        let path = Bundle.main.path(forResource: "2016-17PMScheduleEffective9-12-16", ofType: "pdf")!
+        //let path = Bundle.main.path(forResource: "2016-17PMScheduleEffective9-12-16", ofType: "pdf")! //6th Grade
+        let path = Bundle.main.path(forResource: "FinalLakesideCustomBus-PM_Schedule-2017-18", ofType: "pdf")! //7th Grade
         
         let targetURL = URL(fileURLWithPath: path)
         let request = URLRequest(url: targetURL)

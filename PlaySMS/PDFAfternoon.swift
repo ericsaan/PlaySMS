@@ -42,7 +42,7 @@ class PDFAfternoon: UIViewController, MFMessageComposeViewControllerDelegate
     {
         //load up the Afternoon PDF File
         
-        let path = Bundle.main.path(forResource: "2016-17AMScheduleEffective9-12-16", ofType: "pdf")!
+        let path = Bundle.main.path(forResource: "FinalLakesideCustomBus-AM_Schedule-2017-18", ofType: "pdf")!
         
         let targetURL = URL(fileURLWithPath: path)
         let request = URLRequest(url: targetURL)
