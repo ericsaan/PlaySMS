@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/SettingsViewController.swift"
-            timestampString = "506132663.197622"
+            timestampString = "545803298.939698"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/SettingsViewController.swift"
-            timestampString = "506153450.526566"
+            timestampString = "545803298.94004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "btnSubmit(_:)"
             landmarkType = "7">
          </BreakpointContent>

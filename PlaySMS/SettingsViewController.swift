@@ -78,6 +78,18 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     //now we start with the actions from buttons on the board
     //***************************************************************
     
+    
+    @IBAction func btnLakesideTransportation(_ sender: UIButton)
+    {
+        let icon8URL = NSURL(string: "http://www.lakesideschool.org/about-us/transportation")
+        UIApplication.shared.open(icon8URL! as URL, options: [:], completionHandler: nil)
+        
+        
+    }
+    
+    
+    
+
     @IBAction func btnIcon8(_ sender: UIButton)
     {
    /*
@@ -86,7 +98,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         self.openUrl(url: url);
     */
         
-        let icon8URL = NSURL(string: "http://icons8.com")
+            let icon8URL = NSURL(string: "http://icons8.com")
         UIApplication.shared.open(icon8URL as! URL, options: [:], completionHandler: nil)
     }
 
