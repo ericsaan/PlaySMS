@@ -40,10 +40,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     {
 
         txtContactOneName.text = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
-        txtContactOnePhoneNumber.text = UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String!
-        txtContactTwoName.text = UserDefaults.standard.value(forKey: "ContactTwoName") as! String!
-        txtContactTwoPhoneNumber.text = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String!
-        txtStudentPhoneNumber.text = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String!
+        txtContactOnePhoneNumber.text = UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?
+        txtContactTwoName.text = UserDefaults.standard.value(forKey: "ContactTwoName") as! String?
+        txtContactTwoPhoneNumber.text = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?
+        txtStudentPhoneNumber.text = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String?
         
 
     }
@@ -99,14 +99,14 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     */
         
             let icon8URL = NSURL(string: "http://icons8.com")
-        UIApplication.shared.open(icon8URL as! URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(icon8URL! as URL, options: [:], completionHandler: nil)
     }
 
     
     @IBAction func btnMoonspec(_ sender: UIButton)
     {
         let MoonspecURL = NSURL(string: "http://moonspec.com")
-        UIApplication.shared.open(MoonspecURL as! URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(MoonspecURL! as URL, options: [:], completionHandler: nil)
         
     }
 
