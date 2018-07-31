@@ -125,18 +125,11 @@
 		B8103E011E18530300B2AD1B /* PlaySMS */ = {
 			isa = PBXGroup;
 			children = (
+				B868D66921100DFB000F5272 /* Controllers */,
+				B868D66821100DE5000F5272 /* Views */,
+				B868D66721100DD4000F5272 /* Model */,
 				B8103E021E18530300B2AD1B /* AppDelegate.swift */,
-				B8103E0B1E18530300B2AD1B /* LaunchScreen.storyboard */,
-				B8103E061E18530300B2AD1B /* Main.storyboard */,
-				B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */,
-				B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */,
-				B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */,
-				B8103E041E18530300B2AD1B /* ViewController.swift */,
-				B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */,
-				B8F2D5341E22033400442E97 /* ViewController_PDFViewController.swift */,
-				B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */,
 				B8103E091E18530300B2AD1B /* Assets.xcassets */,
-				B8103E0E1E18530300B2AD1B /* Info.plist */,
 				B8F2D52F1E21F15C00442E97 /* PDF */,
 				B8103E161E18841500B2AD1B /* PNGs */,
 			);
@@ -167,6 +160,37 @@
 				B8103E141E1883F400B2AD1B /* 1483251869_button_play.png */,
 			);
 			name = PNGs;
+			sourceTree = "<group>";
+		};
+		B868D66721100DD4000F5272 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */,
+				B8103E0E1E18530300B2AD1B /* Info.plist */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B868D66821100DE5000F5272 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B8103E0B1E18530300B2AD1B /* LaunchScreen.storyboard */,
+				B8103E061E18530300B2AD1B /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B868D66921100DFB000F5272 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */,
+				B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */,
+				B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */,
+				B8103E041E18530300B2AD1B /* ViewController.swift */,
+				B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */,
+				B8F2D5341E22033400442E97 /* ViewController_PDFViewController.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		B8F2D52F1E21F15C00442E97 /* PDF */ = {
