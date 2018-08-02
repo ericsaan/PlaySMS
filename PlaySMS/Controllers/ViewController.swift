@@ -9,6 +9,8 @@
 import UIKit
 import MessageUI
 import Cheers
+import Firebase
+
 
 
 
@@ -28,35 +30,43 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     
     @IBAction func btnPressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
-        sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        
+        //sendSMStatusUpdate(messageToSend: statusMessageToSend)
+        sendMessageToDatabase(messageToSend: statusMessageToSend)
         popConfetti()
         
     }
     
     @IBAction func btn2Pressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
-        sendSMStatusUpdate(messageToSend: statusMessageToSend)
-         popConfetti()
+        //sendSMStatusUpdate(messageToSend: statusMessageToSend)
+        sendMessageToDatabase(messageToSend: statusMessageToSend)
+        
+        popConfetti()
     }
     
     @IBAction func btn3Pressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
-        sendSMStatusUpdate(messageToSend: statusMessageToSend)
-         popConfetti()
+        //sendSMStatusUpdate(messageToSend: statusMessageToSend)
+        sendMessageToDatabase(messageToSend: statusMessageToSend)
+        
+        popConfetti()
     }
     
     @IBAction func btnImhere(_ sender: UIButton)
     {
         let statusMessageToSend = "I'm Here! "
-        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+        //sendSMStatusUpdate(messageToSend: statusMessageToSend)
+        sendMessageToDatabase(messageToSend: statusMessageToSend)
+        
     }
     
     
     @IBAction func btnPickedUp(_ sender: UIButton)
     {
         let statusMessageToSend = "Picked Up! "
-        sendSMStatusUpdate(messageToSend: statusMessageToSend)
+        //sendSMStatusUpdate(messageToSend: statusMessageToSend)
+        sendMessageToDatabase(messageToSend: statusMessageToSend)
+        
     }
         
     
@@ -72,6 +82,55 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     //****************************************************
     //need to refactor to get better encapsulation...ees
     //****************************************************
+    func sendMessageToDatabase(messageToSend : String)
+    {
+        let messagesDB = Database.database().reference().child("Messages")
+        
+        //first let's get the list of recipients
+        recipientsList.removeAll()
+        
+        parentOne = (UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?)!
+        
+        
+        if  parentOne != ""
+        {
+            recipientsList.append(parentOne)
+            print (parentOne)
+        }
+        
+        parentTwo = (UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?)!
+
+        if parentTwo != ""
+        {
+            recipientsList.append(parentTwo)
+            print (parentTwo)
+        }
+
+        
+        if recipientsList.count != 0
+        {
+            for i in 0 ... recipientsList.count - 1
+            {
+            
+            let messageDictionary = ["Receiver": recipientsList[i], //Auth.auth().currentUser?.email,
+                "MessageBody": messageToSend]
+            
+            messagesDB.childByAutoId().setValue(messageDictionary){
+                (error, reference) in
+                
+                if error != nil{
+                    print(error!)
+                }else {
+                    print ("message saved successfully")
+                    
+                }
+              }
+            } //endforloop
+        } //endif loop
+        
+    }
+    
+    
     
     func sendSMStatusUpdate (messageToSend : String)
     {

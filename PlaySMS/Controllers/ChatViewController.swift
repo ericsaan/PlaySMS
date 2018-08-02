@@ -25,6 +25,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet  var sendButton: UIButton!
     @IBOutlet  var messageTextfield: UITextField!
     @IBOutlet var messageTableView: UITableView!
+    //@IBOutlet var messageTableView: UITableView!
     
     
     
@@ -62,6 +63,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     //TODO: Declare cellForRowAtIndexPath here:
+    //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
@@ -121,7 +123,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         UIView.animate(withDuration: 0.5)
             {
-                self.heightConstraint.constant = 323
+                //self.heightConstraint.constant = 323
                 self.view.layoutIfNeeded()
             }
     }
@@ -133,7 +135,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         UIView.animate(withDuration: 0.5)
         {
-            self.heightConstraint.constant = 50
+           // self.heightConstraint.constant = 50
             self.view.layoutIfNeeded()
         }
     }
@@ -148,7 +150,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     
-    @IBAction func sendPressed(_ sender: AnyObject)
+    //@IBAction func sendPressed(_ sender: AnyObject)
+    @IBAction func sendPressed(_ sender: Any)
     {
         messageTextfield.endEditing(true)
         
@@ -158,7 +161,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         sendButton.isEnabled = false
         
         let messagesDB = Database.database().reference().child("Messages")
-        let messageDictionary = ["Sender": Auth.auth().currentUser?.email,
+        let messageDictionary = ["Sender": "daddy", //Auth.auth().currentUser?.email,
                                  "MessageBody": messageTextfield.text!]
         
         messagesDB.childByAutoId().setValue(messageDictionary){

@@ -184,8 +184,6 @@
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="heightConstraint" destination="cng-a8-Yr3" id="Btm-bj-XAn"/>
-                        <outlet property="messageTableView" destination="XOt-Cj-ghd" id="clq-gK-yux"/>
-                        <outlet property="messageTextfield" destination="4X0-1y-WHK" id="shg-06-ltf"/>
                         <outlet property="sendButton" destination="MVY-Kh-PNv" id="heL-RT-SUl"/>
                     </connections>
                 </viewController>
@@ -242,6 +240,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="sendPressed:" destination="v0J-fS-5gN" eventType="touchUpInside" id="ZB0-bg-9mM"/>
                                     <action selector="sendPressed:" destination="7Sk-AW-MKp" eventType="touchUpInside" id="cKR-sE-Tr7"/>
                                 </connections>
                             </button>
@@ -259,7 +258,7 @@
                     <tabBarItem key="tabBarItem" title="Parents" image="Spy Male_950000_25.png" id="aKH-yr-YJs"/>
                     <connections>
                         <outlet property="heightConstraint" destination="XOt-Cj-ghd" id="E8B-M3-NM4"/>
-                        <outlet property="messageTableView" destination="XOt-Cj-ghd" id="6ew-lt-WkS"/>
+                        <outlet property="messageTableView" destination="XOt-Cj-ghd" id="RDi-o4-1bl"/>
                         <outlet property="messageTextfield" destination="4X0-1y-WHK" id="4cK-kk-23d"/>
                         <outlet property="sendButton" destination="MVY-Kh-PNv" id="IbG-cT-pTB"/>
                     </connections>
