@@ -49,10 +49,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     }
     
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+ 
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
     {
         //... handle sms screen actions

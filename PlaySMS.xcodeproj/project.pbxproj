@@ -29,6 +29,11 @@
 		B85925DA1E2B5C0B00AC6B4B /* PDFPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */; };
 		B868D66B211018CD000F5272 /* LakeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66A211018CD000F5272 /* LakeLogo.png */; };
 		B868D66D21101972000F5272 /* RedButtonGoldBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66C21101972000F5272 /* RedButtonGoldBorder.png */; };
+		B868D675211165B3000F5272 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B868D673211165B3000F5272 /* MessageCell.xib */; };
+		B868D676211165B3000F5272 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D674211165B3000F5272 /* CustomMessageCell.swift */; };
+		B868D678211165E0000F5272 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D677211165DF000F5272 /* ChatViewController.swift */; };
+		B868D67A21116B9C000F5272 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D67921116B9C000F5272 /* Message.swift */; };
+		B868D67C2111733D000F5272 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B868D67B2111733D000F5272 /* GoogleService-Info.plist */; };
 		B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B8718E2D1E19AA5800515C7E /* SilverButton.png */; };
 		B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */; };
 		B8F2D5281E21EB8D00442E97 /* PDF 2_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */; };
@@ -43,6 +48,7 @@
 		B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */; };
 		B8F2D53D1E22B18B00442E97 /* Eyes_Emoji.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */; };
 		B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */; };
+		FE9CAE9D05FB39D5AEAA1ACC /* Pods_PlaySMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -59,6 +65,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		57C9026B8D8F502EE1DF36E9 /* Pods-PlaySMS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaySMS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlaySMS/Pods-PlaySMS.release.xcconfig"; sourceTree = "<group>"; };
+		9B3CDF9053C1F94ECAD44C49 /* Pods-PlaySMS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaySMS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaySMS/Pods-PlaySMS.debug.xcconfig"; sourceTree = "<group>"; };
 		B8103DFF1E18530300B2AD1B /* PlaySMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlaySMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8103E021E18530300B2AD1B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8103E041E18530300B2AD1B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +91,11 @@
 		B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFPageViewController.swift; sourceTree = "<group>"; };
 		B868D66A211018CD000F5272 /* LakeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LakeLogo.png; sourceTree = "<group>"; };
 		B868D66C21101972000F5272 /* RedButtonGoldBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButtonGoldBorder.png; sourceTree = "<group>"; };
+		B868D673211165B3000F5272 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		B868D674211165B3000F5272 /* CustomMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
+		B868D677211165DF000F5272 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		B868D67921116B9C000F5272 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		B868D67B2111733D000F5272 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8718E2D1E19AA5800515C7E /* SilverButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverButton.png; sourceTree = "<group>"; };
 		B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WheresTheBusViewController.swift; sourceTree = "<group>"; };
 		B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PDF 2_950000_25.png"; sourceTree = "<group>"; };
@@ -97,6 +110,7 @@
 		B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eyes_Emoji_LARGE.png; sourceTree = "<group>"; };
 		B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eyes_Emoji.png; sourceTree = "<group>"; };
 		B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Conversations.swift; sourceTree = "<group>"; };
+		C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaySMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,17 +118,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE9CAE9D05FB39D5AEAA1ACC /* Pods_PlaySMS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B169249300CB921E2097C7F1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B3CDF9053C1F94ECAD44C49 /* Pods-PlaySMS.debug.xcconfig */,
+				57C9026B8D8F502EE1DF36E9 /* Pods-PlaySMS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B8103DF61E18530300B2AD1B = {
 			isa = PBXGroup;
 			children = (
 				B8103E011E18530300B2AD1B /* PlaySMS */,
 				B8103E001E18530300B2AD1B /* Products */,
+				B169249300CB921E2097C7F1 /* Pods */,
+				EBC3282B586ABD36AFC5A90E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -129,12 +155,14 @@
 		B8103E011E18530300B2AD1B /* PlaySMS */ = {
 			isa = PBXGroup;
 			children = (
+				B8103E021E18530300B2AD1B /* AppDelegate.swift */,
 				B8103E0E1E18530300B2AD1B /* Info.plist */,
+				B868D67B2111733D000F5272 /* GoogleService-Info.plist */,
 				B868D66921100DFB000F5272 /* Controllers */,
 				B868D66821100DE5000F5272 /* Views */,
 				B868D66721100DD4000F5272 /* Model */,
-				B8103E021E18530300B2AD1B /* AppDelegate.swift */,
 				B8103E091E18530300B2AD1B /* Assets.xcassets */,
+				B868D66E211164DC000F5272 /* Custom Cell */,
 				B8F2D52F1E21F15C00442E97 /* PDF */,
 				B8103E161E18841500B2AD1B /* PNGs */,
 			);
@@ -172,6 +200,7 @@
 		B868D66721100DD4000F5272 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B868D67921116B9C000F5272 /* Message.swift */,
 				B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */,
 			);
 			path = Model;
@@ -195,8 +224,18 @@
 				B8103E041E18530300B2AD1B /* ViewController.swift */,
 				B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */,
 				B8F2D5341E22033400442E97 /* ViewController_PDFViewController.swift */,
+				B868D677211165DF000F5272 /* ChatViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		B868D66E211164DC000F5272 /* Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				B868D674211165B3000F5272 /* CustomMessageCell.swift */,
+				B868D673211165B3000F5272 /* MessageCell.xib */,
+			);
+			path = "Custom Cell";
 			sourceTree = "<group>";
 		};
 		B8F2D52F1E21F15C00442E97 /* PDF */ = {
@@ -211,6 +250,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		EBC3282B586ABD36AFC5A90E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -218,10 +265,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B8103E111E18530300B2AD1B /* Build configuration list for PBXNativeTarget "PlaySMS" */;
 			buildPhases = (
+				855D29CFAE3E668B85CB7254 /* [CP] Check Pods Manifest.lock */,
 				B8103DFB1E18530300B2AD1B /* Sources */,
 				B8103DFC1E18530300B2AD1B /* Frameworks */,
 				B8103DFD1E18530300B2AD1B /* Resources */,
 				B8DE9CC81E1B6A0900DAD0C3 /* Embed Watch Content */,
+				7ADBF40436EEDBF788D249A5 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -274,6 +323,7 @@
 			files = (
 				B8F2D5321E21F3A300442E97 /* 2016-17AMScheduleEffective9-12-16.pdf in Resources */,
 				B831B4F11F5FACAB009FAB4D /* YellowBusKids.jpeg in Resources */,
+				B868D675211165B3000F5272 /* MessageCell.xib in Resources */,
 				B8F2D5281E21EB8D00442E97 /* PDF 2_950000_25.png in Resources */,
 				B8103E1C1E1888A500B2AD1B /* lakeside.jpg in Resources */,
 				B8F2D5331E21F3A300442E97 /* 2016-17PMScheduleEffective9-12-16.pdf in Resources */,
@@ -291,6 +341,7 @@
 				B8103E0D1E18530300B2AD1B /* LaunchScreen.storyboard in Resources */,
 				B831B4F31F5FAE15009FAB4D /* YellowPlain.jpeg in Resources */,
 				B868D66B211018CD000F5272 /* LakeLogo.png in Resources */,
+				B868D67C2111733D000F5272 /* GoogleService-Info.plist in Resources */,
 				B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */,
 				B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */,
 				B8103E1A1E18877600B2AD1B /* LakesideLogo2.jpeg in Resources */,
@@ -305,18 +356,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		7ADBF40436EEDBF788D249A5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PlaySMS/Pods-PlaySMS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/Cheers/Cheers.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cheers.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PlaySMS/Pods-PlaySMS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		855D29CFAE3E668B85CB7254 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlaySMS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B8103DFB1E18530300B2AD1B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B868D676211165B3000F5272 /* CustomMessageCell.swift in Sources */,
 				B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */,
 				B8F2D5351E22033400442E97 /* ViewController_PDFViewController.swift in Sources */,
 				B8103E051E18530300B2AD1B /* ViewController.swift in Sources */,
 				B8103E031E18530300B2AD1B /* AppDelegate.swift in Sources */,
 				B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */,
+				B868D67A21116B9C000F5272 /* Message.swift in Sources */,
 				B8F2D5371E222C7B00442E97 /* PDFAfternoon.swift in Sources */,
 				B85925D81E2AAD1D00AC6B4B /* SettingsViewController.swift in Sources */,
+				B868D678211165E0000F5272 /* ChatViewController.swift in Sources */,
 				B85925DA1E2B5C0B00AC6B4B /* PDFPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +561,7 @@
 		};
 		B8103E121E18530300B2AD1B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B3CDF9053C1F94ECAD44C49 /* Pods-PlaySMS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -472,6 +578,7 @@
 		};
 		B8103E131E18530300B2AD1B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 57C9026B8D8F502EE1DF36E9 /* Pods-PlaySMS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";

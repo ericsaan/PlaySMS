@@ -8,13 +8,15 @@
 
 import UIKit
 import MessageUI
+import Cheers
+
 
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
 {
     
     
-
+    let cheerView = CheerView()
     var recipientsList = [String]()
     
     var statusMessageToSend = ""
@@ -27,16 +29,21 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     @IBAction func btnPressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
         sendSMStatusUpdate(messageToSend: statusMessageToSend)
+        
+        popConfetti()
+        
     }
     
     @IBAction func btn2Pressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
         sendSMStatusUpdate(messageToSend: statusMessageToSend)
+         popConfetti()
     }
     
     @IBAction func btn3Pressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
         sendSMStatusUpdate(messageToSend: statusMessageToSend)
+         popConfetti()
     }
     
     @IBAction func btnImhere(_ sender: UIButton)
@@ -53,7 +60,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     }
         
     
-      
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        cheerView.frame = view.bounds
+    }
     
     
     
@@ -98,10 +109,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         messageVC.messageComposeDelegate = self;
         
         //make sure we check for nil here or simulator
-         //if (MFMessageComposeViewController.canSendText()
-        
-        
+        if (MFMessageComposeViewController.canSendText()) {
             self.present(messageVC, animated: false, completion: nil)
+            
+            }
+        
+        
         
         
     }
@@ -117,9 +130,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-        let parentOne = UserDefaults.standard.value(forKey: "ParentOne") as? String ?? String()
-        let parentTwo = UserDefaults.standard.value(forKey: "ParentTwo") as? String ?? String()
+//        let parentOne = UserDefaults.standard.value(forKey: "ParentOne") as? String ?? String()
+//        let parentTwo = UserDefaults.standard.value(forKey: "ParentTwo") as? String ?? String()
 
+        cheerView.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
+        view.addSubview(cheerView)
 
         
     }
@@ -156,9 +171,17 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     }
     
     //******************************************
-    
-    
-
-
+    func popConfetti() {
+     
+        cheerView.start()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
+        self.cheerView.stop()
+        }
+     } //  endpopconfetti
+    //******************************************
+        
+        
+        
+        
 }
 
