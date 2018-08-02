@@ -45,7 +45,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         txtContactTwoPhoneNumber.text = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?
         txtStudentPhoneNumber.text = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String?
         
-
+        txtStudentName.text = UserDefaults.standard.value(forKey: "StudentName") as! String?
     }
     
     
@@ -69,8 +69,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBOutlet weak var txtContactTwoPhoneNumber: UITextField!
     
-    @IBOutlet weak var txtStudentPhoneNumber: UITextField!
+    @IBOutlet weak var txtStudentName: UITextField!
+    //@IBOutlet weak var txtStudentPhoneNumber: UITextField!
     
+    @IBOutlet weak var txtStudentPhoneNumber: UITextField!
     //***************************************************************
     //now we start with the actions from buttons on the board
     //***************************************************************
@@ -149,6 +151,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         let savedContactOnePhoneNumber = txtContactOnePhoneNumber.text!
         let savedContactTwoName = txtContactTwoName.text!
         let savedContactTwoPhoneNumber = txtContactTwoPhoneNumber.text!
+        let savedStudentName = txtStudentName.text!
         let savedStudentPhoneNumber = txtStudentPhoneNumber.text!
         
         
@@ -156,6 +159,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         UserDefaults.standard.set(savedContactOnePhoneNumber, forKey: "ContactOnePhoneNumber")
         UserDefaults.standard.set(savedContactTwoName, forKey: "ContactTwoName")
         UserDefaults.standard.set(savedContactTwoPhoneNumber, forKey: "ContactTwoPhoneNumber")
+        UserDefaults.standard.set(savedStudentName, forKey: "StudentName")
         UserDefaults.standard.set(savedStudentPhoneNumber, forKey: "StudentPhoneNumber")
         
     }

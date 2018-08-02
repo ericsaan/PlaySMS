@@ -16,14 +16,20 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Declare instance variables here
     var messageArray : [Message] = [Message]()
+    var studentName: String?
+    
+    
     
     
     // We've pre-linked the IBOutlets
     
+    @IBOutlet var heightConstraint: NSLayoutConstraint!
     
-    @IBOutlet  var heightConstraint: NSLayoutConstraint!
+    
+   // @IBOutlet  var heightConstraint: NSLayoutConstraint!
     @IBOutlet  var sendButton: UIButton!
     @IBOutlet  var messageTextfield: UITextField!
+  
     @IBOutlet var messageTableView: UITableView!
     //@IBOutlet var messageTableView: UITableView!
     
@@ -31,7 +37,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+      
+        studentName = UserDefaults.standard.value(forKey: "StudentName") as? String
+        if studentName == nil {
+            studentName = "No Student Specified"
+        }
         //TODO: Set yourself as the delegate and datasource here:
         messageTableView.delegate = self
         messageTableView.dataSource = self
@@ -73,7 +83,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.senderUsername.text = messageArray[indexPath.row].sender
       //  cell.avatarImageView.image = UIImage(named: "egg")
         
-        if cell.senderUsername.text == Auth.auth().currentUser?.email as String?
+        if cell.senderUsername.text == studentName
+            // Auth.auth().currentUser?.email as String?
         {
             cell.avatarImageView.backgroundColor = UIColor.flatMint()
             cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
@@ -90,9 +101,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //TODO: Declare numberOfRowsInSection here:
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-       return messageArray.count 
+        return messageArray.count 
         
-    }
+        
+           }
 
     
     //TODO: Declare tableViewTapped here:
@@ -123,7 +135,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         UIView.animate(withDuration: 0.5)
             {
-                //self.heightConstraint.constant = 323
+                self.heightConstraint.constant = 323
                 self.view.layoutIfNeeded()
             }
     }
@@ -135,7 +147,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     {
         UIView.animate(withDuration: 0.5)
         {
-           // self.heightConstraint.constant = 50
+           self.heightConstraint.constant = 50
             self.view.layoutIfNeeded()
         }
     }
@@ -192,7 +204,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageDB.observe(.childAdded, with: { (snapshot) in
             let snapshotValue = snapshot.value as! Dictionary<String,String>
             let text = snapshotValue["MessageBody"]!
-            let sender = snapshotValue["Sender"]!
+            let sender = snapshotValue["Receiver"]!
             //print (text, sender)
             let message = Message()
             message.messageBody = text

@@ -24,20 +24,28 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     var statusMessageToSend = ""
     
    
-    var parentOne = ""
-    var parentTwo = ""
+    var parentOne: String? = ""
+    var parentTwo: String? = ""
+    var studentName: String? = ""
     
     
     @IBAction func btnPressed(_ sender: UIButton) {
-        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. -"
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        studentName = studentName! + ": "
+        studentName = studentName! + String(hour) + ":" + String(minute)
+        
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        sendMessageToDatabase(messageToSend: statusMessageToSend)
+        sendMessageToDatabase(messageToSend: statusMessageToSend + " " + studentName! )
         popConfetti()
         
     }
     
     @IBAction func btn2Pressed(_ sender: UIButton) {
-        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. -"
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
         
@@ -45,7 +53,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     }
     
     @IBAction func btn3Pressed(_ sender: UIButton) {
-        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. -"
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
         
@@ -89,21 +97,21 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         //first let's get the list of recipients
         recipientsList.removeAll()
         
-        parentOne = (UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?)!
+        //parentOne = (UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?)!
         
         
         if  parentOne != ""
         {
-            recipientsList.append(parentOne)
-            print (parentOne)
+            recipientsList.append(parentOne!)
+            print (parentOne!)
         }
         
-        parentTwo = (UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?)!
+       // parentTwo = (UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?)!
 
         if parentTwo != ""
         {
-            recipientsList.append(parentTwo)
-            print (parentTwo)
+            recipientsList.append(parentTwo!)
+            print (parentTwo!)
         }
 
         
@@ -138,23 +146,23 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         //first let's get the list of recipients
         recipientsList.removeAll()
         
-       parentOne = (UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?)!
+       //parentOne = (UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?)!
        
             
             if  parentOne != ""
             {
-                recipientsList.append(parentOne)
-                print (parentOne)
+                recipientsList.append(parentOne!)
+                print (parentOne!)
             }
        
         
         
-            parentTwo = (UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?)!
+           // parentTwo = (UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?)!
             
             if parentTwo != ""
             {
-                recipientsList.append(parentTwo)
-                print (parentTwo)
+                recipientsList.append(parentTwo!)
+                print (parentTwo!)
             }
     
 
@@ -191,7 +199,19 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
                 
 //        let parentOne = UserDefaults.standard.value(forKey: "ParentOne") as? String ?? String()
 //        let parentTwo = UserDefaults.standard.value(forKey: "ParentTwo") as? String ?? String()
-
+        parentOne = UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?
+        if parentOne == nil {
+            parentOne = "No Parent One"
+        }
+        parentTwo = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?
+        if parentTwo == nil {
+            parentTwo = "No Parent Two"
+        }
+        
+        studentName = UserDefaults.standard.value(forKey: "StudentName") as? String
+        if studentName == nil{
+            studentName = "No Student Specified"
+        }
         cheerView.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
         view.addSubview(cheerView)
 
