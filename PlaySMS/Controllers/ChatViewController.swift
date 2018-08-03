@@ -17,6 +17,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Declare instance variables here
     var messageArray : [Message] = [Message]()
     var studentName: String?
+    var dateString: String?
     
     
     
@@ -42,6 +43,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if studentName == nil {
             studentName = "No Student Specified"
         }
+        
+       
+        dateString = getDateString()
+        
         //TODO: Set yourself as the delegate and datasource here:
         messageTableView.delegate = self
         messageTableView.dataSource = self
@@ -80,19 +85,17 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         cell.messageBody.text = messageArray[indexPath.row].messageBody
-        cell.senderUsername.text = messageArray[indexPath.row].sender
-      //  cell.avatarImageView.image = UIImage(named: "egg")
+        cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Time: " + messageArray[indexPath.row].dateSent
         
-        if cell.senderUsername.text == studentName
-            // Auth.auth().currentUser?.email as String?
-        {
-            cell.avatarImageView.backgroundColor = UIColor.flatMint()
-            cell.messageBackground.backgroundColor = UIColor.flatSkyBlue()
-        }
-        else{
-            cell.avatarImageView.backgroundColor = UIColor.flatWatermelon()
-            cell.messageBackground.backgroundColor = UIColor.flatGray()
-        }
+//        if messageArray[indexPath.row].receiver == studentName
+//            // Auth.auth().currentUser?.email as String?
+//        {
+//            cell.messageBackground.backgroundColor = UIColor.flatBlue()            
+//        }
+//        else{
+//            cell.messageBackground.backgroundColor = UIColor.flatWhite()
+//            
+//        }
         
         return cell
         
@@ -165,31 +168,31 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //@IBAction func sendPressed(_ sender: AnyObject)
     @IBAction func sendPressed(_ sender: Any)
     {
-        messageTextfield.endEditing(true)
-        
-        
-        //TODO: Send the message to Firebase and save it in our database
-        messageTextfield.isEnabled = false
-        sendButton.isEnabled = false
-        
-        let messagesDB = Database.database().reference().child("Messages")
-        let messageDictionary = ["Sender": "daddy", //Auth.auth().currentUser?.email,
-                                 "MessageBody": messageTextfield.text!]
-        
-        messagesDB.childByAutoId().setValue(messageDictionary){
-            (error, reference) in
-            
-            if error != nil{
-                print(error!)
-            }else {
-                print ("message saved successfully")
-                self.messageTextfield.isEnabled = true
-                self.sendButton.isEnabled = true
-                self.messageTextfield.text = ""
-                
-                
-            }
-        }
+//        messageTextfield.endEditing(true)
+//        
+//        
+//        //TODO: Send the message to Firebase and save it in our database
+//        messageTextfield.isEnabled = false
+//        sendButton.isEnabled = false
+//        
+//        let messagesDB = Database.database().reference().child("Messages")
+//        let messageDictionary = ["Sender": "daddy", //Auth.auth().currentUser?.email,
+//                                 "MessageBody": messageTextfield.text!,"Receiver": studentName!,"DateString: dateString!]
+//        
+//        messagesDB.childByAutoId().setValue(messageDictionary){
+//            (error, reference) in
+//            
+//            if error != nil{
+//                print(error!)
+//            }else {
+//                print ("message saved successfully")
+//                self.messageTextfield.isEnabled = true
+//                self.sendButton.isEnabled = true
+//                self.messageTextfield.text = ""
+//                
+//                
+//            }
+  //      }
         
         
         
@@ -204,11 +207,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageDB.observe(.childAdded, with: { (snapshot) in
             let snapshotValue = snapshot.value as! Dictionary<String,String>
             let text = snapshotValue["MessageBody"]!
-            let sender = snapshotValue["Receiver"]!
+            let sender = snapshotValue["Sender"]!
+            let receiver = snapshotValue["Receiver"]!
+            let dateString = snapshotValue["DateString"]!
+            
             //print (text, sender)
             let message = Message()
             message.messageBody = text
             message.sender   = sender
+            message.receiver = receiver
+            message.dateSent = dateString
+            
+            
             self.messageArray.append(message)
             
             self.configureTableView()
@@ -217,9 +227,19 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
         })
     }
-
     
     
+    
+    func getDateString() -> String {
+        
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let dateString = String(hour) + ":" + String(minute)
+        return dateString
+    }
     
 //    @IBAction func logOutPressed(_ sender: AnyObject) {
 //        

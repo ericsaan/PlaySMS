@@ -30,22 +30,16 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     
     
     @IBAction func btnPressed(_ sender: UIButton) {
-        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. -"
-        let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
-        studentName = studentName! + ": "
-        studentName = studentName! + String(hour) + ":" + String(minute)
-        
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
+       
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        sendMessageToDatabase(messageToSend: statusMessageToSend + " " + studentName! )
+        sendMessageToDatabase(messageToSend: statusMessageToSend)
         popConfetti()
         
     }
     
     @IBAction func btn2Pressed(_ sender: UIButton) {
-        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. -"
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
         
@@ -53,7 +47,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     }
     
     @IBAction func btn3Pressed(_ sender: UIButton) {
-        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. -"
+        let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
         
@@ -114,14 +108,23 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
             print (parentTwo!)
         }
 
+        studentName = UserDefaults.standard.value(forKey: "StudentName") as? String
+        if studentName == nil{
+            studentName = "No Student Specified"
+        }
+        
+        
+        
+        
         
         if recipientsList.count != 0
         {
             for i in 0 ... recipientsList.count - 1
             {
-            
+            let dateString = getDateString()
+                
             let messageDictionary = ["Receiver": recipientsList[i], //Auth.auth().currentUser?.email,
-                "MessageBody": messageToSend]
+                "MessageBody": messageToSend, "Sender": studentName, "DateString": dateString]
             
             messagesDB.childByAutoId().setValue(messageDictionary){
                 (error, reference) in
@@ -199,11 +202,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
                 
 //        let parentOne = UserDefaults.standard.value(forKey: "ParentOne") as? String ?? String()
 //        let parentTwo = UserDefaults.standard.value(forKey: "ParentTwo") as? String ?? String()
-        parentOne = UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?
+        parentOne = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
         if parentOne == nil {
             parentOne = "No Parent One"
         }
-        parentTwo = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?
+        parentTwo = UserDefaults.standard.value(forKey: "ContactTwoName") as! String?
         if parentTwo == nil {
             parentTwo = "No Parent Two"
         }
@@ -259,7 +262,16 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
      } //  endpopconfetti
     //******************************************
         
+    func getDateString() -> String {
         
+        
+        let date = Date()
+        let calendar = Calendar.current
+        let hour = calendar.component(.hour, from: date)
+        let minute = calendar.component(.minute, from: date)
+        let dateString = String(hour) + ":" + String(minute)
+        return dateString
+    }
         
         
 }

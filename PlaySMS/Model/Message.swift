@@ -10,7 +10,8 @@ class Message {
     
     var sender : String = ""
     var messageBody : String = ""
-    
+    var receiver : String = ""
+    var dateSent : String = ""
     
     
 }
