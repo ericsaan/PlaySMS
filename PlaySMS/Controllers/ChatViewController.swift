@@ -67,15 +67,28 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         configureTableView()
         retrieveMessages()
+      
+//        let scrollPoint = CGPoint(x: 0, y: messageTableView.contentSize.height - messageTableView.frame.size.height)
+//        messageTableView.setContentOffset(scrollPoint, animated: true)
+//        let indexPathScroll = IndexPath(item: (self.messageArray.count - 1), section: 0)
+//        messageTableView.scrollToRow(at: indexPathScroll, at: UITableViewScrollPosition.bottom, animated: true)
         
         messageTableView.separatorStyle = .none
+       
         
     }
 
+    
+    override func viewDidAppear(_ animated: Bool) {
+       scrollTobottom()
+     }
+    override func viewWillAppear(_ animated: Bool) {
+       scrollTobottom()
+    }
+    
     ///////////////////////////////////////////
     
     //MARK: - TableView DataSource Methods
-    
     
     
     //TODO: Declare cellForRowAtIndexPath here:
@@ -83,7 +96,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
-        
+ 
         
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Time: " + messageArray[indexPath.row].dateSent
@@ -110,6 +123,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
            }
 
+    
+    
     
     //TODO: Declare tableViewTapped here:
     @objc func tableViewTapped()
@@ -191,7 +206,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.messageTextfield.isEnabled = true
                 self.sendButton.isEnabled = true
                 self.messageTextfield.text = ""
-            
+                //self.viewWillAppear(true)
+                self.scrollTobottom()
             
             }
         }
@@ -225,11 +241,19 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             self.configureTableView()
             self.messageTableView.reloadData()
+            self.scrollTobottom()
+
             
             
         })
     }
     
+    
+    func scrollTobottom() {
+        let scrollPoint = CGPoint(x: 0, y: self.messageTableView.contentSize.height - self.messageTableView.frame.size.height)
+        self.messageTableView.setContentOffset(scrollPoint, animated: true)
+        
+    }
     
     
     func getDateString() -> String {
