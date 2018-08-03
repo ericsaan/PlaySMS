@@ -48,6 +48,7 @@
 		B8F2D53D1E22B18B00442E97 /* Eyes_Emoji.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */; };
 		B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */; };
 		B8F2F9322113EC47003ABB1A /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F2F9312113EC47003ABB1A /* MessageCell.xib */; };
+		B8F2F93421147DA2003ABB1A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2F93321147DA2003ABB1A /* Settings.swift */; };
 		FE9CAE9D05FB39D5AEAA1ACC /* Pods_PlaySMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +111,7 @@
 		B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eyes_Emoji.png; sourceTree = "<group>"; };
 		B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Conversations.swift; sourceTree = "<group>"; };
 		B8F2F9312113EC47003ABB1A /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
+		B8F2F93321147DA2003ABB1A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaySMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -202,6 +204,7 @@
 			children = (
 				B868D67921116B9C000F5272 /* Message.swift */,
 				B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */,
+				B8F2F93321147DA2003ABB1A /* Settings.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -418,6 +421,7 @@
 				B8103E051E18530300B2AD1B /* ViewController.swift in Sources */,
 				B8103E031E18530300B2AD1B /* AppDelegate.swift in Sources */,
 				B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */,
+				B8F2F93421147DA2003ABB1A /* Settings.swift in Sources */,
 				B868D67A21116B9C000F5272 /* Message.swift in Sources */,
 				B8F2D5371E222C7B00442E97 /* PDFAfternoon.swift in Sources */,
 				B85925D81E2AAD1D00AC6B4B /* SettingsViewController.swift in Sources */,

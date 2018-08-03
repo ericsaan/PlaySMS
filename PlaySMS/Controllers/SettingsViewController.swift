@@ -12,7 +12,7 @@ import MessageUI
 class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate
 {
 
-    
+    var settingsData: Settings = Settings()
     
     
     override func viewDidLoad()
@@ -39,16 +39,19 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     override func viewWillAppear(_ animated: Bool)
     {
 
-        txtContactOneName.text = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
-        txtContactOnePhoneNumber.text = UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?
-        txtContactTwoName.text = UserDefaults.standard.value(forKey: "ContactTwoName") as! String?
-        txtContactTwoPhoneNumber.text = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?
-        txtAppUserPhone.text = UserDefaults.standard.value(forKey: "AppUserPhoneNumber") as! String?
+        settingsData.refreshSettings()
         
-        txtAppUserName.text = UserDefaults.standard.value(forKey: "AppUserName") as! String?
-        txtBusRoute1.text = UserDefaults.standard.value(forKey: "BusRoute1") as! String? ?? "007"
-        txtBusRoute2.text = UserDefaults.standard.value(forKey: "BusRoute2") as! String? ?? "008"
-        txtBusRoute3.text = UserDefaults.standard.value(forKey: "BusRoute3") as! String? ?? "009"
+        txtContactOneName.text = settingsData.contactOne
+        txtContactOnePhoneNumber.text = settingsData.contactOnePhoneNumber
+        txtContactTwoName.text = settingsData.contactTwo
+        txtContactTwoPhoneNumber.text = settingsData.contactOnePhoneNumber
+        txtAppUserPhone.text = settingsData.appUserPhoneNumber
+        
+        txtAppUserName.text = settingsData.appUserName
+        txtBusRoute1.text = settingsData.busRoute1
+        txtBusRoute2.text = settingsData.busRoute2
+        txtBusRoute3.text = settingsData.busRoute3
+        
         
         
         
@@ -76,7 +79,6 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBOutlet weak var txtContactTwoPhoneNumber: UITextField!
     
     @IBOutlet weak var txtAppUserName: UITextField!
-    //@IBOutlet weak var txtStudentPhoneNumber: UITextField!
     
     @IBOutlet weak var txtAppUserPhone: UITextField!
     
@@ -107,11 +109,6 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
 
     @IBAction func btnIcon8(_ sender: UIButton)
     {
-   /*
-    var url = ""
-        url="www.icon8.com"  // Load URLs into here
-        self.openUrl(url: url);
-    */
         
             let icon8URL = NSURL(string: "http://icons8.com")
         UIApplication.shared.open(icon8URL! as URL, options: [:], completionHandler: nil)

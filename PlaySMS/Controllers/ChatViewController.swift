@@ -18,32 +18,28 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     var messageArray : [Message] = [Message]()
     var studentName: String?
     var dateString: String?
+    var appUserName: String?
+    
+    var settingsData: Settings = Settings()
     
     
-    
-    
-    // We've pre-linked the IBOutlets
     
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     
     
     
-   // @IBOutlet  var heightConstraint: NSLayoutConstraint!
     @IBOutlet  var sendButton: UIButton!
     @IBOutlet  var messageTextfield: UITextField!
   
     @IBOutlet var messageTableView: UITableView!
-    //@IBOutlet var messageTableView: UITableView!
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-        studentName = UserDefaults.standard.value(forKey: "StudentName") as? String
-        if studentName == nil {
-            studentName = "No Student Specified"
-        }
+        
+        settingsData.refreshSettings()
+        appUserName = settingsData.appUserName
         
        
         dateString = getDateString()
@@ -51,7 +47,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //TODO: Set yourself as the delegate and datasource here:
         messageTableView.delegate = self
         messageTableView.dataSource = self
-        
         
         //TODO: Set yourself as the delegate of the text field here:
         messageTextfield.delegate = self
@@ -68,11 +63,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         configureTableView()
         retrieveMessages()
       
-//        let scrollPoint = CGPoint(x: 0, y: messageTableView.contentSize.height - messageTableView.frame.size.height)
-//        messageTableView.setContentOffset(scrollPoint, animated: true)
-//        let indexPathScroll = IndexPath(item: (self.messageArray.count - 1), section: 0)
-//        messageTableView.scrollToRow(at: indexPathScroll, at: UITableViewScrollPosition.bottom, animated: true)
-        
         messageTableView.separatorStyle = .none
        
         
@@ -80,7 +70,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     override func viewDidAppear(_ animated: Bool) {
-       scrollTobottom()
+       //scrollTobottom()
      }
     override func viewWillAppear(_ animated: Bool) {
        scrollTobottom()
@@ -101,6 +91,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Time: " + messageArray[indexPath.row].dateSent
         
+        
+        //TODO: filter to receiving app user
 //        if messageArray[indexPath.row].receiver == appUserName
 //            // Auth.auth().currentUser?.email as String?
 //        {
@@ -192,8 +184,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //hit the database
         let dateString = getDateString()
         
+        //TODO: NOTE: send message back, note this will not work with 2 students :( need to refactor
+        
+        studentName = messageArray[messageArray.count - 1].sender  //get last sender and respond to them
+        
+        
         let messagesDB = Database.database().reference().child("Messages")
-        let messageDictionary = ["Sender": studentName, //Auth.auth().currentUser?.email,
+        let messageDictionary = ["Sender": appUserName, //Auth.auth().currentUser?.email,
                                  "MessageBody": messageTextfield.text!,"Receiver": studentName!,"DateString": dateString]
         
         messagesDB.childByAutoId().setValue(messageDictionary){
@@ -206,7 +203,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.messageTextfield.isEnabled = true
                 self.sendButton.isEnabled = true
                 self.messageTextfield.text = ""
-                //self.viewWillAppear(true)
                 self.scrollTobottom()
             
             }

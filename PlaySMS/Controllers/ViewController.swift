@@ -14,6 +14,7 @@ import Firebase
 
 
 
+
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
 {
     
@@ -30,6 +31,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     var busRoute1: String? = ""
     var busRoute2: String? = ""
     var busRoute3: String? = ""
+    
+    var settingsData: Settings = Settings()
+    
+    
+    
     
     
     @IBOutlet weak var butRoute1: UIButton!
@@ -103,11 +109,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         
         //first let's get the list of recipients
         recipientsList.removeAll()
+        settingsData.refreshSettings()
+        parentOne = settingsData.contactOne
+        parentTwo = settingsData.contactTwo
         
-        //parentOne = (UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?)!
-        
-        
-        if  parentOne != ""
+        if  parentOne != nil
         {
             recipientsList.append(parentOne!)
             print (parentOne!)
@@ -115,13 +121,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         
        // parentTwo = (UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?)!
 
-        if parentTwo != ""
+        if parentTwo != nil
         {
             recipientsList.append(parentTwo!)
             print (parentTwo!)
         }
 
-        appUserName = UserDefaults.standard.value(forKey: "AppUserName") as? String
+        //appUserName = UserDefaults.standard.value(forKey: "AppUserName") as? String
+        appUserName = settingsData.appUserName
         if appUserName == nil{
             appUserName = "No App User Specified"
         }
@@ -163,7 +170,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         recipientsList.removeAll()
         
        //parentOne = (UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?)!
-       
+       parentOne = settingsData.contactOnePhoneNumber
+       parentTwo = settingsData.contactTwoPhoneNumber
             
             if  parentOne != ""
             {
@@ -185,9 +193,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         let messageVC = MFMessageComposeViewController()
         
         messageVC.body =   messageToSend
-        
 
-        // MessageVC.recipients = ["4252411879"];
         messageVC.recipients = recipientsList;
         messageVC.messageComposeDelegate = self;
         
@@ -224,25 +230,16 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     
     override func viewWillAppear(_ animated: Bool)
     {
-        parentOne = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
-        if parentOne == nil {
-            parentOne = "No Parent One"
-        }
-        parentTwo = UserDefaults.standard.value(forKey: "ContactTwoName") as! String?
-        if parentTwo == nil {
-            parentTwo = "No Parent Two"
-        }
+        //get all the user defaults and assign to variables
+        settingsData.refreshSettings()
+        parentOne = settingsData.contactOne
+        parentTwo = settingsData.contactTwo
+        appUserName = settingsData.appUserName
+        busRoute1 = settingsData.busRoute1
+        busRoute2 = settingsData.busRoute2
+        busRoute3 = settingsData.busRoute3
         
-        appUserName = UserDefaults.standard.value(forKey: "AppUserName") as? String
-        if appUserName == nil{
-            appUserName = "No Student Specified"
-        }
-        
-        
-        busRoute1 = UserDefaults.standard.value(forKey: "BusRoute1") as? String  ?? "007"
-        busRoute2 = UserDefaults.standard.value(forKey: "BusRoute2") as? String  ?? "008"
-        busRoute3 = UserDefaults.standard.value(forKey: "BusRoute3") as? String  ?? "009"
-        
+        //set the titles of the 3 primary buttons
         butRoute1.setTitle(busRoute1, for: .normal)
         butRoute2.setTitle(busRoute2, for: .normal)
         butRoute3.setTitle(busRoute3, for: .normal)
