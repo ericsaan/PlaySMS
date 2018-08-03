@@ -27,6 +27,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     
     
+    
    // @IBOutlet  var heightConstraint: NSLayoutConstraint!
     @IBOutlet  var sendButton: UIButton!
     @IBOutlet  var messageTextfield: UITextField!
@@ -87,7 +88,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Time: " + messageArray[indexPath.row].dateSent
         
-//        if messageArray[indexPath.row].receiver == studentName
+//        if messageArray[indexPath.row].receiver == appUserName
 //            // Auth.auth().currentUser?.email as String?
 //        {
 //            cell.messageBackground.backgroundColor = UIColor.flatBlue()            
@@ -138,7 +139,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         UIView.animate(withDuration: 0.5)
             {
-                self.heightConstraint.constant = 323
+               self.heightConstraint.constant = 323
                 self.view.layoutIfNeeded()
             }
     }
@@ -168,31 +169,32 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //@IBAction func sendPressed(_ sender: AnyObject)
     @IBAction func sendPressed(_ sender: Any)
     {
-//        messageTextfield.endEditing(true)
-//        
-//        
-//        //TODO: Send the message to Firebase and save it in our database
-//        messageTextfield.isEnabled = false
-//        sendButton.isEnabled = false
-//        
-//        let messagesDB = Database.database().reference().child("Messages")
-//        let messageDictionary = ["Sender": "daddy", //Auth.auth().currentUser?.email,
-//                                 "MessageBody": messageTextfield.text!,"Receiver": studentName!,"DateString: dateString!]
-//        
-//        messagesDB.childByAutoId().setValue(messageDictionary){
-//            (error, reference) in
-//            
-//            if error != nil{
-//                print(error!)
-//            }else {
-//                print ("message saved successfully")
-//                self.messageTextfield.isEnabled = true
-//                self.sendButton.isEnabled = true
-//                self.messageTextfield.text = ""
-//                
-//                
-//            }
-  //      }
+        messageTextfield.endEditing(true)
+        messageTextfield.isEnabled = false
+        sendButton.isEnabled = false
+        
+        
+        //hit the database
+        let dateString = getDateString()
+        
+        let messagesDB = Database.database().reference().child("Messages")
+        let messageDictionary = ["Sender": studentName, //Auth.auth().currentUser?.email,
+                                 "MessageBody": messageTextfield.text!,"Receiver": studentName!,"DateString": dateString]
+        
+        messagesDB.childByAutoId().setValue(messageDictionary){
+            (error, reference) in
+            
+            if error != nil{
+                print(error!)
+            }else {
+                print ("message saved successfully")
+                self.messageTextfield.isEnabled = true
+                self.sendButton.isEnabled = true
+                self.messageTextfield.text = ""
+            
+            
+            }
+        }
         
         
         

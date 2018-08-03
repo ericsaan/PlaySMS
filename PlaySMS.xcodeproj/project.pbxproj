@@ -29,7 +29,6 @@
 		B85925DA1E2B5C0B00AC6B4B /* PDFPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */; };
 		B868D66B211018CD000F5272 /* LakeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66A211018CD000F5272 /* LakeLogo.png */; };
 		B868D66D21101972000F5272 /* RedButtonGoldBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66C21101972000F5272 /* RedButtonGoldBorder.png */; };
-		B868D675211165B3000F5272 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B868D673211165B3000F5272 /* MessageCell.xib */; };
 		B868D676211165B3000F5272 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D674211165B3000F5272 /* CustomMessageCell.swift */; };
 		B868D678211165E0000F5272 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D677211165DF000F5272 /* ChatViewController.swift */; };
 		B868D67A21116B9C000F5272 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D67921116B9C000F5272 /* Message.swift */; };
@@ -48,6 +47,7 @@
 		B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */; };
 		B8F2D53D1E22B18B00442E97 /* Eyes_Emoji.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */; };
 		B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */; };
+		B8F2F9322113EC47003ABB1A /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F2F9312113EC47003ABB1A /* MessageCell.xib */; };
 		FE9CAE9D05FB39D5AEAA1ACC /* Pods_PlaySMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */; };
 /* End PBXBuildFile section */
 
@@ -91,7 +91,6 @@
 		B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFPageViewController.swift; sourceTree = "<group>"; };
 		B868D66A211018CD000F5272 /* LakeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LakeLogo.png; sourceTree = "<group>"; };
 		B868D66C21101972000F5272 /* RedButtonGoldBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButtonGoldBorder.png; sourceTree = "<group>"; };
-		B868D673211165B3000F5272 /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		B868D674211165B3000F5272 /* CustomMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
 		B868D677211165DF000F5272 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B868D67921116B9C000F5272 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
@@ -110,6 +109,7 @@
 		B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eyes_Emoji_LARGE.png; sourceTree = "<group>"; };
 		B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eyes_Emoji.png; sourceTree = "<group>"; };
 		B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Conversations.swift; sourceTree = "<group>"; };
+		B8F2F9312113EC47003ABB1A /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaySMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -233,7 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				B868D674211165B3000F5272 /* CustomMessageCell.swift */,
-				B868D673211165B3000F5272 /* MessageCell.xib */,
+				B8F2F9312113EC47003ABB1A /* MessageCell.xib */,
 			);
 			path = "Custom Cell";
 			sourceTree = "<group>";
@@ -323,7 +323,6 @@
 			files = (
 				B8F2D5321E21F3A300442E97 /* 2016-17AMScheduleEffective9-12-16.pdf in Resources */,
 				B831B4F11F5FACAB009FAB4D /* YellowBusKids.jpeg in Resources */,
-				B868D675211165B3000F5272 /* MessageCell.xib in Resources */,
 				B8F2D5281E21EB8D00442E97 /* PDF 2_950000_25.png in Resources */,
 				B8103E1C1E1888A500B2AD1B /* lakeside.jpg in Resources */,
 				B8F2D5331E21F3A300442E97 /* 2016-17PMScheduleEffective9-12-16.pdf in Resources */,
@@ -347,6 +346,7 @@
 				B8103E1A1E18877600B2AD1B /* LakesideLogo2.jpeg in Resources */,
 				B8103E0A1E18530300B2AD1B /* Assets.xcassets in Resources */,
 				B831B4ED1F5FAA19009FAB4D /* YellowBus.png in Resources */,
+				B8F2F9322113EC47003ABB1A /* MessageCell.xib in Resources */,
 				B85925D61E2A98B100AC6B4B /* Settings_950000_25.png in Resources */,
 				B8103E081E18530300B2AD1B /* Main.storyboard in Resources */,
 				B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */,

@@ -26,7 +26,20 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
    
     var parentOne: String? = ""
     var parentTwo: String? = ""
-    var studentName: String? = ""
+    var appUserName: String? = ""
+    var busRoute1: String? = ""
+    var busRoute2: String? = ""
+    var busRoute3: String? = ""
+    
+    
+    @IBOutlet weak var butRoute1: UIButton!
+    @IBOutlet weak var butRoute2: UIButton!
+    @IBOutlet weak var butRoute3: UIButton!
+    
+    
+    
+    
+    
     
     
     @IBAction func btnPressed(_ sender: UIButton) {
@@ -108,9 +121,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
             print (parentTwo!)
         }
 
-        studentName = UserDefaults.standard.value(forKey: "StudentName") as? String
-        if studentName == nil{
-            studentName = "No Student Specified"
+        appUserName = UserDefaults.standard.value(forKey: "AppUserName") as? String
+        if appUserName == nil{
+            appUserName = "No App User Specified"
         }
         
         
@@ -124,7 +137,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
             let dateString = getDateString()
                 
             let messageDictionary = ["Receiver": recipientsList[i], //Auth.auth().currentUser?.email,
-                "MessageBody": messageToSend, "Sender": studentName, "DateString": dateString]
+                "MessageBody": messageToSend, "Sender": appUserName, "DateString": dateString]
             
             messagesDB.childByAutoId().setValue(messageDictionary){
                 (error, reference) in
@@ -200,21 +213,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
                 
-//        let parentOne = UserDefaults.standard.value(forKey: "ParentOne") as? String ?? String()
-//        let parentTwo = UserDefaults.standard.value(forKey: "ParentTwo") as? String ?? String()
-        parentOne = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
-        if parentOne == nil {
-            parentOne = "No Parent One"
-        }
-        parentTwo = UserDefaults.standard.value(forKey: "ContactTwoName") as! String?
-        if parentTwo == nil {
-            parentTwo = "No Parent Two"
-        }
+
         
-        studentName = UserDefaults.standard.value(forKey: "StudentName") as? String
-        if studentName == nil{
-            studentName = "No Student Specified"
-        }
         cheerView.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
         view.addSubview(cheerView)
 
@@ -224,7 +224,29 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     
     override func viewWillAppear(_ animated: Bool)
     {
-       //NOTHING HERE, USED TO BE WHERE WE UPDATED THE LABELS WITH PARENT/GUARDIAN
+        parentOne = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
+        if parentOne == nil {
+            parentOne = "No Parent One"
+        }
+        parentTwo = UserDefaults.standard.value(forKey: "ContactTwoName") as! String?
+        if parentTwo == nil {
+            parentTwo = "No Parent Two"
+        }
+        
+        appUserName = UserDefaults.standard.value(forKey: "AppUserName") as? String
+        if appUserName == nil{
+            appUserName = "No Student Specified"
+        }
+        
+        
+        busRoute1 = UserDefaults.standard.value(forKey: "BusRoute1") as? String  ?? "007"
+        busRoute2 = UserDefaults.standard.value(forKey: "BusRoute2") as? String  ?? "008"
+        busRoute3 = UserDefaults.standard.value(forKey: "BusRoute3") as? String  ?? "009"
+        
+        butRoute1.setTitle(busRoute1, for: .normal)
+        butRoute2.setTitle(busRoute2, for: .normal)
+        butRoute3.setTitle(busRoute3, for: .normal)
+        
     }
     
     

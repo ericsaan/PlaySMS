@@ -43,9 +43,15 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         txtContactOnePhoneNumber.text = UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?
         txtContactTwoName.text = UserDefaults.standard.value(forKey: "ContactTwoName") as! String?
         txtContactTwoPhoneNumber.text = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?
-        txtStudentPhoneNumber.text = UserDefaults.standard.value(forKey: "StudentPhoneNumber") as! String?
+        txtAppUserPhone.text = UserDefaults.standard.value(forKey: "AppUserPhoneNumber") as! String?
         
-        txtStudentName.text = UserDefaults.standard.value(forKey: "StudentName") as! String?
+        txtAppUserName.text = UserDefaults.standard.value(forKey: "AppUserName") as! String?
+        txtBusRoute1.text = UserDefaults.standard.value(forKey: "BusRoute1") as! String? ?? "007"
+        txtBusRoute2.text = UserDefaults.standard.value(forKey: "BusRoute2") as! String? ?? "008"
+        txtBusRoute3.text = UserDefaults.standard.value(forKey: "BusRoute3") as! String? ?? "009"
+        
+        
+        
     }
     
     
@@ -69,10 +75,20 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBOutlet weak var txtContactTwoPhoneNumber: UITextField!
     
-    @IBOutlet weak var txtStudentName: UITextField!
+    @IBOutlet weak var txtAppUserName: UITextField!
     //@IBOutlet weak var txtStudentPhoneNumber: UITextField!
     
-    @IBOutlet weak var txtStudentPhoneNumber: UITextField!
+    @IBOutlet weak var txtAppUserPhone: UITextField!
+    
+    @IBOutlet weak var txtBusRoute1: UITextField!
+    
+    @IBOutlet weak var txtBusRoute2: UITextField!
+    
+    @IBOutlet weak var txtBusRoute3: UITextField!
+    
+    
+    
+    
     //***************************************************************
     //now we start with the actions from buttons on the board
     //***************************************************************
@@ -151,16 +167,23 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         let savedContactOnePhoneNumber = txtContactOnePhoneNumber.text!
         let savedContactTwoName = txtContactTwoName.text!
         let savedContactTwoPhoneNumber = txtContactTwoPhoneNumber.text!
-        let savedStudentName = txtStudentName.text!
-        let savedStudentPhoneNumber = txtStudentPhoneNumber.text!
+        let savedAppUserName = txtAppUserName.text!
+        let savedAppUserPhoneNumber = txtAppUserPhone.text!
+        let savedBusRoute1 = txtBusRoute1.text!
+        let savedBusRoute2 = txtBusRoute2.text!
+        let savedBusRoute3 = txtBusRoute3.text!
+        
         
         
         UserDefaults.standard.set(savedContactOneName, forKey: "ContactOneName")
         UserDefaults.standard.set(savedContactOnePhoneNumber, forKey: "ContactOnePhoneNumber")
         UserDefaults.standard.set(savedContactTwoName, forKey: "ContactTwoName")
         UserDefaults.standard.set(savedContactTwoPhoneNumber, forKey: "ContactTwoPhoneNumber")
-        UserDefaults.standard.set(savedStudentName, forKey: "StudentName")
-        UserDefaults.standard.set(savedStudentPhoneNumber, forKey: "StudentPhoneNumber")
+        UserDefaults.standard.set(savedAppUserName, forKey: "AppUserName")
+        UserDefaults.standard.set(savedAppUserPhoneNumber, forKey: "AppUserPhone")
+        UserDefaults.standard.set(savedBusRoute1, forKey: "BusRoute1")
+        UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")
+        UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
         
     }
     
