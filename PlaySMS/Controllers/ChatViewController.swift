@@ -84,9 +84,25 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     //TODO: Declare cellForRowAtIndexPath here:
     //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        //let cast = messageArray.filter($0.receiver = appUserName)
+        
+        
+//        Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.
+//        In this example, filter(_:) is used to include only names shorter than five characters.
+//        let cast = ["Vivien", "Marlon", "Kim", "Karl"]
+//        let shortNames = cast.filter { $0.count < 5 }
+//
+        
+        //let receiverNames = messageArray.filter { $0.receiver = appUserName }
+//
+//        messageArray.filter {
+//            $0.receiver.contains({ $0.receiver == appUserName })
+//        }
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
- 
+//        cell.messageBody.text = receiverNames[indexPath.row].messageBody
+//        cell.senderUsername.text = " " + receiverNames[indexPath.row].sender + "   Time: " + receiverNames[indexPath.row].dateSent
+        
         
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Time: " + messageArray[indexPath.row].dateSent
