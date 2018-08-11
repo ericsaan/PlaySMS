@@ -127,9 +127,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
             print (parentTwo!)
         }
 
-        //appUserName = UserDefaults.standard.value(forKey: "AppUserName") as? String
-        appUserName = settingsData.appUserName
-        if appUserName == nil{
+         appUserName = settingsData.appUserName
+         if appUserName == nil{
             appUserName = "No App User Specified"
         }
         
@@ -141,10 +140,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         {
             for i in 0 ... recipientsList.count - 1
             {
-            let dateString = getDateString()
-                
-            let messageDictionary = ["Receiver": recipientsList[i], //Auth.auth().currentUser?.email,
-                "MessageBody": messageToSend, "Sender": appUserName, "DateString": dateString]
+                let dateString = getDateString()
+                let messageDictionary = ["Receiver": recipientsList[i], //Auth.auth().currentUser?.email,
+                "MessageBody": messageToSend, "Sender": appUserName as Any, "DateString": dateString as Any]
             
             messagesDB.childByAutoId().setValue(messageDictionary){
                 (error, reference) in

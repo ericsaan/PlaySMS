@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>701600505357-8r9vniqe7isd0hrnd3nneebj9m1n3flm.apps.googleusercontent.com</string>
+	<string>250632136441-olic6diahh8ka59fimt4fj2a5sag6qm1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.701600505357-8r9vniqe7isd0hrnd3nneebj9m1n3flm</string>
+	<string>com.googleusercontent.apps.250632136441-olic6diahh8ka59fimt4fj2a5sag6qm1</string>
 	<key>API_KEY</key>
-	<string>AIzaSyDbBYbZppveNJs-2bt8BdJAv2b7laUQxZ8</string>
+	<string>AIzaSyDVwHWTpXLgO186m3QEUsDinZgYz3XpnbA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>701600505357</string>
+	<string>250632136441</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Sully.PlaySMS.MoonspecTest</string>
+	<string>Sully.PlaySMS.MoonspecPro</string>
 	<key>PROJECT_ID</key>
-	<string>playsms-f5fd9</string>
+	<string>playsmsmacpro</string>
 	<key>STORAGE_BUCKET</key>
-	<string>playsms-f5fd9.appspot.com</string>
+	<string>playsmsmacpro.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:701600505357:ios:11f33352d0d614d5</string>
+	<string>1:250632136441:ios:69924612b75adcaa</string>
 	<key>DATABASE_URL</key>
-	<string>https://playsms-f5fd9.firebaseio.com</string>
+	<string>https://playsmsmacpro.firebaseio.com</string>
 </dict>
 </plist>

@@ -103,7 +103,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        cell.messageBody.text = receiverNames[indexPath.row].messageBody
 //        cell.senderUsername.text = " " + receiverNames[indexPath.row].sender + "   Time: " + receiverNames[indexPath.row].dateSent
         
-        
+        if messageArray[indexPath.row].messageBody.count < 50 {
+            messageArray[indexPath.row].messageBody += "                             "
+        }
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Time: " + messageArray[indexPath.row].dateSent
         

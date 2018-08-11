@@ -16,6 +16,7 @@
 		B8103E181E1885E100B2AD1B /* LakesideLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B8103E171E1885E100B2AD1B /* LakesideLogo.png */; };
 		B8103E1A1E18877600B2AD1B /* LakesideLogo2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B8103E191E18877600B2AD1B /* LakesideLogo2.jpeg */; };
 		B8103E1C1E1888A500B2AD1B /* lakeside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8103E1B1E1888A500B2AD1B /* lakeside.jpg */; };
+		B82718EF211B5C4F00CA161D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B82718EE211B5C4F00CA161D /* GoogleService-Info.plist */; };
 		B831B4E71F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B831B4E61F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf */; };
 		B831B4E91F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B831B4E81F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf */; };
 		B831B4ED1F5FAA19009FAB4D /* YellowBus.png in Resources */ = {isa = PBXBuildFile; fileRef = B831B4EC1F5FAA19009FAB4D /* YellowBus.png */; };
@@ -32,7 +33,6 @@
 		B868D676211165B3000F5272 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D674211165B3000F5272 /* CustomMessageCell.swift */; };
 		B868D678211165E0000F5272 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D677211165DF000F5272 /* ChatViewController.swift */; };
 		B868D67A21116B9C000F5272 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D67921116B9C000F5272 /* Message.swift */; };
-		B868D67C2111733D000F5272 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B868D67B2111733D000F5272 /* GoogleService-Info.plist */; };
 		B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B8718E2D1E19AA5800515C7E /* SilverButton.png */; };
 		B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */; };
 		B8F2D5281E21EB8D00442E97 /* PDF 2_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */; };
@@ -79,6 +79,7 @@
 		B8103E171E1885E100B2AD1B /* LakesideLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LakesideLogo.png; sourceTree = "<group>"; };
 		B8103E191E18877600B2AD1B /* LakesideLogo2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LakesideLogo2.jpeg; sourceTree = "<group>"; };
 		B8103E1B1E1888A500B2AD1B /* lakeside.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lakeside.jpg; sourceTree = "<group>"; };
+		B82718EE211B5C4F00CA161D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B831B4E61F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FinalLakesideCustomBus-PM_Schedule-2017-18.pdf"; sourceTree = "<group>"; };
 		B831B4E81F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FinalLakesideCustomBus-AM_Schedule-2017-18.pdf"; sourceTree = "<group>"; };
 		B831B4EC1F5FAA19009FAB4D /* YellowBus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowBus.png; sourceTree = "<group>"; };
@@ -95,7 +96,6 @@
 		B868D674211165B3000F5272 /* CustomMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
 		B868D677211165DF000F5272 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B868D67921116B9C000F5272 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
-		B868D67B2111733D000F5272 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8718E2D1E19AA5800515C7E /* SilverButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverButton.png; sourceTree = "<group>"; };
 		B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WheresTheBusViewController.swift; sourceTree = "<group>"; };
 		B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PDF 2_950000_25.png"; sourceTree = "<group>"; };
@@ -158,8 +158,8 @@
 			isa = PBXGroup;
 			children = (
 				B8103E021E18530300B2AD1B /* AppDelegate.swift */,
+				B82718EE211B5C4F00CA161D /* GoogleService-Info.plist */,
 				B8103E0E1E18530300B2AD1B /* Info.plist */,
-				B868D67B2111733D000F5272 /* GoogleService-Info.plist */,
 				B868D66921100DFB000F5272 /* Controllers */,
 				B868D66821100DE5000F5272 /* Views */,
 				B868D66721100DD4000F5272 /* Model */,
@@ -296,7 +296,7 @@
 				TargetAttributes = {
 					B8103DFE1E18530300B2AD1B = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = BLXXF824QW;
+						DevelopmentTeam = H7U9YYSK82;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -341,9 +341,9 @@
 				B8F2D52E1E21EF9800442E97 /* Bus_950000_25.png in Resources */,
 				B831B4E71F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf in Resources */,
 				B8103E0D1E18530300B2AD1B /* LaunchScreen.storyboard in Resources */,
+				B82718EF211B5C4F00CA161D /* GoogleService-Info.plist in Resources */,
 				B831B4F31F5FAE15009FAB4D /* YellowPlain.jpeg in Resources */,
 				B868D66B211018CD000F5272 /* LakeLogo.png in Resources */,
-				B868D67C2111733D000F5272 /* GoogleService-Info.plist in Resources */,
 				B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */,
 				B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */,
 				B8103E1A1E18877600B2AD1B /* LakesideLogo2.jpeg in Resources */,
@@ -369,9 +369,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-PlaySMS/Pods-PlaySMS-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Cheers/Cheers.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -379,9 +377,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cheers.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -569,11 +565,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BLXXF824QW;
+				DEVELOPMENT_TEAM = H7U9YYSK82;
 				INFOPLIST_FILE = PlaySMS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.MoonspecTest;
+				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.MoonspecPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -586,11 +582,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = BLXXF824QW;
+				DEVELOPMENT_TEAM = H7U9YYSK82;
 				INFOPLIST_FILE = PlaySMS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.MoonspecTest;
+				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.MoonspecPro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
