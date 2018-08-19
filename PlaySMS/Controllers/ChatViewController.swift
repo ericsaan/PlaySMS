@@ -87,30 +87,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //let cast = messageArray.filter($0.receiver = appUserName)
         
         
-//        Returns an array containing, in order, the elements of the sequence that satisfy the given predicate.
-//        In this example, filter(_:) is used to include only names shorter than five characters.
-//        let cast = ["Vivien", "Marlon", "Kim", "Karl"]
-//        let shortNames = cast.filter { $0.count < 5 }
-//
-        
-        //let receiverNames = messageArray.filter { $0.receiver = appUserName }
-//
-//        messageArray.filter {
-//            $0.receiver.contains({ $0.receiver == appUserName })
-//        }
+
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
-//        cell.messageBody.text = receiverNames[indexPath.row].messageBody
-//        cell.senderUsername.text = " " + receiverNames[indexPath.row].sender + "   Time: " + receiverNames[indexPath.row].dateSent
-        
+   
         //TODO: Fix the string length
         let blankString: String = "                                                                      "
         var messagePadding: String = ""
         
-        
         if messageArray[indexPath.row].messageBody.count < 62 {
             messagePadding = String(blankString.suffix((62-messageArray[indexPath.row].messageBody.count)))
- //           messageArray[indexPath.row].messageBody += "                               "
             messageArray[indexPath.row].messageBody += messagePadding
             
         }
@@ -119,15 +105,20 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         //TODO: filter to receiving app user
-//        if messageArray[indexPath.row].receiver == appUserName
-//            // Auth.auth().currentUser?.email as String?
-//        {
-//            cell.messageBackground.backgroundColor = UIColor.flatBlue()            
-//        }
-//        else{
-//            cell.messageBackground.backgroundColor = UIColor.flatWhite()
-//            
-//        }
+        if messageArray[indexPath.row].sender == appUserName
+            // Auth.auth().currentUser?.email as String?
+        {
+            cell.messageBackground.backgroundColor = UIColor.flatBlue()
+            cell.senderUsername.textColor = UIColor.white
+            cell.messageBody.backgroundColor = UIColor.flatBlue()
+            cell.messageBody.textColor = UIColor.white
+        }
+        else{
+            cell.messageBackground.backgroundColor = UIColor.flatWhite()
+            cell.messageBody.backgroundColor = UIColor.flatWhite()
+            cell.messageBody.textColor = UIColor.black
+                 cell.senderUsername.textColor = UIColor.black
+        }
         
         return cell
         
