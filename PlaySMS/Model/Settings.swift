@@ -19,6 +19,7 @@ class Settings
     var busRoute1: String? = ""
     var busRoute2: String? = ""
     var busRoute3: String? = ""
+    var switchConfetti: String? = "1"
     
     func refreshSettings() {
         contactOne = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
@@ -30,6 +31,7 @@ class Settings
         busRoute1 = UserDefaults.standard.value(forKey: "BusRoute1") as? String  ?? "000"
         busRoute2 = UserDefaults.standard.value(forKey: "BusRoute2") as? String  ?? "000"
         busRoute3 = UserDefaults.standard.value(forKey: "BusRoute3") as? String  ?? "000"
+        switchConfetti = UserDefaults.standard.value(forKey: "SwitchConfetti") as? String ?? "1"
         
     }
     

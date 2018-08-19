@@ -103,11 +103,19 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        cell.messageBody.text = receiverNames[indexPath.row].messageBody
 //        cell.senderUsername.text = " " + receiverNames[indexPath.row].sender + "   Time: " + receiverNames[indexPath.row].dateSent
         
-        if messageArray[indexPath.row].messageBody.count < 50 {
-            messageArray[indexPath.row].messageBody += "                             "
+        //TODO: Fix the string length
+        let blankString: String = "                                                                      "
+        var messagePadding: String = ""
+        
+        
+        if messageArray[indexPath.row].messageBody.count < 62 {
+            messagePadding = String(blankString.suffix((62-messageArray[indexPath.row].messageBody.count)))
+ //           messageArray[indexPath.row].messageBody += "                               "
+            messageArray[indexPath.row].messageBody += messagePadding
+            
         }
         cell.messageBody.text = messageArray[indexPath.row].messageBody
-        cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Time: " + messageArray[indexPath.row].dateSent
+        cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Date: " + messageArray[indexPath.row].dateSent
         
         
         //TODO: filter to receiving app user
@@ -236,6 +244,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
      {
         let messageDB = Database.database().reference().child("Messages")
         
+        settingsData.refreshSettings()
+        
         messageDB.observe(.childAdded, with: { (snapshot) in
             let snapshotValue = snapshot.value as! Dictionary<String,String>
             let text = snapshotValue["MessageBody"]!
@@ -251,7 +261,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             message.dateSent = dateString
             
             
-            self.messageArray.append(message)
+            //don't append message if not intended for app user or not sent by user
+            
+            if self.settingsData.appUserName == message.receiver || self.settingsData.appUserName == message.sender {
+                self.messageArray.append(message)
+                
+            }
+            
             
             self.configureTableView()
             self.messageTableView.reloadData()
@@ -274,29 +290,26 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
-        let dateString = String(hour) + ":" + String(minute)
+        
+       
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = .medium
+        
+        let dateString = formatter.string(from: date)
+        
+        
+        
+        
+//        let calendar = Calendar.current
+//        let hour = calendar.component(.hour, from: date)
+//        let minute = calendar.component(.minute, from: date)
+//        let day = calendar.component((.day), from: date)
+//        let dateString = String(hour) + ":" + String(minute) + " Date: " + String(day)
         return dateString
     }
     
-//    @IBAction func logOutPressed(_ sender: AnyObject) {
-//        
-//        //TODO: Log out the user and send them back to WelcomeViewController
-//        do
-//        {
-//            try Auth.auth().signOut()
-//            navigationController?.popToRootViewController(animated: true)
-//            
-//        }
-//        catch
-//        {
-//            print ("Error, there was a problem signing out")
-//        }
-//        
-//        
-//    }
+
     
 
 

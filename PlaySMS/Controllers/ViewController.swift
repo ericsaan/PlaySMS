@@ -31,6 +31,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     var busRoute1: String? = ""
     var busRoute2: String? = ""
     var busRoute3: String? = ""
+    var switchConfetti: String? = "1"
     
     var settingsData: Settings = Settings()
     
@@ -53,7 +54,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
        
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
-        popConfetti()
+        if switchConfetti == "1" {
+            popConfetti()
+        }
         
     }
     
@@ -62,7 +65,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
         
-        popConfetti()
+        if switchConfetti == "1" {
+            popConfetti()
+        }
     }
     
     @IBAction func btn3Pressed(_ sender: UIButton) {
@@ -70,7 +75,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
         
-        popConfetti()
+        if switchConfetti == "1" {
+            popConfetti()
+        }
     }
     
     @IBAction func btnImhere(_ sender: UIButton)
@@ -112,6 +119,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         settingsData.refreshSettings()
         parentOne = settingsData.contactOne
         parentTwo = settingsData.contactTwo
+        switchConfetti = settingsData.switchConfetti
         
         if  parentOne != nil
         {
@@ -236,6 +244,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         busRoute1 = settingsData.busRoute1
         busRoute2 = settingsData.busRoute2
         busRoute3 = settingsData.busRoute3
+        switchConfetti = settingsData.switchConfetti
         
         //set the titles of the 3 primary buttons
         butRoute1.setTitle(busRoute1, for: .normal)
@@ -280,13 +289,22 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     //******************************************
         
     func getDateString() -> String {
-        
-        
+       
         let date = Date()
-        let calendar = Calendar.current
-        let hour = calendar.component(.hour, from: date)
-        let minute = calendar.component(.minute, from: date)
-        let dateString = String(hour) + ":" + String(minute)
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = .medium
+       
+        let dateString = formatter.string(from: date)
+        
+      
+//        let calendar = Calendar.current
+//        let hour = calendar.component(.hour, from: date)
+//        let minute = calendar.component(.minute, from: date)
+//        let day = calendar.component(.weekday, from: date)
+//
+//        var dateString = String(hour) + ":" + String(minute)
+//            dateString = dateString + " Day " + String(day)
         return dateString
     }
         

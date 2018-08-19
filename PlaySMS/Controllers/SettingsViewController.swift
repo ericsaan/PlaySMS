@@ -51,6 +51,13 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         txtBusRoute1.text = settingsData.busRoute1
         txtBusRoute2.text = settingsData.busRoute2
         txtBusRoute3.text = settingsData.busRoute3
+        if settingsData.switchConfetti == "1" {
+            switchConfetti.setOn(true, animated: true)
+            
+        } else {
+            switchConfetti.setOn(false, animated: true)
+        }
+        
         
         
         
@@ -88,6 +95,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBOutlet weak var txtBusRoute3: UITextField!
     
+    @IBOutlet weak var switchConfetti: UISwitch!
     
     
     
@@ -170,6 +178,13 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         let savedBusRoute2 = txtBusRoute2.text!
         let savedBusRoute3 = txtBusRoute3.text!
         
+        var switchState: String = "1"
+        if !switchConfetti.isOn {
+         switchState = "0"
+        }
+        let savedSwitchConfetti = switchState
+        
+        
         
         
         UserDefaults.standard.set(savedContactOneName, forKey: "ContactOneName")
@@ -181,6 +196,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         UserDefaults.standard.set(savedBusRoute1, forKey: "BusRoute1")
         UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")
         UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
+        UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
         
     }
     
