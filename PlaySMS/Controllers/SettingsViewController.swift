@@ -192,7 +192,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         UserDefaults.standard.set(savedContactTwoName, forKey: "ContactTwoName")
         UserDefaults.standard.set(savedContactTwoPhoneNumber, forKey: "ContactTwoPhoneNumber")
         UserDefaults.standard.set(savedAppUserName, forKey: "AppUserName")
-        UserDefaults.standard.set(savedAppUserPhoneNumber, forKey: "AppUserPhone")
+        UserDefaults.standard.set(savedAppUserPhoneNumber, forKey: "AppUserPhoneNumber")
         UserDefaults.standard.set(savedBusRoute1, forKey: "BusRoute1")
         UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")
         UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")

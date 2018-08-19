@@ -117,7 +117,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.messageBackground.backgroundColor = UIColor.flatWhite()
             cell.messageBody.backgroundColor = UIColor.flatWhite()
             cell.messageBody.textColor = UIColor.black
-                 cell.senderUsername.textColor = UIColor.black
+            cell.senderUsername.textColor = UIColor.black
         }
         
         return cell
@@ -253,11 +253,36 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             
             //don't append message if not intended for app user or not sent by user
-            
-            if self.settingsData.appUserName == message.receiver || self.settingsData.appUserName == message.sender {
-                self.messageArray.append(message)
+            //***************************************************************************************
+            if self.settingsData.appUserName == message.receiver  {
+               self.messageArray.append(message)
                 
             }
+            
+            //now for messages the app user has sent, only need 1 record even though 2 messages were sent
+            if self.messageArray.count > 0 {
+                
+                
+                let senderCheck = self.messageArray[self.messageArray.count - 1]
+                
+                
+                if self.settingsData.appUserName == senderCheck.sender {
+                    if senderCheck.dateSent != message.dateSent {
+                        self.messageArray.append(message)
+                        
+                    }
+                    
+                }
+            } else {
+                if self.settingsData.appUserName == message.sender {
+                    self.messageArray.append(message)
+                    
+                }
+            }
+            
+            //***************************************************************************************
+            
+            
             
             
             self.configureTableView()
