@@ -7,9 +7,9 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>250632136441-q7mgr80e9b4gmotdg1iu7oqobjkp1uob.apps.googleusercontent.com</string>
+	<string>250632136441-olic6diahh8ka59fimt4fj2a5sag6qm1.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.250632136441-q7mgr80e9b4gmotdg1iu7oqobjkp1uob</string>
+	<string>com.googleusercontent.apps.250632136441-olic6diahh8ka59fimt4fj2a5sag6qm1</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDVwHWTpXLgO186m3QEUsDinZgYz3XpnbA</string>
 	<key>GCM_SENDER_ID</key>
@@ -17,7 +17,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>Sully.PlaySMS.MoonspecGradeEight</string>
+	<string>Sully.PlaySMS.MoonspecPro</string>
 	<key>PROJECT_ID</key>
 	<string>playsmsmacpro</string>
 	<key>STORAGE_BUCKET</key>
@@ -33,7 +33,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:250632136441:ios:414a3649dfcf1e3a</string>
+	<string>1:250632136441:ios:69924612b75adcaa</string>
 	<key>DATABASE_URL</key>
 	<string>https://playsmsmacpro.firebaseio.com</string>
 </dict>
