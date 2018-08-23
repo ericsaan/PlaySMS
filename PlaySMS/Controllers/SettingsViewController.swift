@@ -8,6 +8,8 @@
 
 import UIKit
 import MessageUI
+import Firebase
+
 
 class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate
 {
@@ -197,6 +199,11 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")
         UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
         UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
+        
+        
+        
+        
+        
         
     }
     

@@ -33,20 +33,7 @@ class PDFPageViewController: UIPageViewController, UIPageViewControllerDataSourc
             self.setViewControllers([initialViewController], direction: .forward, animated: true, completion: nil)
         }
         
-      //  let  rect =  CGRect(x: self.view.bounds.origin.x, y: self.view.bounds.origin.y, width: self.view.bounds.size.width, height: self.view.bounds.size.height - 150)
-        
-        //self.view.bounds = rect
-        //self.view.set
-    
-        
-        
-        /*
-        CGRect rect = CGRectMake([[self view] bounds].origin.x,
-                                 [[self view] bounds].origin.yc,
-                                 [[self view] bounds].size.widthz,
-                                 [[self view] bounds].size.height-10);
-        [[self.pageController view] setBounds:rect];
-        */
+     
         
         
         //custom dots

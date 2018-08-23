@@ -22,7 +22,7 @@ class ViewController_PDFViewController: UIViewController, MFMessageComposeViewCo
         //load up the Afternoon PDF File
         
         //let path = Bundle.main.path(forResource: "2016-17PMScheduleEffective9-12-16", ofType: "pdf")! //6th Grade
-        let path = Bundle.main.path(forResource: "FinalLakesideCustomBus-PM_Schedule-2017-18", ofType: "pdf")! //7th Grade
+        let path = Bundle.main.path(forResource: "LakesideCustomBusSchedules-2018-2019 Afternoon", ofType: "pdf")! //8th Grade
         
         let targetURL = URL(fileURLWithPath: path)
         let request = URLRequest(url: targetURL)
@@ -59,22 +59,6 @@ class ViewController_PDFViewController: UIViewController, MFMessageComposeViewCo
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
-    
-    
-    
-    
-    
     
     
     

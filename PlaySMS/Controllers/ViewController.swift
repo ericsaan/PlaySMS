@@ -150,7 +150,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
             {
                 let dateString = getDateString()
                 let messageDictionary = ["Receiver": recipientsList[i], //Auth.auth().currentUser?.email,
-                "MessageBody": messageToSend, "Sender": appUserName as Any, "DateString": dateString as Any]
+                    "MessageBody": messageToSend, "Sender": appUserName as Any, "DateString": dateString as Any, "FCMToken": "a fcm token"]
             
             messagesDB.childByAutoId().setValue(messageDictionary){
                 (error, reference) in
@@ -159,7 +159,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
                     print(error!)
                 }else {
                     print ("message saved successfully")
-                    
+                   // self.sendRequestPush()
                 }
               }
             } //endforloop
@@ -167,7 +167,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         
     }
     
-    
+    func postToken(Token: [String: AnyObject])
+    {
+        print ("fcmToken: \(Token)")
+        let dbRef = Database.database().reference()
+        dbRef.child("fcmToken").child(Messaging.messaging().fcmToken!).setValue(Token)
+    }
     
     func sendSMStatusUpdate (messageToSend : String)
     {
@@ -298,16 +303,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         let dateString = formatter.string(from: date)
         
       
-//        let calendar = Calendar.current
-//        let hour = calendar.component(.hour, from: date)
-//        let minute = calendar.component(.minute, from: date)
-//        let day = calendar.component(.weekday, from: date)
-//
-//        var dateString = String(hour) + ":" + String(minute)
-//            dateString = dateString + " Day " + String(day)
         return dateString
     }
-        
-        
+    
+    
 }
 

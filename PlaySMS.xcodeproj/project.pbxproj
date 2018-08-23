@@ -23,6 +23,8 @@
 		B831B4EF1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B831B4EE1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg */; };
 		B831B4F11F5FACAB009FAB4D /* YellowBusKids.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B831B4F01F5FACAB009FAB4D /* YellowBusKids.jpeg */; };
 		B831B4F31F5FAE15009FAB4D /* YellowPlain.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B831B4F21F5FAE15009FAB4D /* YellowPlain.jpeg */; };
+		B844996D212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B844996C212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf */; };
+		B844996F212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B844996E212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf */; };
 		B84EA3541E19F44E00DDDAC5 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B84EA3531E19F44E00DDDAC5 /* Default.png */; };
 		B84EA3561E19F61300DDDAC5 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B84EA3551E19F61300DDDAC5 /* Default@2x.png */; };
 		B85925D61E2A98B100AC6B4B /* Settings_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */; };
@@ -87,6 +89,8 @@
 		B831B4EE1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YellowBusSmoke.jpeg; sourceTree = "<group>"; };
 		B831B4F01F5FACAB009FAB4D /* YellowBusKids.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YellowBusKids.jpeg; sourceTree = "<group>"; };
 		B831B4F21F5FAE15009FAB4D /* YellowPlain.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YellowPlain.jpeg; sourceTree = "<group>"; };
+		B844996C212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "LakesideCustomBusSchedules-2018-2019 Afternoon.pdf"; sourceTree = "<group>"; };
+		B844996E212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "LakesideCustomBusSchedules-2018-2019 Morning.pdf"; sourceTree = "<group>"; };
 		B84EA3531E19F44E00DDDAC5 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B84EA3551E19F61300DDDAC5 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings_950000_25.png; sourceTree = "<group>"; };
@@ -249,6 +253,8 @@
 		B8F2D52F1E21F15C00442E97 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
+				B844996C212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf */,
+				B844996E212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf */,
 				B831B4E81F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf */,
 				B831B4E61F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf */,
 				B8F2D5301E21F3A300442E97 /* 2016-17AMScheduleEffective9-12-16.pdf */,
@@ -351,6 +357,7 @@
 				B8103E151E1883F400B2AD1B /* 1483251869_button_play.png in Resources */,
 				B8103E181E1885E100B2AD1B /* LakesideLogo.png in Resources */,
 				B8F2D5391E22312700442E97 /* ComingSoon.jpg in Resources */,
+				B844996F212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf in Resources */,
 				B8F2D52E1E21EF9800442E97 /* Bus_950000_25.png in Resources */,
 				B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */,
 				B831B4E71F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf in Resources */,
@@ -367,6 +374,7 @@
 				B85925D61E2A98B100AC6B4B /* Settings_950000_25.png in Resources */,
 				B8103E081E18530300B2AD1B /* Main.storyboard in Resources */,
 				B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */,
+				B844996D212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf in Resources */,
 				B831B4E91F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,23 +389,33 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PlaySMS/Pods-PlaySMS-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/Cheers/Cheers.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cheers.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);

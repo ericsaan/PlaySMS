@@ -20,10 +20,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //TODO: Initialise and Configure your Firebase here:
+        //TODO: uncomment notfication section when ready to use again...ees
+        //MARK: Notifications
         FirebaseApp.configure()
-        
+
         Messaging.messaging().delegate = self as? MessagingDelegate
-        
+
         Messaging.messaging().shouldEstablishDirectChannel = true
         // [END set_messaging_delegate]
         // Register for remote notifications. This shows a permission dialog on first run, to
@@ -32,7 +34,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
             UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
-            
+
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
                 options: authOptions,
@@ -42,12 +44,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
             application.registerUserNotificationSettings(settings)
         }
-        
+
         application.registerForRemoteNotifications()
+         // [END register_for_notifications]
         
-        // [END register_for_notifications]
-        
-        
+        //MARK: Notifications END
         return true
     }
 
@@ -63,6 +64,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if let messageID = userInfo[gcmMessageIDKey] {
             
             print("Message ID: \(messageID)")
+            UIApplication.shared.applicationIconBadgeNumber = 0     //ees... Set Icon badge count to 0 when app loads
+            
         }
         
         // Print full message.
@@ -79,6 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Print message ID.
         if let messageID = userInfo[gcmMessageIDKey] {
             print("Message ID: \(messageID)")
+            UIApplication.shared.applicationIconBadgeNumber = 0     //ees... Set Icon badge count to 0 when app loads
+            
         }
         
         // Print full message.
@@ -126,6 +131,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        UIApplication.shared.applicationIconBadgeNumber = 0     //ees... Set Icon badge count to 0 when app loads
+        
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
