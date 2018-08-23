@@ -212,7 +212,6 @@
 			isa = PBXGroup;
 			children = (
 				B868D67921116B9C000F5272 /* Message.swift */,
-				B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */,
 				B8F2F93321147DA2003ABB1A /* Settings.swift */,
 			);
 			path = Model;
@@ -235,6 +234,7 @@
 				B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */,
 				B8103E041E18530300B2AD1B /* ViewController.swift */,
 				B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */,
+				B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */,
 				B8F2D5341E22033400442E97 /* ViewController_PDFViewController.swift */,
 				B868D677211165DF000F5272 /* ChatViewController.swift */,
 			);

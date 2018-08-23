@@ -117,8 +117,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         //first let's get the list of recipients
         recipientsList.removeAll()
         settingsData.refreshSettings()
-        parentOne = settingsData.contactOne
-        parentTwo = settingsData.contactTwo
+        parentOne = settingsData.contactOnePhoneNumber
+        parentTwo = settingsData.contactTwoPhoneNumber
         switchConfetti = settingsData.switchConfetti
         
         if  parentOne != nil

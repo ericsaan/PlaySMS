@@ -46,7 +46,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         txtContactOneName.text = settingsData.contactOne
         txtContactOnePhoneNumber.text = settingsData.contactOnePhoneNumber
         txtContactTwoName.text = settingsData.contactTwo
-        txtContactTwoPhoneNumber.text = settingsData.contactOnePhoneNumber
+        txtContactTwoPhoneNumber.text = settingsData.contactTwoPhoneNumber
         txtAppUserPhone.text = settingsData.appUserPhoneNumber
         
         txtAppUserName.text = settingsData.appUserName
