@@ -16,7 +16,16 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
 
     var settingsData: Settings = Settings()
     
+    @IBOutlet weak var lblSettings: UILabel!
     
+    @IBOutlet weak var butSave: UIButton!
+    
+    @IBOutlet weak var butTransportation: UIButton!
+    
+    @IBOutlet weak var lblAcks: UILabel!
+    
+    @IBOutlet weak var lblVersions: UILabel!
+    @IBOutlet weak var butIcons: UIButton!
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -59,6 +68,16 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         } else {
             switchConfetti.setOn(false, animated: true)
         }
+        //now to center all the buttons for whatever size screen we have
+        butSave.center.x = self.view.center.x
+        butTransportation.center.x = self.view.center.x
+        butIcons.center.x = self.view.center.x
+        lblSettings.center.x = self.view.center.x
+        lblAcks.center.x = self.view.center.x
+        
+        lblVersions.center.x = self.view.center.x
+        
+        
         
         
         

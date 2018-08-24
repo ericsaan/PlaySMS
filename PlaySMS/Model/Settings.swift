@@ -28,9 +28,9 @@ class Settings
         contactTwoPhoneNumber = UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?
         appUserName = UserDefaults.standard.value(forKey: "AppUserName") as! String?
         appUserPhoneNumber = UserDefaults.standard.value(forKey: "AppUserPhoneNumber") as! String? 
-        busRoute1 = UserDefaults.standard.value(forKey: "BusRoute1") as? String  ?? "000"
-        busRoute2 = UserDefaults.standard.value(forKey: "BusRoute2") as? String  ?? "000"
-        busRoute3 = UserDefaults.standard.value(forKey: "BusRoute3") as? String  ?? "000"
+        busRoute1 = UserDefaults.standard.value(forKey: "BusRoute1") as? String  ?? "986"
+        busRoute2 = UserDefaults.standard.value(forKey: "BusRoute2") as? String  ?? "989"
+        busRoute3 = UserDefaults.standard.value(forKey: "BusRoute3") as? String  ?? "981"
         switchConfetti = UserDefaults.standard.value(forKey: "SwitchConfetti") as? String ?? "1"
         
     }

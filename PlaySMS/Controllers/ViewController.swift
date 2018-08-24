@@ -35,7 +35,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     
     var settingsData: Settings = Settings()
     
+    @IBOutlet weak var imgLakeside: UIImageView!
     
+    @IBOutlet weak var lblOnTheBus: UILabel!
     
     
     
@@ -255,7 +257,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         butRoute1.setTitle(busRoute1, for: .normal)
         butRoute2.setTitle(busRoute2, for: .normal)
         butRoute3.setTitle(busRoute3, for: .normal)
+       imgLakeside.center.x = self.view.center.x
+        lblOnTheBus.center.x = self.view.center.x
         
+    
     }
     
     
