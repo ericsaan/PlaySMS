@@ -17,8 +17,6 @@
 		B8103E1A1E18877600B2AD1B /* LakesideLogo2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B8103E191E18877600B2AD1B /* LakesideLogo2.jpeg */; };
 		B8103E1C1E1888A500B2AD1B /* lakeside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8103E1B1E1888A500B2AD1B /* lakeside.jpg */; };
 		B82718EF211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist in Resources */ = {isa = PBXBuildFile; fileRef = B82718EE211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist */; };
-		B831B4E71F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B831B4E61F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf */; };
-		B831B4E91F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B831B4E81F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf */; };
 		B831B4ED1F5FAA19009FAB4D /* YellowBus.png in Resources */ = {isa = PBXBuildFile; fileRef = B831B4EC1F5FAA19009FAB4D /* YellowBus.png */; };
 		B831B4EF1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B831B4EE1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg */; };
 		B831B4F11F5FACAB009FAB4D /* YellowBusKids.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B831B4F01F5FACAB009FAB4D /* YellowBusKids.jpeg */; };
@@ -43,8 +41,6 @@
 		B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5291E21EDC000442E97 /* Spy Male_950000_25.png */; };
 		B8F2D52C1E21EF4800442E97 /* Queen UK_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D52B1E21EF4800442E97 /* Queen UK_950000_25.png */; };
 		B8F2D52E1E21EF9800442E97 /* Bus_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D52D1E21EF9800442E97 /* Bus_950000_25.png */; };
-		B8F2D5321E21F3A300442E97 /* 2016-17AMScheduleEffective9-12-16.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5301E21F3A300442E97 /* 2016-17AMScheduleEffective9-12-16.pdf */; };
-		B8F2D5331E21F3A300442E97 /* 2016-17PMScheduleEffective9-12-16.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5311E21F3A300442E97 /* 2016-17PMScheduleEffective9-12-16.pdf */; };
 		B8F2D5351E22033400442E97 /* ViewController_PDFViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D5341E22033400442E97 /* ViewController_PDFViewController.swift */; };
 		B8F2D5371E222C7B00442E97 /* PDFAfternoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */; };
 		B8F2D5391E22312700442E97 /* ComingSoon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5381E22312700442E97 /* ComingSoon.jpg */; };
@@ -84,8 +80,6 @@
 		B8103E191E18877600B2AD1B /* LakesideLogo2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LakesideLogo2.jpeg; sourceTree = "<group>"; };
 		B8103E1B1E1888A500B2AD1B /* lakeside.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lakeside.jpg; sourceTree = "<group>"; };
 		B82718EE211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_OldWorking.plist"; sourceTree = "<group>"; };
-		B831B4E61F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FinalLakesideCustomBus-PM_Schedule-2017-18.pdf"; sourceTree = "<group>"; };
-		B831B4E81F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "FinalLakesideCustomBus-AM_Schedule-2017-18.pdf"; sourceTree = "<group>"; };
 		B831B4EC1F5FAA19009FAB4D /* YellowBus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YellowBus.png; sourceTree = "<group>"; };
 		B831B4EE1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YellowBusSmoke.jpeg; sourceTree = "<group>"; };
 		B831B4F01F5FACAB009FAB4D /* YellowBusKids.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = YellowBusKids.jpeg; sourceTree = "<group>"; };
@@ -111,8 +105,6 @@
 		B8F2D5291E21EDC000442E97 /* Spy Male_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spy Male_950000_25.png"; sourceTree = "<group>"; };
 		B8F2D52B1E21EF4800442E97 /* Queen UK_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Queen UK_950000_25.png"; sourceTree = "<group>"; };
 		B8F2D52D1E21EF9800442E97 /* Bus_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Bus_950000_25.png; sourceTree = "<group>"; };
-		B8F2D5301E21F3A300442E97 /* 2016-17AMScheduleEffective9-12-16.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "2016-17AMScheduleEffective9-12-16.pdf"; sourceTree = "<group>"; };
-		B8F2D5311E21F3A300442E97 /* 2016-17PMScheduleEffective9-12-16.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "2016-17PMScheduleEffective9-12-16.pdf"; sourceTree = "<group>"; };
 		B8F2D5341E22033400442E97 /* ViewController_PDFViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_PDFViewController.swift; sourceTree = "<group>"; };
 		B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFAfternoon.swift; sourceTree = "<group>"; };
 		B8F2D5381E22312700442E97 /* ComingSoon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = ComingSoon.jpg; sourceTree = "<group>"; };
@@ -258,10 +250,6 @@
 			children = (
 				B844996C212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf */,
 				B844996E212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf */,
-				B831B4E81F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf */,
-				B831B4E61F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf */,
-				B8F2D5301E21F3A300442E97 /* 2016-17AMScheduleEffective9-12-16.pdf */,
-				B8F2D5311E21F3A300442E97 /* 2016-17PMScheduleEffective9-12-16.pdf */,
 			);
 			name = PDF;
 			path = ..;
@@ -346,11 +334,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8F2D5321E21F3A300442E97 /* 2016-17AMScheduleEffective9-12-16.pdf in Resources */,
 				B831B4F11F5FACAB009FAB4D /* YellowBusKids.jpeg in Resources */,
 				B8F2D5281E21EB8D00442E97 /* PDF 2_950000_25.png in Resources */,
 				B8103E1C1E1888A500B2AD1B /* lakeside.jpg in Resources */,
-				B8F2D5331E21F3A300442E97 /* 2016-17PMScheduleEffective9-12-16.pdf in Resources */,
 				B868D66D21101972000F5272 /* RedButtonGoldBorder.png in Resources */,
 				B831B4EF1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg in Resources */,
 				B8F2D53D1E22B18B00442E97 /* Eyes_Emoji.png in Resources */,
@@ -363,7 +349,6 @@
 				B844996F212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf in Resources */,
 				B8F2D52E1E21EF9800442E97 /* Bus_950000_25.png in Resources */,
 				B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */,
-				B831B4E71F5F7EDC009FAB4D /* FinalLakesideCustomBus-PM_Schedule-2017-18.pdf in Resources */,
 				B8103E0D1E18530300B2AD1B /* LaunchScreen.storyboard in Resources */,
 				B82718EF211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist in Resources */,
 				B831B4F31F5FAE15009FAB4D /* YellowPlain.jpeg in Resources */,
@@ -378,7 +363,6 @@
 				B8103E081E18530300B2AD1B /* Main.storyboard in Resources */,
 				B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */,
 				B844996D212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf in Resources */,
-				B831B4E91F5F7EED009FAB4D /* FinalLakesideCustomBus-AM_Schedule-2017-18.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

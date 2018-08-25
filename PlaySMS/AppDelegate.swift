@@ -66,6 +66,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Message ID: \(messageID)")
             UIApplication.shared.applicationIconBadgeNumber = 0     //ees... Set Icon badge count to 0 when app loads
             
+            
+//            let alert = UIAlertController(title: "Bus Ride Update...?", message: "Open Conversations Window?.", preferredStyle: .alert)
+//
+//            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+//            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+//
+//            p
+//            present(alert, animated: true)
         }
         
         // Print full message.
@@ -91,7 +99,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         completionHandler(UIBackgroundFetchResult.newData)
     }
+    
+//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        completionHandler([.alert, .badge, .sound])
+//    }
+//    
+//    
+    
+    
     // [END receive_message]
+    
+    
+    
+    
+    
+    
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Unable to register for remote notifications: \(error.localizedDescription)")
     }
@@ -177,7 +199,7 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         print(userInfo)
         
         // Change this to your preferred presentation option
-        completionHandler([])
+        completionHandler([.alert, .badge, .sound])
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,

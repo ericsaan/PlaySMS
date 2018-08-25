@@ -95,8 +95,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let blankString: String = "                                                                      "
         var messagePadding: String = ""
         
-        if messageArray[indexPath.row].messageBody.count < 62 {
-            messagePadding = String(blankString.suffix((62-messageArray[indexPath.row].messageBody.count)))
+        if messageArray[indexPath.row].messageBody.count < 52 {
+            messagePadding = String(blankString.suffix((52 - messageArray[indexPath.row].messageBody.count)))
             messageArray[indexPath.row].messageBody += messagePadding
             
         }
