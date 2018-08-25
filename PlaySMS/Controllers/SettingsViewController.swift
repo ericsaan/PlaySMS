@@ -10,11 +10,26 @@ import UIKit
 import MessageUI
 import Firebase
 
-
 class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate
 {
 
     var settingsData: Settings = Settings()
+    
+    @IBOutlet weak var txtContactOneNameSize: UITextField!
+    
+    @IBOutlet weak var c1PhoneNumber: UITextField!
+    
+    
+    @IBOutlet weak var c2Name: UITextField!
+    
+    @IBOutlet weak var c2PhoneNumber: UITextField!
+    @IBOutlet weak var studentName: UITextField!
+    @IBOutlet weak var studentPhoneNumber: UITextField!
+    @IBOutlet weak var bRoute1: UITextField!
+    @IBOutlet weak var bRoute2: UITextField!
+    @IBOutlet weak var bRoute3: UITextField!
+    
+    
     
     @IBOutlet weak var lblSettings: UILabel!
     
@@ -69,21 +84,43 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
             switchConfetti.setOn(false, animated: true)
         }
         //now to center all the buttons for whatever size screen we have
+        settingsLayout()
+    }
+   //************************************************
+    func settingsLayout() {
+        let screenWidth = Int(self.view.frame.width)
+        let iPhoneVer: IPhoneVersion = IPhoneVersion()
+        
         butSave.center.x = self.view.center.x
         butTransportation.center.x = self.view.center.x
         butIcons.center.x = self.view.center.x
         lblSettings.center.x = self.view.center.x
         lblAcks.center.x = self.view.center.x
-        
         lblVersions.center.x = self.view.center.x
         
+        switch screenWidth {
+        case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth:
+            
+            txtContactOneNameSize.frame.size.width = 225
+            c1PhoneNumber.frame.size.width = 225
+            c2Name.frame.size.width = 225
+            c2PhoneNumber.frame.size.width = 225
+            studentName.frame.size.width = 225
+            studentPhoneNumber.frame.size.width = 225
+            bRoute1.frame.size.width = 225
+            bRoute2.frame.size.width = 225
+            bRoute3.frame.size.width = 225
+            
+        default:
+            return
+            
+        }
         
-        
-        
-        
-        
-        
+        self.view.layoutIfNeeded()
     }
+    
+    
+    
     
     
  

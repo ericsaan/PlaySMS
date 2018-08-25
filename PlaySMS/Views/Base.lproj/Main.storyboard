@@ -77,7 +77,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fud-Sn-1HC">
-                                <rect key="frame" x="125" y="297" width="134" height="134"/>
+                                <rect key="frame" x="125" y="301" width="134" height="134"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="47"/>
                                 <state key="normal" title="981" backgroundImage="RedButtonGoldBorder.png">
@@ -334,7 +334,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Mom or Guardian" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="csh-ab-w81">
-                                <rect key="frame" x="178" y="86" width="184" height="30"/>
+                                <rect key="frame" x="178" y="87" width="184" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -494,7 +494,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sgw-VL-l3Y">
-                                <rect key="frame" x="179" y="366" width="49" height="31"/>
+                                <rect key="frame" x="179" y="367" width="49" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Confetti Pop" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljl-Te-czH">
@@ -563,19 +563,28 @@
                         <color key="badgeColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="bRoute1" destination="ReU-7k-323" id="va6-Ns-lwc"/>
+                        <outlet property="bRoute2" destination="teA-N0-qpG" id="Yxs-Ug-xNf"/>
+                        <outlet property="bRoute3" destination="LVj-je-KD2" id="0Lc-Xh-zvm"/>
                         <outlet property="butIcons" destination="70i-DZ-DRb" id="5D1-kp-nZx"/>
                         <outlet property="butSave" destination="5DG-iV-Dit" id="XBc-zb-8Qc"/>
                         <outlet property="butTransportation" destination="h2h-de-bKi" id="rU0-DF-OOq"/>
+                        <outlet property="c1PhoneNumber" destination="nN5-2D-30R" id="HiV-uJ-XDF"/>
+                        <outlet property="c2Name" destination="D4m-HP-lCU" id="Dcl-md-XT7"/>
+                        <outlet property="c2PhoneNumber" destination="vi2-DW-FRw" id="R6q-lE-vp1"/>
                         <outlet property="lblAcks" destination="ehb-4t-FiI" id="gJE-8W-h1q"/>
                         <outlet property="lblSettings" destination="rZ3-ua-T4c" id="QMO-35-lRu"/>
                         <outlet property="lblVersions" destination="nxW-nf-vEp" id="9CR-Rt-mt6"/>
+                        <outlet property="studentName" destination="SPk-23-9Gn" id="kCp-TY-DDg"/>
+                        <outlet property="studentPhoneNumber" destination="dxj-0q-Jll" id="neV-cp-bak"/>
                         <outlet property="switchConfetti" destination="Sgw-VL-l3Y" id="KdA-h8-h3c"/>
                         <outlet property="txtAppUserName" destination="SPk-23-9Gn" id="f79-D4-hmf"/>
                         <outlet property="txtAppUserPhone" destination="dxj-0q-Jll" id="B3U-pi-jge"/>
                         <outlet property="txtBusRoute1" destination="ReU-7k-323" id="hTn-PK-VJk"/>
                         <outlet property="txtBusRoute2" destination="teA-N0-qpG" id="UMU-jP-FaA"/>
                         <outlet property="txtBusRoute3" destination="LVj-je-KD2" id="dCC-d7-qGW"/>
-                        <outlet property="txtContactOneName" destination="csh-ab-w81" id="LkQ-hO-sKk"/>
+                        <outlet property="txtContactOneName" destination="csh-ab-w81" id="uLd-n2-I2A"/>
+                        <outlet property="txtContactOneNameSize" destination="csh-ab-w81" id="BUr-YU-Ufo"/>
                         <outlet property="txtContactOnePhoneNumber" destination="nN5-2D-30R" id="HBh-H2-jLw"/>
                         <outlet property="txtContactTwoName" destination="D4m-HP-lCU" id="HAo-pF-zuu"/>
                         <outlet property="txtContactTwoPhoneNumber" destination="vi2-DW-FRw" id="Jlm-O6-AcR"/>

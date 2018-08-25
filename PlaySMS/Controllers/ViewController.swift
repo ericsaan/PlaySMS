@@ -257,13 +257,50 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         butRoute1.setTitle(busRoute1, for: .normal)
         butRoute2.setTitle(busRoute2, for: .normal)
         butRoute3.setTitle(busRoute3, for: .normal)
-       imgLakeside.center.x = self.view.center.x
-        lblOnTheBus.center.x = self.view.center.x
-        
-    
+        mainSettingsLayout()
     }
     
-    
+    //*******************************************
+    func mainSettingsLayout() {
+        let screenWidth = Int(self.view.frame.width)
+        let iPhoneVer: IPhoneVersion = IPhoneVersion()
+        let r1BallX = self.view.center.x - 134
+        let r2BallX = self.view.center.x-1
+        let r3BallY = butRoute3.frame.origin.y 
+        let ballSize: CGFloat = 134
+        
+        
+        imgLakeside.center.x = self.view.center.x
+        lblOnTheBus.center.x = self.view.center.x
+        
+        switch screenWidth {
+        case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth:
+            
+            butRoute1.frame.size.width = ballSize
+            butRoute1.frame.size.height = ballSize
+            butRoute1.frame.origin.x = r1BallX
+            
+            butRoute2.frame.size.width = ballSize
+            butRoute2.frame.size.height = ballSize
+            butRoute2.frame.origin.x = r2BallX
+            
+            butRoute3.frame.size.width = ballSize
+            butRoute3.frame.size.height = ballSize
+            butRoute3.center.x = self.view.center.x
+            butRoute3.frame.origin.y = butRoute1.frame.origin.y + 112
+            
+            
+            
+            
+            
+        default:
+            return
+            
+        }
+        
+        self.view.layoutIfNeeded()
+        
+    }
     
     //******************************************
     func MorningOrAfternoon() -> String
