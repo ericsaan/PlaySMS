@@ -26,50 +26,7 @@ class ViewController_Conversations: UIViewController, MFMessageComposeViewContro
   
     
     
-    //*****************************************************
-    //btn action to open onebusaway or waze
-    //*****************************************************
     
-//    @IBAction func btnWhereIsBus(_ sender: UIButton)
-//    {
-//        //let findMyFriendsHooks = "onebusaway.co://"
-//        //let findMyFriendsHooks = "waze://?ll=47.6205,122.3493"
-//        //let findMyFriendsHooks = "waze://?ll=37.44469,-122.15971&z=10"
-//
-//        let findMyFriendsHooks = "onebusaway://"
-//
-//        let appUrl = URL(string: findMyFriendsHooks)
-//        if UIApplication.shared.canOpenURL(appUrl! as URL)
-//        {
-//            UIApplication.shared.open(appUrl!)
-//
-//        } else {
-//            //redirect to safari because the user doesn't have Instagram
-//            print("App not installed")
-//            UIApplication.shared.open(URL(string: "https://itunes.apple.com/us/app/onebusaway/id329380089?mt=8")!)
-//        //UIApplication.shared.open(URL(string: "http://itunes.apple.com/us/app/id323229106")!)
-//        }
-//
-//    }
-//
-//    @IBAction func btnWhereRU(_ sender: UIButton)
-//    {
-//
-//        let findMyFriendsHooks = "findmyfriends://"
-//
-//        let appUrl = URL(string: findMyFriendsHooks)
-//        if UIApplication.shared.canOpenURL(appUrl! as URL)
-//        {
-//            UIApplication.shared.open(appUrl!)
-//
-//        } else {
-//            //redirect to safari because the user doesn't have Instagram
-//            print("App not installed")
-//            //UIApplication.shared.open(URL(string: "https://itunes.apple.com/in/app/instagram/id389801252?m")!)
-//        }
-//    }
-//
-//
     
     //method that sends the SMS message
     func sendSMStatusUpdate (_recipient : String?, _message : String)

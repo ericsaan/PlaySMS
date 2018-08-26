@@ -99,7 +99,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xnx-7d-NyY">
-                                <rect key="frame" x="201" y="464" width="100" height="100"/>
+                                <rect key="frame" x="201" y="443" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
                                 <state key="normal" title="Picked Up!" backgroundImage="RedButtonGoldBorder.png">
@@ -110,7 +110,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SiO-4t-qcw">
-                                <rect key="frame" x="78" y="464" width="100" height="100"/>
+                                <rect key="frame" x="78" y="443" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="17"/>
                                 <state key="normal" title="I'm Here!" backgroundImage="RedButtonGoldBorder.png">
@@ -135,8 +135,20 @@
                                 <rect key="frame" x="70" y="48" width="243" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RRD-II-uD4" customClass="GIDSignInButton">
+                                <rect key="frame" x="144" y="586" width="87" height="32"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="97" id="p0S-yd-6CL"/>
+                                    <constraint firstAttribute="height" constant="32" id="xP5-x3-b7e"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="RRD-II-uD4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="C22-Fo-MBh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RRD-II-uD4" secondAttribute="bottom" id="zSW-aw-DGg"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Bus" image="Bus_950000_25.png" id="Dpf-0a-3p9">
                         <color key="badgeColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -147,6 +159,7 @@
                         <outlet property="butRoute3" destination="fud-Sn-1HC" id="4rj-8D-b7r"/>
                         <outlet property="imgLakeside" destination="dux-bE-IYV" id="Nxh-GX-YLH"/>
                         <outlet property="lblOnTheBus" destination="fjL-lv-LVo" id="RPZ-7b-wIv"/>
+                        <outlet property="signInButton" destination="RRD-II-uD4" id="1KC-ZY-JgJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -10,12 +10,13 @@ import UIKit
 import MessageUI
 import Cheers
 import Firebase
+import GoogleSignIn
 
 
 
 
 
-class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, GIDSignInUIDelegate
 {
     
     
@@ -35,6 +36,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
     
     var settingsData: Settings = Settings()
     
+    @IBOutlet weak var signInButton: GIDSignInButton!
     @IBOutlet weak var imgLakeside: UIImageView!
     
     @IBOutlet weak var lblOnTheBus: UILabel!
@@ -237,6 +239,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         cheerView.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
         view.addSubview(cheerView)
 
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
         
     }
 
@@ -258,6 +262,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         butRoute2.setTitle(busRoute2, for: .normal)
         butRoute3.setTitle(busRoute3, for: .normal)
         mainSettingsLayout()
+        
+        
+        
+        
+        
     }
     
     //*******************************************
@@ -272,6 +281,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         
         imgLakeside.center.x = self.view.center.x
         lblOnTheBus.center.x = self.view.center.x
+         signInButton.center.x = self.view.center.x
         
         switch screenWidth {
         case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth:
@@ -289,7 +299,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
             butRoute3.center.x = self.view.center.x
             butRoute3.frame.origin.y = butRoute1.frame.origin.y + 112
             
-            
+           
             
             
             
