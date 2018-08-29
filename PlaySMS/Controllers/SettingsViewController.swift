@@ -9,6 +9,9 @@
 import UIKit
 import MessageUI
 import Firebase
+import FirebaseAuth
+
+
 
 class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate
 {
@@ -256,18 +259,110 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
         UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
         
+          //  verifyPhoneNumber
+          
+    
+    var verificationCode = ""
+       
+            
+    PhoneAuthProvider.provider().verifyPhoneNumber("+14252411879", uiDelegate: nil) { (verificationID, error) in
+    if let error = error {
+    print(error.localizedDescription)
+    return
+    }
+    // Sign in using the verificationID and the code sent to the user
+    // ...
+//        //1. Create the alert controller.
+//        let alert = UIAlertController(title: "Bus Ride", message: "Enter Your Phone Number", preferredStyle: .alert)
+//
+//        //2. Add the text field. You can configure it however you need.
+//        alert.addTextField { (textField) in
+//            textField.text = ""
+//        }
+//
+//        // 3. Grab the value from the text field, and print it when the user clicks OK.
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+//            let textField = alert?.textFields![0] // Force unwrapping because we know it exists.
+//            print("Text field: \(String(describing: textField?.text))")
+//            verificationCode = (textField?.text)!
+//
+//        }))
+//
+//
+//        // 4. Present the alert.
+//        self.present(alert, animated: true, completion: nil)
+//
+        
+        self.showInputDialog(title: "Verify SMS Code",
+                        subtitle: "Please enter the verification code below.",
+                        actionTitle: "Verify",
+                        cancelTitle: "Cancel",
+                        inputPlaceholder: "",
+                        inputKeyboardType: .numberPad)
+        { (input:String?) in
+            print("The verification code is \(input ?? "")")
+            verificationCode = input!  //set outside of closure for showinput dialog so can use to create credential
+            self.saveUserVerifiedPhoneNumber(verificationID: verificationID!, verificationCode: verificationCode)
+        }
         
         
         
-        
+            
         
     }
     
     
+    }
+    
+    func saveUserVerifiedPhoneNumber (verificationID: String, verificationCode: String) {
+        
+
+    let credential = PhoneAuthProvider.provider().credential(
+        withVerificationID: verificationID,
+        verificationCode: verificationCode)
     
     
     
     
     
+    Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+    if let error = error {
+    // ...
+    print (error.localizedDescription)
+    }
+    // User is signed in
+    // ...
+    
+    }
+    }  //endsaveverifieduserphonenumber
     
 }
+
+extension UIViewController {
+    func showInputDialog(title:String? = nil,
+                         subtitle:String? = nil,
+                         actionTitle:String? = "Verify",
+                         cancelTitle:String? = "Cancel",
+                         inputPlaceholder:String? = nil,
+                         inputKeyboardType:UIKeyboardType = UIKeyboardType.default,
+                         cancelHandler: ((UIAlertAction) -> Swift.Void)? = nil,
+                         actionHandler: ((_ text: String?) -> Void)? = nil) {
+        
+        let alert = UIAlertController(title: title, message: subtitle, preferredStyle: .alert)
+        alert.addTextField { (textField:UITextField) in
+            textField.placeholder = inputPlaceholder
+            textField.keyboardType = inputKeyboardType
+        }
+        alert.addAction(UIAlertAction(title: actionTitle, style: .destructive, handler: { (action:UIAlertAction) in
+            guard let textField =  alert.textFields?.first else {
+                actionHandler?(nil)
+                return
+            }
+            actionHandler?(textField.text)
+        }))
+        alert.addAction(UIAlertAction(title: cancelTitle, style: .cancel, handler: cancelHandler))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+}
+
