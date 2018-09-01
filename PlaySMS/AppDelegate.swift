@@ -16,14 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
 
     var window: UIWindow?
     let gcmMessageIDKey = "gcm.message_id"
-
+    
+ 
+    struct GlobalVariable {
+        static var deviceTokenGlobal: String = ""
+        
+    }
+    var deviceToken: String = ""
+    
+    
+    //hooking to cLoudstore
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         //TODO: Initialise and Configure your Firebase here:
         //TODO: uncomment notfication section when ready to use again...ees
         //MARK: Notifications
+      
         FirebaseApp.configure()
+       
+
+        
         
         //enabling Google Auth
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
@@ -115,7 +129,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
     // [END receive_message]
     
     
-    //enabling google signin...ees
+    //**********************************************
+    //MARK: Enabling google sign in...ees
+    //**********************************************
     @available(iOS 9.0, *)
     func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
         -> Bool {
@@ -124,11 +140,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
                                                      annotation: [:])
     }
     
+//    func sign(_ signin: GIDSignIn!, didSignOutFor user: GIDGoogleUser!, withError error: Error?) {
+//        
+//    }
+//    
+    
     //google signin for "didsignin"...ees
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         // ...
         if let error = error {
             // ...
+            print(error.localizedDescription)
             return
         }
         
@@ -136,24 +158,123 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
         
+        
         Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
             if let error = error {
                 // ...
+                
+                print(error.localizedDescription)
                 return
             }
             // User is signed in
+            //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
+            let currentUser = Auth.auth().currentUser!.email
+            
+            let userDB = Firestore.firestore()
+            let settings = userDB.settings
+            settings.areTimestampsInSnapshotsEnabled = true
+            userDB.settings = settings
+            
+            //let deviceTokenIn = AppDelegate.GlobalVariable.deviceTokenGlobal
+            
+            userDB.collection("userFcmtokens")
+                
+                .whereField("email", isEqualTo: currentUser!)
+                //.whereField("fcmToken", isEqualTo: "asdfg")   //TODO: need to get the current fcmtoken for querying
+                
+                .whereField("fcmToken", isEqualTo: self.deviceToken)   //TODO: need to get the current fcmtoken for querying
+                
+                .getDocuments() { (querySnapshot, err) in
+                    
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        
+                        if querySnapshot?.count == 0 {
+                            //fcmtoken is not present SO INSERT IT
+                            
+                            var ref: DocumentReference? = nil
+                            ref = userDB.collection("userFcmtokens").addDocument(data: [
+                                "email": currentUser!,
+                                "fcmToken": self.deviceToken
+                                
+                            ]) { err in
+                                if let err = err {
+                                    print("Error adding document: \(err)")
+                                } else {
+                                    print("Document added with ID: \(ref!.documentID)")
+                                }
+                            }
+
+                            
+                            
+                        }  //end query snapshot == nil
+                        
+                        //now we have a match and just to make sure we will delete each one that matches
+                        for document in querySnapshot!.documents {
+                            print("\(document.documentID) => \(document.data())")
+                            
+                        }
+                    }
+                } //endgetdocuments
+            
+            
+            
+            
+            
+            
+            
+            
+            
             // ...
+            //var userInfo = Auth.auth()
+//            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+//            changeRequest?.setValue("4252411879", forKey: "phoneNumber")
+//            changeRequest?.commitChanges { (error) in
+//                // ...
+//
+//            }
+//            let currentUser = Auth.auth().currentUser
+//            currentUser?.updatePhoneNumber(<#T##phoneNumberCredential: PhoneAuthCredential##PhoneAuthCredential#>, completion: <#T##UserProfileChangeCallback?##UserProfileChangeCallback?##(Error?) -> Void#>)
+//            Auth.auth().updateCurrentUser(currentUser!, completion: { (
+//                ) in
+//                <#code#>
+//            })
+//
+            //let credential: PhoneAuthCredential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "authVID")!,
+                                                                                          
+            
+            
+//            let userInfo = Auth.auth().currentUser?.providerData
+//            let phoneNumber = Auth.auth().currentUser?.phoneNumber
+//            if phoneNumber != nil {
+//                print(phoneNumber!)
+//            } else {
+//
+//            }
+//               // print(userInfo.phoneNumber!)
+          
+            
         }
         // ...
     }
     
+    
+    
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
         // ...
+        
+        
+        
+        
+       
+        
     }
     
-    
-    //registration for notifications
+    //**********************************************
+    //MARK: Enabling Registration for notifications
+    //**********************************************
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
         print("Unable to register for remote notifications: \(error.localizedDescription)")
     }
@@ -263,6 +384,9 @@ extension AppDelegate : MessagingDelegate {
     // [START refresh_token]
     func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
         print("Firebase registration token: \(fcmToken)")
+        //set global deviceToken for use with userdb
+        self.deviceToken = fcmToken
+        GlobalVariable.deviceTokenGlobal = fcmToken
 
         let dataDict:[String: String] = ["token": fcmToken]
         NotificationCenter.default.post(name: Notification.Name("FCMToken"), object: nil, userInfo: dataDict)

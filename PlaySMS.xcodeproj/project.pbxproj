@@ -35,6 +35,7 @@
 		B868D678211165E0000F5272 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D677211165DF000F5272 /* ChatViewController.swift */; };
 		B868D67A21116B9C000F5272 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D67921116B9C000F5272 /* Message.swift */; };
 		B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B8718E2D1E19AA5800515C7E /* SilverButton.png */; };
+		B877E02C213A4BE600C7ADFF /* Client Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877E02B213A4BE600C7ADFF /* Client Key.swift */; };
 		B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */; };
 		B8B0D8002130E08C00E6E8CD /* IphoneVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */; };
 		B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */; };
@@ -99,6 +100,7 @@
 		B868D677211165DF000F5272 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B868D67921116B9C000F5272 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B8718E2D1E19AA5800515C7E /* SilverButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverButton.png; sourceTree = "<group>"; };
+		B877E02B213A4BE600C7ADFF /* Client Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client Key.swift"; sourceTree = "<group>"; };
 		B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WheresTheBusViewController.swift; sourceTree = "<group>"; };
 		B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneVersion.swift; sourceTree = "<group>"; };
 		B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		B8103DF61E18530300B2AD1B = {
 			isa = PBXGroup;
 			children = (
+				B877E02B213A4BE600C7ADFF /* Client Key.swift */,
 				B8103E011E18530300B2AD1B /* PlaySMS */,
 				B8103E001E18530300B2AD1B /* Products */,
 				B169249300CB921E2097C7F1 /* Pods */,
@@ -470,6 +473,7 @@
 				B8F2F93421147DA2003ABB1A /* Settings.swift in Sources */,
 				B8B0D8002130E08C00E6E8CD /* IphoneVersion.swift in Sources */,
 				B868D67A21116B9C000F5272 /* Message.swift in Sources */,
+				B877E02C213A4BE600C7ADFF /* Client Key.swift in Sources */,
 				B8F2D5371E222C7B00442E97 /* PDFAfternoon.swift in Sources */,
 				B85925D81E2AAD1D00AC6B4B /* SettingsViewController.swift in Sources */,
 				B868D678211165E0000F5272 /* ChatViewController.swift in Sources */,

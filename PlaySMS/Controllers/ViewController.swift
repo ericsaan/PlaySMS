@@ -224,6 +224,79 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     
+    @IBAction func btnSignOut(_ sender: UIButton) {
+    
+    do {
+           let currentUser = Auth.auth().currentUser?.email
+        
+            try Auth.auth().signOut()
+            self.dismiss(animated: true, completion: nil)
+            print ("Sign out successful")
+            let olduser = Auth.auth().currentUser?.email
+            print ("olduser: \(olduser)")
+        
+            //now to signout of google itself.
+            GIDSignIn.sharedInstance().signOut()
+            //now delete record/document from userDB
+        
+        
+        //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
+        let userDB = Firestore.firestore()
+        let settings = userDB.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        userDB.settings = settings
+        
+        let deviceTokenIn = AppDelegate.GlobalVariable.deviceTokenGlobal
+        
+        userDB.collection("userFcmtokens")
+            
+            .whereField("email", isEqualTo: currentUser!)
+            //.whereField("fcmToken", isEqualTo: "asdfg")   //TODO: need to get the current fcmtoken for querying
+            
+            .whereField("fcmToken", isEqualTo: deviceTokenIn)   //TODO: need to get the current fcmtoken for querying
+            
+            .getDocuments() { (querySnapshot, err) in
+                
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    
+                    if querySnapshot?.count == 0 {
+                        //fcmtoken is not present for this user so nothing to delete
+                        return
+                    }  //end query snapshot == nil
+                    
+                    //now we have a match and just to make sure we will delete each one that matches
+                    for document in querySnapshot!.documents {
+                        print("Deleting: \(document.documentID) => \(document.data())")
+                        userDB.collection("userFcmtokens").document(document.documentID).delete() { err in
+                            if let err = err {
+                                print("Error removing document: \(err)")
+                            } else {
+                                print("Document successfully removed!")
+                            }
+                        }
+                    }
+                }
+        }
+        
+        
+        
+        
+        
+        
+        } catch let err {
+            print(err)
+        }
+    
+    }
+    
+    
+    
+    
+    
+    
+    
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
     {
         //... handle sms screen actions
@@ -239,7 +312,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         cheerView.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
         view.addSubview(cheerView)
 
+        //call login for google
         GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/user.phonenumbers.read")
         GIDSignIn.sharedInstance().signIn()
         
     }
