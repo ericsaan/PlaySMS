@@ -266,7 +266,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate
         let iPhoneVer: IPhoneVersion = IPhoneVersion()
         let r1BallX = self.view.center.x - 134
         let r2BallX = self.view.center.x-1
-        let r3BallY = butRoute3.frame.origin.y 
+        //let r3BallY = butRoute3.frame.origin.y 
         let ballSize: CGFloat = 134
         
         

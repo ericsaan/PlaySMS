@@ -60,7 +60,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     }
 
     //Calls this function when the tap is recognized.
-    func dismissKeyboard() {
+    @objc func dismissKeyboard() {
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
         view.endEditing(true)
     }
@@ -203,8 +203,9 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBAction func txtContactTwoName(_ sender: UITextField)
     {
         
-        var inSender = sender.text!
-        if inSender.characters.count > 12
+        let inSender = sender.text!
+        //if inSender.characters.count > 12   //for swift 4
+            if inSender.count > 12
         {
             let index = inSender.index(inSender.startIndex, offsetBy: 12)
             txtContactTwoName.text = inSender.substring(to: index)  // Hello
@@ -218,8 +219,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBAction func txtContactOneName(_ sender: UITextField)
     {
-        var inSender = sender.text!
-        if inSender.characters.count > 12
+        
+        let inSender = sender.text!
+        //if inSender.characters.count > 12  //ees.... for swift4
+            if inSender.count > 12
         {
             let index = inSender.index(inSender.startIndex, offsetBy: 12)
             txtContactOneName.text = inSender.substring(to: index)
