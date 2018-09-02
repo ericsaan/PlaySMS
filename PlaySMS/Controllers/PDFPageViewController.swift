@@ -11,7 +11,7 @@ import UIKit
 class PDFPageViewController: UIPageViewController, UIPageViewControllerDataSource {
 
     //variable that can store result of functions
-    private (set) lazy var myViewControllers : [UIViewController] =
+    @objc private (set) lazy var myViewControllers : [UIViewController] =
         {
             return            [
                 self.myViewConrollersFunc("ViewController_PDFViewController"),

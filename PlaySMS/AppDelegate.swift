@@ -15,14 +15,14 @@ import GoogleSignIn
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
 
     var window: UIWindow?
-    let gcmMessageIDKey = "gcm.message_id"
+    @objc let gcmMessageIDKey = "gcm.message_id"
     
  
     struct GlobalVariable {
         static var deviceTokenGlobal: String = ""
         
     }
-    var deviceToken: String = ""
+    @objc var deviceToken: String = ""
     
     
     //hooking to cLoudstore

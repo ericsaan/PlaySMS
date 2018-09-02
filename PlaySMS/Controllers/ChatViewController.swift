@@ -16,9 +16,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Declare instance variables here
     var messageArray : [Message] = [Message]()
-    var studentName: String?
-    var dateString: String?
-    var appUserName: String?
+    @objc var studentName: String?
+    @objc var dateString: String?
+    @objc var appUserName: String?
     
     var settingsData: Settings = Settings()
     
@@ -143,7 +143,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     //TODO: Declare configureTableView here:
-    func configureTableView()
+    @objc func configureTableView()
     {
         messageTableView.rowHeight = UITableViewAutomaticDimension
         messageTableView.estimatedRowHeight = 120.0
@@ -230,7 +230,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //TODO: Create the retrieveMessages method here:
     
-     func retrieveMessages()
+     @objc func retrieveMessages()
      {
         let messageDB = Database.database().reference().child("Messages")
         
@@ -294,14 +294,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    func scrollTobottom() {
+    @objc func scrollTobottom() {
         let scrollPoint = CGPoint(x: 0, y: self.messageTableView.contentSize.height - self.messageTableView.frame.size.height)
         self.messageTableView.setContentOffset(scrollPoint, animated: true)
         
     }
     
     
-    func getDateString() -> String {
+    @objc func getDateString() -> String {
         
         
         let date = Date()

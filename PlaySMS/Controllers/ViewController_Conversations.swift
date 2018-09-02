@@ -13,12 +13,12 @@ class ViewController_Conversations: UIViewController, MFMessageComposeViewContro
 {
 
     
-    var recipientsList = [String]()
+    @objc var recipientsList = [String]()
     
    
-    var statusMessageToSend = ""
+    @objc var statusMessageToSend = ""
     
-    var studentPhoneNumber  = ""
+    @objc var studentPhoneNumber  = ""
     
     //now all the button action methods
     
@@ -29,7 +29,7 @@ class ViewController_Conversations: UIViewController, MFMessageComposeViewContro
     
     
     //method that sends the SMS message
-    func sendSMStatusUpdate (_recipient : String?, _message : String)
+    @objc func sendSMStatusUpdate (_recipient : String?, _message : String)
     {
         
         //first let's get the list of recipients

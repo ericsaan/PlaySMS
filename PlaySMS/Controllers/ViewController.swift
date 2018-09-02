@@ -20,19 +20,19 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
 {
     
     
-    let cheerView = CheerView()
-    var recipientsList = [String]()
+    @objc let cheerView = CheerView()
+    @objc var recipientsList = [String]()
     
-    var statusMessageToSend = ""
+    @objc var statusMessageToSend = ""
     
    
-    var parentOne: String? = ""
-    var parentTwo: String? = ""
-    var appUserName: String? = ""
-    var busRoute1: String? = ""
-    var busRoute2: String? = ""
-    var busRoute3: String? = ""
-    var switchConfetti: String? = "1"
+    @objc var parentOne: String? = ""
+    @objc var parentTwo: String? = ""
+    @objc var appUserName: String? = ""
+    @objc var busRoute1: String? = ""
+    @objc var busRoute2: String? = ""
+    @objc var busRoute3: String? = ""
+    @objc var switchConfetti: String? = "1"
     
     var settingsData: Settings = Settings()
       @IBOutlet weak var imgLakeside: UIImageView!
@@ -112,7 +112,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     //****************************************************
     //need to refactor to get better encapsulation...ees
     //****************************************************
-    func sendMessageToDatabase(messageToSend : String)
+    @objc func sendMessageToDatabase(messageToSend : String)
     {
         let messagesDB = Database.database().reference().child("Messages")
         
@@ -176,7 +176,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
 //        dbRef.child("fcmToken").child(Messaging.messaging().fcmToken!).setValue(Token)
 //    }
 //    
-    func sendSMStatusUpdate (messageToSend : String)
+    @objc func sendSMStatusUpdate (messageToSend : String)
     {
 
         //first let's get the list of recipients
@@ -270,7 +270,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     //*******************************************
-    func mainSettingsLayout() {
+    @objc func mainSettingsLayout() {
         let screenWidth = Int(self.view.frame.width)
         let iPhoneVer: IPhoneVersion = IPhoneVersion()
         let r1BallX = self.view.center.x - 134
@@ -312,7 +312,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     //******************************************
-    func MorningOrAfternoon() -> String
+    @objc func MorningOrAfternoon() -> String
     {
         var timeOfDay = ""
         let date = Date()
@@ -335,7 +335,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     //******************************************
-    func popConfetti() {
+    @objc func popConfetti() {
      
         cheerView.start()
         DispatchQueue.main.asyncAfter(deadline: .now() + 1 ) {
@@ -344,7 +344,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
      } //  endpopconfetti
     //******************************************
         
-    func getDateString() -> String {
+    @objc func getDateString() -> String {
        
         let date = Date()
         let formatter = DateFormatter()
