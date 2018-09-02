@@ -147,6 +147,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
                 //now to signout of google itself.
                 GIDSignIn.sharedInstance().signOut()
                 //now delete record/document from userDB
+                //firest we reset the student user email and update the text field
+                UserDefaults.standard.set("", forKey: "AppUserName")
+                settingsData.refreshSettings()
+                txtAppUserName.text = settingsData.appUserName
                 
                 
                 //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
@@ -196,6 +200,11 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         } else{
              btnGoogleSignInOut.setTitle("Sign Out", for: .normal)
             GIDSignIn.sharedInstance().signIn()
+             settingsData.refreshSettings()
+            txtAppUserName.text = settingsData.appUserName
+              self.view.layoutIfNeeded()
+            
+            
         }
        }  //endbuttongsigninoutfunction
     
@@ -277,7 +286,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBAction func txtContactTwoName(_ sender: UITextField)
     {
         
-        var inSender = sender.text!
+      //  var inSender = sender.text!
 //        if inSender.characters.count > 12
 //        {
 //            let index = inSender.index(inSender.startIndex, offsetBy: 12)
@@ -292,7 +301,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBAction func txtContactOneName(_ sender: UITextField)
     {
-        var inSender = sender.text!
+       // var inSender = sender.text!
 //        if inSender.characters.count > 12
 //        {
 //            let index = inSender.index(inSender.startIndex, offsetBy: 12)
@@ -307,7 +316,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         let savedContactOnePhoneNumber = txtContactOnePhoneNumber.text!
         let savedContactTwoName = txtContactTwoName.text!
         let savedContactTwoPhoneNumber = txtContactTwoPhoneNumber.text!
-        let savedAppUserName = txtAppUserName.text!
+        //let savedAppUserName = txtAppUserName.text!
         let savedAppUserPhoneNumber = txtAppUserPhone.text!
         let savedBusRoute1 = txtBusRoute1.text!
         let savedBusRoute2 = txtBusRoute2.text!
@@ -326,7 +335,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         UserDefaults.standard.set(savedContactOnePhoneNumber, forKey: "ContactOnePhoneNumber")
         UserDefaults.standard.set(savedContactTwoName, forKey: "ContactTwoName")
         UserDefaults.standard.set(savedContactTwoPhoneNumber, forKey: "ContactTwoPhoneNumber")
-        UserDefaults.standard.set(savedAppUserName, forKey: "AppUserName")
+        //UserDefaults.standard.set(savedAppUserName, forKey: "AppUserName")
         UserDefaults.standard.set(savedAppUserPhoneNumber, forKey: "AppUserPhoneNumber")
         UserDefaults.standard.set(savedBusRoute1, forKey: "BusRoute1")
         UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")

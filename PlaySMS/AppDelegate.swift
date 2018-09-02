@@ -169,7 +169,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
             // User is signed in
             //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
             let currentUser = Auth.auth().currentUser!.email
-            
+            UserDefaults.standard.set(currentUser, forKey: "AppUserName")
+           
+           
             let userDB = Firestore.firestore()
             let settings = userDB.settings
             settings.areTimestampsInSnapshotsEnabled = true
