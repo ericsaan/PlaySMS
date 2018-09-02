@@ -5,9 +5,6 @@ PODS:
   - BoringSSL/Implementation (10.0.6):
     - BoringSSL/Interface (= 10.0.6)
   - BoringSSL/Interface (10.0.6)
-  - ChameleonFramework (2.1.0):
-    - ChameleonFramework/Default (= 2.1.0)
-  - ChameleonFramework/Default (2.1.0)
   - Cheers (2.1.0)
   - Firebase (5.4.0):
     - Firebase/Core (= 5.4.0)
@@ -116,7 +113,6 @@ PODS:
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
-  - ChameleonFramework
   - Cheers
   - Firebase
   - Firebase/Auth
@@ -130,7 +126,6 @@ DEPENDENCIES:
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - BoringSSL
-    - ChameleonFramework
     - Cheers
     - Firebase
     - FirebaseAnalytics
@@ -155,7 +150,6 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Cheers: 02d6335ac9ceb1ebf678df78d378bc71242a015e
   Firebase: d66f4f29c23f22d96808d9abc174d81d8eee968f
   FirebaseAnalytics: b3628aea54c50464c32c393fb2ea032566e7ecc2
@@ -178,6 +172,6 @@ SPEC CHECKSUMS:
   Protobuf: 1eb9700044745f00181c136ef21b8ff3ad5a0fd5
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 0098555942a185a56828d0e103e0058b123d6ca5
+PODFILE CHECKSUM: 03d8ea8a7cefa9f287da936de121f42acf85e00d
 
 COCOAPODS: 1.5.3

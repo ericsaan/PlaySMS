@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9BE1C9AE66FDEC89AC3C5E53B0ADD78A"
+               BlueprintIdentifier = "989C118144DFBE33DA64B50F6CF890BD"
                BuildableName = "Pods_PlaySMS.framework"
                BlueprintName = "Pods-PlaySMS"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "9BE1C9AE66FDEC89AC3C5E53B0ADD78A"
+            BlueprintIdentifier = "989C118144DFBE33DA64B50F6CF890BD"
             BuildableName = "Pods_PlaySMS.framework"
             BlueprintName = "Pods-PlaySMS"
             ReferencedContainer = "container:Pods.xcodeproj">

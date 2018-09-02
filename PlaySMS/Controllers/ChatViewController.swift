@@ -8,7 +8,7 @@
 
 import UIKit
 import Firebase
-import ChameleonFramework
+//import ChameleonFramework
 
 
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate
@@ -108,14 +108,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         if messageArray[indexPath.row].sender == appUserName
             // Auth.auth().currentUser?.email as String?
         {
-            cell.messageBackground.backgroundColor = UIColor.flatBlue()
+            cell.messageBackground.backgroundColor = UIColor.gray   // flatBlue()
             cell.senderUsername.textColor = UIColor.white
-            cell.messageBody.backgroundColor = UIColor.flatBlue()
+            cell.messageBody.backgroundColor = UIColor.gray
             cell.messageBody.textColor = UIColor.white
         }
         else{
-            cell.messageBackground.backgroundColor = UIColor.flatWhite()
-            cell.messageBody.backgroundColor = UIColor.flatWhite()
+            cell.messageBackground.backgroundColor = UIColor.white   //.flatWhite()
+            cell.messageBody.backgroundColor = UIColor.white
             cell.messageBody.textColor = UIColor.black
             cell.senderUsername.textColor = UIColor.black
         }

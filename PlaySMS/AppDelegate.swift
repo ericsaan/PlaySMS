@@ -43,16 +43,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
 
-        Messaging.messaging().delegate = self as? MessagingDelegate
+        Messaging.messaging().delegate = self as MessagingDelegate
 
         Messaging.messaging().shouldEstablishDirectChannel = true
         // [END set_messaging_delegate]
-        // Register for remote notifications. This shows a permission dialog on first run, to
+        // Register for remote notifications. This shows a permission dialog on first run, tob
         // show the dialog at a more appropriate time move this registration accordingly.
         // [START register_for_notifications]
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self as? UNUserNotificationCenterDelegate
+            UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
 
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
