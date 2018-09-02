@@ -9,12 +9,17 @@
 import UIKit
 import MessageUI
 import Firebase
+import GoogleSignIn
 
-class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate
+class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate, GIDSignInUIDelegate
 {
 
+   
     var settingsData: Settings = Settings()
     
+    @IBOutlet weak var btnGoogleSignInOut: UIButton!
+    
+    @IBOutlet weak var imageGoogle: UIImageView!
     @IBOutlet weak var txtContactOneNameSize: UITextField!
     
     @IBOutlet weak var c1PhoneNumber: UITextField!
@@ -52,8 +57,11 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
-    
-    
+        settingsLayout()
+        
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().signIn()
+
     }
 
     //Calls this function when the tap is recognized.
@@ -97,6 +105,9 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         lblSettings.center.x = self.view.center.x
         lblAcks.center.x = self.view.center.x
         lblVersions.center.x = self.view.center.x
+        //btnGoogleSignInOut.center.x = self.view.center.x
+       
+        
         
         switch screenWidth {
         case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth:
@@ -121,7 +132,72 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     }
     
     
-    
+    @IBAction func buttonSignInOut(_ sender: Any) {
+       
+        if Auth.auth().currentUser != nil
+        {
+            btnGoogleSignInOut.setTitle("Sign In", for: .normal)
+            do {
+                let currentUser = Auth.auth().currentUser?.email
+                
+                try Auth.auth().signOut()
+                self.dismiss(animated: true, completion: nil)
+                print ("Sign out successful")
+                
+                //now to signout of google itself.
+                GIDSignIn.sharedInstance().signOut()
+                //now delete record/document from userDB
+                
+                
+                //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
+                let userDB = Firestore.firestore()
+                let settings = userDB.settings
+                settings.areTimestampsInSnapshotsEnabled = true
+                userDB.settings = settings
+                
+                let deviceTokenIn = AppDelegate.GlobalVariable.deviceTokenGlobal
+                
+                userDB.collection("userFcmtokens")
+                    
+                    .whereField("email", isEqualTo: currentUser!)
+                    //.whereField("fcmToken", isEqualTo: "asdfg")   //TODO: need to get the current fcmtoken for querying
+                    
+                    .whereField("fcmToken", isEqualTo: deviceTokenIn)   //TODO: need to get the current fcmtoken for querying
+                    
+                    .getDocuments() { (querySnapshot, err) in
+                        
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            
+                            if querySnapshot?.count == 0 {
+                                //fcmtoken is not present for this user so nothing to delete
+                                return
+                            }  //end query snapshot == nil
+                            
+                            //now we have a match and just to make sure we will delete each one that matches
+                            for document in querySnapshot!.documents {
+                                print("Deleting: \(document.documentID) => \(document.data())")
+                                userDB.collection("userFcmtokens").document(document.documentID).delete() { err in
+                                    if let err = err {
+                                        print("Error removing document: \(err)")
+                                    } else {
+                                        print("Document successfully removed!")
+                                    }
+                                }
+                            }
+                        }
+                        
+                }
+                
+            } catch let err {
+                print(err)
+            }
+        } else{
+             btnGoogleSignInOut.setTitle("Sign Out", for: .normal)
+            GIDSignIn.sharedInstance().signIn()
+        }
+       }  //endbuttongsigninoutfunction
     
     
  
@@ -202,11 +278,11 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     {
         
         var inSender = sender.text!
-        if inSender.characters.count > 12
-        {
-            let index = inSender.index(inSender.startIndex, offsetBy: 12)
-            txtContactTwoName.text = inSender.substring(to: index)  // Hello
-        }
+//        if inSender.characters.count > 12
+//        {
+//            let index = inSender.index(inSender.startIndex, offsetBy: 12)
+//            txtContactTwoName.text = inSender.substring(to: index)  // Hello
+//        }
     }
         
     
@@ -217,11 +293,11 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBAction func txtContactOneName(_ sender: UITextField)
     {
         var inSender = sender.text!
-        if inSender.characters.count > 12
-        {
-            let index = inSender.index(inSender.startIndex, offsetBy: 12)
-            txtContactOneName.text = inSender.substring(to: index)
-        }
+//        if inSender.characters.count > 12
+//        {
+//            let index = inSender.index(inSender.startIndex, offsetBy: 12)
+//            txtContactOneName.text = inSender.substring(to: index)
+//        }
     }
     
     

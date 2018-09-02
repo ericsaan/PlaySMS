@@ -35,9 +35,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     var switchConfetti: String? = "1"
     
     var settingsData: Settings = Settings()
-    
-    @IBOutlet weak var signInButton: GIDSignInButton!
-    @IBOutlet weak var imgLakeside: UIImageView!
+      @IBOutlet weak var imgLakeside: UIImageView!
     
     @IBOutlet weak var lblOnTheBus: UILabel!
     
@@ -121,8 +119,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //first let's get the list of recipients
         recipientsList.removeAll()
         settingsData.refreshSettings()
-        parentOne = settingsData.contactOnePhoneNumber
-        parentTwo = settingsData.contactTwoPhoneNumber
+        parentOne = settingsData.contactOne
+        parentTwo = settingsData.contactTwo
         switchConfetti = settingsData.switchConfetti
         
         if  parentOne != nil
@@ -154,7 +152,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             {
                 let dateString = getDateString()
                 let messageDictionary = ["Receiver": recipientsList[i], //Auth.auth().currentUser?.email,
-                    "MessageBody": messageToSend, "Sender": appUserName as Any, "DateString": dateString as Any, "FCMToken": "a fcm token"]
+                    "MessageBody": messageToSend, "Sender": appUserName as Any, "DateString": dateString as Any]
             
             messagesDB.childByAutoId().setValue(messageDictionary){
                 (error, reference) in
@@ -171,13 +169,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
     }
     
-    func postToken(Token: [String: AnyObject])
-    {
-        print ("fcmToken: \(Token)")
-        let dbRef = Database.database().reference()
-        dbRef.child("fcmToken").child(Messaging.messaging().fcmToken!).setValue(Token)
-    }
-    
+//    func postToken(Token: [String: AnyObject])
+//    {
+//        print ("fcmToken: \(Token)")
+//        let dbRef = Database.database().reference()
+//        dbRef.child("fcmToken").child(Messaging.messaging().fcmToken!).setValue(Token)
+//    }
+//    
     func sendSMStatusUpdate (messageToSend : String)
     {
 
@@ -222,79 +220,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         
     }
-    
-    
-    @IBAction func btnSignOut(_ sender: UIButton) {
-    
-    do {
-           let currentUser = Auth.auth().currentUser?.email
-        
-            try Auth.auth().signOut()
-            self.dismiss(animated: true, completion: nil)
-            print ("Sign out successful")
-            let olduser = Auth.auth().currentUser?.email
-            print ("olduser: \(olduser)")
-        
-            //now to signout of google itself.
-            GIDSignIn.sharedInstance().signOut()
-            //now delete record/document from userDB
-        
-        
-        //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
-        let userDB = Firestore.firestore()
-        let settings = userDB.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        userDB.settings = settings
-        
-        let deviceTokenIn = AppDelegate.GlobalVariable.deviceTokenGlobal
-        
-        userDB.collection("userFcmtokens")
-            
-            .whereField("email", isEqualTo: currentUser!)
-            //.whereField("fcmToken", isEqualTo: "asdfg")   //TODO: need to get the current fcmtoken for querying
-            
-            .whereField("fcmToken", isEqualTo: deviceTokenIn)   //TODO: need to get the current fcmtoken for querying
-            
-            .getDocuments() { (querySnapshot, err) in
-                
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                } else {
-                    
-                    if querySnapshot?.count == 0 {
-                        //fcmtoken is not present for this user so nothing to delete
-                        return
-                    }  //end query snapshot == nil
-                    
-                    //now we have a match and just to make sure we will delete each one that matches
-                    for document in querySnapshot!.documents {
-                        print("Deleting: \(document.documentID) => \(document.data())")
-                        userDB.collection("userFcmtokens").document(document.documentID).delete() { err in
-                            if let err = err {
-                                print("Error removing document: \(err)")
-                            } else {
-                                print("Document successfully removed!")
-                            }
-                        }
-                    }
-                }
-        }
-        
-        
-        
-        
-        
-        
-        } catch let err {
-            print(err)
-        }
-    
-    }
-    
-    
-    
-    
-    
     
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
@@ -350,13 +275,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         let iPhoneVer: IPhoneVersion = IPhoneVersion()
         let r1BallX = self.view.center.x - 134
         let r2BallX = self.view.center.x-1
-        let r3BallY = butRoute3.frame.origin.y 
+        //let r3BallY = butRoute3.frame.origin.y
         let ballSize: CGFloat = 134
         
         
         imgLakeside.center.x = self.view.center.x
         lblOnTheBus.center.x = self.view.center.x
-         signInButton.center.x = self.view.center.x
         
         switch screenWidth {
         case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth:
@@ -382,7 +306,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             return
             
         }
-        
+       // signInButton.
         self.view.layoutIfNeeded()
         
     }

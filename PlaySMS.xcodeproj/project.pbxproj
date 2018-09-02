@@ -36,9 +36,12 @@
 		B868D67A21116B9C000F5272 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D67921116B9C000F5272 /* Message.swift */; };
 		B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B8718E2D1E19AA5800515C7E /* SilverButton.png */; };
 		B877E02C213A4BE600C7ADFF /* Client Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877E02B213A4BE600C7ADFF /* Client Key.swift */; };
+		B877E02E213B7A0200C7ADFF /* Signout.png in Resources */ = {isa = PBXBuildFile; fileRef = B877E02D213B7A0200C7ADFF /* Signout.png */; };
 		B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */; };
 		B8B0D8002130E08C00E6E8CD /* IphoneVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */; };
 		B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */; };
+		B8BCD9A8213BB92500E503FF /* Google.png in Resources */ = {isa = PBXBuildFile; fileRef = B8BCD9A7213BB92500E503FF /* Google.png */; };
+		B8BCD9AA213BB9C000E503FF /* googleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B8BCD9A9213BB9C000E503FF /* googleLogo.png */; };
 		B8F2D5281E21EB8D00442E97 /* PDF 2_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */; };
 		B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D5291E21EDC000442E97 /* Spy Male_950000_25.png */; };
 		B8F2D52C1E21EF4800442E97 /* Queen UK_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D52B1E21EF4800442E97 /* Queen UK_950000_25.png */; };
@@ -101,10 +104,13 @@
 		B868D67921116B9C000F5272 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B8718E2D1E19AA5800515C7E /* SilverButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverButton.png; sourceTree = "<group>"; };
 		B877E02B213A4BE600C7ADFF /* Client Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client Key.swift"; sourceTree = "<group>"; };
+		B877E02D213B7A0200C7ADFF /* Signout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Signout.png; sourceTree = "<group>"; };
 		B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WheresTheBusViewController.swift; sourceTree = "<group>"; };
 		B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneVersion.swift; sourceTree = "<group>"; };
 		B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8B145D3212BD8080041CFCF /* PlaySMS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlaySMS.entitlements; sourceTree = "<group>"; };
+		B8BCD9A7213BB92500E503FF /* Google.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Google.png; sourceTree = "<group>"; };
+		B8BCD9A9213BB9C000E503FF /* googleLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = googleLogo.png; sourceTree = "<group>"; };
 		B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "PDF 2_950000_25.png"; sourceTree = "<group>"; };
 		B8F2D5291E21EDC000442E97 /* Spy Male_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spy Male_950000_25.png"; sourceTree = "<group>"; };
 		B8F2D52B1E21EF4800442E97 /* Queen UK_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Queen UK_950000_25.png"; sourceTree = "<group>"; };
@@ -185,13 +191,16 @@
 				B868D66A211018CD000F5272 /* LakeLogo.png */,
 				B831B4F21F5FAE15009FAB4D /* YellowPlain.jpeg */,
 				B831B4F01F5FACAB009FAB4D /* YellowBusKids.jpeg */,
+				B877E02D213B7A0200C7ADFF /* Signout.png */,
 				B831B4EE1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg */,
 				B831B4EC1F5FAA19009FAB4D /* YellowBus.png */,
+				B8BCD9A7213BB92500E503FF /* Google.png */,
 				B868D66C21101972000F5272 /* RedButtonGoldBorder.png */,
 				B84AF6C921321CBB00B2704F /* cartoon-school-bus-clipart-17.jpg */,
 				B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */,
 				B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */,
 				B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */,
+				B8BCD9A9213BB9C000E503FF /* googleLogo.png */,
 				B84EA3531E19F44E00DDDAC5 /* Default.png */,
 				B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */,
 				B8F2D52B1E21EF4800442E97 /* Queen UK_950000_25.png */,
@@ -348,6 +357,7 @@
 				B831B4EF1F5FAAD9009FAB4D /* YellowBusSmoke.jpeg in Resources */,
 				B8F2D53D1E22B18B00442E97 /* Eyes_Emoji.png in Resources */,
 				B84EA3541E19F44E00DDDAC5 /* Default.png in Resources */,
+				B8BCD9AA213BB9C000E503FF /* googleLogo.png in Resources */,
 				B8F2D52C1E21EF4800442E97 /* Queen UK_950000_25.png in Resources */,
 				B84EA3561E19F61300DDDAC5 /* Default@2x.png in Resources */,
 				B8103E151E1883F400B2AD1B /* 1483251869_button_play.png in Resources */,
@@ -367,8 +377,10 @@
 				B8103E0A1E18530300B2AD1B /* Assets.xcassets in Resources */,
 				B831B4ED1F5FAA19009FAB4D /* YellowBus.png in Resources */,
 				B8F2F9322113EC47003ABB1A /* MessageCell.xib in Resources */,
+				B8BCD9A8213BB92500E503FF /* Google.png in Resources */,
 				B85925D61E2A98B100AC6B4B /* Settings_950000_25.png in Resources */,
 				B8103E081E18530300B2AD1B /* Main.storyboard in Resources */,
+				B877E02E213B7A0200C7ADFF /* Signout.png in Resources */,
 				B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */,
 				B844996D212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf in Resources */,
 			);
