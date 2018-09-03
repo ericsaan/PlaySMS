@@ -135,8 +135,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             parentTwo = settingsData.contactTwo
             switchConfetti = settingsData.switchConfetti
             
-            let messageToSendOut = messageToSend.padding(toLength: 64, withPad: " ", startingAt: 0)
-            
+            let messageToSendOut = messageToSend.padding(toLength: 44, withPad: " ", startingAt: 0)
+            print("length is-> \(messageToSendOut.count)")
+                
             if  parentOne != nil && parentOne != ""
             {
                 recipientsList.append(parentOne!)

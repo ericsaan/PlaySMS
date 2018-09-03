@@ -19,6 +19,8 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBOutlet weak var btnGoogleSignInOut: UIButton!
     
+    @IBOutlet weak var lblMoonSpec: UILabel!
+    @IBOutlet weak var lblKatya: UILabel!
     @IBOutlet weak var imageGoogle: UIImageView!
     @IBOutlet weak var txtContactOneNameSize: UITextField!
     
@@ -105,9 +107,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         lblSettings.center.x = self.view.center.x
         lblAcks.center.x = self.view.center.x
         lblVersions.center.x = self.view.center.x
-        //btnGoogleSignInOut.center.x = self.view.center.x
+        lblKatya.center.x = self.view.center.x
+        lblMoonSpec.center.x = self.view.center.x
+         self.view.layoutIfNeeded()
        
-        
         
         switch screenWidth {
         case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth:
@@ -122,13 +125,14 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
             bRoute2.frame.size.width = 225
             bRoute3.frame.size.width = 225
             
+             self.view.layoutIfNeeded()
             
         default:
             return
             
         }
         
-        self.view.layoutIfNeeded()
+       
     }
     
     
@@ -164,10 +168,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
                 userDB.collection("userFcmtokens")
                     
                     .whereField("email", isEqualTo: currentUser!)
-                    //.whereField("fcmToken", isEqualTo: "asdfg")   //TODO: need to get the current fcmtoken for querying
-                    
-                    .whereField("fcmToken", isEqualTo: deviceTokenIn)   //TODO: need to get the current fcmtoken for querying
-                    
+                    .whereField("fcmToken", isEqualTo: deviceTokenIn)   
                     .getDocuments() { (querySnapshot, err) in
                         
                         if let err = err {
@@ -286,12 +287,6 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBAction func txtContactTwoName(_ sender: UITextField)
     {
         
-      //  var inSender = sender.text!
-//        if inSender.characters.count > 12
-//        {
-//            let index = inSender.index(inSender.startIndex, offsetBy: 12)
-//            txtContactTwoName.text = inSender.substring(to: index)  // Hello
-//        }
     }
         
     
@@ -301,12 +296,6 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBAction func txtContactOneName(_ sender: UITextField)
     {
-       // var inSender = sender.text!
-//        if inSender.characters.count > 12
-//        {
-//            let index = inSender.index(inSender.startIndex, offsetBy: 12)
-//            txtContactOneName.text = inSender.substring(to: index)
-//        }
     }
     
     
@@ -316,7 +305,6 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         let savedContactOnePhoneNumber = txtContactOnePhoneNumber.text!
         let savedContactTwoName = txtContactTwoName.text!
         let savedContactTwoPhoneNumber = txtContactTwoPhoneNumber.text!
-        //let savedAppUserName = txtAppUserName.text!
         let savedAppUserPhoneNumber = txtAppUserPhone.text!
         let savedBusRoute1 = txtBusRoute1.text!
         let savedBusRoute2 = txtBusRoute2.text!
@@ -335,16 +323,11 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         UserDefaults.standard.set(savedContactOnePhoneNumber, forKey: "ContactOnePhoneNumber")
         UserDefaults.standard.set(savedContactTwoName, forKey: "ContactTwoName")
         UserDefaults.standard.set(savedContactTwoPhoneNumber, forKey: "ContactTwoPhoneNumber")
-        //UserDefaults.standard.set(savedAppUserName, forKey: "AppUserName")
         UserDefaults.standard.set(savedAppUserPhoneNumber, forKey: "AppUserPhoneNumber")
         UserDefaults.standard.set(savedBusRoute1, forKey: "BusRoute1")
         UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")
         UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
         UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
-        
-        
-        
-        
         
         
     }

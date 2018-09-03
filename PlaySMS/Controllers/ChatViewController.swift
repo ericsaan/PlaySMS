@@ -81,24 +81,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     //TODO: Declare cellForRowAtIndexPath here:
-    //func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //let cast = messageArray.filter($0.receiver = appUserName)
-        
-        
-
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
    
-        //TODO: Fix the string length
-//        let blankString: String = "                                                                      "
-//        var messagePadding: String = ""
-//
-//        if messageArray[indexPath.row].messageBody.count < 52 {
-//            messagePadding = String(blankString.suffix((52 - messageArray[indexPath.row].messageBody.count)))
-//            messageArray[indexPath.row].messageBody += messagePadding
-        
-//        }
+ 
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         cell.senderUsername.text = " " + messageArray[indexPath.row].sender + " - " + messageArray[indexPath.row].dateSent
         
@@ -201,8 +188,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //hit the database
         let dateString = getDateString()
         let messageIn = messageTextfield.text!
-        let messageToSend = messageIn.padding(toLength: 64, withPad: " ", startingAt: 0)
-       
+        let messageToSend = messageIn.padding(toLength: 44, withPad: " ", startingAt: 0)
+        print("length is-> \(messageToSend.count)")
+        
         
         studentName = messageArray[messageArray.count - 1].sender  //get last sender and respond to them
         
@@ -246,7 +234,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             //print (text, sender)
             let message = Message()
-            message.messageBody = text.padding(toLength: 64, withPad: " ", startingAt: 0)
+            message.messageBody = text.padding(toLength: 44, withPad: " ", startingAt: 0)
              
             message.sender   = sender
             message.receiver = receiver
