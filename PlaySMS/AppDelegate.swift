@@ -32,18 +32,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
         // Override point for customization after application launch.
         //TODO: Initialise and Configure your Firebase here:
         //TODO: uncomment notfication section when ready to use again...ees
+        //enabling Google Auth
+        
+        
+        FirebaseApp.configure()
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
+        
+        
         //MARK: Notifications
       
-        FirebaseApp.configure()
        
 
         
         
-        //enabling Google Auth
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
-
-        Messaging.messaging().delegate = self as MessagingDelegate
+      Messaging.messaging().delegate = self as MessagingDelegate
 
         Messaging.messaging().shouldEstablishDirectChannel = true
         // [END set_messaging_delegate]
@@ -261,17 +265,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
         // ...
     }
     
-    
-    
+   
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         // Perform any operations when the user disconnects from app here.
         // ...
-        
-        
-        
-        
-       
-        
+      
     }
     
     //**********************************************

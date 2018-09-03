@@ -30,7 +30,6 @@
 		B868D67A21116B9C000F5272 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D67921116B9C000F5272 /* Message.swift */; };
 		B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B8718E2D1E19AA5800515C7E /* SilverButton.png */; };
 		B877E02C213A4BE600C7ADFF /* Client Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877E02B213A4BE600C7ADFF /* Client Key.swift */; };
-		B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */; };
 		B8B0D8002130E08C00E6E8CD /* IphoneVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */; };
 		B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */; };
 		B8BCD9AA213BB9C000E503FF /* googleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B8BCD9A9213BB9C000E503FF /* googleLogo.png */; };
@@ -41,7 +40,6 @@
 		B8F2D5371E222C7B00442E97 /* PDFAfternoon.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */; };
 		B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */; };
 		B8F2D53D1E22B18B00442E97 /* Eyes_Emoji.png in Resources */ = {isa = PBXBuildFile; fileRef = B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */; };
-		B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */; };
 		B8F2F9322113EC47003ABB1A /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8F2F9312113EC47003ABB1A /* MessageCell.xib */; };
 		B8F2F93421147DA2003ABB1A /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2F93321147DA2003ABB1A /* Settings.swift */; };
 		FE9CAE9D05FB39D5AEAA1ACC /* Pods_PlaySMS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */; };
@@ -88,7 +86,6 @@
 		B868D67921116B9C000F5272 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B8718E2D1E19AA5800515C7E /* SilverButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverButton.png; sourceTree = "<group>"; };
 		B877E02B213A4BE600C7ADFF /* Client Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client Key.swift"; sourceTree = "<group>"; };
-		B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_WheresTheBusViewController.swift; sourceTree = "<group>"; };
 		B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneVersion.swift; sourceTree = "<group>"; };
 		B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8B145D3212BD8080041CFCF /* PlaySMS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlaySMS.entitlements; sourceTree = "<group>"; };
@@ -100,7 +97,6 @@
 		B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFAfternoon.swift; sourceTree = "<group>"; };
 		B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eyes_Emoji_LARGE.png; sourceTree = "<group>"; };
 		B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Eyes_Emoji.png; sourceTree = "<group>"; };
-		B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController_Conversations.swift; sourceTree = "<group>"; };
 		B8F2F9312113EC47003ABB1A /* MessageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		B8F2F93321147DA2003ABB1A /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		C6AE1CA8609E1C4AD43DDC45 /* Pods_PlaySMS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlaySMS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -209,11 +205,9 @@
 		B868D66921100DFB000F5272 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				B886315A1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift */,
 				B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */,
 				B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */,
 				B8103E041E18530300B2AD1B /* ViewController.swift */,
-				B8F2D53E1E22B5FE00442E97 /* ViewController_Conversations.swift */,
 				B8F2D5361E222C7B00442E97 /* PDFAfternoon.swift */,
 				B8F2D5341E22033400442E97 /* ViewController_PDFViewController.swift */,
 				B868D677211165DF000F5272 /* ChatViewController.swift */,
@@ -436,11 +430,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B868D676211165B3000F5272 /* CustomMessageCell.swift in Sources */,
-				B886315B1E2C36E2007E7F6A /* ViewController_WheresTheBusViewController.swift in Sources */,
 				B8F2D5351E22033400442E97 /* ViewController_PDFViewController.swift in Sources */,
 				B8103E051E18530300B2AD1B /* ViewController.swift in Sources */,
 				B8103E031E18530300B2AD1B /* AppDelegate.swift in Sources */,
-				B8F2D53F1E22B5FE00442E97 /* ViewController_Conversations.swift in Sources */,
 				B8F2F93421147DA2003ABB1A /* Settings.swift in Sources */,
 				B8B0D8002130E08C00E6E8CD /* IphoneVersion.swift in Sources */,
 				B868D67A21116B9C000F5272 /* Message.swift in Sources */,

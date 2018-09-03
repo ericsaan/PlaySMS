@@ -164,6 +164,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         UIView.animate(withDuration: 0.5)
             {
                self.heightConstraint.constant = 323
+              
                 self.view.layoutIfNeeded()
             }
     }

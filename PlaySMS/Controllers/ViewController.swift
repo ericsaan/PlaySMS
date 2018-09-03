@@ -22,10 +22,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     @objc let cheerView = CheerView()
     @objc var recipientsList = [String]()
-    
     @objc var statusMessageToSend = ""
-    
-   
     @objc var parentOne: String? = ""
     @objc var parentTwo: String? = ""
     @objc var appUserName: String? = ""
@@ -35,21 +32,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @objc var switchConfetti: String? = "1"
     
     var settingsData: Settings = Settings()
-      @IBOutlet weak var imgLakeside: UIImageView!
     
+    @IBOutlet weak var imgLakeside: UIImageView!
     @IBOutlet weak var lblOnTheBus: UILabel!
-    
-    
-    
     @IBOutlet weak var butRoute1: UIButton!
     @IBOutlet weak var butRoute2: UIButton!
     @IBOutlet weak var butRoute3: UIButton!
-    
-    
-    
-    
-    
-    
     
     @IBAction func btnPressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
@@ -107,8 +95,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     
-    
-    
     //****************************************************
     //need to refactor to get better encapsulation...ees
     //****************************************************
@@ -123,15 +109,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         parentTwo = settingsData.contactTwo
         switchConfetti = settingsData.switchConfetti
         
-        if  parentOne != nil
+        if  parentOne != nil && parentOne != ""
         {
             recipientsList.append(parentOne!)
             print (parentOne!)
         }
         
-       // parentTwo = (UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?)!
-
-        if parentTwo != nil
+      
+        if parentTwo != nil && parentTwo != ""
         {
             recipientsList.append(parentTwo!)
             print (parentTwo!)
@@ -142,16 +127,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             appUserName = "No App User Specified"
         }
         
-        
-        
-        
-        
         if recipientsList.count != 0
         {
             for i in 0 ... recipientsList.count - 1
             {
                 let dateString = getDateString()
-                let messageDictionary = ["Receiver": recipientsList[i], //Auth.auth().currentUser?.email,
+                let messageDictionary = ["Receiver": recipientsList[i],
                     "MessageBody": messageToSend, "Sender": appUserName as Any, "DateString": dateString as Any]
             
             messagesDB.childByAutoId().setValue(messageDictionary){
@@ -161,7 +142,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                     print(error!)
                 }else {
                     print ("message saved successfully")
-                   // self.sendRequestPush()
+                   
                 }
               }
             } //endforloop
@@ -169,22 +150,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
     }
     
-//    func postToken(Token: [String: AnyObject])
-//    {
-//        print ("fcmToken: \(Token)")
-//        let dbRef = Database.database().reference()
-//        dbRef.child("fcmToken").child(Messaging.messaging().fcmToken!).setValue(Token)
-//    }
-//    
+
     @objc func sendSMStatusUpdate (messageToSend : String)
     {
 
         //first let's get the list of recipients
         recipientsList.removeAll()
-        
-       //parentOne = (UserDefaults.standard.value(forKey: "ContactOnePhoneNumber") as! String?)!
-       parentOne = settingsData.contactOnePhoneNumber
-       parentTwo = settingsData.contactTwoPhoneNumber
+        parentOne = settingsData.contactOnePhoneNumber
+        parentTwo = settingsData.contactTwoPhoneNumber
             
             if  parentOne != ""
             {
@@ -192,21 +165,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 print (parentOne!)
             }
        
-        
-        
-           // parentTwo = (UserDefaults.standard.value(forKey: "ContactTwoPhoneNumber") as! String?)!
-            
             if parentTwo != ""
             {
                 recipientsList.append(parentTwo!)
                 print (parentTwo!)
             }
     
-
         let messageVC = MFMessageComposeViewController()
-        
         messageVC.body =   messageToSend
-
         messageVC.recipients = recipientsList;
         messageVC.messageComposeDelegate = self;
         
@@ -215,9 +181,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.present(messageVC, animated: false, completion: nil)
             
             }
-        
-        
-        
         
     }
     
@@ -231,15 +194,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-
         
         cheerView.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
         view.addSubview(cheerView)
 
         //call login for google
         GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().scopes.append("https://www.googleapis.com/auth/user.phonenumbers.read")
         GIDSignIn.sharedInstance().signIn()
         
     }
@@ -263,10 +223,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         butRoute3.setTitle(busRoute3, for: .normal)
         mainSettingsLayout()
         
-        
-        
-        
-        
     }
     
     //*******************************************
@@ -275,7 +231,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         let iPhoneVer: IPhoneVersion = IPhoneVersion()
         let r1BallX = self.view.center.x - 134
         let r2BallX = self.view.center.x-1
-        //let r3BallY = butRoute3.frame.origin.y
         let ballSize: CGFloat = 134
         
         
@@ -298,15 +253,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             butRoute3.center.x = self.view.center.x
             butRoute3.frame.origin.y = butRoute1.frame.origin.y + 112
             
-           
-            
-            
-            
         default:
             return
             
         }
-       // signInButton.
         self.view.layoutIfNeeded()
         
     }
