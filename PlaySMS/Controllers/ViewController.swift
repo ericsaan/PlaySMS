@@ -39,55 +39,66 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet weak var butRoute2: UIButton!
     @IBOutlet weak var butRoute3: UIButton!
     
+    //************************************************************************
+    
     @IBAction func btnPressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
        
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        sendMessageToDatabase(messageToSend: statusMessageToSend)
-        if switchConfetti == "1" {
-            popConfetti()
+        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+            
+            if switchConfetti == "1" {
+                popConfetti()
+            }
         }
         
     }
+    //************************************************************************
     
     @IBAction func btn2Pressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        sendMessageToDatabase(messageToSend: statusMessageToSend)
+        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
         
-        if switchConfetti == "1" {
-            popConfetti()
+            if switchConfetti == "1" {
+                popConfetti()
+            }
         }
     }
+    //************************************************************************
     
     @IBAction func btn3Pressed(_ sender: UIButton) {
         let statusMessageToSend = "(" + sender.currentTitle! + ") " + MorningOrAfternoon() + " - I'm on the Bus. "
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        sendMessageToDatabase(messageToSend: statusMessageToSend)
-        
-        if switchConfetti == "1" {
-            popConfetti()
+        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+            
+            if switchConfetti == "1" {
+                popConfetti()
+            }
         }
     }
+    //************************************************************************
     
     @IBAction func btnImhere(_ sender: UIButton)
     {
         let statusMessageToSend = "I'm Here!                                                    "
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        sendMessageToDatabase(messageToSend: statusMessageToSend)
+        let sendStatus = sendMessageToDatabase(messageToSend: statusMessageToSend)
         
     }
     
+    //************************************************************************
     
     @IBAction func btnPickedUp(_ sender: UIButton)
     {
         let statusMessageToSend = "Picked Up!                                                   "
         
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        sendMessageToDatabase(messageToSend: statusMessageToSend)
+        let sendStatus = sendMessageToDatabase(messageToSend: statusMessageToSend)
         
     }
         
+    //************************************************************************
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -99,60 +110,78 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     //****************************************************
     //need to refactor to get better encapsulation...ees
     //****************************************************
-    @objc func sendMessageToDatabase(messageToSend : String)
+    @objc func sendMessageToDatabase(messageToSend : String) -> Bool
     {
-        let messagesDB = Database.database().reference().child("Messages")
         
-        //first let's get the list of recipients
-        recipientsList.removeAll()
-        settingsData.refreshSettings()
-        parentOne = settingsData.contactOne
-        parentTwo = settingsData.contactTwo
-        switchConfetti = settingsData.switchConfetti
-        let messageToSendOut = messageToSend.padding(toLength: 64, withPad: " ", startingAt: 0)
-        
-        if  parentOne != nil && parentOne != ""
-        {
-            recipientsList.append(parentOne!)
-            print (parentOne!)
-        }
-        
-      
-        if parentTwo != nil && parentTwo != ""
-        {
-            recipientsList.append(parentTwo!)
-            print (parentTwo!)
-        }
-
-         appUserName = settingsData.appUserName
-         if appUserName == nil{
-            appUserName = "No App User Specified"
-        }
-        
-        if recipientsList.count != 0
-        {
-            for i in 0 ... recipientsList.count - 1
-            {
-                let dateString = getDateString()
-                let messageDictionary = ["Receiver": recipientsList[i],
-                    "MessageBody": messageToSendOut, "Sender": appUserName as Any, "DateString": dateString as Any]
+        if Auth.auth().currentUser == nil {
+            //call login for google
+           //alert sign in on the settings page then segue
+            let alert = UIAlertController(title: "Login Alert", message: "You need to login...", preferredStyle: .alert)
             
-            messagesDB.childByAutoId().setValue(messageDictionary){
-                (error, reference) in
-                
-                if error != nil{
-                    print(error!)
-                }else {
-                    print ("message saved successfully")
-                   
-                }
-              }
-            } //endforloop
-        } //endif loop
+            let defaultAction = UIAlertAction(title: "Ok", style: .default) { (action) in
+            }
+            alert.addAction(defaultAction)
+            present(alert, animated: true)
+            return false
+          
+        } else {
         
+            let messagesDB = Database.database().reference().child("Messages")
+            
+            //first let's get the list of recipients
+            recipientsList.removeAll()
+            settingsData.refreshSettings()
+            parentOne = settingsData.contactOne
+            parentTwo = settingsData.contactTwo
+            switchConfetti = settingsData.switchConfetti
+            
+            let messageToSendOut = messageToSend.padding(toLength: 64, withPad: " ", startingAt: 0)
+            
+            if  parentOne != nil && parentOne != ""
+            {
+                recipientsList.append(parentOne!)
+               // print (parentOne!)
+            }
+            
+          
+            if parentTwo != nil && parentTwo != ""
+            {
+                recipientsList.append(parentTwo!)
+                //print (parentTwo!)
+            }
+
+             appUserName = settingsData.appUserName
+             if appUserName == nil{
+                appUserName = "No App User Specified"
+            }
+            
+            if recipientsList.count != 0
+            {
+                for i in 0 ... recipientsList.count - 1
+                {
+                    let dateString = getDateString()
+                    let messageDictionary = ["Receiver": recipientsList[i],
+                        "MessageBody": messageToSendOut, "Sender": appUserName as Any, "DateString": dateString as Any]
+                
+                messagesDB.childByAutoId().setValue(messageDictionary){
+                    (error, reference) in
+                    
+                    if error != nil{
+                        print(error!)
+                    }else {
+                        print ("message saved successfully")
+                       
+                    }
+                  }
+                } //endforloop
+            } //endif loop
+        }//end if on user = nil
+        
+        return true
     }
     
-
+    //************************************************************************
+    
     @objc func sendSMStatusUpdate (messageToSend : String)
     {
 
@@ -164,13 +193,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             if  parentOne != ""
             {
                 recipientsList.append(parentOne!)
-                print (parentOne!)
+                //print (parentOne!)
             }
        
             if parentTwo != ""
             {
                 recipientsList.append(parentTwo!)
-                print (parentTwo!)
+               // print (parentTwo!)
             }
     
         let messageVC = MFMessageComposeViewController()
@@ -186,6 +215,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
     }
     
+    //************************************************************************
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
     {
@@ -193,6 +223,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.dismiss(animated: true, completion: nil)
     }
    
+    //************************************************************************
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -206,6 +237,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
     }
 
+    //************************************************************************
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -294,6 +326,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         self.cheerView.stop()
         }
      } //  endpopconfetti
+    
     //******************************************
         
     @objc func getDateString() -> String {
@@ -304,8 +337,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         formatter.timeStyle = .short
        
         let dateString = formatter.string(from: date)
-        
-      
+       
         return dateString
     }
     

@@ -16,6 +16,7 @@ class ViewController_PDFViewController: UIViewController, MFMessageComposeViewCo
     
     @IBOutlet weak var PDF_Webview: UIWebView!
     
+    //************************************************************************
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -31,10 +32,7 @@ class ViewController_PDFViewController: UIViewController, MFMessageComposeViewCo
         
     }
     
-    
-    
-    
-    
+    //************************************************************************
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,24 +45,20 @@ class ViewController_PDFViewController: UIViewController, MFMessageComposeViewCo
         
     }
 
+    //************************************************************************
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //************************************************************************
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
     {
         //... handle sms screen actions
         self.dismiss(animated: true, completion: nil)
     }
-    
-
-    
-    
-    
-    
-    
-    
     
     
 }
