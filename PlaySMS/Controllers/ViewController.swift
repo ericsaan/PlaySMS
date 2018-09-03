@@ -72,7 +72,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     @IBAction func btnImhere(_ sender: UIButton)
     {
-        let statusMessageToSend = "I'm Here! "
+        let statusMessageToSend = "I'm Here!                                                    "
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
         
@@ -81,7 +81,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     @IBAction func btnPickedUp(_ sender: UIButton)
     {
-        let statusMessageToSend = "Picked Up! "
+        let statusMessageToSend = "Picked Up!                                                   "
+        
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         sendMessageToDatabase(messageToSend: statusMessageToSend)
         
@@ -108,6 +109,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         parentOne = settingsData.contactOne
         parentTwo = settingsData.contactTwo
         switchConfetti = settingsData.switchConfetti
+        let messageToSendOut = messageToSend.padding(toLength: 64, withPad: " ", startingAt: 0)
         
         if  parentOne != nil && parentOne != ""
         {
@@ -133,7 +135,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             {
                 let dateString = getDateString()
                 let messageDictionary = ["Receiver": recipientsList[i],
-                    "MessageBody": messageToSend, "Sender": appUserName as Any, "DateString": dateString as Any]
+                    "MessageBody": messageToSendOut, "Sender": appUserName as Any, "DateString": dateString as Any]
             
             messagesDB.childByAutoId().setValue(messageDictionary){
                 (error, reference) in
@@ -299,7 +301,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         let date = Date()
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = .medium
+        formatter.timeStyle = .short
        
         let dateString = formatter.string(from: date)
         

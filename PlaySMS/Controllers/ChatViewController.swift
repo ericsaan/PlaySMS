@@ -92,16 +92,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "customMessageCell", for: indexPath) as! CustomMessageCell
    
         //TODO: Fix the string length
-        let blankString: String = "                                                                      "
-        var messagePadding: String = ""
+//        let blankString: String = "                                                                      "
+//        var messagePadding: String = ""
+//
+//        if messageArray[indexPath.row].messageBody.count < 52 {
+//            messagePadding = String(blankString.suffix((52 - messageArray[indexPath.row].messageBody.count)))
+//            messageArray[indexPath.row].messageBody += messagePadding
         
-        if messageArray[indexPath.row].messageBody.count < 52 {
-            messagePadding = String(blankString.suffix((52 - messageArray[indexPath.row].messageBody.count)))
-            messageArray[indexPath.row].messageBody += messagePadding
-            
-        }
+//        }
         cell.messageBody.text = messageArray[indexPath.row].messageBody
-        cell.senderUsername.text = " " + messageArray[indexPath.row].sender + "   Date: " + messageArray[indexPath.row].dateSent
+        cell.senderUsername.text = " " + messageArray[indexPath.row].sender + " - " + messageArray[indexPath.row].dateSent
         
         
         //TODO: filter to receiving app user
@@ -201,15 +201,16 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //hit the database
         let dateString = getDateString()
-        
-        //TODO: NOTE: send message back, note this will not work with 2 students :( need to refactor
+        let messageIn = messageTextfield.text!
+        let messageToSend = messageIn.padding(toLength: 64, withPad: " ", startingAt: 0)
+       
         
         studentName = messageArray[messageArray.count - 1].sender  //get last sender and respond to them
         
         
         let messagesDB = Database.database().reference().child("Messages")
         let messageDictionary = ["Sender": appUserName, //Auth.auth().currentUser?.email,
-                                 "MessageBody": messageTextfield.text!,"Receiver": studentName!,"DateString": dateString]
+            "MessageBody": messageToSend,"Receiver": studentName!,"DateString": dateString]
         
         messagesDB.childByAutoId().setValue(messageDictionary){
             (error, reference) in
@@ -246,7 +247,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             //print (text, sender)
             let message = Message()
-            message.messageBody = text
+            message.messageBody = text.padding(toLength: 64, withPad: " ", startingAt: 0)
+             
             message.sender   = sender
             message.receiver = receiver
             message.dateSent = dateString
@@ -281,10 +283,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             
             //***************************************************************************************
-            
-            
-            
-            
             self.configureTableView()
             self.messageTableView.reloadData()
             self.scrollTobottom()
@@ -310,18 +308,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
        
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = .medium
+        formatter.timeStyle = .short
         
         let dateString = formatter.string(from: date)
         
         
         
-        
-//        let calendar = Calendar.current
-//        let hour = calendar.component(.hour, from: date)
-//        let minute = calendar.component(.minute, from: date)
-//        let day = calendar.component((.day), from: date)
-//        let dateString = String(hour) + ":" + String(minute) + " Date: " + String(day)
         return dateString
     }
     
