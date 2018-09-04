@@ -232,33 +232,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
             
             
             
-            // ...
-            //var userInfo = Auth.auth()
-//            let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
-//            changeRequest?.setValue("4252411879", forKey: "phoneNumber")
-//            changeRequest?.commitChanges { (error) in
-//                // ...
-//
-//            }
-//            let currentUser = Auth.auth().currentUser
-//            currentUser?.updatePhoneNumber(<#T##phoneNumberCredential: PhoneAuthCredential##PhoneAuthCredential#>, completion: <#T##UserProfileChangeCallback?##UserProfileChangeCallback?##(Error?) -> Void#>)
-//            Auth.auth().updateCurrentUser(currentUser!, completion: { (
-//                ) in
-//                <#code#>
-//            })
-//
-            //let credential: PhoneAuthCredential = PhoneAuthProvider.provider().credential(withVerificationID: defaults.string(forKey: "authVID")!,
-                                                                                          
-            
-            
-//            let userInfo = Auth.auth().currentUser?.providerData
-//            let phoneNumber = Auth.auth().currentUser?.phoneNumber
-//            if phoneNumber != nil {
-//                print(phoneNumber!)
-//            } else {
-//
-//            }
-//               // print(userInfo.phoneNumber!)
+          
           
             
         }
@@ -285,22 +259,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         print("APNs token retrieved: \(deviceToken)")
         
-        // With swizzling disabled you must set the APNs token here.
-        // Messaging.messaging().apnsToken = deviceToken
     }
     
-    
-    
-    
-        
-        
-        
-        //bg color of universe
-        //window?.backgroundColor = .white
-        
-        
-        
-   
+      
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
