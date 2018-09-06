@@ -188,7 +188,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //hit the database
         let dateString = getDateString()
         let messageIn = messageTextfield.text!
-        let messageToSend = messageIn.padding(toLength: 44, withPad: " ", startingAt: 0)
+        let messageToSend = messageIn.padding(toLength: 50, withPad: " ", startingAt: 0)
         print("length is-> \(messageToSend.count)")
         
         
@@ -234,7 +234,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             //print (text, sender)
             let message = Message()
-            message.messageBody = text.padding(toLength: 44, withPad: " ", startingAt: 0)
+            message.messageBody = text.padding(toLength: 64, withPad: " ", startingAt: 0)
              
             message.sender   = sender
             message.receiver = receiver
@@ -252,14 +252,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             if self.messageArray.count > 0 {
                 
                 
-                let senderCheck = self.messageArray[self.messageArray.count - 1]
+                let senderCheck = message  //self.messageArray[self.messageArray.count - 1]
                 
                 
                 if self.settingsData.appUserName == senderCheck.sender {
-                    if senderCheck.dateSent != message.dateSent {
+                //    if senderCheck.dateSent != message.dateSent {
                         self.messageArray.append(message)
                         
-                    }
+                //    }
                     
                 }
             } else {
