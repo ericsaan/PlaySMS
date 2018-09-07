@@ -273,7 +273,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         lblOnTheBus.center.x = self.view.center.x
         
         switch screenWidth {
-        case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth:
+        case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth, iPhoneVer.iPhone8Width, iPhoneVer.iPhoneXWidth:
             
             butRoute1.frame.size.width = ballSize
             butRoute1.frame.size.height = ballSize

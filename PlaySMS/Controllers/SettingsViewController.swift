@@ -17,6 +17,8 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
    
     var settingsData: Settings = Settings()
     
+    @IBOutlet weak var lblSignInOut: UILabel!
+    @IBOutlet weak var lblSettings2: UILabel!
     @IBOutlet weak var btnGoogleSignInOut: UIButton!
     
     @IBOutlet weak var lblMoonSpec: UILabel!
@@ -102,30 +104,41 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         let iPhoneVer: IPhoneVersion = IPhoneVersion()
         
         butSave.center.x = self.view.center.x
-        butTransportation.center.x = self.view.center.x
+        //butTransportation.center.x = self.view.center.x
         butIcons.center.x = self.view.center.x
-        lblSettings.center.x = self.view.center.x
+        lblSettings2.center.x = self.view.center.x
         lblAcks.center.x = self.view.center.x
         lblVersions.center.x = self.view.center.x
         lblKatya.center.x = self.view.center.x
         lblMoonSpec.center.x = self.view.center.x
-         self.view.layoutIfNeeded()
+        lblSignInOut.center.x = CGFloat(screenWidth - 50)
+        btnGoogleSignInOut.center.x = CGFloat(screenWidth - 50)
+        
+        
+        self.view.layoutIfNeeded()
        
         
         switch screenWidth {
-        case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth:
+        case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth, iPhoneVer.iPhoneXWidth,iPhoneVer.iPhone8Width:
             
-            txtContactOneNameSize.frame.size.width = 225
-            c1PhoneNumber.frame.size.width = 225
-            c2Name.frame.size.width = 225
-            c2PhoneNumber.frame.size.width = 225
-            studentName.frame.size.width = 225
-            studentPhoneNumber.frame.size.width = 225
-            bRoute1.frame.size.width = 225
-            bRoute2.frame.size.width = 225
-            bRoute3.frame.size.width = 225
+            txtContactOneNameSize.frame.size.width = 242
+            c1PhoneNumber.frame.size.width = 242
+            c2Name.frame.size.width = 242
+            c2PhoneNumber.frame.size.width = 242
+            studentName.frame.size.width = 242
+            studentPhoneNumber.frame.size.width = 242
+            bRoute1.frame.size.width = 242
+            bRoute2.frame.size.width = 242
+            bRoute3.frame.size.width = 242
             
              self.view.layoutIfNeeded()
+           
+        case iPhoneVer.iPhone5Width, iPhoneVer.iPhone4Width, iPhoneVer.iPhone3Width:
+            
+            
+            self.view.layoutIfNeeded()
+            
+            
             
         default:
             return
