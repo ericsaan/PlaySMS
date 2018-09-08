@@ -13,8 +13,8 @@ target 'PlaySMS' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Firestore'
   pod 'SVProgressHUD'
-#  pod 'ChameleonFramework'
   pod 'Cheers'
   pod 'GoogleSignIn'
+
   
 end

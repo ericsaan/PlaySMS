@@ -196,6 +196,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         let messagesDB = Database.database().reference().child("Messages")
+        
+        
         let messageDictionary = ["Sender": appUserName, //Auth.auth().currentUser?.email,
             "MessageBody": messageToSend,"Receiver": studentName!,"DateString": dateString]
         
@@ -213,7 +215,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             }
         }
-        
+      
                 
     }  //endsendpressed
     
@@ -227,6 +229,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         messageDB.observe(.childAdded, with: { (snapshot) in
             let snapshotValue = snapshot.value as! Dictionary<String,String>
+            
             let text = snapshotValue["MessageBody"]!
             let sender = snapshotValue["Sender"]!
             let receiver = snapshotValue["Receiver"]!
@@ -234,7 +237,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             //print (text, sender)
             let message = Message()
-            message.messageBody = text.padding(toLength: 64, withPad: " ", startingAt: 0)
+            message.messageBody = text.padding(toLength: 51, withPad: " ", startingAt: 0)
              
             message.sender   = sender
             message.receiver = receiver
@@ -275,8 +278,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.scrollTobottom()
 
             
-            
         })
+    
     }
     
     

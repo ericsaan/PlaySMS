@@ -23,6 +23,7 @@
 		B85925D61E2A98B100AC6B4B /* Settings_950000_25.png in Resources */ = {isa = PBXBuildFile; fileRef = B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */; };
 		B85925D81E2AAD1D00AC6B4B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */; };
 		B85925DA1E2B5C0B00AC6B4B /* PDFPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */; };
+		B85F66DD2143A36500DD21D5 /* Dust.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F66DC2143A36400DD21D5 /* Dust.png */; };
 		B868D66B211018CD000F5272 /* LakeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66A211018CD000F5272 /* LakeLogo.png */; };
 		B868D66D21101972000F5272 /* RedButtonGoldBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66C21101972000F5272 /* RedButtonGoldBorder.png */; };
 		B868D676211165B3000F5272 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D674211165B3000F5272 /* CustomMessageCell.swift */; };
@@ -79,6 +80,7 @@
 		B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Settings_950000_25.png; sourceTree = "<group>"; };
 		B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFPageViewController.swift; sourceTree = "<group>"; };
+		B85F66DC2143A36400DD21D5 /* Dust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dust.png; sourceTree = "<group>"; };
 		B868D66A211018CD000F5272 /* LakeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LakeLogo.png; sourceTree = "<group>"; };
 		B868D66C21101972000F5272 /* RedButtonGoldBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButtonGoldBorder.png; sourceTree = "<group>"; };
 		B868D674211165B3000F5272 /* CustomMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 				B868D66821100DE5000F5272 /* Views */,
 				B868D66721100DD4000F5272 /* Model */,
 				B8103E091E18530300B2AD1B /* Assets.xcassets */,
+				B85F66DC2143A36400DD21D5 /* Dust.png */,
 				B868D66E211164DC000F5272 /* Custom Cell */,
 				B8F2D52F1E21F15C00442E97 /* PDF */,
 				B8103E161E18841500B2AD1B /* PNGs */,
@@ -327,6 +330,7 @@
 				B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */,
 				B84AF6CA21321CBB00B2704F /* cartoon-school-bus-clipart-17.jpg in Resources */,
 				B8103E0D1E18530300B2AD1B /* LaunchScreen.storyboard in Resources */,
+				B85F66DD2143A36500DD21D5 /* Dust.png in Resources */,
 				B82718EF211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist in Resources */,
 				B868D66B211018CD000F5272 /* LakeLogo.png in Resources */,
 				B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */,
@@ -588,7 +592,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLXXF824QW;
 				INFOPLIST_FILE = PlaySMS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.MoonspecGradeEight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -609,7 +613,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BLXXF824QW;
 				INFOPLIST_FILE = PlaySMS/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.MoonspecGradeEight;
 				PRODUCT_NAME = "$(TARGET_NAME)";

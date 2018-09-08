@@ -11,6 +11,7 @@ import MessageUI
 import Cheers
 import Firebase
 import GoogleSignIn
+//import Cocoa
 
 
 
@@ -18,8 +19,8 @@ import GoogleSignIn
 
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, GIDSignInUIDelegate
 {
-    
-    
+
+    let emitterLayer = CAEmitterLayer()
     @objc let cheerView = CheerView()
     @objc var recipientsList = [String]()
     @objc var statusMessageToSend = ""
@@ -81,10 +82,34 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     @IBAction func btnImhere(_ sender: UIButton)
     {
+        
+        
+    
+        
         let statusMessageToSend = "I'm Here!                                                    "
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        let sendStatus = sendMessageToDatabase(messageToSend: statusMessageToSend)
+        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+//            if switchConfetti == "1" {
+//                popConfetti()
+//            }
+            
+            UIButton.animate(withDuration: 0.2,
+                             animations: {
+                                sender.transform = CGAffineTransform(scaleX: 1.20, y: 1.20)
+            },
+                             completion: { finish in
+                                UIButton.animate(withDuration: 0.2, animations: {
+                                    sender.transform = CGAffineTransform.identity
+                                })
+            })
+            
+            
+            setupBaseLayer()
+            launchFireworks()
+            
+        }
         
+
     }
     
     //************************************************************************
@@ -93,8 +118,24 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     {
         let statusMessageToSend = "Picked Up!                                                   "
         
+        UIButton.animate(withDuration: 0.2,
+                         animations: {
+                            sender.transform = CGAffineTransform(scaleX: 1.20, y: 1.20)
+        },
+                         completion: { finish in
+                            UIButton.animate(withDuration: 0.2, animations: {
+                                sender.transform = CGAffineTransform.identity
+                            })
+        })
+        
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        let sendStatus = sendMessageToDatabase(messageToSend: statusMessageToSend)
+        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+            
+            
+            if switchConfetti == "1" {
+                popConfetti()
+            }
+        }
         
     }
         
@@ -135,7 +176,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             parentTwo = settingsData.contactTwo
             switchConfetti = settingsData.switchConfetti
             
-            let messageToSendOut = messageToSend.padding(toLength: 44, withPad: " ", startingAt: 0)
+            let messageToSendOut = messageToSend.padding(toLength: 50, withPad: " ", startingAt: 0)
             print("length is-> \(messageToSendOut.count)")
                 
             if  parentOne != nil && parentOne != ""
@@ -342,6 +383,72 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         return dateString
     }
     
+    func setupBaseLayer()
+    {
+        // Add a layer that emits, animates, and renders a particle system.
+        let size = view.bounds.size
+        emitterLayer.emitterPosition = CGPoint(x: size.width / 2, y: size.height - 100)
+        emitterLayer.renderMode = kCAEmitterLayerAdditive
+        view.layer.addSublayer(emitterLayer)
+    }
     
-}
+    func launchFireworks()
+    {
+        // Get particle image
+        let particleImage = "dust.png" //UIImage(named: "dust")?.cgImage
+        
+        // The definition of a particle (launch point of the firework)
+        let baseCell = CAEmitterCell()
+        baseCell.color = UIColor.white.withAlphaComponent(0.8).cgColor
+        baseCell.emissionLongitude = -CGFloat.pi / 2
+        baseCell.emissionRange = CGFloat.pi / 5
+        baseCell.emissionLatitude = 0
+        baseCell.lifetime = 2.0
+        baseCell.birthRate = 1
+        baseCell.velocity = 400
+        baseCell.velocityRange = 50
+        baseCell.yAcceleration = 300
+        baseCell.redRange   = 0.5
+        baseCell.greenRange = 0.5
+        baseCell.blueRange  = 0.5
+        baseCell.alphaRange = 0.5
+        
+        // The definition of a particle (rising animation)
+        let risingCell = CAEmitterCell()
+        risingCell.contents = particleImage
+        risingCell.emissionLongitude = (4 * CGFloat.pi) / 2
+        risingCell.emissionRange = CGFloat.pi / 7
+        risingCell.scale = 0.4
+        risingCell.velocity = 100
+        risingCell.birthRate = 50
+        risingCell.lifetime = 1.5
+        risingCell.yAcceleration = 350
+        risingCell.alphaSpeed = -0.7
+        risingCell.scaleSpeed = -0.1
+        risingCell.scaleRange = 0.1
+        risingCell.beginTime = 0.01
+        risingCell.duration = 0.7
+        
+        // The definition of a particle (spark animation)
+        let sparkCell = CAEmitterCell()
+        sparkCell.contents = particleImage
+        sparkCell.emissionRange = 2 * CGFloat.pi
+        sparkCell.birthRate = 8000
+        sparkCell.scale = 0.5
+        sparkCell.velocity = 130
+        sparkCell.lifetime = 3.0
+        sparkCell.yAcceleration = 80
+        sparkCell.beginTime = 1.5
+        sparkCell.duration = 0.1
+        sparkCell.alphaSpeed = -0.1
+        sparkCell.scaleSpeed = -0.1
+        
+        // baseCell contains rising and spark particle
+        baseCell.emitterCells = [risingCell, sparkCell]
+        
+        // Add baseCell to the emitter layer
+        emitterLayer.emitterCells = [baseCell]
+    }
+    
+   }
 
