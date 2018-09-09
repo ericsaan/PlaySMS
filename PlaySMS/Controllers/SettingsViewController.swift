@@ -74,6 +74,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBOutlet weak var lblVersions: UILabel!
     @IBOutlet weak var butIcons: UIButton!
     
+    @IBOutlet weak var txtAppUserName: UITextField!
     
     
     
@@ -115,8 +116,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         txtContactTwoName.text = settingsData.contactTwo
         txtContactTwoPhoneNumber.text = settingsData.contactTwoPhoneNumber
         txtAppUserPhone.text = settingsData.appUserPhoneNumber
+        let userName = settingsData.appUserName
         
-        txtAppUserName.text = settingsData.appUserName
+        txtAppUserName?.text = userName
+        
         txtBusRoute1.text = settingsData.busRoute1
         txtBusRoute2.text = settingsData.busRoute2
         txtBusRoute3.text = settingsData.busRoute3
@@ -185,7 +188,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
        
         if Auth.auth().currentUser != nil
         {
-            btnGoogleSignInOut.setTitle("Sign In", for: .normal)
+            //btnGoogleSignInOut.setTitle("Sign In", for: .normal)
+            lblSignInOut.text = "Sign In"
+            self.view.layoutIfNeeded()
+            
             do {
                 let currentUser = Auth.auth().currentUser?.email
                 
@@ -244,10 +250,14 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
                 print(err)
             }
         } else{
-             btnGoogleSignInOut.setTitle("Sign Out", for: .normal)
+             //btnGoogleSignInOut.setTitle("Sign Out", for: .normal)
+            lblSignInOut.text = "Sign Out"
             GIDSignIn.sharedInstance().signIn()
-             settingsData.refreshSettings()
-            txtAppUserName.text = settingsData.appUserName
+//            let currentUser = Auth.auth().currentUser!.email
+//            UserDefaults.standard.set(currentUser, forKey: "AppUserName")
+            
+       //      settingsData.refreshSettings()
+      //      txtAppUserName.text = settingsData.appUserName
               self.view.layoutIfNeeded()
             
             
@@ -275,8 +285,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBOutlet weak var txtContactTwoPhoneNumber: UITextField!
     
-    @IBOutlet weak var txtAppUserName: UITextField!
-    
+   
     @IBOutlet weak var txtAppUserPhone: UITextField!
     
     @IBOutlet weak var txtBusRoute1: UITextField!
@@ -343,6 +352,8 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     {
     }
     
+    @IBAction func txtFuncAppUserNme(_ sender: UITextField) {
+    }
     
     @IBAction func btnSubmit(_ sender: UIButton)
     {
@@ -432,6 +443,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         lblMoonSpec.textColor = colorIn
         lblVersions.textColor = colorIn
         lblSignInOut.textColor = colorIn
+        lblConfettiPop.textColor = colorIn
     }
     
 }

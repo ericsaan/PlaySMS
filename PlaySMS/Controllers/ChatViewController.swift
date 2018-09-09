@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+
 //import ChameleonFramework
 
 
@@ -303,13 +304,19 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let snapshotValue = snapshot.value as! Dictionary<String,String>
             
             let text = snapshotValue["MessageBody"]!
-            let sender = snapshotValue["Sender"]!
+            var sender = snapshotValue["Sender"]!
+            
+            //now strip out the email portion
+            let index = sender.index(of: "@")!
+            let newStr = String(sender[..<index])
+            sender = newStr
+            
             let receiver = snapshotValue["Receiver"]!
             let dateString = snapshotValue["DateString"]!
             
             //print (text, sender)
             let message = Message()
-            message.messageBody = text.padding(toLength: 51, withPad: " ", startingAt: 0)
+            message.messageBody = text.padding(toLength: 43, withPad: " ", startingAt: 0)
              
             message.sender   = sender
             message.receiver = receiver

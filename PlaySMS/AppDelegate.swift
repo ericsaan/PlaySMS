@@ -89,14 +89,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
             print("Message ID: \(messageID)")
             UIApplication.shared.applicationIconBadgeNumber = 0     //ees... Set Icon badge count to 0 when app loads
             
-            
-//            let alert = UIAlertController(title: "Bus Ride Update...?", message: "Open Conversations Window?.", preferredStyle: .alert)
-//
-//            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
-//            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
-//
-//            p
-//            present(alert, animated: true)
+          
         }
         
         // Print full message.
@@ -123,12 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
         completionHandler(UIBackgroundFetchResult.newData)
     }
     
-//    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-//        completionHandler([.alert, .badge, .sound])
-//    }
-//    
-//    
-    
+
     
     // [END receive_message]
     
@@ -174,6 +162,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
             //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
             let currentUser = Auth.auth().currentUser!.email
             UserDefaults.standard.set(currentUser, forKey: "AppUserName")
+            //sleep(1)
            
            
             let userDB = Firestore.firestore()
