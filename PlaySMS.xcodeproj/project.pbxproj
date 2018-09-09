@@ -24,6 +24,8 @@
 		B85925D81E2AAD1D00AC6B4B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */; };
 		B85925DA1E2B5C0B00AC6B4B /* PDFPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */; };
 		B85F66DD2143A36500DD21D5 /* Dust.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F66DC2143A36400DD21D5 /* Dust.png */; };
+		B85F66E12144209000DD21D5 /* University Prep Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85F66E02144209000DD21D5 /* University Prep Logo.jpg */; };
+		B85F66E32144938E00DD21D5 /* EvergreenWhiteLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F66E22144938D00DD21D5 /* EvergreenWhiteLogo.png */; };
 		B868D66B211018CD000F5272 /* LakeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66A211018CD000F5272 /* LakeLogo.png */; };
 		B868D66D21101972000F5272 /* RedButtonGoldBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66C21101972000F5272 /* RedButtonGoldBorder.png */; };
 		B868D676211165B3000F5272 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D674211165B3000F5272 /* CustomMessageCell.swift */; };
@@ -81,6 +83,8 @@
 		B85925D71E2AAD1D00AC6B4B /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B85925D91E2B5C0B00AC6B4B /* PDFPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFPageViewController.swift; sourceTree = "<group>"; };
 		B85F66DC2143A36400DD21D5 /* Dust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dust.png; sourceTree = "<group>"; };
+		B85F66E02144209000DD21D5 /* University Prep Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "University Prep Logo.jpg"; sourceTree = "<group>"; };
+		B85F66E22144938D00DD21D5 /* EvergreenWhiteLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EvergreenWhiteLogo.png; sourceTree = "<group>"; };
 		B868D66A211018CD000F5272 /* LakeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LakeLogo.png; sourceTree = "<group>"; };
 		B868D66C21101972000F5272 /* RedButtonGoldBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButtonGoldBorder.png; sourceTree = "<group>"; };
 		B868D674211165B3000F5272 /* CustomMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
@@ -172,9 +176,11 @@
 				B84AF6C921321CBB00B2704F /* cartoon-school-bus-clipart-17.jpg */,
 				B8F2D53A1E22B05400442E97 /* Eyes_Emoji_LARGE.png */,
 				B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */,
+				B85F66E22144938D00DD21D5 /* EvergreenWhiteLogo.png */,
 				B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */,
 				B8BCD9A9213BB9C000E503FF /* googleLogo.png */,
 				B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */,
+				B85F66E02144209000DD21D5 /* University Prep Logo.jpg */,
 				B84EA3551E19F61300DDDAC5 /* Default@2x.png */,
 				B8F2D52D1E21EF9800442E97 /* Bus_950000_25.png */,
 				B8F2D5291E21EDC000442E97 /* Spy Male_950000_25.png */,
@@ -319,6 +325,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8F2D5281E21EB8D00442E97 /* PDF 2_950000_25.png in Resources */,
+				B85F66E12144209000DD21D5 /* University Prep Logo.jpg in Resources */,
 				B8103E1C1E1888A500B2AD1B /* lakeside.jpg in Resources */,
 				B868D66D21101972000F5272 /* RedButtonGoldBorder.png in Resources */,
 				B8F2D53D1E22B18B00442E97 /* Eyes_Emoji.png in Resources */,
@@ -329,6 +336,7 @@
 				B8F2D52E1E21EF9800442E97 /* Bus_950000_25.png in Resources */,
 				B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */,
 				B84AF6CA21321CBB00B2704F /* cartoon-school-bus-clipart-17.jpg in Resources */,
+				B85F66E32144938E00DD21D5 /* EvergreenWhiteLogo.png in Resources */,
 				B8103E0D1E18530300B2AD1B /* LaunchScreen.storyboard in Resources */,
 				B85F66DD2143A36500DD21D5 /* Dust.png in Resources */,
 				B82718EF211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist in Resources */,

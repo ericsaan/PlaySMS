@@ -40,6 +40,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet weak var butRoute2: UIButton!
     @IBOutlet weak var butRoute3: UIButton!
     
+    
+    //pickerview
+    @IBOutlet weak var butLogo: UIButton!
+    
+    @IBOutlet weak var pickerView: UIPickerView!
+   // let skins = ["Lakeside", "Evergreen", "University Prep", "Neutral"]
+    
+   // let skinLogos = ["LakesideLogo.png","Evergreen Logo.png","University Prep Logo.jpg", "cartoon-school-bus-clipart-17.jpg"]
+    
     //************************************************************************
     
     @IBAction func btnPressed(_ sender: UIButton) {
@@ -104,8 +113,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             })
             
             
-            setupBaseLayer()
-            launchFireworks()
+          
             
         }
         
@@ -273,6 +281,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         cheerView.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
         view.addSubview(cheerView)
 
+        //to pick skins
+        pickerView.delegate = self
+        pickerView.dataSource = self
+        
         //call login for google
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
@@ -297,9 +309,60 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         butRoute1.setTitle(busRoute1, for: .normal)
         butRoute2.setTitle(busRoute2, for: .normal)
         butRoute3.setTitle(busRoute3, for: .normal)
-        mainSettingsLayout()
         
+        pickerView.isHidden = true
+        
+        //now to set the background
+        setBackgrounds()
+        
+        mainSettingsLayout()
+    }  //end will appear
+    
+    
+        func setBackgrounds() {
+   
+            switch settingsData.skinLogo {
+        case "Evergreen":
+            let logo = settingsData.skinEvergreen
+            butLogo.setImage(UIImage(named: logo), for: .normal)
+            self.view.backgroundColor = settingsData.swiftColorEvergreen
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorEvergreen
+
+        case "University Prep":
+            let logo = settingsData.skinUniversityPrep
+            butLogo.setImage(UIImage(named: logo), for: .normal)
+            self.view.backgroundColor = settingsData.swiftColorUniversityPrep
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorUniversityPrep
+
+        case "Neutral":
+            let logo = settingsData.skinNeutral
+            butLogo.setImage(UIImage(named: logo), for: .normal)
+            self.view.backgroundColor = settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+
+            
+        default:
+            let logo = settingsData.skinLakeside
+            butLogo.setImage(UIImage(named: logo), for: .normal)
+            //self.view.backgroundColor = UIColor.darkGray
+            self.view.backgroundColor = settingsData.swiftColorLakeside
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
+                
+
+        }  //endswitch
+        self.view.layoutIfNeeded()
+    }  //endsetbackground
+    
+    
+    
+    
+    @IBAction func btnSelectLogo(_ sender: UIButton) {
+    pickerView.isHidden = false
     }
+    
+    
+    
+    
     
     //*******************************************
     @objc func mainSettingsLayout() {
@@ -310,7 +373,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         let ballSize: CGFloat = 134
         
         
-        imgLakeside.center.x = self.view.center.x
+       // imgLakeside.center.x = self.view.center.x
         lblOnTheBus.center.x = self.view.center.x
         
         switch screenWidth {
@@ -383,72 +446,83 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         return dateString
     }
     
-    func setupBaseLayer()
-    {
-        // Add a layer that emits, animates, and renders a particle system.
-        let size = view.bounds.size
-        emitterLayer.emitterPosition = CGPoint(x: size.width / 2, y: size.height - 100)
-        emitterLayer.renderMode = kCAEmitterLayerAdditive
-        view.layer.addSublayer(emitterLayer)
-    }
-    
-    func launchFireworks()
-    {
-        // Get particle image
-        let particleImage = "dust.png" //UIImage(named: "dust")?.cgImage
-        
-        // The definition of a particle (launch point of the firework)
-        let baseCell = CAEmitterCell()
-        baseCell.color = UIColor.white.withAlphaComponent(0.8).cgColor
-        baseCell.emissionLongitude = -CGFloat.pi / 2
-        baseCell.emissionRange = CGFloat.pi / 5
-        baseCell.emissionLatitude = 0
-        baseCell.lifetime = 2.0
-        baseCell.birthRate = 1
-        baseCell.velocity = 400
-        baseCell.velocityRange = 50
-        baseCell.yAcceleration = 300
-        baseCell.redRange   = 0.5
-        baseCell.greenRange = 0.5
-        baseCell.blueRange  = 0.5
-        baseCell.alphaRange = 0.5
-        
-        // The definition of a particle (rising animation)
-        let risingCell = CAEmitterCell()
-        risingCell.contents = particleImage
-        risingCell.emissionLongitude = (4 * CGFloat.pi) / 2
-        risingCell.emissionRange = CGFloat.pi / 7
-        risingCell.scale = 0.4
-        risingCell.velocity = 100
-        risingCell.birthRate = 50
-        risingCell.lifetime = 1.5
-        risingCell.yAcceleration = 350
-        risingCell.alphaSpeed = -0.7
-        risingCell.scaleSpeed = -0.1
-        risingCell.scaleRange = 0.1
-        risingCell.beginTime = 0.01
-        risingCell.duration = 0.7
-        
-        // The definition of a particle (spark animation)
-        let sparkCell = CAEmitterCell()
-        sparkCell.contents = particleImage
-        sparkCell.emissionRange = 2 * CGFloat.pi
-        sparkCell.birthRate = 8000
-        sparkCell.scale = 0.5
-        sparkCell.velocity = 130
-        sparkCell.lifetime = 3.0
-        sparkCell.yAcceleration = 80
-        sparkCell.beginTime = 1.5
-        sparkCell.duration = 0.1
-        sparkCell.alphaSpeed = -0.1
-        sparkCell.scaleSpeed = -0.1
-        
-        // baseCell contains rising and spark particle
-        baseCell.emitterCells = [risingCell, sparkCell]
-        
-        // Add baseCell to the emitter layer
-        emitterLayer.emitterCells = [baseCell]
-    }
-    
+   
    }
 
+
+extension ViewController : UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
+    {
+      
+        //on other screens do same as far as reading user default adn then setting background and logo
+
+
+//        let logo = settingsData.skinLogos[row]
+//        butLogo.setImage(UIImage(named: logo), for: .normal)
+        UserDefaults.standard.set(settingsData.skins[row], forKey: "SkinLogo")
+        settingsData.refreshSettings()
+        pickerView.isHidden = true;
+        
+        switch settingsData.skinLogo {
+        case "Evergreen":
+            let logo = settingsData.skinEvergreen
+            butLogo.setImage(UIImage(named: logo), for: .normal)
+            self.view.backgroundColor = settingsData.swiftColorEvergreen
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorEvergreen
+           
+            
+        case "University Prep":
+            let logo = settingsData.skinUniversityPrep
+            butLogo.setImage(UIImage(named: logo), for: .normal)
+            self.view.backgroundColor = settingsData.swiftColorUniversityPrep
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorUniversityPrep
+            
+        case "Neutral":
+            let logo = settingsData.skinNeutral
+            butLogo.setImage(UIImage(named: logo), for: .normal)
+            self.view.backgroundColor = settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+            
+            
+        default:
+            let logo = settingsData.skinLakeside
+            butLogo.setImage(UIImage(named: logo), for: .normal)
+            //self.view.backgroundColor = UIColor.darkGray
+            self.view.backgroundColor = settingsData.swiftColorLakeside
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
+            
+            
+        }  //endswitch
+        
+        
+        self.view.layoutIfNeeded()
+        
+    }
+    
+    
+    
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+   
+        return settingsData.skins[row]
+    }
+    
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return settingsData.skins.count
+        
+    }
+    
+    
+    
+    
+    
+}

@@ -14,8 +14,30 @@ import GoogleSignIn
 class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate, GIDSignInUIDelegate
 {
 
-   
+    
+    @IBOutlet var viewMain: UIView!
     var settingsData: Settings = Settings()
+    
+    @IBOutlet weak var lbl1stContact: UILabel!
+    
+    @IBOutlet weak var lbl1stContactPhone: UILabel!
+    
+    
+    @IBOutlet weak var lbl2ndContact: UILabel!
+    @IBOutlet weak var lbl2ndContactPhone: UILabel!
+    
+    @IBOutlet weak var lblAppUser: UILabel!
+    
+    
+    @IBOutlet weak var lblAppUserPhone: UILabel!
+    
+    @IBOutlet weak var lblBusRoute1: UILabel!
+    @IBOutlet weak var lblBusRoute2: UILabel!
+    
+    @IBOutlet weak var lblBusRoute3: UILabel!
+    
+    @IBOutlet weak var lblConfettiPop: UILabel!
+    
     
     @IBOutlet weak var lblSignInOut: UILabel!
     @IBOutlet weak var lblSettings2: UILabel!
@@ -39,6 +61,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBOutlet weak var bRoute3: UITextField!
     
     
+    @IBOutlet weak var btnIcons: UIButton!
     
     @IBOutlet weak var lblSettings: UILabel!
     
@@ -50,6 +73,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBOutlet weak var lblVersions: UILabel!
     @IBOutlet weak var butIcons: UIButton!
+    
+    
+    
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -61,6 +88,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         //tap.cancelsTouchesInView = false
         
         view.addGestureRecognizer(tap)
+        
+      
+        
+        
         settingsLayout()
         
         GIDSignIn.sharedInstance().uiDelegate = self
@@ -96,6 +127,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
             switchConfetti.setOn(false, animated: true)
         }
         //now to center all the buttons for whatever size screen we have
+        setBackgrounds()
         settingsLayout()
     }
    //************************************************
@@ -347,9 +379,59 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     
     
+    func setBackgrounds() {
+        
+        switch settingsData.skinLogo {
+        case "Evergreen":
+            self.view.backgroundColor = settingsData.swiftColorEvergreen
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorEvergreen
+            setLabelColor(colorIn: UIColor.white)
+            
+        case "University Prep":
+            self.view.backgroundColor = settingsData.swiftColorUniversityPrep
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorUniversityPrep
+            setLabelColor(colorIn: UIColor.white)
+            
+        case "Neutral":
+            
+            self.view.backgroundColor = settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+            
+            
+            setLabelColor(colorIn: UIColor.black)
+            
+            
+            
+        default:  //as in Lakeside
+            
+            self.view.backgroundColor = settingsData.swiftColorLakeside
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
+            setLabelColor(colorIn: UIColor.white)
+            
+        }  //endswitch
+        self.view.layoutIfNeeded()
+    }  //endsetbackground
     
-    
-    
-    
+    func setLabelColor(colorIn: UIColor) {
+        
+        lblSettings2.textColor = colorIn
+        
+        lbl1stContact.textColor = colorIn
+        lbl1stContactPhone.textColor = colorIn
+        lbl2ndContact.textColor = colorIn
+        lbl2ndContactPhone.textColor = colorIn
+        lblAppUser.textColor = colorIn
+        lblAppUserPhone.textColor = colorIn
+        lblBusRoute1.textColor = colorIn
+        lblBusRoute2.textColor = colorIn
+        lblBusRoute3.textColor = colorIn
+        lblAcks.textColor = colorIn
+        lblVersions.textColor = colorIn
+        butIcons.setTitleColor(colorIn, for: .normal)
+        lblKatya.textColor = colorIn
+        lblMoonSpec.textColor = colorIn
+        lblVersions.textColor = colorIn
+        lblSignInOut.textColor = colorIn
+    }
     
 }

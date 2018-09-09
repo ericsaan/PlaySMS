@@ -17,7 +17,10 @@ class PDFAfternoon: UIViewController, MFMessageComposeViewControllerDelegate
 
     
     
+    @IBOutlet var viewMorning: UIView!
     @IBOutlet weak var PDF_ViewMorning: UIWebView!
+    
+    var settingsData = Settings()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +46,9 @@ class PDFAfternoon: UIViewController, MFMessageComposeViewControllerDelegate
         //load up the Afternoon PDF File
         
         let path = Bundle.main.path(forResource: "LakesideCustomBusSchedules-2018-2019 Morning", ofType: "pdf")!
+    
+        settingsData.refreshSettings()
+        setBackgrounds()
         
         let targetURL = URL(fileURLWithPath: path)
         let request = URLRequest(url: targetURL)
@@ -50,5 +56,35 @@ class PDFAfternoon: UIViewController, MFMessageComposeViewControllerDelegate
         
         
     }
+    func setBackgrounds() {
+        settingsData.refreshSettings()
+        switch settingsData.skinLogo {
+        case "Evergreen":
+            self.PDF_ViewMorning.backgroundColor = settingsData.swiftColorEvergreen
+            self.viewMorning.backgroundColor = settingsData.swiftColorEvergreen
+            self.view.backgroundColor = settingsData.swiftColorEvergreen
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorEvergreen
+            
+        case "University Prep":
+            self.PDF_ViewMorning.backgroundColor = settingsData.swiftColorUniversityPrep
+            self.viewMorning.backgroundColor = settingsData.swiftColorUniversityPrep
+            self.view.backgroundColor = settingsData.swiftColorUniversityPrep
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorUniversityPrep
+            
+        case "Neutral":
+            self.PDF_ViewMorning.backgroundColor = settingsData.swiftColorNeutral
+            self.viewMorning.backgroundColor = settingsData.swiftColorNeutral
+            self.view.backgroundColor = settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+            
+        default:  //as in Lakeside
+            self.PDF_ViewMorning.backgroundColor = settingsData.swiftColorLakeside
+            self.viewMorning.backgroundColor = settingsData.swiftColorLakeside
+            self.view.backgroundColor = settingsData.swiftColorLakeside
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
+            
+        }  //endswitch
+        self.view.layoutIfNeeded()
+    }  //endsetbackground
     
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 class Settings
 {
     
@@ -20,6 +21,24 @@ class Settings
     var busRoute2: String? = ""
     var busRoute3: String? = ""
     var switchConfetti: String? = "1"
+    var skinLogo: String? = ""
+    var skinEvergreen = "EvergreenWhiteLogo.png"
+    var skinLakeside = "LakesideLogo.png"
+    var skinUniversityPrep = "University Prep Logo.jpg"
+    var skinNeutral = "cartoon-school-bus-clipart-17.jpg"
+    
+  //  let swiftColorLakeside = UIColor(red: 0.37421922299999999, green: 0.090546001819999999, blue: 0.0483754905, alpha: 1)
+    let swiftColorLakeside = UIColor(red: 104.0/255.0, green: 5.0/255.0, blue: 0.0, alpha: 1)
+    let swiftColorEvergreen = UIColor(red: 43.0/255.0, green: 119.0/255.0, blue: 101.0/255.0, alpha: 1)
+    
+    let swiftColorUniversityPrep = UIColor(red: 37.0/255.0, green: 91.0/255.0, blue: 137.0/255.0, alpha: 1)
+    
+    let swiftColorNeutral = UIColor.white
+    
+    
+    let skins = ["Lakeside", "Evergreen", "University Prep", "Neutral"]
+    
+    let skinLogos = ["LakesideLogo.png","EvergreenWhiteLogo.png","University Prep Logo.jpg", "cartoon-school-bus-clipart-17.jpg"]
     
     func refreshSettings() {
         contactOne = UserDefaults.standard.value(forKey: "ContactOneName") as! String?
@@ -32,6 +51,7 @@ class Settings
         busRoute2 = UserDefaults.standard.value(forKey: "BusRoute2") as? String  ?? "989"
         busRoute3 = UserDefaults.standard.value(forKey: "BusRoute3") as? String  ?? "981"
         switchConfetti = UserDefaults.standard.value(forKey: "SwitchConfetti") as? String ?? "1"
+        skinLogo = UserDefaults.standard.value(forKey: "SkinLogo") as? String ?? "Lakeside"
         
     }
     

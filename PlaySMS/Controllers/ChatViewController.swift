@@ -26,6 +26,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var heightConstraint: NSLayoutConstraint!
     
     
+    @IBOutlet weak var composeViewer: UIView!
     
     @IBOutlet  var sendButton: UIButton!
     @IBOutlet  var messageTextfield: UITextField!
@@ -72,7 +73,77 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
        //scrollTobottom()
      }
     override func viewWillAppear(_ animated: Bool) {
-       scrollTobottom()
+        
+        settingsData.refreshSettings()
+        setBackgrounds()
+        messageTableView.reloadData()
+        scrollTobottom()
+    }
+    
+    func setBackgrounds() {
+        settingsData.refreshSettings()
+        switch settingsData.skinLogo {
+        case "Evergreen":
+            self.view.backgroundColor = settingsData.swiftColorEvergreen
+            self.messageTableView.backgroundColor = settingsData.swiftColorEvergreen
+            
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorEvergreen
+            self.composeViewer.backgroundColor = settingsData.swiftColorEvergreen
+            
+        case "University Prep":
+            self.messageTableView.backgroundColor = settingsData.swiftColorUniversityPrep
+            self.view.backgroundColor = settingsData.swiftColorUniversityPrep
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorUniversityPrep
+            self.composeViewer.backgroundColor = settingsData.swiftColorUniversityPrep
+            
+        case "Neutral":
+            self.view.backgroundColor = settingsData.swiftColorNeutral
+            self.messageTableView.backgroundColor = settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+            self.composeViewer.backgroundColor = settingsData.swiftColorNeutral
+            
+            
+        default:
+            self.view.backgroundColor = settingsData.swiftColorLakeside
+            self.messageTableView.backgroundColor = settingsData.swiftColorLakeside
+            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
+            self.composeViewer.backgroundColor = settingsData.swiftColorLakeside
+            
+        }  //endswitch
+        self.view.layoutIfNeeded()
+    }  //endsetbackground
+    
+    
+    func cellBackgroundColor() -> UIColor {
+        settingsData.refreshSettings()
+        
+        switch settingsData.skinLogo {
+        case "Evergreen":
+
+            return settingsData.swiftColorEvergreen
+            
+        case "University Prep":
+            return settingsData.swiftColorUniversityPrep
+            
+        case "Neutral":
+            return settingsData.swiftColorNeutral
+            
+            
+        default:
+            return settingsData.swiftColorLakeside
+            
+        }  //endswitch
+   
+       
+    }  //endsetbackground
+    
+    
+    
+     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        cell.backgroundColor =  cellBackgroundColor()
+        self.view.setNeedsLayout()
+        //tableView.reloadData()
+        self.view.layoutIfNeeded()
     }
     
     ///////////////////////////////////////////
@@ -100,10 +171,11 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell.messageBody.textColor = UIColor.white
         }
         else{
-            cell.messageBackground.backgroundColor = UIColor.white   //.flatWhite()
-            cell.messageBody.backgroundColor = UIColor.white
-            cell.messageBody.textColor = UIColor.black
-            cell.senderUsername.textColor = UIColor.black
+            cell.messageBackground.backgroundColor = UIColor.darkGray   //.flatWhite()
+            cell.messageBody.backgroundColor = UIColor.darkGray
+            cell.messageBody.textColor = UIColor.white
+            cell.senderUsername.textColor = UIColor.white
+            
         }
         
         return cell
