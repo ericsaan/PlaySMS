@@ -74,8 +74,8 @@ class PDFAfternoon: UIViewController, MFMessageComposeViewControllerDelegate
         case "Neutral":
             self.PDF_ViewMorning.backgroundColor = settingsData.swiftColorNeutral
             self.viewMorning.backgroundColor = settingsData.swiftColorNeutral
-            self.view.backgroundColor = settingsData.swiftColorNeutral
-            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+            self.view.backgroundColor =  UIColor.black // settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = UIColor.black  //  settingsData.swiftColorNeutral
             
         default:  //as in Lakeside
             self.PDF_ViewMorning.backgroundColor = settingsData.swiftColorLakeside

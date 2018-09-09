@@ -26,6 +26,9 @@
 		B85F66DD2143A36500DD21D5 /* Dust.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F66DC2143A36400DD21D5 /* Dust.png */; };
 		B85F66E12144209000DD21D5 /* University Prep Logo.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B85F66E02144209000DD21D5 /* University Prep Logo.jpg */; };
 		B85F66E32144938E00DD21D5 /* EvergreenWhiteLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F66E22144938D00DD21D5 /* EvergreenWhiteLogo.png */; };
+		B85F66E52144B4DD00DD21D5 /* BlackButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F66E42144B4DD00DD21D5 /* BlackButton.png */; };
+		B85F66E72144D97100DD21D5 /* UPrep.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F66E62144D97000DD21D5 /* UPrep.png */; };
+		B85F66E92144D97B00DD21D5 /* EvergreenButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B85F66E82144D97B00DD21D5 /* EvergreenButton.png */; };
 		B868D66B211018CD000F5272 /* LakeLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66A211018CD000F5272 /* LakeLogo.png */; };
 		B868D66D21101972000F5272 /* RedButtonGoldBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = B868D66C21101972000F5272 /* RedButtonGoldBorder.png */; };
 		B868D676211165B3000F5272 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D674211165B3000F5272 /* CustomMessageCell.swift */; };
@@ -85,6 +88,9 @@
 		B85F66DC2143A36400DD21D5 /* Dust.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dust.png; sourceTree = "<group>"; };
 		B85F66E02144209000DD21D5 /* University Prep Logo.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "University Prep Logo.jpg"; sourceTree = "<group>"; };
 		B85F66E22144938D00DD21D5 /* EvergreenWhiteLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EvergreenWhiteLogo.png; sourceTree = "<group>"; };
+		B85F66E42144B4DD00DD21D5 /* BlackButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlackButton.png; sourceTree = "<group>"; };
+		B85F66E62144D97000DD21D5 /* UPrep.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = UPrep.png; sourceTree = "<group>"; };
+		B85F66E82144D97B00DD21D5 /* EvergreenButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = EvergreenButton.png; sourceTree = "<group>"; };
 		B868D66A211018CD000F5272 /* LakeLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LakeLogo.png; sourceTree = "<group>"; };
 		B868D66C21101972000F5272 /* RedButtonGoldBorder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RedButtonGoldBorder.png; sourceTree = "<group>"; };
 		B868D674211165B3000F5272 /* CustomMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
@@ -178,7 +184,10 @@
 				B85925D51E2A98B100AC6B4B /* Settings_950000_25.png */,
 				B85F66E22144938D00DD21D5 /* EvergreenWhiteLogo.png */,
 				B8F2D5271E21EB8D00442E97 /* PDF 2_950000_25.png */,
+				B85F66E42144B4DD00DD21D5 /* BlackButton.png */,
+				B85F66E62144D97000DD21D5 /* UPrep.png */,
 				B8BCD9A9213BB9C000E503FF /* googleLogo.png */,
+				B85F66E82144D97B00DD21D5 /* EvergreenButton.png */,
 				B8F2D53C1E22B18B00442E97 /* Eyes_Emoji.png */,
 				B85F66E02144209000DD21D5 /* University Prep Logo.jpg */,
 				B84EA3551E19F61300DDDAC5 /* Default@2x.png */,
@@ -331,10 +340,13 @@
 				B8F2D53D1E22B18B00442E97 /* Eyes_Emoji.png in Resources */,
 				B8BCD9AA213BB9C000E503FF /* googleLogo.png in Resources */,
 				B84EA3561E19F61300DDDAC5 /* Default@2x.png in Resources */,
+				B85F66E52144B4DD00DD21D5 /* BlackButton.png in Resources */,
+				B85F66E72144D97100DD21D5 /* UPrep.png in Resources */,
 				B8103E181E1885E100B2AD1B /* LakesideLogo.png in Resources */,
 				B844996F212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf in Resources */,
 				B8F2D52E1E21EF9800442E97 /* Bus_950000_25.png in Resources */,
 				B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */,
+				B85F66E92144D97B00DD21D5 /* EvergreenButton.png in Resources */,
 				B84AF6CA21321CBB00B2704F /* cartoon-school-bus-clipart-17.jpg in Resources */,
 				B85F66E32144938E00DD21D5 /* EvergreenWhiteLogo.png in Resources */,
 				B8103E0D1E18530300B2AD1B /* LaunchScreen.storyboard in Resources */,

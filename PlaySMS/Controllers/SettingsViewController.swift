@@ -395,7 +395,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         case "Neutral":
             
             self.view.backgroundColor = settingsData.swiftColorNeutral
-            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = UIColor.black  // settingsData.swiftColorNeutral
             
             
             setLabelColor(colorIn: UIColor.black)

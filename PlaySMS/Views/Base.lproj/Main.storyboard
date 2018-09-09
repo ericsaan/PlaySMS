@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="barTintColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <color key="selectedImageTintColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="selectedImageTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="eH1-SD-4th"/>
@@ -113,7 +113,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wX2-2g-CEj">
-                                <rect key="frame" x="59" y="154" width="100" height="100"/>
+                                <rect key="frame" x="59" y="153" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="TimesNewRomanPS-BoldMT" family="Times New Roman" pointSize="47"/>
                                 <state key="normal" title="986" backgroundImage="RedButtonGoldBorder.png">
@@ -135,7 +135,7 @@
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleAspectFit" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eSJ-dh-xr7">
-                                <rect key="frame" x="66" y="158" width="189" height="39"/>
+                                <rect key="frame" x="66" y="158" width="189" height="11"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="189" id="zB7-Gy-gJt"/>
@@ -150,6 +150,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="eSJ-dh-xr7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2xo-0r-xD7"/>
                             <constraint firstItem="fjL-lv-LVo" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4re-pu-PMo"/>
                             <constraint firstItem="eSJ-dh-xr7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7gh-o5-ly1"/>
                             <constraint firstItem="5mx-SC-AV8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="ACc-GS-C2K"/>
@@ -163,7 +164,9 @@
                         <color key="badgeColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="butImHere" destination="SiO-4t-qcw" id="iEM-4l-B9W"/>
                         <outlet property="butLogo" destination="5mx-SC-AV8" id="rCc-eb-edw"/>
+                        <outlet property="butPickedUp" destination="Xnx-7d-NyY" id="Xgt-Jx-l56"/>
                         <outlet property="butRoute1" destination="wX2-2g-CEj" id="ahR-z7-4dF"/>
                         <outlet property="butRoute2" destination="X6V-vb-Kwl" id="aDL-o7-fQE"/>
                         <outlet property="butRoute3" destination="fud-Sn-1HC" id="4rj-8D-b7r"/>

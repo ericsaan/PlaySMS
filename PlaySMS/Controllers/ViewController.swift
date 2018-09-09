@@ -39,6 +39,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet weak var butRoute1: UIButton!
     @IBOutlet weak var butRoute2: UIButton!
     @IBOutlet weak var butRoute3: UIButton!
+    @IBOutlet weak var butImHere: UIButton!
+    @IBOutlet weak var butPickedUp: UIButton!
     
     
     //pickerview
@@ -112,7 +114,13 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                                 })
             })
             
-            
+            if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+                
+                
+                if switchConfetti == "1" {
+                    popConfetti()
+                }
+            }
           
             
         }
@@ -327,26 +335,53 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             butLogo.setImage(UIImage(named: logo), for: .normal)
             self.view.backgroundColor = settingsData.swiftColorEvergreen
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorEvergreen
-
+            self.lblOnTheBus.textColor = UIColor.white
+            self.butRoute1.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
+            self.butRoute2.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
+            self.butRoute3.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
+            self.butImHere.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
+            self.butPickedUp.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
+                
         case "University Prep":
             let logo = settingsData.skinUniversityPrep
             butLogo.setImage(UIImage(named: logo), for: .normal)
             self.view.backgroundColor = settingsData.swiftColorUniversityPrep
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorUniversityPrep
-
+            self.lblOnTheBus.textColor = UIColor.white
+            self.butRoute1.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
+            self.butRoute2.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
+            self.butRoute3.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
+            self.butImHere.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
+            self.butPickedUp.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
+                
+                
         case "Neutral":
             let logo = settingsData.skinNeutral
             butLogo.setImage(UIImage(named: logo), for: .normal)
+            
             self.view.backgroundColor = settingsData.swiftColorNeutral
-            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
-
+            self.tabBarController?.tabBar.barTintColor = UIColor.black //s  settingsData.swiftColorNeutral
+            self.butRoute1.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
+            self.butRoute2.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
+            self.butRoute3.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
+            self.butImHere.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
+            self.butPickedUp.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
+            self.lblOnTheBus.textColor = UIColor.black
+                
+            
+           
             
         default:
             let logo = settingsData.skinLakeside
             butLogo.setImage(UIImage(named: logo), for: .normal)
-            //self.view.backgroundColor = UIColor.darkGray
             self.view.backgroundColor = settingsData.swiftColorLakeside
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
+            self.butRoute1.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
+            self.butRoute2.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
+            self.butRoute3.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
+            self.butImHere.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
+            self.butPickedUp.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
+               self.lblOnTheBus.textColor = UIColor.white
                 
 
         }  //endswitch
@@ -483,10 +518,10 @@ extension ViewController : UIPickerViewDelegate, UIPickerViewDataSource {
             
         case "Neutral":
             let logo = settingsData.skinNeutral
-            butLogo.setImage(UIImage(named: logo), for: .normal)
+            self.butLogo.setImage(UIImage(named: logo), for: .normal)
             self.view.backgroundColor = settingsData.swiftColorNeutral
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
-            
+           
             
         default:
             let logo = settingsData.skinLakeside
@@ -497,7 +532,7 @@ extension ViewController : UIPickerViewDelegate, UIPickerViewDataSource {
             
             
         }  //endswitch
-        
+        setBackgrounds()
         
         self.view.layoutIfNeeded()
         

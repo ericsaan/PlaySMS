@@ -87,8 +87,8 @@ class ViewController_PDFViewController: UIViewController, MFMessageComposeViewCo
         case "Neutral":
             self.PDF_Webview.backgroundColor = settingsData.swiftColorNeutral
             self.PDF_Webview.backgroundColor = settingsData.swiftColorNeutral
-            self.view.backgroundColor = settingsData.swiftColorNeutral
-            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+            self.view.backgroundColor = UIColor.black // settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = UIColor.black // settingsData.swiftColorNeutral
             
             
         default:  //as in Lakeside

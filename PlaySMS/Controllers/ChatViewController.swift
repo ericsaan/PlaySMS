@@ -97,9 +97,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.composeViewer.backgroundColor = settingsData.swiftColorUniversityPrep
             
         case "Neutral":
-            self.view.backgroundColor = settingsData.swiftColorNeutral
+            self.view.backgroundColor = UIColor.black //settingsData.swiftColorNeutral
             self.messageTableView.backgroundColor = settingsData.swiftColorNeutral
-            self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = UIColor.black //settingsData.swiftColorNeutral
             self.composeViewer.backgroundColor = settingsData.swiftColorNeutral
             
             
