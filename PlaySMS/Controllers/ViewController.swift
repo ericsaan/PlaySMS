@@ -98,12 +98,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
         
         let statusMessageToSend = "I'm Here!                                                    "
-        //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
-//            if switchConfetti == "1" {
-//                popConfetti()
-//            }
-            
+                   
             UIButton.animate(withDuration: 0.2,
                              animations: {
                                 sender.transform = CGAffineTransform(scaleX: 1.20, y: 1.20)
@@ -113,7 +108,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                                     sender.transform = CGAffineTransform.identity
                                 })
             })
-            
             if sendMessageToDatabase(messageToSend: statusMessageToSend) {
                 
                 
@@ -123,7 +117,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             }
           
             
-        }
+      
         
 
     }
@@ -144,7 +138,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                             })
         })
         
-        //sendSMStatusUpdate(messageToSend: statusMessageToSend)
+       
         if sendMessageToDatabase(messageToSend: statusMessageToSend) {
             
             
@@ -193,7 +187,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             switchConfetti = settingsData.switchConfetti
             
             let messageToSendOut = messageToSend.padding(toLength: 50, withPad: " ", startingAt: 0)
-            print("length is-> \(messageToSendOut.count)")
+            //print("length is-> \(messageToSendOut.count)")
                 
             if  parentOne != nil && parentOne != ""
             {
