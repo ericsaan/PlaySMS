@@ -265,14 +265,23 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         print("length is-> \(messageToSend.count)")
         
         
-        studentName = messageArray[messageArray.count - 1].sender  //get last sender and respond to them
+        //studentName = messageArray[messageArray.count - 1].sender  //get last sender and respond to them
         
+        //need to send to both pga entries instead of last one as both need to see the message
         
         let messagesDB = Database.database().reference().child("Messages")
         
+        let settingsData: Settings = Settings()
+        settingsData.refreshSettings()
         
+        let receivers = [settingsData.contactOne,settingsData.contactTwo]
+        
+        for receiver in receivers {
+            
+        if receiver != "" {
+            
         let messageDictionary = ["Sender": appUserName, //Auth.auth().currentUser?.email,
-            "MessageBody": messageToSend,"Receiver": studentName!,"DateString": dateString]
+            "MessageBody": messageToSend,"Receiver": receiver!,"DateString": dateString]
         
         messagesDB.childByAutoId().setValue(messageDictionary){
             (error, reference) in
@@ -286,9 +295,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.messageTextfield.text = ""
                 self.scrollTobottom()
             
-            }
-        }
-      
+                }
+            }  ///end dictionary save to db
+        }  //end if statement
+            
+        } //end for loop
+        
                 
     }  //endsendpressed
     

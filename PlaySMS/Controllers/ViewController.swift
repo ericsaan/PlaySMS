@@ -98,7 +98,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
         
         let statusMessageToSend = "I'm Here!                                                    "
-                   
+        
             UIButton.animate(withDuration: 0.2,
                              animations: {
                                 sender.transform = CGAffineTransform(scaleX: 1.20, y: 1.20)
@@ -213,7 +213,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 {
                     let dateString = getDateString()
                     let messageDictionary = ["Receiver": recipientsList[i],
-                        "MessageBody": messageToSendOut, "Sender": appUserName as Any, "DateString": dateString as Any]
+                                             "MessageBody": messageToSendOut, "Sender": appUserName as Any, "DateString": dateString as Any]
                 
                 messagesDB.childByAutoId().setValue(messageDictionary){
                     (error, reference) in
@@ -221,7 +221,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                     if error != nil{
                         print(error!)
                     }else {
-                        print ("message saved successfully")
+                       // print ("message saved successfully")
                        
                     }
                   }
