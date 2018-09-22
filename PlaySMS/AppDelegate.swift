@@ -351,6 +351,10 @@ extension AppDelegate : MessagingDelegate {
     
     func messaging(_ messaging: Messaging, didReceive remoteMessage: MessagingRemoteMessage) {
         print("Received Internal data message: \(remoteMessage.appData)")
+        //now to automatically send a message back
+        
+        
+        
     }
     // [END ios_10_data_message]
 }
