@@ -43,9 +43,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.delegate = self
         messageTableView.dataSource = self
         
-       
-       
-
         //TODO: Register your MessageCell.xib file here:
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         

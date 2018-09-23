@@ -242,7 +242,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 {
                     let dateString = getDateString()
                     let messageDictionary = ["Receiver": recipientsList[i], "ReceiverName": recipientsListNames[i],
-                                             "MessageBody": messageToSendOut, "Sender": appUserName as Any, "SenderName": senderName, "DateString": dateString as Any]
+                                             "MessageBody": messageToSendOut, "Sender": appUserName as Any, "SenderName": senderName!, "DateString": dateString as Any]
                 
                 messagesDB.childByAutoId().setValue(messageDictionary){
                     (error, reference) in
@@ -255,6 +255,52 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                     }
                   }
                 } //endforloop
+                //**********
+                //now to write to cloudstore as well in transition
+                //**********
+
+                let userDB = Firestore.firestore()
+                let settings = userDB.settings
+                settings.areTimestampsInSnapshotsEnabled = true
+                userDB.settings = settings
+                
+                userDB.collection("messages")
+                
+                for i in 0 ... recipientsList.count - 1
+                {
+                    let dateString = getDateString()
+          
+                    var ref: DocumentReference? = nil
+                    ref = userDB.collection("messages").addDocument(data: [
+                        "Receiver": recipientsList[i],
+                        "ReceiverName": recipientsListNames[i],
+                        "MessageBody": messageToSendOut,
+                        "Sender": appUserName!,
+                        "SenderName": senderName!,
+                        "DateString": dateString
+                        
+                    ]) { err in
+                            if let err = err {
+                                print("Error adding message document: \(err)")
+                            } else {
+                                print("Document added with ID: \(ref!.documentID)")
+                            }
+                        } //enderr
+                    
+                } //endforloop
+                
+                // end write to cloudstore
+                //***************************
+                
+                
+                
+                
+                
+                
+                
+                
+                
+                
             } //endif loop
         }//end if on user = nil
         
@@ -315,7 +361,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //to pick skins
         pickerView.delegate = self
         pickerView.dataSource = self
-        
+       // FirebaseApp.configure()
         //call login for google
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
