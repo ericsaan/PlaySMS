@@ -24,10 +24,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     let emitterLayer = CAEmitterLayer()
     @objc let cheerView = CheerView()
     @objc var recipientsList = [String]()
+    @objc var recipientsListNames = [String]()
     @objc var statusMessageToSend = ""
     @objc var parentOne: String? = ""
+    @objc var parentOneName: String? = ""
     @objc var parentTwo: String? = ""
+    @objc var parentTwoName: String? = ""
     @objc var appUserName: String? = ""
+    @objc var senderName: String? = ""
     @objc var busRoute1: String? = ""
     @objc var busRoute2: String? = ""
     @objc var busRoute3: String? = ""
@@ -42,15 +46,39 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet weak var butRoute3: UIButton!
     @IBOutlet weak var butImHere: UIButton!
     @IBOutlet weak var butPickedUp: UIButton!
+    @IBOutlet weak var butGettingClose: UIButton!
     
     
     //pickerview
     @IBOutlet weak var butLogo: UIButton!
     
     @IBOutlet weak var pickerView: UIPickerView!
-   // let skins = ["Lakeside", "Evergreen", "University Prep", "Neutral"]
+ 
+    //************************************************************************
     
-   // let skinLogos = ["LakesideLogo.png","Evergreen Logo.png","University Prep Logo.jpg", "cartoon-school-bus-clipart-17.jpg"]
+    @IBAction func btnGettingClosePressed(_ sender: UIButton) {
+        
+        let statusMessageToSend = getCloseText()  //custom text based on email from sullivan or fitzgerald families
+        
+        UIButton.animate(withDuration: 0.2,
+                         animations: {
+                            sender.transform = CGAffineTransform(scaleX: 1.20, y: 1.20)
+        },
+                         completion: { finish in
+                            UIButton.animate(withDuration: 0.2, animations: {
+                                sender.transform = CGAffineTransform.identity
+                            })
+        })
+        
+        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+            
+            
+            if switchConfetti == "1" {
+                popConfetti()
+            }
+        }
+        
+    }
     
     //************************************************************************
     
@@ -94,10 +122,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     @IBAction func btnImhere(_ sender: UIButton)
     {
-        
-        
-    
-        
+      
         let statusMessageToSend = "I'm Here!                                                    "
         
             UIButton.animate(withDuration: 0.2,
@@ -116,12 +141,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                     popConfetti()
                 }
             }
-          
-            
-      
-        
-
-    }
+      }
     
     //************************************************************************
     
@@ -182,9 +202,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             
             //first let's get the list of recipients
             recipientsList.removeAll()
+            recipientsListNames.removeAll()
+            
             settingsData.refreshSettings()
             parentOne = settingsData.contactOne
             parentTwo = settingsData.contactTwo
+            parentOneName = settingsData.contactOnePhoneNumber
+            parentTwoName = settingsData.contactTwoPhoneNumber
+            senderName = settingsData.appUserPhoneNumber
+            
             switchConfetti = settingsData.switchConfetti
             
             let messageToSendOut = messageToSend.padding(toLength: 50, withPad: " ", startingAt: 0)
@@ -193,6 +219,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             if  parentOne != nil && parentOne != ""
             {
                 recipientsList.append(parentOne!)
+                recipientsListNames.append(parentOneName!)
                // print (parentOne!)
             }
             
@@ -200,6 +227,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             if parentTwo != nil && parentTwo != ""
             {
                 recipientsList.append(parentTwo!)
+                recipientsListNames.append(parentTwoName!)
                 //print (parentTwo!)
             }
 
@@ -213,8 +241,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 for i in 0 ... recipientsList.count - 1
                 {
                     let dateString = getDateString()
-                    let messageDictionary = ["Receiver": recipientsList[i],
-                                             "MessageBody": messageToSendOut, "Sender": appUserName as Any, "DateString": dateString as Any]
+                    let messageDictionary = ["Receiver": recipientsList[i], "ReceiverName": recipientsListNames[i],
+                                             "MessageBody": messageToSendOut, "Sender": appUserName as Any, "SenderName": senderName, "DateString": dateString as Any]
                 
                 messagesDB.childByAutoId().setValue(messageDictionary){
                     (error, reference) in
@@ -235,39 +263,39 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     //************************************************************************
     
-    @objc func sendSMStatusUpdate (messageToSend : String)
-    {
-
-        //first let's get the list of recipients
-        recipientsList.removeAll()
-        parentOne = settingsData.contactOnePhoneNumber
-        parentTwo = settingsData.contactTwoPhoneNumber
-            
-            if  parentOne != ""
-            {
-                recipientsList.append(parentOne!)
-                //print (parentOne!)
-            }
-       
-            if parentTwo != ""
-            {
-                recipientsList.append(parentTwo!)
-               // print (parentTwo!)
-            }
-    
-        let messageVC = MFMessageComposeViewController()
-        messageVC.body =   messageToSend
-        messageVC.recipients = recipientsList;
-        messageVC.messageComposeDelegate = self;
-        
-        //make sure we check for nil here or simulator
-        if (MFMessageComposeViewController.canSendText()) {
-            self.present(messageVC, animated: false, completion: nil)
-            
-            }
-        
-    }
-    
+//    @objc func sendSMStatusUpdate (messageToSend : String)
+//    {
+//
+//        //first let's get the list of recipients
+//        recipientsList.removeAll()
+//        parentOne = settingsData.contactOnePhoneNumber
+//        parentTwo = settingsData.contactTwoPhoneNumber
+//
+//            if  parentOne != ""
+//            {
+//                recipientsList.append(parentOne!)
+//                //print (parentOne!)
+//            }
+//
+//            if parentTwo != ""
+//            {
+//                recipientsList.append(parentTwo!)
+//               // print (parentTwo!)
+//            }
+//
+//        let messageVC = MFMessageComposeViewController()
+//        messageVC.body =   messageToSend
+//        messageVC.recipients = recipientsList;
+//        messageVC.messageComposeDelegate = self;
+//
+//        //make sure we check for nil here or simulator
+//        if (MFMessageComposeViewController.canSendText()) {
+//            self.present(messageVC, animated: false, completion: nil)
+//
+//            }
+//
+//    }
+//
     //************************************************************************
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
@@ -321,10 +349,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         mainSettingsLayout()
     }  //end will appear
     
-    
-        func setBackgrounds() {
+   //*****************************************************************************************************
+    func setBackgrounds() {
    
-            switch settingsData.skinLogo {
+      switch settingsData.skinLogo {
         case "Evergreen":
             let logo = settingsData.skinEvergreen
             butLogo.setImage(UIImage(named: logo), for: .normal)
@@ -336,6 +364,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.butRoute3.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
             self.butImHere.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
             self.butPickedUp.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
+            self.butGettingClose.setTitleColor(UIColor.white, for: .normal)
+            self.butGettingClose.setTitle(getCloseText(), for: .normal)
+                
                 
         case "University Prep":
             let logo = settingsData.skinUniversityPrep
@@ -348,7 +379,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.butRoute3.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
             self.butImHere.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
             self.butPickedUp.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
-                
+            self.butGettingClose.setTitleColor(UIColor.white, for: .normal)
+            self.butGettingClose.setTitle(getCloseText(), for: .normal)
+        
                 
         case "Neutral":
             let logo = settingsData.skinNeutral
@@ -362,7 +395,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.butImHere.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
             self.butPickedUp.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
             self.lblOnTheBus.textColor = UIColor.black
-                
+            self.butGettingClose.setTitleColor(UIColor.black, for: .normal)
+            self.butGettingClose.setTitle(getCloseText(), for: .normal)
+        
             
            
             
@@ -376,15 +411,30 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.butRoute3.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
             self.butImHere.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
             self.butPickedUp.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
-               self.lblOnTheBus.textColor = UIColor.white
-                
-
+            self.lblOnTheBus.textColor = UIColor.white
+            self.butGettingClose.setTitleColor(UIColor.white, for: .normal)
+            self.butGettingClose.setTitle(getCloseText(), for: .normal)
+        
+        
         }  //endswitch
         self.view.layoutIfNeeded()
     }  //endsetbackground
     
-    
-    
+    //***************************************************************************************
+    func getCloseText()-> String {
+       switch settingsData.appUserName {
+        
+       case "katherines23@lakesideschool.org", "ericsaan@gmail.com", "sullynat@gmail.com","gregfitz99@gmail.com", "marypellyfitzgerald@gmail.com","jenniferf23@lakesideschool.org":
+       
+            return "On 520..."
+        
+        default:
+            return "Getting Close..."
+       }
+        
+     }
+  
+    //***************************************************************************************
     
     @IBAction func btnSelectLogo(_ sender: UIButton) {
     pickerView.isHidden = false

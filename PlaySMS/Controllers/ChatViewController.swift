@@ -10,8 +10,8 @@ import Firebase
 
 //import ChameleonFramework
 
-
-class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate
+//, UITextFieldDelegate
+class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     
     // Declare instance variables here
@@ -19,20 +19,14 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc var studentName: String?
     @objc var dateString: String?
     @objc var appUserName: String?
+    @objc var senderName: String?
+    @objc var receiverName: String?
+    @objc var receiverName1: String?
+    @objc var receiverName2: String?
     
     var settingsData: Settings = Settings()
     
-    
-    
-    @IBOutlet var heightConstraint: NSLayoutConstraint!
-    
-    
-    @IBOutlet weak var composeViewer: UIView!
-    
-    @IBOutlet  var sendButton: UIButton!
-    @IBOutlet  var messageTextfield: UITextField!
-  
-    @IBOutlet var messageTableView: UITableView!
+    @IBOutlet weak var messageTableView: UITableView!
     
     
     
@@ -49,23 +43,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.delegate = self
         messageTableView.dataSource = self
         
-        //TODO: Set yourself as the delegate of the text field here:
-        messageTextfield.delegate = self
-        
-        
-        //TODO: Set the tapGesture here:
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tableViewTapped))
-        messageTableView.addGestureRecognizer(tapGesture)
-        
+       
+       
 
         //TODO: Register your MessageCell.xib file here:
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
-        configureTableView()
+        //configureTableView()
         retrieveMessages()
       
         messageTableView.separatorStyle = .none
-       
+        messageTableView.reloadData()
+        self.view.layoutIfNeeded()
         
     }
 
@@ -81,6 +70,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         scrollTobottom()
     }
     
+    
+    //***********************************************************************************
+    
     func setBackgrounds() {
         settingsData.refreshSettings()
         switch settingsData.skinLogo {
@@ -89,31 +81,32 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.messageTableView.backgroundColor = settingsData.swiftColorEvergreen
             
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorEvergreen
-            self.composeViewer.backgroundColor = settingsData.swiftColorEvergreen
+            //self.composeViewer.backgroundColor = settingsData.swiftColorEvergreen
             
         case "University Prep":
             self.messageTableView.backgroundColor = settingsData.swiftColorUniversityPrep
             self.view.backgroundColor = settingsData.swiftColorUniversityPrep
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorUniversityPrep
-            self.composeViewer.backgroundColor = settingsData.swiftColorUniversityPrep
+            //self.composeViewer.backgroundColor = settingsData.swiftColorUniversityPrep
             
         case "Neutral":
             self.view.backgroundColor = UIColor.black //settingsData.swiftColorNeutral
             self.messageTableView.backgroundColor = settingsData.swiftColorNeutral
             self.tabBarController?.tabBar.barTintColor = UIColor.black //settingsData.swiftColorNeutral
-            self.composeViewer.backgroundColor = settingsData.swiftColorNeutral
+           // self.composeViewer.backgroundColor = settingsData.swiftColorNeutral
             
             
         default:
             self.view.backgroundColor = settingsData.swiftColorLakeside
             self.messageTableView.backgroundColor = settingsData.swiftColorLakeside
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
-            self.composeViewer.backgroundColor = settingsData.swiftColorLakeside
+            //self.composeViewer.backgroundColor = settingsData.swiftColorLakeside
             
         }  //endswitch
         self.view.layoutIfNeeded()
     }  //endsetbackground
     
+    //***********************************************************************************
     
     func cellBackgroundColor() -> UIColor {
         settingsData.refreshSettings()
@@ -138,6 +131,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
        
     }  //endsetbackground
     
+    //***********************************************************************************
     
     
      func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -159,7 +153,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
    
  
         cell.messageBody.text = messageArray[indexPath.row].messageBody
-        cell.senderUsername.text = " " + messageArray[indexPath.row].sender + " - " + messageArray[indexPath.row].dateSent
+        let senderName = messageArray[indexPath.row].senderName
+        if senderName != "" {
+            cell.senderUsername.text = " " + messageArray[indexPath.row].senderName + " - " + messageArray[indexPath.row].dateSent
+        } else {
+            cell.senderUsername.text = " " + messageArray[indexPath.row].sender + " - " + messageArray[indexPath.row].dateSent
+        }
         
         
         //TODO: filter to receiving app user
@@ -195,11 +194,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     
     //TODO: Declare tableViewTapped here:
-    @objc func tableViewTapped()
-    {
-        messageTextfield.endEditing(true)
-    }
-    
+
     
     //TODO: Declare configureTableView here:
     @objc func configureTableView()
@@ -211,101 +206,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     ///////////////////////////////////////////
     
-    //MARK:- TextField Delegate Methods
-    
-    
-
-    
-    //TODO: Declare textFieldDidBeginEditing here:
-    func textFieldDidBeginEditing(_ textField: UITextField)
-    {
-        
-        UIView.animate(withDuration: 0.5)
-            {
-               self.heightConstraint.constant = 323
-              
-                self.view.layoutIfNeeded()
-            }
-    }
-    
-    
-    
-    //TODO: Declare textFieldDidEndEditing here:
-    func textFieldDidEndEditing(_ textField: UITextField)
-    {
-        UIView.animate(withDuration: 0.5)
-        {
-           self.heightConstraint.constant = 50
-            self.view.layoutIfNeeded()
-        }
-    }
-
-    
-    ///////////////////////////////////////////
-    
-    
-    //MARK: - Send & Recieve from Firebase
-    
-    
-    
-    
-    
-    //@IBAction func sendPressed(_ sender: AnyObject)
-    @IBAction func sendPressed(_ sender: Any)
-    {
-        messageTextfield.endEditing(true)
-        messageTextfield.isEnabled = false
-        sendButton.isEnabled = false
-        
-        
-        //hit the database
-        let dateString = getDateString()
-        let messageIn = messageTextfield.text!
-        let messageToSend = messageIn.padding(toLength: 50, withPad: " ", startingAt: 0)
-        print("length is-> \(messageToSend.count)")
-        
-        
-        //studentName = messageArray[messageArray.count - 1].sender  //get last sender and respond to them
-        
-        //need to send to both pga entries instead of last one as both need to see the message
-        
-        let messagesDB = Database.database().reference().child("Messages")
-        
-        let settingsData: Settings = Settings()
-        settingsData.refreshSettings()
-        
-        let receivers = [settingsData.contactOne,settingsData.contactTwo]
-        
-        for receiver in receivers {
-            
-        if receiver != "" {
-            
-        let messageDictionary = ["Sender": appUserName, //Auth.auth().currentUser?.email,
-            "MessageBody": messageToSend,"Receiver": receiver!,"DateString": dateString]
-        
-        messagesDB.childByAutoId().setValue(messageDictionary){
-            (error, reference) in
-            
-            if error != nil{
-                print(error!)
-            }else {
-                print ("message saved successfully")
-                self.messageTextfield.isEnabled = true
-                self.sendButton.isEnabled = true
-                self.messageTextfield.text = ""
-                self.scrollTobottom()
-            
-                }
-            }  ///end dictionary save to db
-        }  //end if statement
-            
-        } //end for loop
-        
-                
-    }  //endsendpressed
-    
-    //TODO: Create the retrieveMessages method here:
-    
+//    //TODO: Create the retrieveMessages method here:
+//
      @objc func retrieveMessages()
      {
         let messageDB = Database.database().reference().child("Messages")
@@ -316,14 +218,12 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             let snapshotValue = snapshot.value as! Dictionary<String,String>
             
             let text = snapshotValue["MessageBody"]!
-            var sender = snapshotValue["Sender"]!
-            
-            //now strip out the email portion
-            let index = sender.index(of: "@")!
-            let newStr = String(sender[..<index])
-            sender = newStr
+            let sender = snapshotValue["Sender"]!
+            let senderName = snapshotValue["SenderName"]!
             
             let receiver = snapshotValue["Receiver"]!
+            let receiverName = snapshotValue["ReceiverName"]!
+            
             let dateString = snapshotValue["DateString"]!
             
             //print (text, sender)
@@ -331,12 +231,17 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             message.messageBody = text.padding(toLength: 43, withPad: " ", startingAt: 0)
              
             message.sender   = sender
+            message.senderName = senderName
             message.receiver = receiver
+            message.receiverName  = receiverName
             message.dateSent = dateString
             
             
             //don't append message if not intended for app user or not sent by user
             //***************************************************************************************
+           
+          
+            
             if self.settingsData.appUserName == message.receiver  {
                self.messageArray.append(message)
                 
@@ -350,29 +255,26 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 
                 if self.settingsData.appUserName == senderCheck.sender {
-                //    if senderCheck.dateSent != message.dateSent {
                         self.messageArray.append(message)
-                        
-                //    }
-                    
                 }
             } else {
+           
                 if self.settingsData.appUserName == message.sender {
                     self.messageArray.append(message)
                     
                 }
             }
             
-            //***************************************************************************************
-            self.configureTableView()
+                self.configureTableView()
             self.messageTableView.reloadData()
             self.scrollTobottom()
 
             
         })
-    
+      //print("done retrieving")
     }
     
+    //***************************************************************************************
     
     @objc func scrollTobottom() {
         let scrollPoint = CGPoint(x: 0, y: self.messageTableView.contentSize.height - self.messageTableView.frame.size.height)
@@ -380,6 +282,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
     }
     
+    //***************************************************************************************
     
     @objc func getDateString() -> String {
         
@@ -397,6 +300,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         return dateString
     }
+    //***************************************************************************************
     
 
 }
