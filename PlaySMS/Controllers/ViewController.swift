@@ -238,23 +238,23 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             
             if recipientsList.count != 0
             {
-                for i in 0 ... recipientsList.count - 1
-                {
-                    let dateString = getDateString()
-                    let messageDictionary = ["Receiver": recipientsList[i], "ReceiverName": recipientsListNames[i],
-                                             "MessageBody": messageToSendOut, "Sender": appUserName as Any, "SenderName": senderName!, "DateString": dateString as Any]
-                
-                messagesDB.childByAutoId().setValue(messageDictionary){
-                    (error, reference) in
-                    
-                    if error != nil{
-                        print(error!)
-                    }else {
-                       // print ("message saved successfully")
-                       
-                    }
-                  }
-                } //endforloop
+//                for i in 0 ... recipientsList.count - 1
+//                {
+//                    let dateString = getDateString()
+//                    let messageDictionary = ["Receiver": recipientsList[i], "ReceiverName": recipientsListNames[i],
+//                                             "MessageBody": messageToSendOut, "Sender": appUserName as Any, "SenderName": senderName!, "DateString": dateString as Any]
+//                
+//                messagesDB.childByAutoId().setValue(messageDictionary){
+//                    (error, reference) in
+//                    
+//                    if error != nil{
+//                        print(error!)
+//                    }else {
+//                       // print ("message saved successfully")
+//                       
+//                    }
+//                  }
+//                } //endforloop
                 //**********
                 //now to write to cloudstore as well in transition
                 //**********
@@ -472,10 +472,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
        case "katherines23@lakesideschool.org", "ericsaan@gmail.com", "sullynat@gmail.com","gregfitz99@gmail.com", "marypellyfitzgerald@gmail.com","jenniferf23@lakesideschool.org":
        
-            return "On 520..."
+            return "     On 520 "
         
         default:
-            return "Getting Close..."
+            return "  Getting Close"
        }
         
      }

@@ -46,7 +46,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         //TODO: Register your MessageCell.xib file here:
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
-        //configureTableView()
+        configureTableView()
         retrieveMessages()
       
         messageTableView.separatorStyle = .none
@@ -58,13 +58,23 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidAppear(_ animated: Bool) {
        //scrollTobottom()
+        //retrieveMessages()
+
+//        scrollTobottom()
+       
+       // configureTableView()
+       //         messageTableView.reloadData()
+         self.view.layoutIfNeeded()
      }
     override func viewWillAppear(_ animated: Bool) {
         
-        settingsData.refreshSettings()
+//        settingsData.refreshSettings()
         setBackgrounds()
-        messageTableView.reloadData()
-        scrollTobottom()
+        configureTableView()
+        retrieveMessages()
+        //messageTableView.reloadData()
+//        scrollTobottom()
+        self.view.layoutIfNeeded()
     }
     
     
@@ -207,67 +217,73 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
 //
      @objc func retrieveMessages()
      {
-        let messageDB = Database.database().reference().child("Messages")
         
         settingsData.refreshSettings()
+        messageArray.removeAll()
+        //messageTableView.reloadData()
         
-        messageDB.observe(.childAdded, with: { (snapshot) in
-            let snapshotValue = snapshot.value as! Dictionary<String,String>
+        
+        
+        
+        let messageDB = Firestore.firestore()
+        let settings = messageDB.settings
+        settings.areTimestampsInSnapshotsEnabled = true
+        messageDB.settings = settings
+        
+        //userDB.collection("messages")
+        messageDB.collection("messages")
             
-            let text = snapshotValue["MessageBody"]!
-            let sender = snapshotValue["Sender"]!
-            let senderName = snapshotValue["SenderName"]!
+            .whereField("Receiver", isEqualTo: settingsData.appUserName!)
+            //.whereField("fcmToken", isEqualTo: "asdfg")   //TODO: need to get the current fcmtoken for querying
             
-            let receiver = snapshotValue["Receiver"]!
-            let receiverName = snapshotValue["ReceiverName"]!
-            
-            let dateString = snapshotValue["DateString"]!
-            
-            //print (text, sender)
-            let message = Message()
-            message.messageBody = text.padding(toLength: 43, withPad: " ", startingAt: 0)
-             
-            message.sender   = sender
-            message.senderName = senderName
-            message.receiver = receiver
-            message.receiverName  = receiverName
-            message.dateSent = dateString
-            
-            
-            //don't append message if not intended for app user or not sent by user
-            //***************************************************************************************
-           
-          
-            
-            if self.settingsData.appUserName == message.receiver  {
-               self.messageArray.append(message)
+            .whereField("Sender", isEqualTo: settingsData.appUserName!)
+            .order(by: "DateString")
+            .getDocuments() { (querySnapshot, err) in
                 
-            }
-            
-            //now for messages the app user has sent, only need 1 record even though 2 messages were sent
-            if self.messageArray.count > 0 {
-                
-                
-                let senderCheck = message  //self.messageArray[self.messageArray.count - 1]
-                
-                
-                if self.settingsData.appUserName == senderCheck.sender {
-                        self.messageArray.append(message)
-                }
-            } else {
-           
-                if self.settingsData.appUserName == message.sender {
-                    self.messageArray.append(message)
-                    
-                }
-            }
-            
-                self.configureTableView()
-            self.messageTableView.reloadData()
-            self.scrollTobottom()
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                } else {
+                    self.messageArray.removeAll()
+                    //now we have a match SO WE populate the messagearray
+                    for document in querySnapshot!.documents {
+                     let documentData = document.data()
+                        
+                     let text = documentData["MessageBody"] as? String ?? ""
+                        
+                     let sender = documentData["Sender"] as? String ?? ""
+                     let senderName = documentData["SenderName"] as? String ?? ""
+                     let receiver = documentData["Receiver"] as? String ?? ""
+                     let receiverName = documentData["ReceiverName"] as? String ?? ""
+                     let dateString = documentData["DateString"] as? String ?? ""
 
             
-        })
+                       // print("\(document.documentID) => \(document.data())")
+                         print("\(document.documentID) => \(text)")
+                        let message = Message()
+                        message.messageBody = text.padding(toLength: 48, withPad: " ", startingAt: 0)
+            
+                        message.sender   = sender
+                        message.senderName = senderName
+                        message.receiver = receiver
+                        message.receiverName = receiverName
+                        message.dateSent = dateString
+                        
+                        self.messageArray.append(message)
+                           self.messageTableView.reloadData()
+                        
+                    }
+                }
+                
+            } //endgetdocuments
+       
+        
+
+//            self.configureTableView()
+        messageTableView.reloadData()
+            self.scrollTobottom()
+            self.view.layoutIfNeeded()
+
+            
       //print("done retrieving")
     }
     

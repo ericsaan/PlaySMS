@@ -149,18 +149,27 @@
                                     <action selector="btnSelectLogo:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ug2-SY-mVi"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHu-hA-SfC">
-                                <rect key="frame" x="112" y="469" width="99" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                                <state key="normal" title="Getting Close">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <action selector="btnGettingClosePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c1w-bf-tNk"/>
-                                </connections>
-                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ayd-9B-D6B" userLabel="ViewBottom">
+                                <rect key="frame" x="0.0" y="466" width="320" height="53"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OHu-hA-SfC">
+                                        <rect key="frame" x="123" y="13.5" width="74" height="26"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                        <state key="normal" title="Getting Close">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnGettingClosePressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c1w-bf-tNk"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="9Rx-ac-cDW"/>
+                                    <constraint firstItem="OHu-hA-SfC" firstAttribute="centerX" secondItem="Ayd-9B-D6B" secondAttribute="centerX" id="Ipp-cF-mbX"/>
+                                    <constraint firstItem="OHu-hA-SfC" firstAttribute="centerY" secondItem="Ayd-9B-D6B" secondAttribute="centerY" id="j1C-T0-YeM"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -169,10 +178,16 @@
                             <constraint firstItem="eSJ-dh-xr7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7gh-o5-ly1"/>
                             <constraint firstItem="5mx-SC-AV8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7ki-Pp-dRj"/>
                             <constraint firstItem="fjL-lv-LVo" firstAttribute="top" secondItem="5mx-SC-AV8" secondAttribute="bottom" constant="1" id="DCk-aZ-6ss"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ayd-9B-D6B" secondAttribute="bottom" id="TjY-zy-y7F"/>
                             <constraint firstItem="5mx-SC-AV8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zk8-cK-WF2"/>
                             <constraint firstItem="eSJ-dh-xr7" firstAttribute="top" secondItem="fjL-lv-LVo" secondAttribute="bottom" constant="1" id="aiC-25-01d"/>
+                            <constraint firstItem="Ayd-9B-D6B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="cEw-2n-Fex"/>
+                            <constraint firstAttribute="trailing" secondItem="Ayd-9B-D6B" secondAttribute="trailing" id="cyx-YB-Lt0"/>
                             <constraint firstItem="fjL-lv-LVo" firstAttribute="top" secondItem="5mx-SC-AV8" secondAttribute="bottom" constant="3" id="fMz-uJ-cFg"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ayd-9B-D6B" secondAttribute="bottom" id="mM6-d9-1Dg"/>
+                            <constraint firstItem="Ayd-9B-D6B" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="pC1-bt-mTY"/>
                             <constraint firstItem="5mx-SC-AV8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pCQ-KF-WQl"/>
+                            <constraint firstAttribute="trailing" secondItem="Ayd-9B-D6B" secondAttribute="trailing" id="ppI-bZ-Xa8"/>
                             <constraint firstItem="5mx-SC-AV8" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="16" id="tHr-4B-euP"/>
                         </constraints>
                     </view>
@@ -225,6 +240,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.37421922299999999" green="0.090546001819999999" blue="0.0483754905" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="tDT-BE-97j" firstAttribute="top" secondItem="OWj-mp-z5n" secondAttribute="bottom" id="0zR-Lc-HDR"/>
                             <constraint firstAttribute="trailing" secondItem="OWj-mp-z5n" secondAttribute="trailing" id="EoL-Vh-lfQ"/>
                             <constraint firstItem="OWj-mp-z5n" firstAttribute="top" secondItem="b57-GU-K6F" secondAttribute="bottom" id="OMZ-2b-JJ2"/>
                             <constraint firstItem="tDT-BE-97j" firstAttribute="top" secondItem="OWj-mp-z5n" secondAttribute="bottom" id="dTM-rS-rwq"/>
