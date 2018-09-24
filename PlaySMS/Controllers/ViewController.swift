@@ -13,11 +13,6 @@ import Firebase
 import GoogleSignIn
 import CoreLocation
 
-
-
-
-
-
 class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, GIDSignInUIDelegate
 {
 
@@ -197,9 +192,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             return false
           
         } else {
-        
-            let messagesDB = Database.database().reference().child("Messages")
-            
+         
             //first let's get the list of recipients
             recipientsList.removeAll()
             recipientsListNames.removeAll()
@@ -238,25 +231,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             
             if recipientsList.count != 0
             {
-//                for i in 0 ... recipientsList.count - 1
-//                {
-//                    let dateString = getDateString()
-//                    let messageDictionary = ["Receiver": recipientsList[i], "ReceiverName": recipientsListNames[i],
-//                                             "MessageBody": messageToSendOut, "Sender": appUserName as Any, "SenderName": senderName!, "DateString": dateString as Any]
-//                
-//                messagesDB.childByAutoId().setValue(messageDictionary){
-//                    (error, reference) in
-//                    
-//                    if error != nil{
-//                        print(error!)
-//                    }else {
-//                       // print ("message saved successfully")
-//                       
-//                    }
-//                  }
-//                } //endforloop
                 //**********
-                //now to write to cloudstore as well in transition
+                //now to write to cloudstore
                 //**********
 
                 let userDB = Firestore.firestore()
@@ -291,16 +267,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 
                 // end write to cloudstore
                 //***************************
-                
-                
-                
-                
-                
-                
-                
-                
-                
-                
             } //endif loop
         }//end if on user = nil
         
@@ -308,40 +274,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
     
     //************************************************************************
-    
-//    @objc func sendSMStatusUpdate (messageToSend : String)
-//    {
-//
-//        //first let's get the list of recipients
-//        recipientsList.removeAll()
-//        parentOne = settingsData.contactOnePhoneNumber
-//        parentTwo = settingsData.contactTwoPhoneNumber
-//
-//            if  parentOne != ""
-//            {
-//                recipientsList.append(parentOne!)
-//                //print (parentOne!)
-//            }
-//
-//            if parentTwo != ""
-//            {
-//                recipientsList.append(parentTwo!)
-//               // print (parentTwo!)
-//            }
-//
-//        let messageVC = MFMessageComposeViewController()
-//        messageVC.body =   messageToSend
-//        messageVC.recipients = recipientsList;
-//        messageVC.messageComposeDelegate = self;
-//
-//        //make sure we check for nil here or simulator
-//        if (MFMessageComposeViewController.canSendText()) {
-//            self.present(messageVC, animated: false, completion: nil)
-//
-//            }
-//
-//    }
-//
+   
     //************************************************************************
     
     func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult)
@@ -361,7 +294,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //to pick skins
         pickerView.delegate = self
         pickerView.dataSource = self
-       // FirebaseApp.configure()
         //call login for google
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().signIn()
@@ -434,7 +366,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             butLogo.setImage(UIImage(named: logo), for: .normal)
             
             self.view.backgroundColor = settingsData.swiftColorNeutral
-            self.tabBarController?.tabBar.barTintColor = UIColor.black //s  settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = UIColor.black
             self.butRoute1.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
             self.butRoute2.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
             self.butRoute3.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
@@ -486,10 +418,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     pickerView.isHidden = false
     }
     
-    
-    
-    
-    
     //*******************************************
     @objc func mainSettingsLayout() {
         let screenWidth = Int(self.view.frame.width)
@@ -498,8 +426,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         let r2BallX = self.view.center.x-1
         let ballSize: CGFloat = 134
         
-        
-       // imgLakeside.center.x = self.view.center.x
         lblOnTheBus.center.x = self.view.center.x
         
         switch screenWidth {
@@ -571,24 +497,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
        
         return dateString
     }
-    
-   
    }
 
 
 extension ViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     
-    
-    
-    
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int)
     {
       
         //on other screens do same as far as reading user default adn then setting background and logo
-
-
-//        let logo = settingsData.skinLogos[row]
-//        butLogo.setImage(UIImage(named: logo), for: .normal)
         UserDefaults.standard.set(settingsData.skins[row], forKey: "SkinLogo")
         settingsData.refreshSettings()
         pickerView.isHidden = true;
@@ -617,7 +534,6 @@ extension ViewController : UIPickerViewDelegate, UIPickerViewDataSource {
         default:
             let logo = settingsData.skinLakeside
             butLogo.setImage(UIImage(named: logo), for: .normal)
-            //self.view.backgroundColor = UIColor.darkGray
             self.view.backgroundColor = settingsData.swiftColorLakeside
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
             

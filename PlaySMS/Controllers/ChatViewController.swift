@@ -60,7 +60,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
        //scrollTobottom()
         //retrieveMessages()
 
-//        scrollTobottom()
+      scrollTobottom()
        
        // configureTableView()
        //         messageTableView.reloadData()
@@ -73,7 +73,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         configureTableView()
         retrieveMessages()
         //messageTableView.reloadData()
-//        scrollTobottom()
+        scrollTobottom()
         self.view.layoutIfNeeded()
     }
     
@@ -88,26 +88,23 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.messageTableView.backgroundColor = settingsData.swiftColorEvergreen
             
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorEvergreen
-            //self.composeViewer.backgroundColor = settingsData.swiftColorEvergreen
             
         case "University Prep":
             self.messageTableView.backgroundColor = settingsData.swiftColorUniversityPrep
             self.view.backgroundColor = settingsData.swiftColorUniversityPrep
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorUniversityPrep
-            //self.composeViewer.backgroundColor = settingsData.swiftColorUniversityPrep
             
         case "Neutral":
-            self.view.backgroundColor = UIColor.black //settingsData.swiftColorNeutral
+            self.view.backgroundColor = UIColor.black
             self.messageTableView.backgroundColor = settingsData.swiftColorNeutral
-            self.tabBarController?.tabBar.barTintColor = UIColor.black //settingsData.swiftColorNeutral
-           // self.composeViewer.backgroundColor = settingsData.swiftColorNeutral
+            self.tabBarController?.tabBar.barTintColor = UIColor.black
             
             
         default:
             self.view.backgroundColor = settingsData.swiftColorLakeside
             self.messageTableView.backgroundColor = settingsData.swiftColorLakeside
             self.tabBarController?.tabBar.barTintColor = settingsData.swiftColorLakeside
-            //self.composeViewer.backgroundColor = settingsData.swiftColorLakeside
+            
             
         }  //endswitch
         self.view.layoutIfNeeded()
@@ -170,9 +167,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         //TODO: filter to receiving app user
         if messageArray[indexPath.row].sender == appUserName
-            // Auth.auth().currentUser?.email as String?
         {
-            cell.messageBackground.backgroundColor = UIColor.gray   // flatBlue()
+            cell.messageBackground.backgroundColor = UIColor.gray
             cell.senderUsername.textColor = UIColor.white
             cell.messageBody.backgroundColor = UIColor.gray
             cell.messageBody.textColor = UIColor.white
@@ -220,22 +216,15 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         settingsData.refreshSettings()
         messageArray.removeAll()
-        //messageTableView.reloadData()
-        
-        
-        
         
         let messageDB = Firestore.firestore()
         let settings = messageDB.settings
         settings.areTimestampsInSnapshotsEnabled = true
         messageDB.settings = settings
         
-        //userDB.collection("messages")
         messageDB.collection("messages")
             
             .whereField("Receiver", isEqualTo: settingsData.appUserName!)
-            //.whereField("fcmToken", isEqualTo: "asdfg")   //TODO: need to get the current fcmtoken for querying
-            
             .whereField("Sender", isEqualTo: settingsData.appUserName!)
             .order(by: "DateString")
             .getDocuments() { (querySnapshot, err) in
