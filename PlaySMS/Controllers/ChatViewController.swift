@@ -145,7 +145,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.view.layoutIfNeeded()
     }
     
-    ///////////////////////////////////////////
+  
     
     //MARK: - TableView DataSource Methods
     
