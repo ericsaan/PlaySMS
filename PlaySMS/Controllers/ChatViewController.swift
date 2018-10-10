@@ -16,6 +16,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // Declare instance variables here
     var messageArray : [Message] = [Message]()
+    var reverseMessageArray : [Message] = [Message]()
+    
     @objc var studentName: String?
     @objc var dateString: String?
     @objc var appUserName: String?
@@ -224,33 +226,35 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         messageDB.collection("messages")
             
+                  
             .whereField("Receiver", isEqualTo: settingsData.appUserName!)
-            .whereField("Sender", isEqualTo: settingsData.appUserName!)
-            .order(by: "DateString")
+            //.whereField("Sender", isEqualTo: settingsData.appUserName!)
+            //.order(by: "DateString")
             .getDocuments() { (querySnapshot, err) in
                 
                 if let err = err {
                     print("Error getting documents: \(err)")
                 } else {
                     self.messageArray.removeAll()
+                    
                     //now we have a match SO WE populate the messagearray
                     for document in querySnapshot!.documents {
-                     let documentData = document.data()
+                        let documentData = document.data()
                         
-                     let text = documentData["MessageBody"] as? String ?? ""
+                        let text = documentData["MessageBody"] as? String ?? ""
                         
-                     let sender = documentData["Sender"] as? String ?? ""
-                     let senderName = documentData["SenderName"] as? String ?? ""
-                     let receiver = documentData["Receiver"] as? String ?? ""
-                     let receiverName = documentData["ReceiverName"] as? String ?? ""
-                     let dateString = documentData["DateString"] as? String ?? ""
-
-            
-                       // print("\(document.documentID) => \(document.data())")
-                         print("\(document.documentID) => \(text)")
+                        let sender = documentData["Sender"] as? String ?? ""
+                        let senderName = documentData["SenderName"] as? String ?? ""
+                        let receiver = documentData["Receiver"] as? String ?? ""
+                        let receiverName = documentData["ReceiverName"] as? String ?? ""
+                        let dateString = documentData["DateString"] as? String ?? ""
+                        
+                        
+                        // print("\(document.documentID) => \(document.data())")
+                        print("\(document.documentID) => \(text)")
                         let message = Message()
                         message.messageBody = text.padding(toLength: 48, withPad: " ", startingAt: 0)
-            
+                        
                         message.sender   = sender
                         message.senderName = senderName
                         message.receiver = receiver
@@ -258,16 +262,24 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                         message.dateSent = dateString
                         
                         self.messageArray.append(message)
-                           self.messageTableView.reloadData()
+                        self.messageTableView.reloadData()
                         
                     }
+                    
                 }
                 
-            } //endgetdocuments
-       
+                //                self.messageTableView.reloadData()
+                //                self.view.layoutIfNeeded()
+                
+        } //endgetdocuments
         
 
 //            self.configureTableView()
+        
+        reverseMessageArray = messageArray.reversed()
+        messageArray.removeAll()
+        messageArray = reverseMessageArray
+        
         messageTableView.reloadData()
             self.scrollTobottom()
             self.view.layoutIfNeeded()

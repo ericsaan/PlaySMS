@@ -234,6 +234,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 //**********
                 //now to write to cloudstore
                 //**********
+                
+                recipientsList.append(appUserName!)
+                recipientsListNames.append(senderName!)
 
                 let userDB = Firestore.firestore()
                 let settings = userDB.settings
