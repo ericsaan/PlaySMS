@@ -164,7 +164,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
             UserDefaults.standard.set(currentUser, forKey: "AppUserName")
             //sleep(1)
            
-           
+           let dateString = self.getDateString()
+            
             let userDB = Firestore.firestore()
             let settings = userDB.settings
             settings.areTimestampsInSnapshotsEnabled = true
@@ -191,7 +192,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
                             var ref: DocumentReference? = nil
                             ref = userDB.collection("userFcmtokens").addDocument(data: [
                                 "email": currentUser!,
-                                "fcmToken": self.deviceToken
+                                "fcmToken": self.deviceToken,
+                                "TimeStamp": dateString
                                 
                             ]) { err in
                                 if let err = err {
@@ -357,6 +359,21 @@ extension AppDelegate : MessagingDelegate {
         
     }
     // [END ios_10_data_message]
+    
+    @objc func getDateString() -> String {
+        
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.medium
+        formatter.timeStyle = .short
+        
+        let dateString = formatter.string(from: date)
+        
+        return dateString
+    }
+
+
+
 }
 
 

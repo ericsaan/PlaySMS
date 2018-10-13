@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.0395629"
+            timestampString = "561135668.834186"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "182"
@@ -26,7 +26,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.039628"
+            timestampString = "561135668.834245"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "352"
@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.0396709"
+            timestampString = "561135668.834287"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
@@ -58,7 +58,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.03971"
+            timestampString = "561135668.8343281"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "201"
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.0401"
+            timestampString = "561135668.83439"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -88,11 +88,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.040367"
+            timestampString = "561135668.834444"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -102,7 +102,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.040622"
+            timestampString = "561135668.834497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "57"
@@ -118,7 +118,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.040881"
+            timestampString = "561135668.834552"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "184"
@@ -134,7 +134,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.040921"
+            timestampString = "561135668.834587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "219"
@@ -150,7 +150,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.041185"
+            timestampString = "561135668.834712"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -166,11 +166,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.041443"
+            timestampString = "561135668.834785"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -180,11 +180,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.418874"
+            timestampString = "561135668.834842"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "134"
-            endingLineNumber = "134"
+            startingLineNumber = "128"
+            endingLineNumber = "128"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -196,11 +196,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.4189121"
+            timestampString = "561135668.834879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
+            startingLineNumber = "149"
+            endingLineNumber = "149"
             landmarkName = "settingsLayout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -212,11 +212,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.418946"
+            timestampString = "561135668.834914"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "159"
-            endingLineNumber = "159"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "settingsLayout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -228,7 +228,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/AppDelegate.swift"
-            timestampString = "559454770.3085411"
+            timestampString = "561135668.83495"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "155"
@@ -244,7 +244,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/AppDelegate.swift"
-            timestampString = "559454770.3085819"
+            timestampString = "561135668.835251"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "149"
@@ -260,7 +260,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.041757"
+            timestampString = "561135668.835453"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "207"
@@ -276,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.419054"
+            timestampString = "561135668.835493"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "205"
+            endingLineNumber = "205"
             landmarkName = "buttonSignInOut(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -292,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.419088"
+            timestampString = "561135668.835529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "buttonSignInOut(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -308,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.419121"
+            timestampString = "561135668.835564"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "settingsLayout()"
             landmarkType = "7">
          </BreakpointContent>
@@ -324,7 +324,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.041824"
+            timestampString = "561135668.8355989"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "200"
@@ -340,7 +340,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.041889"
+            timestampString = "561135668.835634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "218"
@@ -356,7 +356,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.041923"
+            timestampString = "561135668.835669"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "187"
@@ -372,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.041957"
+            timestampString = "561135668.835704"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -386,11 +386,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.042213"
+            timestampString = "561135668.835757"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -400,11 +400,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.042467"
+            timestampString = "561135668.835808"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -414,11 +414,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.042719"
+            timestampString = "561135668.835901"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -428,11 +428,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.0429699"
+            timestampString = "561135668.835956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -442,7 +442,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.043336"
+            timestampString = "561135668.836015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "85"
@@ -458,7 +458,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.043445"
+            timestampString = "561135668.8360651"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "143"
@@ -474,7 +474,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.0435081"
+            timestampString = "561135668.836117"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "404"
@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.4212019"
+            timestampString = "561135668.836167"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "409"
-            endingLineNumber = "409"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
             landmarkName = "setBackgrounds()"
             landmarkType = "7">
          </BreakpointContent>
@@ -506,7 +506,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.0435719"
+            timestampString = "561135668.836202"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "578"
@@ -520,7 +520,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.043622"
+            timestampString = "561135668.8362499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "578"
@@ -534,7 +534,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.043656"
+            timestampString = "561135668.836285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "93"
@@ -550,7 +550,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.04392"
+            timestampString = "561135668.83634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "153"
@@ -566,7 +566,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/AppDelegate.swift"
-            timestampString = "559454770.311285"
+            timestampString = "561135668.836427"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "164"
@@ -598,11 +598,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.4218251"
+            timestampString = "561135668.836741"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -614,11 +614,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.421864"
+            timestampString = "561135668.836797"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -630,11 +630,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.421898"
+            timestampString = "561135668.836834"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -646,11 +646,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.421932"
+            timestampString = "561135668.836869"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "dismissKeyboard()"
             landmarkType = "7">
          </BreakpointContent>
@@ -662,11 +662,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.421965"
+            timestampString = "561135668.836956"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "254"
-            endingLineNumber = "254"
+            startingLineNumber = "248"
+            endingLineNumber = "248"
             landmarkName = "buttonSignInOut(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -678,11 +678,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "559355821.421998"
+            timestampString = "561135668.837005"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "buttonSignInOut(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -694,11 +694,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.044343"
+            timestampString = "561135668.837044"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -708,11 +708,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.044602"
+            timestampString = "561135668.837109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -722,11 +722,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.044857"
+            timestampString = "561135668.8371921"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -736,7 +736,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.045109"
+            timestampString = "561135668.8372639"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "167"
@@ -752,11 +752,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.045508"
+            timestampString = "561135668.837323"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -766,7 +766,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.045823"
+            timestampString = "561135668.837379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "60"
@@ -782,7 +782,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.046091"
+            timestampString = "561135668.83744"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "58"
@@ -798,11 +798,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.04636"
+            timestampString = "561135668.8374979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -812,7 +812,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.0466141"
+            timestampString = "561135668.837554"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "170"
@@ -828,7 +828,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.046873"
+            timestampString = "561135668.83761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
@@ -844,11 +844,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.047133"
+            timestampString = "561135668.837666"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321">
+            startingLineNumber = "319"
+            endingLineNumber = "319">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -858,7 +858,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.047384"
+            timestampString = "561135668.8377219"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "45"
@@ -874,7 +874,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ViewController.swift"
-            timestampString = "560905091.0476381"
+            timestampString = "561135668.83778"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "272"
@@ -890,11 +890,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.047677"
+            timestampString = "561135668.837849"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "283"
-            endingLineNumber = "283"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -906,7 +906,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.048157"
+            timestampString = "561135668.837922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "69"
@@ -922,7 +922,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.048437"
+            timestampString = "561135668.837983"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "74"
@@ -938,11 +938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.0487469"
+            timestampString = "561135668.838039"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "296"
-            endingLineNumber = "296"
+            startingLineNumber = "294"
+            endingLineNumber = "294"
             landmarkName = "scrollTobottom()"
             landmarkType = "7">
          </BreakpointContent>
@@ -954,11 +954,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.0490381"
+            timestampString = "561135668.838096"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -970,7 +970,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.049371"
+            timestampString = "561135668.838154"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "224"
@@ -986,11 +986,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.049984"
+            timestampString = "561135668.838306"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "279"
-            endingLineNumber = "279"
+            startingLineNumber = "277"
+            endingLineNumber = "277"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1002,7 +1002,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.0503891"
+            timestampString = "561135668.838367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "35"
@@ -1018,7 +1018,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.050676"
+            timestampString = "561135668.838426"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "225"
@@ -1034,7 +1034,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.050926"
+            timestampString = "561135668.838482"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "220"
@@ -1050,7 +1050,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.051157"
+            timestampString = "561135668.838532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "264"
@@ -1066,7 +1066,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "560905091.051386"
+            timestampString = "561135668.838578"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "241"

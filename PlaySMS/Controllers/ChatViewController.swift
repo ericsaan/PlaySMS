@@ -225,9 +225,9 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageDB.settings = settings
         
         messageDB.collection("messages")
-            
-                  
+            .order(by: "DateString", descending: false)
             .whereField("Receiver", isEqualTo: settingsData.appUserName!)
+            
             //.whereField("Sender", isEqualTo: settingsData.appUserName!)
             //.order(by: "DateString")
             .getDocuments() { (querySnapshot, err) in
@@ -268,8 +268,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                     
                 }
                 
-                //                self.messageTableView.reloadData()
-                //                self.view.layoutIfNeeded()
                 
         } //endgetdocuments
         

@@ -85,13 +85,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         //Looks for single or multiple taps.
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SettingsViewController.dismissKeyboard))
         
-        //Uncomment the line below if you want the tap not not interfere and cancel other interactions.
-        //tap.cancelsTouchesInView = false
-        
         view.addGestureRecognizer(tap)
-        
-      
-        
         
         settingsLayout()
         
