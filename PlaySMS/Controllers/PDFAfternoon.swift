@@ -45,7 +45,9 @@ class PDFAfternoon: UIViewController, MFMessageComposeViewControllerDelegate
     {
         //load up the Afternoon PDF File
         
-        let path = Bundle.main.path(forResource: "LakesideCustomBusSchedules-2018-2019 Morning", ofType: "pdf")!
+      //  let path = Bundle.main.path(forResource: "LakesideCustomBusSchedules-2018-2019 Morning", ofType: "pdf")!
+        let path = Bundle.main.path(forResource: "MetroCustomBusSchedule2019-2020 Morning", ofType: "pdf")!
+
     
         settingsData.refreshSettings()
         setBackgrounds()

@@ -35,6 +35,8 @@
 		B868D678211165E0000F5272 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D677211165DF000F5272 /* ChatViewController.swift */; };
 		B868D67A21116B9C000F5272 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = B868D67921116B9C000F5272 /* Message.swift */; };
 		B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */ = {isa = PBXBuildFile; fileRef = B8718E2D1E19AA5800515C7E /* SilverButton.png */; };
+		B872D71023B5DED400E0A589 /* MetroCustomBusSchedule2019-2020 Afternoon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B872D70F23B5DED300E0A589 /* MetroCustomBusSchedule2019-2020 Afternoon.pdf */; };
+		B872D71223B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B872D71123B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf */; };
 		B877E02C213A4BE600C7ADFF /* Client Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877E02B213A4BE600C7ADFF /* Client Key.swift */; };
 		B8B0D8002130E08C00E6E8CD /* IphoneVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */; };
 		B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */; };
@@ -97,6 +99,8 @@
 		B868D677211165DF000F5272 /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		B868D67921116B9C000F5272 /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		B8718E2D1E19AA5800515C7E /* SilverButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SilverButton.png; sourceTree = "<group>"; };
+		B872D70F23B5DED300E0A589 /* MetroCustomBusSchedule2019-2020 Afternoon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "MetroCustomBusSchedule2019-2020 Afternoon.pdf"; sourceTree = "<group>"; };
+		B872D71123B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "MetroCustomBusSchedule2019-2020 Morning.pdf"; sourceTree = "<group>"; };
 		B877E02B213A4BE600C7ADFF /* Client Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client Key.swift"; sourceTree = "<group>"; };
 		B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneVersion.swift; sourceTree = "<group>"; };
 		B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 		B8F2D52F1E21F15C00442E97 /* PDF */ = {
 			isa = PBXGroup;
 			children = (
+				B872D71123B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf */,
+				B872D70F23B5DED300E0A589 /* MetroCustomBusSchedule2019-2020 Afternoon.pdf */,
 				B844996C212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf */,
 				B844996E212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf */,
 			);
@@ -315,6 +321,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -344,6 +351,7 @@
 				B85F66E72144D97100DD21D5 /* UPrep.png in Resources */,
 				B8103E181E1885E100B2AD1B /* LakesideLogo.png in Resources */,
 				B844996F212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf in Resources */,
+				B872D71023B5DED400E0A589 /* MetroCustomBusSchedule2019-2020 Afternoon.pdf in Resources */,
 				B8F2D52E1E21EF9800442E97 /* Bus_950000_25.png in Resources */,
 				B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */,
 				B85F66E92144D97B00DD21D5 /* EvergreenButton.png in Resources */,
@@ -351,6 +359,7 @@
 				B85F66E32144938E00DD21D5 /* EvergreenWhiteLogo.png in Resources */,
 				B8103E0D1E18530300B2AD1B /* LaunchScreen.storyboard in Resources */,
 				B82718EF211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist in Resources */,
+				B872D71223B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf in Resources */,
 				B868D66B211018CD000F5272 /* LakeLogo.png in Resources */,
 				B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */,
 				B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */,
