@@ -321,10 +321,9 @@
 			};
 			buildConfigurationList = B8103DFA1E18530300B2AD1B /* Build configuration list for PBXProject "PlaySMS" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
 				Base,
 			);
