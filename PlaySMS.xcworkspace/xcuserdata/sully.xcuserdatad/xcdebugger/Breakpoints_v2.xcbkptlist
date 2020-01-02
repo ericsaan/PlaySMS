@@ -475,8 +475,8 @@
             timestampString = "561344338.427573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "439"
-            endingLineNumber = "439"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -509,8 +509,8 @@
             timestampString = "561344338.427641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "613"
-            endingLineNumber = "613"
+            startingLineNumber = "628"
+            endingLineNumber = "628"
             landmarkName = "popConfetti()"
             landmarkType = "7">
          </BreakpointContent>
@@ -526,8 +526,8 @@
             timestampString = "561344338.427675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "613"
-            endingLineNumber = "613"
+            startingLineNumber = "628"
+            endingLineNumber = "628"
             landmarkName = "popConfetti()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1141,8 +1141,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "398"
-            endingLineNumber = "398"
+            startingLineNumber = "421"
+            endingLineNumber = "421"
             landmarkName = "locationManager(_:didEnterRegion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1157,8 +1157,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "417"
-            endingLineNumber = "417"
+            startingLineNumber = "429"
+            endingLineNumber = "429"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1209,6 +1209,114 @@
             endingLineNumber = "56"
             landmarkName = "application(_:didFinishLaunchingWithOptions:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4E24BC68-4EF6-4FBB-BBB4-D9984A49DF24"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlaySMS/Controllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "401"
+            endingLineNumber = "401"
+            landmarkName = "locationManager(_:didEnterRegion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "4E24BC68-4EF6-4FBB-BBB4-D9984A49DF24 - b31585385859cf4c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.locationManager(_: __C.CLLocationManager, didEnterRegion: __C.CLRegion) -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "401"
+                  endingLineNumber = "401"
+                  offsetFromSymbolStart = "412">
+               </Location>
+               <Location
+                  uuid = "4E24BC68-4EF6-4FBB-BBB4-D9984A49DF24 - b31585385859cf4c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.locationManager(_: __C.CLLocationManager, didEnterRegion: __C.CLRegion) -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "401"
+                  endingLineNumber = "401"
+                  offsetFromSymbolStart = "576">
+               </Location>
+               <Location
+                  uuid = "4E24BC68-4EF6-4FBB-BBB4-D9984A49DF24 - b31585385859cf4c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.locationManager(_: __C.CLLocationManager, didEnterRegion: __C.CLRegion) -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "401"
+                  endingLineNumber = "401"
+                  offsetFromSymbolStart = "740">
+               </Location>
+               <Location
+                  uuid = "4E24BC68-4EF6-4FBB-BBB4-D9984A49DF24 - b31585385859cf4c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.locationManager(_: __C.CLLocationManager, didEnterRegion: __C.CLRegion) -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "401"
+                  endingLineNumber = "401"
+                  offsetFromSymbolStart = "904">
+               </Location>
+               <Location
+                  uuid = "4E24BC68-4EF6-4FBB-BBB4-D9984A49DF24 - b31585385859cf4c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.locationManager(_: __C.CLLocationManager, didEnterRegion: __C.CLRegion) -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "401"
+                  endingLineNumber = "401"
+                  offsetFromSymbolStart = "1068">
+               </Location>
+               <Location
+                  uuid = "4E24BC68-4EF6-4FBB-BBB4-D9984A49DF24 - b31585385859cf4c"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.locationManager(_: __C.CLLocationManager, didEnterRegion: __C.CLRegion) -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "401"
+                  endingLineNumber = "401"
+                  offsetFromSymbolStart = "1232">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

@@ -395,20 +395,32 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
       
         // 1. user enter region
         func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
-            showAlert(textToShow: "enter \(region.identifier)")
+
+            switch settingsData.appUserName {
+                  
+                 case "katherines23@lakesideschool.org", "ericsaan@gmail.com", "sullynat@gmail.com","gregfitz99@gmail.com", "marypellyfitzgerald@gmail.com","jenniferf23@lakesideschool.org":
+                 
+                 showAlert(textToShow: "Entering \(region.identifier)")
+                      
+                      let statusMessageToSend =  " I'm on the 520 Bridge. "
+
+                      if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+                          if switchConfetti == "1" {
+                                     popConfetti()
+                                 } //END IF switchconfetti
+                      } //END IF sendmessage
+                      
+                  default:
+                    _ = 0;
+                
+                
+            }
+                  
             
-            let statusMessageToSend =  " I'm on the 520 Bridge. "
             
-           //let statusMessageToSend = "(" + appUserName! + ") " + "- I'm on the 520 Bridge. "
-                        
-//                //sendSMStatusUpdate(messageToSend: statusMessageToSend)
-                   if sendMessageToDatabase(messageToSend: statusMessageToSend) {
-                   
-//                       if switchConfetti == "1" {
-//                           popConfetti()
-//                       }
-                   }
-        }
+            
+            
+        }//END FUNC
     
         
          
@@ -422,11 +434,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         func showAlert(textToShow: String?){
             let alertController = UIAlertController(title: "Locations", message:
                            textToShow, preferredStyle: .alert)
-                       alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+            alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
 
-                       self.present(alertController, animated: true, completion: nil)
-                    
-        }
+                     //  self.present(alertController, animated: true, completion: nil)
+            self.present(alertController, animated: true, completion:{Timer.scheduledTimer(withTimeInterval: 5, repeats:false, block: {_ in
+                self.dismiss(animated: true, completion: nil)
+            })})
+                                      
+    } //end showalert function
     //*********************** end location code **********************************************
     
     
