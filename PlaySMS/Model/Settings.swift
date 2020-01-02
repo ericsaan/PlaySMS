@@ -27,7 +27,7 @@ class Settings
     var skinUniversityPrep = "University Prep Logo.jpg"
     var skinNeutral = "cartoon-school-bus-clipart-17.jpg"
     
-     let swiftColorLakeside = UIColor(red: 104.0/255.0, green: 5.0/255.0, blue: 0.0, alpha: 1)
+    let swiftColorLakeside = UIColor(red: 104.0/255.0, green: 5.0/255.0, blue: 0.0, alpha: 1)
     let swiftColorEvergreen = UIColor(red: 43.0/255.0, green: 119.0/255.0, blue: 101.0/255.0, alpha: 1)
     
     let swiftColorUniversityPrep = UIColor(red: 37.0/255.0, green: 91.0/255.0, blue: 137.0/255.0, alpha: 1)

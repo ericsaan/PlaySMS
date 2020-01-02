@@ -17,7 +17,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>3.45</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -40,6 +40,12 @@
 	<true/>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright 2017  Moonspec.  All rights reserved.</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Allow BusRide Location Services Always and When Running</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Allow BusRide Location Services Always</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Allow BusRide Location Services When Running</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>

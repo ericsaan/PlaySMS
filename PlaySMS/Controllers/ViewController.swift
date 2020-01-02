@@ -13,9 +13,12 @@ import Firebase
 import GoogleSignIn
 import CoreLocation
 
-class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, GIDSignInUIDelegate
+class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, GIDSignInUIDelegate, CLLocationManagerDelegate
 {
+    //location
+    let locationManager = CLLocationManager()
 
+    
     let emitterLayer = CAEmitterLayer()
     @objc let cheerView = CheerView()
     @objc var recipientsList = [String]()
@@ -42,6 +45,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBOutlet weak var butImHere: UIButton!
     @IBOutlet weak var butPickedUp: UIButton!
     @IBOutlet weak var butGettingClose: UIButton!
+
+    
+    
+    
     
     
     //pickerview
@@ -291,6 +298,24 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //location
+        //2. setup location manager
+               locationManager.delegate = self
+               locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
+               locationManager.desiredAccuracy = kCLLocationAccuracyBest
+               
+           //3. setup mapView
+//               mapView.delegate = self
+//               mapView.showsUserLocation  = true
+//               mapView.userTrackingMode = .follow
+//
+           //4. setup test data
+             setupData()
+        //end location
+
+        
+        
+        
         cheerView.config.particle = .confetti(allowedShapes: Particle.ConfettiShape.all)
         view.addSubview(cheerView)
 
@@ -304,6 +329,107 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }
 
     //************************************************************************
+    
+    
+    //location code
+    
+    override func viewDidAppear(_ animated: Bool) {
+           super.viewDidAppear(animated)
+        
+           // 1. status is not determined
+           if CLLocationManager.authorizationStatus() == .notDetermined {
+               locationManager.requestAlwaysAuthorization()
+               
+           }
+           // 2. authorization were denied
+           else if CLLocationManager.authorizationStatus() == .denied {
+               
+               showAlert(textToShow: "Location services were previously denied. Please enable location services for this app in Settings.")
+           }
+           // 3. we do have authorization
+           else if CLLocationManager.authorizationStatus() == .authorizedAlways {
+               locationManager.startUpdatingLocation()
+           }
+       }
+    //*********************************************************************
+     func setupData() {
+            // 1. check if system can monitor regions
+            if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+         
+                // 2. region data
+                let title = "520- Portage Bay"
+               // let coordinate = CLLocationCoordinate2DMake(37.703026, -121.759735)
+                let coordinate = CLLocationCoordinate2DMake(47.643018, -122.315538)
+                
+                let regionRadius = 300.0
+         
+                // 3. setup region
+                let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,
+                    longitude: coordinate.longitude), radius: regionRadius, identifier: title)
+                locationManager.startMonitoring(for: region)
+         
+                // 4. setup annotation
+//                let restaurantAnnotation = MKPointAnnotation()
+//                restaurantAnnotation.coordinate = coordinate;
+//                restaurantAnnotation.title = "\(title)";
+//                mapView.addAnnotation(restaurantAnnotation)
+//
+//                // 5. setup circle
+//                let circle = MKCircle(center: coordinate, radius: regionRadius)
+//                mapView.addOverlay(circle)
+            }
+            else {
+                print("System can't track regions")
+            }
+        }
+         
+        // 6. draw circle
+//        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
+//            let circleRenderer = MKCircleRenderer(overlay: overlay)
+//            circleRenderer.strokeColor = UIColor.red
+//            circleRenderer.lineWidth = 1.0
+//            return circleRenderer
+//        }//end mapview
+//
+
+      
+        // 1. user enter region
+        func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
+            showAlert(textToShow: "enter \(region.identifier)")
+            
+            let statusMessageToSend =  " I'm on the 520 Bridge. "
+            
+           //let statusMessageToSend = "(" + appUserName! + ") " + "- I'm on the 520 Bridge. "
+                        
+//                //sendSMStatusUpdate(messageToSend: statusMessageToSend)
+                   if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+                   
+//                       if switchConfetti == "1" {
+//                           popConfetti()
+//                       }
+                   }
+        }
+         
+        // 2. user exit region
+//        func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
+//           //showAlert(textToShow: "exit \(region.identifier)")
+//        }
+
+
+    //showAlert function
+        func showAlert(textToShow: String?){
+            let alertController = UIAlertController(title: "Locations", message:
+                           textToShow, preferredStyle: .alert)
+                       alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
+
+                       self.present(alertController, animated: true, completion: nil)
+                    
+        }
+    //*********************** end location code **********************************************
+    
+    
+    
+    
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -378,7 +504,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.lblOnTheBus.textColor = UIColor.black
             self.butGettingClose.setTitleColor(UIColor.black, for: .normal)
             self.butGettingClose.setTitle(getCloseText(), for: .normal)
-        
+    
             
            
             
@@ -407,10 +533,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
        case "katherines23@lakesideschool.org", "ericsaan@gmail.com", "sullynat@gmail.com","gregfitz99@gmail.com", "marypellyfitzgerald@gmail.com","jenniferf23@lakesideschool.org":
        
-            return "     On 520 "
+            return "            " //used to be "on 520" for designated emails but took out with location aware feature
         
         default:
-            return "  Getting Close"
+            return "           " //used to be "Getting Close" for designated emails but took out with location aware feature
        }
         
      }

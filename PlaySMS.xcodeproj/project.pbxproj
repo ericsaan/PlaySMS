@@ -38,6 +38,7 @@
 		B872D71023B5DED400E0A589 /* MetroCustomBusSchedule2019-2020 Afternoon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B872D70F23B5DED300E0A589 /* MetroCustomBusSchedule2019-2020 Afternoon.pdf */; };
 		B872D71223B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B872D71123B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf */; };
 		B877E02C213A4BE600C7ADFF /* Client Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877E02B213A4BE600C7ADFF /* Client Key.swift */; };
+		B883295F23BD76B200B37E84 /* 520_PortageBay.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B883295E23BD76B200B37E84 /* 520_PortageBay.gpx */; };
 		B8B0D8002130E08C00E6E8CD /* IphoneVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */; };
 		B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */; };
 		B8BCD9AA213BB9C000E503FF /* googleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B8BCD9A9213BB9C000E503FF /* googleLogo.png */; };
@@ -102,6 +103,7 @@
 		B872D70F23B5DED300E0A589 /* MetroCustomBusSchedule2019-2020 Afternoon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "MetroCustomBusSchedule2019-2020 Afternoon.pdf"; sourceTree = "<group>"; };
 		B872D71123B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "MetroCustomBusSchedule2019-2020 Morning.pdf"; sourceTree = "<group>"; };
 		B877E02B213A4BE600C7ADFF /* Client Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client Key.swift"; sourceTree = "<group>"; };
+		B883295E23BD76B200B37E84 /* 520_PortageBay.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 520_PortageBay.gpx; sourceTree = "<group>"; };
 		B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneVersion.swift; sourceTree = "<group>"; };
 		B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8B145D3212BD8080041CFCF /* PlaySMS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlaySMS.entitlements; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 			isa = PBXGroup;
 			children = (
 				B868D67921116B9C000F5272 /* Message.swift */,
+				B883295E23BD76B200B37E84 /* 520_PortageBay.gpx */,
 				B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */,
 				B8F2F93321147DA2003ABB1A /* Settings.swift */,
 			);
@@ -359,6 +362,7 @@
 				B85F66E32144938E00DD21D5 /* EvergreenWhiteLogo.png in Resources */,
 				B8103E0D1E18530300B2AD1B /* LaunchScreen.storyboard in Resources */,
 				B82718EF211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist in Resources */,
+				B883295F23BD76B200B37E84 /* 520_PortageBay.gpx in Resources */,
 				B872D71223B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf in Resources */,
 				B868D66B211018CD000F5272 /* LakeLogo.png in Resources */,
 				B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */,
@@ -623,6 +627,7 @@
 				INFOPLIST_FILE = PlaySMS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.MoonspecGradeEight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -644,6 +649,7 @@
 				INFOPLIST_FILE = PlaySMS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Sully.PlaySMS.MoonspecGradeEight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

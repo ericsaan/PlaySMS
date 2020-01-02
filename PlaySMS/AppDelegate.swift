@@ -10,6 +10,8 @@ import UIKit
 import UserNotifications
 import Firebase
 import GoogleSignIn
+import CoreLocation
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
@@ -25,11 +27,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
     @objc var deviceToken: String = ""
     
     
+
+    
+    
+    
+    
     //hooking to cLoudstore
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //location
+      
+        
+        
         //TODO: Initialise and Configure your Firebase here:
         //TODO: uncomment notfication section when ready to use again...ees
         //enabling Google Auth
@@ -290,6 +302,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
 }
 
 //now for extensions
+//****************************************************************************
+
 
 // [START ios_10_message_handling]
 @available(iOS 10, *)
@@ -360,6 +374,7 @@ extension AppDelegate : MessagingDelegate {
     }
     // [END ios_10_data_message]
     
+
     @objc func getDateString() -> String {
         
         let date = Date()
