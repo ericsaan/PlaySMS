@@ -56,7 +56,7 @@ class PDFPageViewController: UIPageViewController, UIPageViewControllerDataSourc
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController?
     {
         //get index of current view controller
-        guard let index = myViewControllers.index(of: viewController) else
+        guard let index = myViewControllers.firstIndex(of: viewController) else
         {
             return nil
         }
@@ -84,7 +84,7 @@ class PDFPageViewController: UIPageViewController, UIPageViewControllerDataSourc
         
         
         //get index of current view controller
-        guard let index = myViewControllers.index(of: viewController) else
+        guard let index = myViewControllers.firstIndex(of: viewController) else
         {
             return nil
         }
@@ -119,7 +119,7 @@ class PDFPageViewController: UIPageViewController, UIPageViewControllerDataSourc
     func presentationIndex(for pageViewController: UIPageViewController) -> Int
     {
         //get index of view controller
-        guard let firstViewController = viewControllers?.first , let current = myViewControllers.index(of: firstViewController) else
+        guard let firstViewController = viewControllers?.first , let current = myViewControllers.firstIndex(of: firstViewController) else
         {
             return 0
         }

@@ -9,15 +9,17 @@
 import UIKit
 import UserNotifications
 import Firebase
+//import FirebaseFirestore
 import GoogleSignIn
-import CoreLocation
+
 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
 
     var window: UIWindow?
-    @objc let gcmMessageIDKey = "gcm.message_id"
+    //@objc
+    let gcmMessageIDKey = "gcm.message_id"
     
  
     struct GlobalVariable {
@@ -27,19 +29,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
     @objc var deviceToken: String = ""
     
     
-
-    
-    
-    
-    
     //hooking to cLoudstore
-    
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        //location
-      
+  
         
         
         //TODO: Initialise and Configure your Firebase here:
@@ -48,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
         
         
         FirebaseApp.configure()
+        
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
@@ -56,19 +51,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
         //MARK: Notifications
       
        
-
+     
         
-        
-      Messaging.messaging().delegate = self as MessagingDelegate
-
-        Messaging.messaging().shouldEstablishDirectChannel = true
+      Messaging.messaging().delegate = self //as MessagingDelegate
+       // Messaging.messaging().fcmToken
+             
+       // Messaging.messaging().shouldEstablishDirectChannel = true
         // [END set_messaging_delegate]
         // Register for remote notifications. This shows a permission dialog on first run, tob
         // show the dialog at a more appropriate time move this registration accordingly.
         // [START register_for_notifications]
         if #available(iOS 10.0, *) {
             // For iOS 10 display notification (sent via APNS)
-            UNUserNotificationCenter.current().delegate = self as UNUserNotificationCenterDelegate
+            UNUserNotificationCenter.current().delegate = self// as UNUserNotificationCenterDelegate
 
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
             UNUserNotificationCenter.current().requestAuthorization(
@@ -133,21 +128,71 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
     // [END receive_message]
     
     
+        //**********************************************
+        //MARK: Enabling Registration for notifications
+        //**********************************************
+        func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+            print("Unable to register for remote notifications: \(error.localizedDescription)")
+        }
+        
+        // This function is added here only for debugging purposes, and can be removed if swizzling is enabled.
+        // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
+        // the FCM registration token.
+        func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+            print("APNs token retrieved: \(deviceToken)")
+    
+        }
+    //
+          
+
+        func applicationWillResignActive(_ application: UIApplication) {
+            // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
+            // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        }
+
+        func applicationDidEnterBackground(_ application: UIApplication) {
+            // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
+            // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        }
+
+        func applicationWillEnterForeground(_ application: UIApplication) {
+            // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+            UIApplication.shared.applicationIconBadgeNumber = 0     //ees... Set Icon badge count to 0 when app loads
+            
+        }
+
+        func applicationDidBecomeActive(_ application: UIApplication) {
+            // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        }
+
+        func applicationWillTerminate(_ application: UIApplication) {
+            // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        }
+
+        
+
+        func applicationDidFinishLaunching(_ application: UIApplication)
+        {
+            Thread.sleep(forTimeInterval: 2)
+        }
+        
+    //******************************
+    //END Enabling for notification
+    //******************************
+
+    
+    
     //**********************************************
     //MARK: Enabling google sign in...ees
     //**********************************************
     @available(iOS 9.0, *)
-    func application(_ application: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any])
+    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
         -> Bool {
             return GIDSignIn.sharedInstance().handle(url,
-                                                     sourceApplication:options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String,
+                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
                                                      annotation: [:])
     }
     
-//    func sign(_ signin: GIDSignIn!, didSignOutFor user: GIDGoogleUser!, withError error: Error?) {
-//        
-//    }
-//    
     
     //google signin for "didsignin"...ees
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
@@ -183,7 +228,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
             settings.areTimestampsInSnapshotsEnabled = true
             userDB.settings = settings
             
-            //let deviceTokenIn = AppDelegate.GlobalVariable.deviceTokenGlobal
             
             userDB.collection("userFcmtokens")
                 
@@ -228,16 +272,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
                 } //endgetdocuments
             
             
-            
-            
-            
-            
-            
-            
-            
-          
-          
-            
         }
         // ...
     }
@@ -249,59 +283,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate  {
       
     }
     
-    //**********************************************
-    //MARK: Enabling Registration for notifications
-    //**********************************************
-    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
-        print("Unable to register for remote notifications: \(error.localizedDescription)")
-    }
+    //**************************
+    // END Google SignIn
+    //**************************
     
-    // This function is added here only for debugging purposes, and can be removed if swizzling is enabled.
-    // If swizzling is disabled then this function must be implemented so that the APNs token can be paired to
-    // the FCM registration token.
-    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
-        print("APNs token retrieved: \(deviceToken)")
-        
-    }
-    
-      
+} //end function apploading with options
 
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-        UIApplication.shared.applicationIconBadgeNumber = 0     //ees... Set Icon badge count to 0 when app loads
-        
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-
-    
-
-    func applicationDidFinishLaunching(_ application: UIApplication)
-    {
-        Thread.sleep(forTimeInterval: 2)
-    }
-    
-    
-
-}
-
-//now for extensions
+//****************************************************************************
+// MARK: now for extensions
 //****************************************************************************
 
 

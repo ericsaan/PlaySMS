@@ -409,6 +409,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
 //                       }
                    }
         }
+    
+        
          
         // 2. user exit region
 //        func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {

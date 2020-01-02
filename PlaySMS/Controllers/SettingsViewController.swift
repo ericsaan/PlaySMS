@@ -9,6 +9,7 @@
 import UIKit
 import MessageUI
 import Firebase
+import FirebaseFirestore
 import GoogleSignIn
 
 class SettingsViewController: UIViewController, MFMessageComposeViewControllerDelegate, GIDSignInUIDelegate
@@ -300,7 +301,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBAction func btnLakesideTransportation(_ sender: UIButton)
     {
         let icon8URL = NSURL(string: "http://www.lakesideschool.org/about-us/transportation")
-        UIApplication.shared.open(icon8URL! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(icon8URL! as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         
         
     }
@@ -312,14 +313,14 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     {
         
             let icon8URL = NSURL(string: "http://icons8.com")
-        UIApplication.shared.open(icon8URL! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(icon8URL! as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
     }
 
     
     @IBAction func btnMoonspec(_ sender: UIButton)
     {
         let MoonspecURL = NSURL(string: "http://moonspec.com")
-        UIApplication.shared.open(MoonspecURL! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(MoonspecURL! as URL, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
         
     }
 
@@ -440,4 +441,9 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         lblConfettiPop.textColor = colorIn
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToUIApplicationOpenExternalURLOptionsKeyDictionary(_ input: [String: Any]) -> [UIApplication.OpenExternalURLOptionsKey: Any] {
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (UIApplication.OpenExternalURLOptionsKey(rawValue: key), value)})
 }
