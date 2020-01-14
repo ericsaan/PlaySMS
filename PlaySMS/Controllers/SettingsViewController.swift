@@ -380,9 +380,11 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
         UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
         
-        
+        //settings bundle
+     UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }
     
+
     
     
     func setBackgrounds() {

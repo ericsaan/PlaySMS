@@ -361,7 +361,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                // let coordinate = CLLocationCoordinate2DMake(37.703026, -121.759735)
                 let coordinate = CLLocationCoordinate2DMake(47.643018, -122.315538)
                 
-                let regionRadius = 300.0
+                let regionRadius = 3000.0
          
                 // 3. setup region
                 let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,

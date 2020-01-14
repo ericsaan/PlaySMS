@@ -16,6 +16,7 @@
 		B8103E181E1885E100B2AD1B /* LakesideLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B8103E171E1885E100B2AD1B /* LakesideLogo.png */; };
 		B8103E1A1E18877600B2AD1B /* LakesideLogo2.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = B8103E191E18877600B2AD1B /* LakesideLogo2.jpeg */; };
 		B8103E1C1E1888A500B2AD1B /* lakeside.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B8103E1B1E1888A500B2AD1B /* lakeside.jpg */; };
+		B8108E1823BFA343006E016C /* Settings.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B8108E1723BFA343006E016C /* Settings.bundle */; };
 		B82718EF211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist in Resources */ = {isa = PBXBuildFile; fileRef = B82718EE211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist */; };
 		B844996D212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B844996C212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf */; };
 		B844996F212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B844996E212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf */; };
@@ -81,6 +82,7 @@
 		B8103E171E1885E100B2AD1B /* LakesideLogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LakesideLogo.png; sourceTree = "<group>"; };
 		B8103E191E18877600B2AD1B /* LakesideLogo2.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = LakesideLogo2.jpeg; sourceTree = "<group>"; };
 		B8103E1B1E1888A500B2AD1B /* lakeside.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = lakeside.jpg; sourceTree = "<group>"; };
+		B8108E1723BFA343006E016C /* Settings.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Settings.bundle; path = PlaySMS/Views/Settings.bundle; sourceTree = SOURCE_ROOT; };
 		B82718EE211B5C4F00CA161D /* GoogleService-Info_OldWorking.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info_OldWorking.plist"; sourceTree = "<group>"; };
 		B844996C212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "LakesideCustomBusSchedules-2018-2019 Afternoon.pdf"; sourceTree = "<group>"; };
 		B844996E212E07AF0093A4F6 /* LakesideCustomBusSchedules-2018-2019 Morning.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "LakesideCustomBusSchedules-2018-2019 Morning.pdf"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 		B868D66721100DD4000F5272 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B8108E1723BFA343006E016C /* Settings.bundle */,
 				B868D67921116B9C000F5272 /* Message.swift */,
 				B883295E23BD76B200B37E84 /* 520_PortageBay.gpx */,
 				B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */,
@@ -373,6 +376,7 @@
 				B8103E081E18530300B2AD1B /* Main.storyboard in Resources */,
 				B8F2D52A1E21EDC000442E97 /* Spy Male_950000_25.png in Resources */,
 				B80D6788215694D900C961BE /* redButtonBasic.png in Resources */,
+				B8108E1823BFA343006E016C /* Settings.bundle in Resources */,
 				B844996D212E07A80093A4F6 /* LakesideCustomBusSchedules-2018-2019 Afternoon.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
