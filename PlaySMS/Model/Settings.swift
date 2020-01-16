@@ -20,7 +20,10 @@ class Settings
     var busRoute1: String? = ""
     var busRoute2: String? = ""
     var busRoute3: String? = ""
-    var switchConfetti: String? = "1"
+    //var switchConfetti: String? = "1"
+    var switchConfetti: Bool = false
+    var switchConfettiPop: Bool = false
+    var switch520: Bool = false
     var skinLogo: String? = ""
     var skinEvergreen = "EvergreenWhiteLogo.png"
     var skinLakeside = "LakesideLogo.png"
@@ -49,8 +52,12 @@ class Settings
         busRoute1 = UserDefaults.standard.value(forKey: "BusRoute1") as? String  ?? "986"
         busRoute2 = UserDefaults.standard.value(forKey: "BusRoute2") as? String  ?? "989"
         busRoute3 = UserDefaults.standard.value(forKey: "BusRoute3") as? String  ?? "981"
-        switchConfetti = UserDefaults.standard.value(forKey: "SwitchConfetti") as? String ?? "1"
-        skinLogo = UserDefaults.standard.value(forKey: "SkinLogo") as? String ?? "Lakeside"
+       // switchConfetti = UserDefaults.standard.value(forKey: "SwitchConfetti") as? String ?? "1"
+          switchConfettiPop = UserDefaults.standard.value(forKey: "SwitchConfettiPop") as? Bool ?? false
+             
+        switch520 = UserDefaults.standard.value(forKey: "Switch520") as? Bool ?? false
+        
+            skinLogo = UserDefaults.standard.value(forKey: "SkinLogo") as? String ?? "Lakeside"
         
     }
     

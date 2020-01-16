@@ -118,12 +118,27 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         txtBusRoute1.text = settingsData.busRoute1
         txtBusRoute2.text = settingsData.busRoute2
         txtBusRoute3.text = settingsData.busRoute3
-        if settingsData.switchConfetti == "1" {
+        
+        let intConfetti = settingsData.switchConfettiPop
+        //if settingsData.switchConfetti {
+         if intConfetti {
             switchConfetti.setOn(true, animated: true)
             
         } else {
             switchConfetti.setOn(false, animated: true)
         }
+        
+        
+        let int520 = settingsData.switch520
+            //if settingsData.switchConfetti {
+             if int520 {
+                switch520.setOn(true, animated: true)
+                
+            } else {
+                switch520.setOn(false, animated: true)
+        }
+        
+        
         //now to center all the buttons for whatever size screen we have
         setBackgrounds()
         settingsLayout()
@@ -292,6 +307,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     @IBOutlet weak var switchConfetti: UISwitch!
     
     
+    @IBOutlet weak var switch520: UISwitch!
     
     //***************************************************************
     //now we start with the actions from buttons on the board
@@ -361,25 +377,25 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         let savedBusRoute2 = txtBusRoute2.text!
         let savedBusRoute3 = txtBusRoute3.text!
         
-        var switchState: String = "1"
-        if !switchConfetti.isOn {
-         switchState = "0"
-        }
-        let savedSwitchConfetti = switchState
-        
-        
-        
-        
-        UserDefaults.standard.set(savedContactOneName, forKey: "ContactOneName")
-        UserDefaults.standard.set(savedContactOnePhoneNumber, forKey: "ContactOnePhoneNumber")
-        UserDefaults.standard.set(savedContactTwoName, forKey: "ContactTwoName")
-        UserDefaults.standard.set(savedContactTwoPhoneNumber, forKey: "ContactTwoPhoneNumber")
-        UserDefaults.standard.set(savedAppUserPhoneNumber, forKey: "AppUserPhoneNumber")
-        UserDefaults.standard.set(savedBusRoute1, forKey: "BusRoute1")
-        UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")
-        UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
-        UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
-        
+//        var switchState: String = "1"
+//        if !switchConfetti.isOn {
+//         switchState = "0"
+//        }
+//        let savedSwitchConfetti = switchState
+//        
+//        
+//        
+//        
+//        UserDefaults.standard.set(savedContactOneName, forKey: "ContactOneName")
+//        UserDefaults.standard.set(savedContactOnePhoneNumber, forKey: "ContactOnePhoneNumber")
+//        UserDefaults.standard.set(savedContactTwoName, forKey: "ContactTwoName")
+//        UserDefaults.standard.set(savedContactTwoPhoneNumber, forKey: "ContactTwoPhoneNumber")
+//        UserDefaults.standard.set(savedAppUserPhoneNumber, forKey: "AppUserPhoneNumber")
+//        UserDefaults.standard.set(savedBusRoute1, forKey: "BusRoute1")
+//        UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")
+//        UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
+//        UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
+//        
         //settings bundle
      UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }

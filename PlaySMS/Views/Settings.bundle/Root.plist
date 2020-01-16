@@ -20,7 +20,7 @@
 			<key>Title</key>
 			<string>1st Contact Email</string>
 			<key>Key</key>
-			<string>contactOneName</string>
+			<string>ContactOneName</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -28,7 +28,7 @@
 			<key>Title</key>
 			<string>1st Contact Name</string>
 			<key>Key</key>
-			<string>contactOnePhoneNumber</string>
+			<string>ContactOnePhoneNumber</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -36,7 +36,7 @@
 			<key>Title</key>
 			<string>2nd Contact Email</string>
 			<key>Key</key>
-			<string>contactTwoEmail</string>
+			<string>ContactTwoPhoneNumber</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -44,7 +44,7 @@
 			<key>Title</key>
 			<string>2nd Contact Name</string>
 			<key>Key</key>
-			<string>contactTwoName</string>
+			<string>ContactTwoName</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -58,7 +58,7 @@
 			<key>Title</key>
 			<string>App User Email</string>
 			<key>Key</key>
-			<string>appUserPhoneNumber</string>
+			<string>AppUserPhoneNumber</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -66,7 +66,7 @@
 			<key>Title</key>
 			<string>App User Name</string>
 			<key>Key</key>
-			<string>appUserName</string>
+			<string>AppUserName</string>
 		</dict>
 		<dict>
 			<key>Type</key>
@@ -110,9 +110,9 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Confetti Pop</string>
+			<string>520 Notification</string>
 			<key>Key</key>
-			<string>SwitchConfetti</string>
+			<string>Switch520</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>
@@ -120,9 +120,9 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>520 Notification</string>
+			<string>Confetti Pop</string>
 			<key>Key</key>
-			<string>FiveTwentySwitch</string>
+			<string>SwitchConfettiPop</string>
 			<key>DefaultValue</key>
 			<true/>
 		</dict>

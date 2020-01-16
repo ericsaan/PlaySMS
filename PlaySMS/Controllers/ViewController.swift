@@ -33,8 +33,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @objc var busRoute1: String? = ""
     @objc var busRoute2: String? = ""
     @objc var busRoute3: String? = ""
-    @objc var switchConfetti: String? = "1"
-    
+  //  @objc var switchConfetti: String? = "1"
+    @objc var switchConfetti: ObjCBool = false
+    @objc var switch520: ObjCBool = false
+      
     var settingsData: Settings = Settings()
     
     @IBOutlet weak var imgLakeside: UIImageView!
@@ -75,8 +77,10 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         if sendMessageToDatabase(messageToSend: statusMessageToSend) {
             
             
-            if switchConfetti == "1" {
-                popConfetti()
+         let intConfetti = settingsData.switchConfettiPop
+            if intConfetti {
+                
+              popConfetti()
             }
         }
         
@@ -90,10 +94,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         if sendMessageToDatabase(messageToSend: statusMessageToSend) {
             
-            if switchConfetti == "1" {
+            //if switchConfetti == "1" {
+          // if switchConfetti.boolValue  {
+                let intConfetti = settingsData.switchConfettiPop
+            if intConfetti {
                 popConfetti()
             }
-        }
+            }
+        
         
     }
     //************************************************************************
@@ -103,8 +111,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         if sendMessageToDatabase(messageToSend: statusMessageToSend) {
         
-            if switchConfetti == "1" {
-                popConfetti()
+            //if switchConfetti == "1" {
+            let intConfetti = settingsData.switchConfettiPop
+            if intConfetti {
+                
+            popConfetti()
             }
         }
     }
@@ -115,7 +126,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         if sendMessageToDatabase(messageToSend: statusMessageToSend) {
             
-            if switchConfetti == "1" {
+            let intConfetti = settingsData.switchConfettiPop
+            if intConfetti {
+                
                 popConfetti()
             }
         }
@@ -139,8 +152,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             if sendMessageToDatabase(messageToSend: statusMessageToSend) {
                 
                 
-                if switchConfetti == "1" {
-                    popConfetti()
+                let intConfetti = settingsData.switchConfettiPop
+                if intConfetti {
+                                     popConfetti()
                 }
             }
       }
@@ -165,8 +179,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         if sendMessageToDatabase(messageToSend: statusMessageToSend) {
             
             
-            if switchConfetti == "1" {
-                popConfetti()
+           let intConfetti = settingsData.switchConfettiPop
+            if intConfetti {
+                           popConfetti()
             }
         }
         
@@ -211,7 +226,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             parentTwoName = settingsData.contactTwoPhoneNumber
             senderName = settingsData.appUserPhoneNumber
             
-            switchConfetti = settingsData.switchConfetti
+            //switchConfetti = settingsData.switchConfetti
+            if settingsData.switchConfetti {
+                     switchConfetti = true
+                 }else {
+                     switchConfetti = false
+                 }
             
             let messageToSendOut = messageToSend.padding(toLength: 50, withPad: " ", startingAt: 0)
             //print("length is-> \(messageToSendOut.count)")
@@ -303,13 +323,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                locationManager.delegate = self
                locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
                locationManager.desiredAccuracy = kCLLocationAccuracyBest
-               
-           //3. setup mapView
-//               mapView.delegate = self
-//               mapView.showsUserLocation  = true
-//               mapView.userTrackingMode = .follow
-//
-           //4. setup test data
+ 
              setupData()
         //end location
 
@@ -336,6 +350,8 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     override func viewDidAppear(_ animated: Bool) {
            super.viewDidAppear(animated)
         
+        
+        if settingsData.switch520 {
            // 1. status is not determined
            if CLLocationManager.authorizationStatus() == .notDetermined {
                locationManager.requestAlwaysAuthorization()
@@ -350,18 +366,22 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
            else if CLLocationManager.authorizationStatus() == .authorizedAlways {
                locationManager.startUpdatingLocation()
            }
+        }//endif on switch520
        }
     //*********************************************************************
      func setupData() {
+        
+        if settingsData.switch520 {
+        
             // 1. check if system can monitor regions
             if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
          
                 // 2. region data
                 let title = "520- Portage Bay"
                // let coordinate = CLLocationCoordinate2DMake(37.703026, -121.759735)
-                let coordinate = CLLocationCoordinate2DMake(47.643018, -122.315538)
+                let coordinate = CLLocationCoordinate2DMake(47.642819, -122.316978)
                 
-                let regionRadius = 3000.0
+                let regionRadius = 500.0
          
                 // 3. setup region
                 let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,
@@ -381,6 +401,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             else {
                 print("System can't track regions")
             }
+        }//end if on switch520
         }
          
         // 6. draw circle
@@ -396,28 +417,23 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         // 1. user enter region
         func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
 
-            switch settingsData.appUserName {
-                  
-                 case "katherines23@lakesideschool.org", "ericsaan@gmail.com", "sullynat@gmail.com","gregfitz99@gmail.com", "marypellyfitzgerald@gmail.com","jenniferf23@lakesideschool.org":
-                 
-                 showAlert(textToShow: "Entering \(region.identifier)")
-                      
-                      let statusMessageToSend =  " I'm on the 520 Bridge. "
 
-                      if sendMessageToDatabase(messageToSend: statusMessageToSend) {
-                          if switchConfetti == "1" {
+                    if settingsData.switch520 {
+                        
+                    
+                        showAlert(textToShow: "Entering \(region.identifier)")
+                      
+                        let statusMessageToSend =  " I'm on the 520 Bridge. "
+
+                        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+                            if switchConfetti.boolValue {               //        }== "1" {
                                      popConfetti()
                                  } //END IF switchconfetti
-                      } //END IF sendmessage
-                      
-                  default:
-                    _ = 0;
+                        } //END IF sendmessage
                 
-                
-            }
-                  
+                    } //3neir on switch520
             
-            
+
             
             
         }//END FUNC
@@ -458,7 +474,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         busRoute1 = settingsData.busRoute1
         busRoute2 = settingsData.busRoute2
         busRoute3 = settingsData.busRoute3
-        switchConfetti = settingsData.switchConfetti
+        if settingsData.switchConfetti {
+            switchConfetti = true
+        }else {
+            switchConfetti = false
+        }
         
         //set the titles of the 3 primary buttons
         butRoute1.setTitle(busRoute1, for: .normal)
