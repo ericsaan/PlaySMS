@@ -221,11 +221,13 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let messageDB = Firestore.firestore()
         let settings = messageDB.settings
+       
+        
         settings.areTimestampsInSnapshotsEnabled = true
         messageDB.settings = settings
         
         messageDB.collection("messages")
-            .order(by: "DateString", descending: false)
+            .order(by: "DateString", descending: false)  //sorting feature attempt jan16
             .whereField("Receiver", isEqualTo: settingsData.appUserName!)
             
             //.whereField("Sender", isEqualTo: settingsData.appUserName!)
@@ -262,7 +264,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                         message.dateSent = dateString
                         
                         self.messageArray.append(message)
-                        self.messageTableView.reloadData()
+                        self.messageTableView.reloadData()  //taken out jan 16 for sort date feature
+                        
                         
                     }
                     

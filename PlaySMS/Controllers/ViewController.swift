@@ -94,9 +94,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         //sendSMStatusUpdate(messageToSend: statusMessageToSend)
         if sendMessageToDatabase(messageToSend: statusMessageToSend) {
             
-            //if switchConfetti == "1" {
-          // if switchConfetti.boolValue  {
-                let intConfetti = settingsData.switchConfettiPop
+                 let intConfetti = settingsData.switchConfettiPop
             if intConfetti {
                 popConfetti()
             }
@@ -138,7 +136,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     @IBAction func btnImhere(_ sender: UIButton)
     {
       
-        let statusMessageToSend = "I'm Here!                                                    "
+        let statusMessageToSend = "I'm Here!                                                      "
         
             UIButton.animate(withDuration: 0.2,
                              animations: {
@@ -413,7 +411,15 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
 //        }//end mapview
 //
 
-      
+    func locationManager  (_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
+
+        print(self.locationManager.heading?.trueHeading as Any)
+         //CLLocationDirection magneticNorth = [newHeading magneticHeading];
+
+      }
+    
+    
+    //********************************************
         // 1. user enter region
         func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
 

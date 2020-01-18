@@ -15,8 +15,8 @@
             timestampString = "561344338.425608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "btn2Pressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -49,8 +49,8 @@
             timestampString = "561344338.425711"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -64,8 +64,8 @@
             timestampString = "561344338.425766"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -130,8 +130,8 @@
             timestampString = "561344338.426015"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -196,8 +196,8 @@
             timestampString = "561344338.426981"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "222"
-            endingLineNumber = "222"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
             landmarkName = "sendMessageToDatabase(messageToSend:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -264,8 +264,8 @@
             timestampString = "561344338.4271311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "213"
+            endingLineNumber = "213"
             landmarkName = "sendMessageToDatabase(messageToSend:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -281,8 +281,8 @@
             timestampString = "561344338.4271671"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
             landmarkName = "sendMessageToDatabase(messageToSend:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,8 +298,8 @@
             timestampString = "561344338.427238"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -313,8 +313,8 @@
             timestampString = "561344338.427291"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -328,8 +328,8 @@
             timestampString = "561344338.427343"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -343,8 +343,8 @@
             timestampString = "561344338.4273961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -358,8 +358,8 @@
             timestampString = "561344338.427447"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -390,8 +390,8 @@
             timestampString = "561344338.427573"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "476"
-            endingLineNumber = "476"
+            startingLineNumber = "482"
+            endingLineNumber = "482"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -407,8 +407,8 @@
             timestampString = "561344338.427608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
+            startingLineNumber = "415"
+            endingLineNumber = "415"
             landmarkName = "setBackgrounds()"
             landmarkType = "7">
          </BreakpointContent>
@@ -424,8 +424,8 @@
             timestampString = "561344338.427641"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "654"
-            endingLineNumber = "654"
+            startingLineNumber = "660"
+            endingLineNumber = "660"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -441,8 +441,8 @@
             timestampString = "561344338.427675"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "654"
-            endingLineNumber = "654"
+            startingLineNumber = "660"
+            endingLineNumber = "660"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -535,23 +535,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9A389E55-78F4-4B5F-9FD8-0062B8018DBF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PlaySMS/Controllers/SettingsViewController.swift"
-            timestampString = "561344338.428296"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "buttonSignInOut(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "1B5E1B9B-E12A-4BAE-96DE-B5F2A019CFFA"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -577,8 +560,8 @@
             timestampString = "561344338.42839"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -592,8 +575,8 @@
             timestampString = "561344338.428479"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -607,8 +590,8 @@
             timestampString = "561344338.428532"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -639,8 +622,8 @@
             timestampString = "561344338.4286489"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -688,8 +671,8 @@
             timestampString = "561344338.428805"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -737,8 +720,8 @@
             timestampString = "561344338.428959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "319"
-            endingLineNumber = "319">
+            startingLineNumber = "322"
+            endingLineNumber = "322">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -769,8 +752,8 @@
             timestampString = "561344338.42907"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "292"
-            endingLineNumber = "292"
+            startingLineNumber = "290"
+            endingLineNumber = "290"
             landmarkName = "sendMessageToDatabase(messageToSend:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -786,8 +769,8 @@
             timestampString = "561344338.429106"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
+            startingLineNumber = "284"
+            endingLineNumber = "284"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -837,8 +820,8 @@
             timestampString = "561344338.429311"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "294"
-            endingLineNumber = "294"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
             landmarkName = "scrollTobottom()"
             landmarkType = "7">
          </BreakpointContent>
@@ -854,8 +837,8 @@
             timestampString = "561344338.429379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
+            startingLineNumber = "285"
+            endingLineNumber = "285"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -871,8 +854,8 @@
             timestampString = "561344338.429462"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
+            startingLineNumber = "226"
+            endingLineNumber = "226"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -888,8 +871,8 @@
             timestampString = "561344338.429607"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "277"
-            endingLineNumber = "277"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -908,23 +891,6 @@
             startingLineNumber = "35"
             endingLineNumber = "35"
             landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3B48962A-1DEA-4BDB-B93A-98CD4BBAD9AB"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PlaySMS/Controllers/ChatViewController.swift"
-            timestampString = "561344338.429721"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "225"
-            endingLineNumber = "225"
-            landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -956,8 +922,8 @@
             timestampString = "561344338.429853"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
+            startingLineNumber = "266"
+            endingLineNumber = "266"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -973,8 +939,8 @@
             timestampString = "561344338.429927"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "retrieveMessages()"
             landmarkType = "7">
          </BreakpointContent>
@@ -989,8 +955,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "395"
-            endingLineNumber = "395"
+            startingLineNumber = "393"
+            endingLineNumber = "393"
             landmarkName = "setupData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1005,8 +971,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "443"
-            endingLineNumber = "443"
+            startingLineNumber = "449"
+            endingLineNumber = "449"
             landmarkName = "ViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1021,8 +987,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
+            startingLineNumber = "457"
+            endingLineNumber = "457"
             landmarkName = "showAlert(textToShow:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1085,8 +1051,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "428"
-            endingLineNumber = "428"
+            startingLineNumber = "434"
+            endingLineNumber = "434"
             landmarkName = "locationManager(_:didEnterRegion:)"
             landmarkType = "7">
             <Locations>
@@ -1209,8 +1175,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "421"
-            endingLineNumber = "421"
+            startingLineNumber = "427"
+            endingLineNumber = "427"
             landmarkName = "locationManager(_:didEnterRegion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1241,8 +1207,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "242"
-            endingLineNumber = "242"
+            startingLineNumber = "240"
+            endingLineNumber = "240"
             landmarkName = "sendMessageToDatabase(messageToSend:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1257,8 +1223,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "btn3Pressed(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1273,8 +1239,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "155"
+            endingLineNumber = "155"
             landmarkName = "btnImhere(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1289,8 +1255,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "btnPickedUp(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1305,8 +1271,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "154"
+            endingLineNumber = "154"
             landmarkName = "btnImhere(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1330,22 +1296,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "AD731D7C-5D89-48E7-BF92-CD37AC8F24F7"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "PlaySMS/Controllers/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
-            landmarkName = "btnPressed(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "34C2DED3-2C9D-468E-9B29-ED72827D0428"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1353,9 +1303,25 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "354"
-            endingLineNumber = "354"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "viewDidAppear(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "50D3362A-F14F-49E7-BF1F-7ED2A5A54896"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlaySMS/Controllers/ChatViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

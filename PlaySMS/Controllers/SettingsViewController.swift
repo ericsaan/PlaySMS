@@ -106,39 +106,37 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
 
         settingsData.refreshSettings()
         
-        txtContactOneName.text = settingsData.contactOne
-        txtContactOnePhoneNumber.text = settingsData.contactOnePhoneNumber
-        txtContactTwoName.text = settingsData.contactTwo
-        txtContactTwoPhoneNumber.text = settingsData.contactTwoPhoneNumber
-        txtAppUserPhone.text = settingsData.appUserPhoneNumber
+//        txtContactOneName.text = settingsData.contactOne
+//        txtContactOnePhoneNumber.text = settingsData.contactOnePhoneNumber
+//        txtContactTwoName.text = settingsData.contactTwo
+//        txtContactTwoPhoneNumber.text = settingsData.contactTwoPhoneNumber
+//        txtAppUserPhone.text = settingsData.appUserPhoneNumber
         let userName = settingsData.appUserName
         
         txtAppUserName?.text = userName
         
-        txtBusRoute1.text = settingsData.busRoute1
-        txtBusRoute2.text = settingsData.busRoute2
-        txtBusRoute3.text = settingsData.busRoute3
-        
-        let intConfetti = settingsData.switchConfettiPop
-        //if settingsData.switchConfetti {
-         if intConfetti {
-            switchConfetti.setOn(true, animated: true)
-            
-        } else {
-            switchConfetti.setOn(false, animated: true)
-        }
-        
-        
-        let int520 = settingsData.switch520
-            //if settingsData.switchConfetti {
-             if int520 {
-                switch520.setOn(true, animated: true)
-                
-            } else {
-                switch520.setOn(false, animated: true)
-        }
-        
-        
+//        txtBusRoute1.text = settingsData.busRoute1
+//        txtBusRoute2.text = settingsData.busRoute2
+//        txtBusRoute3.text = settingsData.busRoute3
+//
+//        let intConfetti = settingsData.switchConfettiPop
+//          if intConfetti {
+//            switchConfetti.setOn(true, animated: true)
+//
+//        } else {
+//            switchConfetti.setOn(false, animated: true)
+//        }
+//
+//
+//        let int520 = settingsData.switch520
+//        if int520 {
+//                switch520.setOn(true, animated: true)
+//
+//            } else {
+//                switch520.setOn(false, animated: true)
+//        }
+//
+//
         //now to center all the buttons for whatever size screen we have
         setBackgrounds()
         settingsLayout()
@@ -156,26 +154,28 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         lblVersions.center.x = self.view.center.x
         lblKatya.center.x = self.view.center.x
         lblMoonSpec.center.x = self.view.center.x
-        lblSignInOut.center.x = CGFloat(screenWidth - 50)
-        btnGoogleSignInOut.center.x = CGFloat(screenWidth - 50)
+//        lblSignInOut.center.x = CGFloat(screenWidth - 50)
+//        btnGoogleSignInOut.center.x = CGFloat(screenWidth - 50)
         
-        
+         lblSignInOut.center.x = self.view.center.x
+         btnGoogleSignInOut.center.x = self.view.center.x
+                
         self.view.layoutIfNeeded()
        
         
         switch screenWidth {
         case iPhoneVer.iPhone6PlusWidth, iPhoneVer.iPhone6sPlusWidth, iPhoneVer.iPhone7PlusWidth, iPhoneVer.iPhone8PlusWidth, iPhoneVer.iPhoneXWidth,iPhoneVer.iPhone8Width:
-            
-            txtContactOneNameSize.frame.size.width = 242
-            c1PhoneNumber.frame.size.width = 242
-            c2Name.frame.size.width = 242
-            c2PhoneNumber.frame.size.width = 242
-            studentName.frame.size.width = 242
-            studentPhoneNumber.frame.size.width = 242
-            bRoute1.frame.size.width = 242
-            bRoute2.frame.size.width = 242
-            bRoute3.frame.size.width = 242
-            
+//
+//            txtContactOneNameSize.frame.size.width = 242
+//            c1PhoneNumber.frame.size.width = 242
+//            c2Name.frame.size.width = 242
+//            c2PhoneNumber.frame.size.width = 242
+//            studentName.frame.size.width = 242
+//            studentPhoneNumber.frame.size.width = 242
+//            bRoute1.frame.size.width = 242
+//            bRoute2.frame.size.width = 242
+//            bRoute3.frame.size.width = 242
+//
              self.view.layoutIfNeeded()
            
         case iPhoneVer.iPhone5Width, iPhoneVer.iPhone4Width, iPhoneVer.iPhone3Width:
@@ -215,7 +215,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
                 //firest we reset the student user email and update the text field
                 UserDefaults.standard.set("", forKey: "AppUserName")
                 settingsData.refreshSettings()
-                txtAppUserName.text = settingsData.appUserName
+             //   txtAppUserName.text = settingsData.appUserName
                 
                 
                 //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
@@ -260,14 +260,9 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
                 print(err)
             }
         } else{
-             //btnGoogleSignInOut.setTitle("Sign Out", for: .normal)
             lblSignInOut.text = "Sign Out"
             GIDSignIn.sharedInstance().signIn()
-//            let currentUser = Auth.auth().currentUser!.email
-//            UserDefaults.standard.set(currentUser, forKey: "AppUserName")
-            
-       //      settingsData.refreshSettings()
-      //      txtAppUserName.text = settingsData.appUserName
+
               self.view.layoutIfNeeded()
             
             
@@ -368,15 +363,15 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBAction func btnSubmit(_ sender: UIButton)
     {
-        let savedContactOneName = txtContactOneName.text!
-        let savedContactOnePhoneNumber = txtContactOnePhoneNumber.text!
-        let savedContactTwoName = txtContactTwoName.text!
-        let savedContactTwoPhoneNumber = txtContactTwoPhoneNumber.text!
-        let savedAppUserPhoneNumber = txtAppUserPhone.text!
-        let savedBusRoute1 = txtBusRoute1.text!
-        let savedBusRoute2 = txtBusRoute2.text!
-        let savedBusRoute3 = txtBusRoute3.text!
-        
+//        let savedContactOneName = txtContactOneName.text!
+//        let savedContactOnePhoneNumber = txtContactOnePhoneNumber.text!
+//        let savedContactTwoName = txtContactTwoName.text!
+//        let savedContactTwoPhoneNumber = txtContactTwoPhoneNumber.text!
+//        let savedAppUserPhoneNumber = txtAppUserPhone.text!
+//        let savedBusRoute1 = txtBusRoute1.text!
+//        let savedBusRoute2 = txtBusRoute2.text!
+//        let savedBusRoute3 = txtBusRoute3.text!
+//        
 //        var switchState: String = "1"
 //        if !switchConfetti.isOn {
 //         switchState = "0"
@@ -440,23 +435,23 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         
         lblSettings2.textColor = colorIn
         
-        lbl1stContact.textColor = colorIn
-        lbl1stContactPhone.textColor = colorIn
-        lbl2ndContact.textColor = colorIn
-        lbl2ndContactPhone.textColor = colorIn
-        lblAppUser.textColor = colorIn
-        lblAppUserPhone.textColor = colorIn
-        lblBusRoute1.textColor = colorIn
-        lblBusRoute2.textColor = colorIn
-        lblBusRoute3.textColor = colorIn
-        lblAcks.textColor = colorIn
+//        lbl1stContact.textColor = colorIn
+//        lbl1stContactPhone.textColor = colorIn
+//        lbl2ndContact.textColor = colorIn
+//        lbl2ndContactPhone.textColor = colorIn
+//        lblAppUser.textColor = colorIn
+//        lblAppUserPhone.textColor = colorIn
+//        lblBusRoute1.textColor = colorIn
+//        lblBusRoute2.textColor = colorIn
+//        lblBusRoute3.textColor = colorIn
+//        lblAcks.textColor = colorIn
         lblVersions.textColor = colorIn
         butIcons.setTitleColor(colorIn, for: .normal)
         lblKatya.textColor = colorIn
         lblMoonSpec.textColor = colorIn
         lblVersions.textColor = colorIn
         lblSignInOut.textColor = colorIn
-        lblConfettiPop.textColor = colorIn
+//        lblConfettiPop.textColor = colorIn
     }
     
 }
