@@ -17,6 +17,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
 {
     //location
     let locationManager = CLLocationManager()
+ 
 
     
     let emitterLayer = CAEmitterLayer()
@@ -36,6 +37,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
   //  @objc var switchConfetti: String? = "1"
     @objc var switchConfetti: ObjCBool = false
     @objc var switch520: ObjCBool = false
+    @objc var switchI90: ObjCBool = false
       
     var settingsData: Settings = Settings()
     
@@ -322,7 +324,14 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                locationManager.distanceFilter = kCLLocationAccuracyNearestTenMeters
                locationManager.desiredAccuracy = kCLLocationAccuracyBest
  
-             setupData()
+                 settingsData.refreshSettings()
+
+                
+                
+          
+              setupData()
+        
+        
         //end location
 
         
@@ -348,26 +357,53 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     override func viewDidAppear(_ animated: Bool) {
            super.viewDidAppear(animated)
         
+         settingsData.refreshSettings()
+        setupData()
         
-        if settingsData.switch520 {
-           // 1. status is not determined
-           if CLLocationManager.authorizationStatus() == .notDetermined {
-               locationManager.requestAlwaysAuthorization()
-               
-           }
-           // 2. authorization were denied
-           else if CLLocationManager.authorizationStatus() == .denied {
-               
-               showAlert(textToShow: "Location services were previously denied. Please enable location services for this app in Settings.")
-           }
-           // 3. we do have authorization
-           else if CLLocationManager.authorizationStatus() == .authorizedAlways {
-               locationManager.startUpdatingLocation()
-           }
-        }//endif on switch520
        }
     //*********************************************************************
      func setupData() {
+          settingsData.refreshSettings()
+
+        let monitoredRegions = locationManager.monitoredRegions
+        for regionToDelete in monitoredRegions
+        {
+              locationManager.stopMonitoring(for: regionToDelete)
+        }
+        
+       if settingsData.switch520 || settingsData.switchI90 {
+                    // 1. status is not determined
+                    if CLLocationManager.authorizationStatus() == .notDetermined {
+                        locationManager.requestAlwaysAuthorization()
+                        
+                    }
+                    // 2. authorization were denied
+                    else if CLLocationManager.authorizationStatus() == .denied {
+                        
+                        showAlert(textToShow: "Location services were previously denied. Please enable location services for this app in Settings.")
+                    }
+                    // 3. we do have authorization
+                    else if CLLocationManager.authorizationStatus() == .authorizedAlways {
+                        if settingsData.switchI90 || settingsData.switch520 {
+                         locationManager.startUpdatingLocation()
+                        }
+                    }
+                 }//endif on switch520
+                 
+        if !settingsData.switchI90 && !settingsData.switch520 {
+            locationManager.stopUpdatingLocation();
+            let monitoredRegions = locationManager.monitoredRegions
+                     for regionToDelete in monitoredRegions
+                     {
+                           locationManager.stopMonitoring(for: regionToDelete)
+                     }
+        } else {
+            
+        let monitoredRegions = locationManager.monitoredRegions
+
+        for regionToDelete in monitoredRegions{
+            locationManager.stopMonitoring(for: regionToDelete)
+        }
         
         if settingsData.switch520 {
         
@@ -375,42 +411,52 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
          
                 // 2. region data
-                let title = "520- Portage Bay"
-               // let coordinate = CLLocationCoordinate2DMake(37.703026, -121.759735)
+                let title = "520"
                 let coordinate = CLLocationCoordinate2DMake(47.642819, -122.316978)
                 
-                let regionRadius = 500.0
+                let regionRadius = 200.0
          
                 // 3. setup region
                 let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,
                     longitude: coordinate.longitude), radius: regionRadius, identifier: title)
                 locationManager.startMonitoring(for: region)
-         
-                // 4. setup annotation
-//                let restaurantAnnotation = MKPointAnnotation()
-//                restaurantAnnotation.coordinate = coordinate;
-//                restaurantAnnotation.title = "\(title)";
-//                mapView.addAnnotation(restaurantAnnotation)
-//
-//                // 5. setup circle
-//                let circle = MKCircle(center: coordinate, radius: regionRadius)
-//                mapView.addOverlay(circle)
+      
             }
             else {
                 print("System can't track regions")
             }
         }//end if on switch520
+        
+        if settingsData.switchI90 {
+          
+              // 1. check if system can monitor regions
+              if CLLocationManager.isMonitoringAvailable(for: CLCircularRegion.self) {
+           
+                  // 2. region data
+                  let title = "I90"
+                  let coordinate = CLLocationCoordinate2DMake(47.580120, -122.168965)
+                  
+                  let regionRadius = 200.0
+           
+                  // 3. setup region
+                  let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,
+                      longitude: coordinate.longitude), radius: regionRadius, identifier: title)
+                  locationManager.startMonitoring(for: region)
+             
+        
+              }
+              else {
+                  print("System can't track regions")
+              }
+          }//end if on switch520
+          
+          
+        } //endif on checking for both toggles as false
+        
+        
         }
          
-        // 6. draw circle
-//        func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-//            let circleRenderer = MKCircleRenderer(overlay: overlay)
-//            circleRenderer.strokeColor = UIColor.red
-//            circleRenderer.lineWidth = 1.0
-//            return circleRenderer
-//        }//end mapview
-//
-
+      
     func locationManager  (_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
 
         print(self.locationManager.heading?.trueHeading as Any)
@@ -423,33 +469,49 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         // 1. user enter region
         func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
 
-
+            print (region.identifier)
+            
                     if settingsData.switch520 {
                         
+                        if region.identifier == "520" {
+                            
+                            showAlert(textToShow: "Entering 520 Portage Bay")
+                          
+                            let statusMessageToSend =  " I'm on the 520 Bridge. "
+
+                            if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+                                if switchConfetti.boolValue {
+                                         popConfetti()
+                                     } //END IF switchconfetti
+                            } //END IF sendmessage
+                        } //endif on region identifier
+                    } //ENDIF on switch520
+            
+           if settingsData.switchI90 {
+               
+               print (region.identifier)
+               
+                       if region.identifier == "I90" {
+                           
                     
-                        showAlert(textToShow: "Entering \(region.identifier)")
-                      
-                        let statusMessageToSend =  " I'm on the 520 Bridge. "
+                           showAlert(textToShow: "Entering I-90 Factoria")
+                         
+                           let statusMessageToSend =  " I'm on the I-90 Bridge. "
 
-                        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
-                            if switchConfetti.boolValue {               //        }== "1" {
-                                     popConfetti()
-                                 } //END IF switchconfetti
-                        } //END IF sendmessage
-                
-                    } //3neir on switch520
+                           if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+                               if switchConfetti.boolValue {
+                                        popConfetti()
+                                    } //END IF switchconfetti
+                           } //END IF sendmessage
+                       } //endif on region identifier
+                   } //ENDIF on switchI90
+           
             
-
             
-            
-        }//END FUNC
+        }//END FUNC LOCATION MANAGER
     
         
-         
-        // 2. user exit region
-//        func locationManager(_ manager: CLLocationManager, didExitRegion region: CLRegion) {
-//           //showAlert(textToShow: "exit \(region.identifier)")
-//        }
+     
 
 
     //showAlert function

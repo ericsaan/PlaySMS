@@ -112,6 +112,16 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
+			<string>Confetti Pop</string>
+			<key>Key</key>
+			<string>SwitchConfettiPop</string>
+			<key>DefaultValue</key>
+			<true/>
+		</dict>
+		<dict>
+			<key>Type</key>
+			<string>PSToggleSwitchSpecifier</string>
+			<key>Title</key>
 			<string>520 Notification</string>
 			<key>Key</key>
 			<string>Switch520</string>
@@ -122,11 +132,11 @@
 			<key>Type</key>
 			<string>PSToggleSwitchSpecifier</string>
 			<key>Title</key>
-			<string>Confetti Pop</string>
+			<string>I90 Notfication</string>
 			<key>Key</key>
-			<string>SwitchConfettiPop</string>
+			<string>SwitchI90</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 	</array>
 </dict>

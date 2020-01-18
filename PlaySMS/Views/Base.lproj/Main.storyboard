@@ -209,7 +209,7 @@
             </objects>
             <point key="canvasLocation" x="-3000" y="99.295774647887328"/>
         </scene>
-        <!--Conversations-->
+        <!--Notifcations-->
         <scene sceneID="fCN-WE-FjX">
             <objects>
                 <viewController storyboardIdentifier="chatVC" id="QTN-Hv-3kC" customClass="ChatViewController" customModule="PlaySMS" sceneMemberID="viewController">
@@ -247,7 +247,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Parents" image="Spy Male_950000_25.png" id="HN7-rv-E70"/>
-                    <navigationItem key="navigationItem" title="Conversations" id="3qq-pM-mns"/>
+                    <navigationItem key="navigationItem" title="Notifcations" id="3qq-pM-mns"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="messageTableView" destination="OWj-mp-z5n" id="fzq-Y7-UZn"/>

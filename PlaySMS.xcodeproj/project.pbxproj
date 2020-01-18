@@ -40,6 +40,7 @@
 		B872D71223B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B872D71123B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf */; };
 		B877E02C213A4BE600C7ADFF /* Client Key.swift in Sources */ = {isa = PBXBuildFile; fileRef = B877E02B213A4BE600C7ADFF /* Client Key.swift */; };
 		B883295F23BD76B200B37E84 /* 520_PortageBay.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B883295E23BD76B200B37E84 /* 520_PortageBay.gpx */; };
+		B88CE0D323D372100093C34C /* I90_Factoria.gpx in Resources */ = {isa = PBXBuildFile; fileRef = B88CE0D223D372100093C34C /* I90_Factoria.gpx */; };
 		B8B0D8002130E08C00E6E8CD /* IphoneVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */; };
 		B8B145D2212BD5CB0041CFCF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */; };
 		B8BCD9AA213BB9C000E503FF /* googleLogo.png in Resources */ = {isa = PBXBuildFile; fileRef = B8BCD9A9213BB9C000E503FF /* googleLogo.png */; };
@@ -106,6 +107,7 @@
 		B872D71123B5DEF900E0A589 /* MetroCustomBusSchedule2019-2020 Morning.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "MetroCustomBusSchedule2019-2020 Morning.pdf"; sourceTree = "<group>"; };
 		B877E02B213A4BE600C7ADFF /* Client Key.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Client Key.swift"; sourceTree = "<group>"; };
 		B883295E23BD76B200B37E84 /* 520_PortageBay.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 520_PortageBay.gpx; sourceTree = "<group>"; };
+		B88CE0D223D372100093C34C /* I90_Factoria.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = I90_Factoria.gpx; sourceTree = "<group>"; };
 		B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IphoneVersion.swift; sourceTree = "<group>"; };
 		B8B145D1212BD5CA0041CFCF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B8B145D3212BD8080041CFCF /* PlaySMS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PlaySMS.entitlements; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				B8108E1723BFA343006E016C /* Settings.bundle */,
 				B868D67921116B9C000F5272 /* Message.swift */,
 				B883295E23BD76B200B37E84 /* 520_PortageBay.gpx */,
+				B88CE0D223D372100093C34C /* I90_Factoria.gpx */,
 				B8B0D7FF2130E08C00E6E8CD /* IphoneVersion.swift */,
 				B8F2F93321147DA2003ABB1A /* Settings.swift */,
 			);
@@ -370,6 +373,7 @@
 				B8F2D53B1E22B05400442E97 /* Eyes_Emoji_LARGE.png in Resources */,
 				B8718E2E1E19AA5800515C7E /* SilverButton.png in Resources */,
 				B8103E1A1E18877600B2AD1B /* LakesideLogo2.jpeg in Resources */,
+				B88CE0D323D372100093C34C /* I90_Factoria.gpx in Resources */,
 				B8103E0A1E18530300B2AD1B /* Assets.xcassets in Resources */,
 				B8F2F9322113EC47003ABB1A /* MessageCell.xib in Resources */,
 				B85925D61E2A98B100AC6B4B /* Settings_950000_25.png in Resources */,
