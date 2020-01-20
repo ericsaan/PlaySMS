@@ -49,32 +49,28 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         messageTableView.register(UINib(nibName: "MessageCell", bundle: nil), forCellReuseIdentifier: "customMessageCell")
         
         configureTableView()
-        retrieveMessages()
+       // retrieveMessages()  //jan18
       
         messageTableView.separatorStyle = .none
-        messageTableView.reloadData()
+       // messageTableView.reloadData()  //jan18
         self.view.layoutIfNeeded()
         
     }
 
     
     override func viewDidAppear(_ animated: Bool) {
-       //scrollTobottom()
-        //retrieveMessages()
+     
 
       scrollTobottom()
-       
-       // configureTableView()
-       //         messageTableView.reloadData()
-         self.view.layoutIfNeeded()
+      self.view.layoutIfNeeded()
+        
      }
     override func viewWillAppear(_ animated: Bool) {
         
-//        settingsData.refreshSettings()
+
         setBackgrounds()
         configureTableView()
         retrieveMessages()
-        //messageTableView.reloadData()
         scrollTobottom()
         self.view.layoutIfNeeded()
     }
@@ -160,10 +156,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
  
         cell.messageBody.text = messageArray[indexPath.row].messageBody
         let senderName = messageArray[indexPath.row].senderName
+        //convert date to string
+        let df = DateFormatter()
+        df.dateFormat = "MMM dd, YYYY hh:mm a"
+      
+        
+        
+        let nowDate = messageArray[indexPath.row].dateSent
+                       
         if senderName != "" {
-            cell.senderUsername.text = " " + messageArray[indexPath.row].senderName + " - " + messageArray[indexPath.row].dateSent
+            cell.senderUsername.text = " " + messageArray[indexPath.row].senderName + " - " + nowDate
         } else {
-            cell.senderUsername.text = " " + messageArray[indexPath.row].sender + " - " + messageArray[indexPath.row].dateSent
+            cell.senderUsername.text = " " + messageArray[indexPath.row].sender + " - " + nowDate
         }
         
         
@@ -209,10 +213,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     
-    ///////////////////////////////////////////
+//********************************************************
     
-//    //TODO: Create the retrieveMessages method here:
-//
      @objc func retrieveMessages()
      {
         
@@ -230,9 +232,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             .order(by: "DateString", descending: false)  //sorting feature attempt jan16
             .whereField("Receiver", isEqualTo: settingsData.appUserName!)
             
-            //.whereField("Sender", isEqualTo: settingsData.appUserName!)
-            //.order(by: "DateString")
-            .getDocuments() { (querySnapshot, err) in
+              .getDocuments() { (querySnapshot, err) in
                 
                 if let err = err {
                     print("Error getting documents: \(err)")
@@ -244,27 +244,36 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                         let documentData = document.data()
                         
                         let text = documentData["MessageBody"] as? String ?? ""
-                        
                         let sender = documentData["Sender"] as? String ?? ""
                         let senderName = documentData["SenderName"] as? String ?? ""
                         let receiver = documentData["Receiver"] as? String ?? ""
                         let receiverName = documentData["ReceiverName"] as? String ?? ""
                         let dateString = documentData["DateString"] as? String ?? ""
+                        let dateISO = documentData["DateISO"] as? String ?? ""
                         
                         
                         // print("\(document.documentID) => \(document.data())")
-                        print("\(document.documentID) => \(text)")
-                        let message = Message()
-                        message.messageBody = text.padding(toLength: 48, withPad: " ", startingAt: 0)
+                        //print("\(document.documentID) => \(text)")
+                        let mbText = text.padding(toLength: 48, withPad: " ", startingAt: 0)
                         
-                        message.sender   = sender
-                        message.senderName = senderName
-                        message.receiver = receiver
-                        message.receiverName = receiverName
-                        message.dateSent = dateString
+                        //added initializer to class, did this so could add a date property right in the instancing
+                        let message = Message(sender: sender, senderName: senderName, messageBody: mbText,  receiver: receiver, receiverName: receiverName, dateString: dateString, dateISO: dateISO)
+                        
+
                         
                         self.messageArray.append(message)
-                        self.messageTableView.reloadData()  //taken out jan 16 for sort date feature
+                        //might have to sort the array each time we add a record because it is an enclosure and async do doesn't alwayss return
+                        //now to sort the array by date
+                        
+                        self.messageArray = self.messageArray.sorted(by:{
+                            $0.dateISO.compare($1.dateISO) == .orderedDescending
+                        })
+
+                        for obj in self.messageArray {
+                            print (obj.dateSent)
+
+                        }
+                       self.messageTableView.reloadData()  //taken out jan 16 for sort date feature
                         
                         
                     }
@@ -275,11 +284,6 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         } //endgetdocuments
         
 
-//            self.configureTableView()
-        
-        reverseMessageArray = messageArray.reversed()
-        messageArray.removeAll()
-        messageArray = reverseMessageArray
         
         messageTableView.reloadData()
             self.scrollTobottom()
@@ -302,18 +306,15 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
     @objc func getDateString() -> String {
         
         
+        
         let date = Date()
-        
-       
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = .short
-        
-        let dateString = formatter.string(from: date)
-        
-        
-        
-        return dateString
+               let formatter = DateFormatter()
+               formatter.dateStyle = DateFormatter.Style.medium
+               formatter.timeStyle = .short
+              
+               let dateString = formatter.string(from: date)
+              let parsed = dateString.replacingOccurrences(of: "at", with: "")
+               return parsed
     }
     //***************************************************************************************
     

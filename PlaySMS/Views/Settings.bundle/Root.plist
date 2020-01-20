@@ -116,7 +116,7 @@
 			<key>Key</key>
 			<string>SwitchConfettiPop</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>

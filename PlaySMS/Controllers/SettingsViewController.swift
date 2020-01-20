@@ -215,7 +215,6 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
                 //firest we reset the student user email and update the text field
                 UserDefaults.standard.set("", forKey: "AppUserName")
                 settingsData.refreshSettings()
-             //   txtAppUserName.text = settingsData.appUserName
                 
                 
                 //now to update the ExtendedUserDB with the fcmToken from this device for the logged in email
@@ -363,35 +362,10 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
     
     @IBAction func btnSubmit(_ sender: UIButton)
     {
-//        let savedContactOneName = txtContactOneName.text!
-//        let savedContactOnePhoneNumber = txtContactOnePhoneNumber.text!
-//        let savedContactTwoName = txtContactTwoName.text!
-//        let savedContactTwoPhoneNumber = txtContactTwoPhoneNumber.text!
-//        let savedAppUserPhoneNumber = txtAppUserPhone.text!
-//        let savedBusRoute1 = txtBusRoute1.text!
-//        let savedBusRoute2 = txtBusRoute2.text!
-//        let savedBusRoute3 = txtBusRoute3.text!
-//        
-//        var switchState: String = "1"
-//        if !switchConfetti.isOn {
-//         switchState = "0"
-//        }
-//        let savedSwitchConfetti = switchState
-//        
-//        
-//        
-//        
-//        UserDefaults.standard.set(savedContactOneName, forKey: "ContactOneName")
-//        UserDefaults.standard.set(savedContactOnePhoneNumber, forKey: "ContactOnePhoneNumber")
-//        UserDefaults.standard.set(savedContactTwoName, forKey: "ContactTwoName")
-//        UserDefaults.standard.set(savedContactTwoPhoneNumber, forKey: "ContactTwoPhoneNumber")
-//        UserDefaults.standard.set(savedAppUserPhoneNumber, forKey: "AppUserPhoneNumber")
-//        UserDefaults.standard.set(savedBusRoute1, forKey: "BusRoute1")
-//        UserDefaults.standard.set(savedBusRoute2, forKey: "BusRoute2")
-//        UserDefaults.standard.set(savedBusRoute3, forKey: "BusRoute3")
-//        UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
-//        
-        //settings bundle
+        //next line is to remind how to set userdefaults without using settings bundle
+        //        UserDefaults.standard.set(savedSwitchConfetti, forKey: "SwitchConfetti")
+
+        //Open settings bundle app
      UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
     }
     
@@ -414,8 +388,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         case "Neutral":
             
             self.view.backgroundColor = settingsData.swiftColorNeutral
-            self.tabBarController?.tabBar.barTintColor = UIColor.black  // settingsData.swiftColorNeutral
-            
+            self.tabBarController?.tabBar.barTintColor = UIColor.black
             
             setLabelColor(colorIn: UIColor.black)
             
@@ -435,23 +408,13 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
         
         lblSettings2.textColor = colorIn
         
-//        lbl1stContact.textColor = colorIn
-//        lbl1stContactPhone.textColor = colorIn
-//        lbl2ndContact.textColor = colorIn
-//        lbl2ndContactPhone.textColor = colorIn
-//        lblAppUser.textColor = colorIn
-//        lblAppUserPhone.textColor = colorIn
-//        lblBusRoute1.textColor = colorIn
-//        lblBusRoute2.textColor = colorIn
-//        lblBusRoute3.textColor = colorIn
-//        lblAcks.textColor = colorIn
+
         lblVersions.textColor = colorIn
         butIcons.setTitleColor(colorIn, for: .normal)
         lblKatya.textColor = colorIn
         lblMoonSpec.textColor = colorIn
         lblVersions.textColor = colorIn
         lblSignInOut.textColor = colorIn
-//        lblConfettiPop.textColor = colorIn
     }
     
 }

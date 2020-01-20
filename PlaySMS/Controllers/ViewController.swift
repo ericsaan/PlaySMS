@@ -64,27 +64,27 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     @IBAction func btnGettingClosePressed(_ sender: UIButton) {
         
-        let statusMessageToSend = getCloseText()  //custom text based on email from sullivan or fitzgerald families
+      //  let statusMessageToSend = getCloseText()  //custom text based on email from sullivan or fitzgerald families
         
-        UIButton.animate(withDuration: 0.2,
-                         animations: {
-                            sender.transform = CGAffineTransform(scaleX: 1.20, y: 1.20)
-        },
-                         completion: { finish in
-                            UIButton.animate(withDuration: 0.2, animations: {
-                                sender.transform = CGAffineTransform.identity
-                            })
-        })
-        
-        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
-            
-            
-         let intConfetti = settingsData.switchConfettiPop
-            if intConfetti {
-                
-              popConfetti()
-            }
-        }
+//        UIButton.animate(withDuration: 0.2,
+//                         animations: {
+//                            sender.transform = CGAffineTransform(scaleX: 1.20, y: 1.20)
+//        },
+//                         completion: { finish in
+//                            UIButton.animate(withDuration: 0.2, animations: {
+//                                sender.transform = CGAffineTransform.identity
+//                            })
+//        })
+//
+//        if sendMessageToDatabase(messageToSend: statusMessageToSend) {
+//
+//
+//         let intConfetti = settingsData.switchConfettiPop
+//            if intConfetti {
+//
+//              popConfetti()
+//            }
+//        }
         
     }
     
@@ -161,6 +161,17 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     
     //************************************************************************
     
+    
+    @IBAction func btnSettings(_ sender: UIButton) {
+        
+        //settings bundle
+          UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+    }
+    
+    
+    
+    //************************************************************************
+    
     @IBAction func btnPickedUp(_ sender: UIButton)
     {
         let statusMessageToSend = "Picked Up!                                                   "
@@ -201,6 +212,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     //****************************************************
     @objc func sendMessageToDatabase(messageToSend : String) -> Bool
     {
+        var errFlag = false
         
         if Auth.auth().currentUser == nil {
             //call login for google
@@ -226,7 +238,6 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             parentTwoName = settingsData.contactTwoPhoneNumber
             senderName = settingsData.appUserPhoneNumber
             
-            //switchConfetti = settingsData.switchConfetti
             if settingsData.switchConfetti {
                      switchConfetti = true
                  }else {
@@ -272,9 +283,11 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 
                 userDB.collection("messages")
                 
+               
                 for i in 0 ... recipientsList.count - 1
                 {
                     let dateString = getDateString()
+                    let dateISO = getDateStringISO()
           
                     var ref: DocumentReference? = nil
                     ref = userDB.collection("messages").addDocument(data: [
@@ -283,14 +296,20 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                         "MessageBody": messageToSendOut,
                         "Sender": appUserName!,
                         "SenderName": senderName!,
-                        "DateString": dateString
+                        "DateString": dateString,
+                        "DateISO": dateISO
                         
                     ]) { err in
                             if let err = err {
                                 print("Error adding message document: \(err)")
+                                errFlag = true
+                                
                             } else {
                                 print("Document added with ID: \(ref!.documentID)")
                             }
+                        if errFlag {
+                            self.showAlert(textToShow: "Error Writing to Cloud Store...")
+                        }
                         } //enderr
                     
                 } //endforloop
@@ -298,9 +317,20 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 // end write to cloudstore
                 //***************************
             } //endif loop
+            else{
+                errFlag = true
+                showAlert(textToShow: "No Recipients Configured!")
+            }
         }//end if on user = nil
         
-        return true
+        
+        
+        if errFlag {
+            return false
+        }
+        else{
+            return true
+        }
     }
     
     //************************************************************************
@@ -516,7 +546,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
 
     //showAlert function
         func showAlert(textToShow: String?){
-            let alertController = UIAlertController(title: "Locations", message:
+            let alertController = UIAlertController(title: "Alerts!", message:
                            textToShow, preferredStyle: .alert)
             alertController.addAction(UIAlertAction(title: "Dismiss", style: .default))
 
@@ -577,7 +607,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.butImHere.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
             self.butPickedUp.setBackgroundImage(UIImage(named: "EvergreenButton.png"), for: .normal)
             self.butGettingClose.setTitleColor(UIColor.white, for: .normal)
-            self.butGettingClose.setTitle(getCloseText(), for: .normal)
+           // self.butGettingClose.setTitle(getCloseText(), for: .normal)
                 
                 
         case "University Prep":
@@ -592,7 +622,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.butImHere.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
             self.butPickedUp.setBackgroundImage(UIImage(named: "UPrep.png"), for: .normal)
             self.butGettingClose.setTitleColor(UIColor.white, for: .normal)
-            self.butGettingClose.setTitle(getCloseText(), for: .normal)
+//self.butGettingClose.setTitle(getCloseText(), for: .normal)
         
                 
         case "Neutral":
@@ -608,7 +638,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.butPickedUp.setBackgroundImage(UIImage(named: "BlackButton.png"), for: .normal)
             self.lblOnTheBus.textColor = UIColor.black
             self.butGettingClose.setTitleColor(UIColor.black, for: .normal)
-            self.butGettingClose.setTitle(getCloseText(), for: .normal)
+      //      self.butGettingClose.setTitle(getCloseText(), for: .normal)
     
             
            
@@ -625,7 +655,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             self.butPickedUp.setBackgroundImage(UIImage(named: "RedButtonGoldBorder"), for: .normal)
             self.lblOnTheBus.textColor = UIColor.white
             self.butGettingClose.setTitleColor(UIColor.white, for: .normal)
-            self.butGettingClose.setTitle(getCloseText(), for: .normal)
+           // self.butGettingClose.setTitle(getCloseText(), for: .normal)
         
         
         }  //endswitch
@@ -633,18 +663,18 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
     }  //endsetbackground
     
     //***************************************************************************************
-    func getCloseText()-> String {
-       switch settingsData.appUserName {
-        
-       case "katherines23@lakesideschool.org", "ericsaan@gmail.com", "sullynat@gmail.com","gregfitz99@gmail.com", "marypellyfitzgerald@gmail.com","jenniferf23@lakesideschool.org":
-       
-            return "            " //used to be "on 520" for designated emails but took out with location aware feature
-        
-        default:
-            return "           " //used to be "Getting Close" for designated emails but took out with location aware feature
-       }
-        
-     }
+//    func getCloseText()-> String {
+//       switch settingsData.appUserName {
+//
+//       case "katherines23@lakesideschool.org", "ericsaan@gmail.com", "sullynat@gmail.com","gregfitz99@gmail.com", "marypellyfitzgerald@gmail.com","jenniferf23@lakesideschool.org":
+//
+//            return "            " //used to be "on 520" for designated emails but took out with location aware feature
+//
+//        default:
+//            return "           " //used to be "Getting Close" for designated emails but took out with location aware feature
+//       }
+//
+//     }
   
     //***************************************************************************************
     
@@ -718,21 +748,62 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         }
      } //  endpopconfetti
     
+    
+    //******************************************
+    //******************************************
+            
+        @objc func getDateStringISO() -> String {
+           
+            let date = Date()
+            let dateFormatter = DateFormatter()
+            dateFormatter.locale = Locale(identifier: "en_US_POSIX") // set locale to reliable US_POSIX
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            let dateString = dateFormatter.string(from: date)
+                    
+            return dateString
+        }
     //******************************************
         
     @objc func getDateString() -> String {
        
         let date = Date()
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.medium
-        formatter.timeStyle = .short
-       
-        let dateString = formatter.string(from: date)
-       
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = .short
+        let dateString = dateFormatter.string(from: date)
         return dateString
     }
-   }
+   } //end viewcontroller
 
+//DateFormatter() has 5 format style options for each of Date and Time. These are:
+//.none .short .medium .long .full
+//
+// DATE      TIME     DATE/TIME STRING
+//"none"    "none"
+//"none"    "short"   9:42 AM
+//"none"    "medium"  9:42:27 AM
+//"none"    "long"    9:42:27 AM EDT
+//"none"    "full"    9:42:27 AM Eastern Daylight Time
+//"short"   "none"    10/10/17
+//"short"   "short"   10/10/17, 9:42 AM
+//"short"   "medium"  10/10/17, 9:42:27 AM
+//"short"   "long"    10/10/17, 9:42:27 AM EDT
+//"short"   "full"    10/10/17, 9:42:27 AM Eastern Daylight Time
+//"medium"  "none"    Oct 10, 2017
+//"medium"  "short"   Oct 10, 2017, 9:42 AM
+//"medium"  "medium"  Oct 10, 2017, 9:42:27 AM
+//"medium"  "long"    Oct 10, 2017, 9:42:27 AM EDT
+//"medium"  "full"    Oct 10, 2017, 9:42:27 AM Eastern Daylight Time
+//"long"    "none"    October 10, 2017
+//"long"    "short"   October 10, 2017 at 9:42 AM
+//"long"    "medium"  October 10, 2017 at 9:42:27 AM
+//"long"    "long"    October 10, 2017 at 9:42:27 AM EDT
+//"long"    "full"    October 10, 2017 at 9:42:27 AM Eastern Daylight Time
+//"full"    "none"    Tuesday, October 10, 2017
+//"full"    "short"   Tuesday, October 10, 2017 at 9:42 AM
+//"full"    "medium"  Tuesday, October 10, 2017 at 9:42:27 AM
+//"full"    "long"    Tuesday, October 10, 2017 at 9:42:27 AM EDT
+//"full"    "full"    Tuesday, October 10, 2017 at 9:42:27 AM Eastern Daylight Time
 
 extension ViewController : UIPickerViewDelegate, UIPickerViewDataSource {
     
