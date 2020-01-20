@@ -269,10 +269,10 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
                             $0.dateISO.compare($1.dateISO) == .orderedDescending
                         })
 
-                        for obj in self.messageArray {
-                            print (obj.dateSent)
-
-                        }
+//                        for obj in self.messageArray {
+//                            print (obj.dateSent)
+//
+//                        }
                        self.messageTableView.reloadData()  //taken out jan 16 for sort date feature
                         
                         

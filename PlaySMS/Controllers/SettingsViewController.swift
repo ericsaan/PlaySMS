@@ -207,7 +207,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
                 
                 try Auth.auth().signOut()
                 self.dismiss(animated: true, completion: nil)
-                print ("Sign out successful")
+                //print ("Sign out successful")
                 
                 //now to signout of google itself.
                 GIDSignIn.sharedInstance().signOut()
@@ -242,7 +242,7 @@ class SettingsViewController: UIViewController, MFMessageComposeViewControllerDe
                             
                             //now we have a match and just to make sure we will delete each one that matches
                             for document in querySnapshot!.documents {
-                                print("Deleting: \(document.documentID) => \(document.data())")
+                                //print("Deleting: \(document.documentID) => \(document.data())")
                                 userDB.collection("userFcmtokens").document(document.documentID).delete() { err in
                                     if let err = err {
                                         print("Error removing document: \(err)")

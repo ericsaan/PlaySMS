@@ -274,8 +274,12 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
                 //**********
                 
                 recipientsList.append(appUserName!)
+                if senderName == nil {
+                    senderName = "None Configured"
+                }else {
                 recipientsListNames.append(senderName!)
-
+                }
+                
                 let userDB = Firestore.firestore()
                 let settings = userDB.settings
                 settings.areTimestampsInSnapshotsEnabled = true
@@ -489,7 +493,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
       
     func locationManager  (_ manager: CLLocationManager, didUpdateHeading newHeading: CLHeading) {
 
-        print(self.locationManager.heading?.trueHeading as Any)
+        //print(self.locationManager.heading?.trueHeading as Any)
          //CLLocationDirection magneticNorth = [newHeading magneticHeading];
 
       }
@@ -499,7 +503,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         // 1. user enter region
         func locationManager(_ manager: CLLocationManager, didEnterRegion region: CLRegion) {
 
-            print (region.identifier)
+            //print (region.identifier)
             
                     if settingsData.switch520 {
                         
@@ -519,7 +523,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
             
            if settingsData.switchI90 {
                
-               print (region.identifier)
+               //print (region.identifier)
                
                        if region.identifier == "I90" {
                            
