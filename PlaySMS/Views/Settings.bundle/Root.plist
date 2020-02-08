@@ -18,7 +18,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>1st Contact Email</string>
+			<string>1st Email</string>
 			<key>Key</key>
 			<string>ContactOneName</string>
 		</dict>
@@ -26,7 +26,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>1st Contact Name</string>
+			<string>1st Name</string>
 			<key>Key</key>
 			<string>ContactOnePhoneNumber</string>
 		</dict>
@@ -34,7 +34,7 @@
 			<key>Type</key>
 			<string>PSTextFieldSpecifier</string>
 			<key>Title</key>
-			<string>2nd Contact Email</string>
+			<string>2nd Email</string>
 			<key>Key</key>
 			<string>ContactTwoName</string>
 		</dict>
@@ -57,8 +57,6 @@
 			<string> </string>
 			<key>Type</key>
 			<string>PSTitleValueSpecifier</string>
-			<key>Title</key>
-			<string>App User Email</string>
 			<key>Key</key>
 			<string>AppUserName</string>
 		</dict>
@@ -126,7 +124,7 @@
 			<key>Key</key>
 			<string>Switch520</string>
 			<key>DefaultValue</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Type</key>
