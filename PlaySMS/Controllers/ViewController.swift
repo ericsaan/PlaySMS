@@ -446,9 +446,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
          
                 // 2. region data
                 let title = "520"
-                let coordinate = CLLocationCoordinate2DMake(47.642819, -122.316978)
+                let coordinate = CLLocationCoordinate2DMake(47.643563, -122.307888)
                 
-                let regionRadius = 500.0
+                let regionRadius = 400.0
          
                 // 3. setup region
                 let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,
@@ -468,9 +468,9 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
            
                   // 2. region data
                   let title = "I90"
-                  let coordinate = CLLocationCoordinate2DMake(47.589915, -122.285575)
+                  let coordinate = CLLocationCoordinate2DMake(47.589714, -122.275315)
                   
-                  let regionRadius = 500.0
+                let regionRadius = 400.0
            
                   // 3. setup region
                   let region = CLCircularRegion(center: CLLocationCoordinate2D(latitude: coordinate.latitude,
@@ -664,6 +664,7 @@ class ViewController: UIViewController, MFMessageComposeViewControllerDelegate, 
         
         }  //endswitch
         self.view.layoutIfNeeded()
+         self.view.layoutIfNeeded()
     }  //endsetbackground
     
     //***************************************************************************************

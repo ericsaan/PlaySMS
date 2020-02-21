@@ -1366,8 +1366,8 @@
             filePath = "PlaySMS/Controllers/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "773"
-            endingLineNumber = "773"
+            startingLineNumber = "774"
+            endingLineNumber = "774"
             landmarkName = "getDateString()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1482,6 +1482,84 @@
             endingLineNumber = "241"
             landmarkName = "sendMessageToDatabase(messageToSend:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "00A81301-0DAC-4DBA-9A75-58E37E79214A"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PlaySMS/Controllers/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "601"
+            endingLineNumber = "601"
+            landmarkName = "setBackgrounds()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "00A81301-0DAC-4DBA-9A75-58E37E79214A - 489bacca89e0d52"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.setBackgrounds() -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "601"
+                  endingLineNumber = "601"
+                  offsetFromSymbolStart = "189">
+               </Location>
+               <Location
+                  uuid = "00A81301-0DAC-4DBA-9A75-58E37E79214A - 489bacca89e0d52"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.setBackgrounds() -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "601"
+                  endingLineNumber = "601"
+                  offsetFromSymbolStart = "270">
+               </Location>
+               <Location
+                  uuid = "00A81301-0DAC-4DBA-9A75-58E37E79214A - 489bacca89e0d52"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.setBackgrounds() -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "601"
+                  endingLineNumber = "601"
+                  offsetFromSymbolStart = "3708">
+               </Location>
+               <Location
+                  uuid = "00A81301-0DAC-4DBA-9A75-58E37E79214A - 489bacca89e0d52"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PlaySMS.ViewController.setBackgrounds() -&gt; ()"
+                  moduleName = "PlaySMS"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/sully/Documents/iOSProjects/PlaySMS/PlaySMS/Controllers/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "601"
+                  endingLineNumber = "601"
+                  offsetFromSymbolStart = "7146">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
